@@ -17,14 +17,14 @@ def callouts_to_divs(md):
     md = re.sub(r'(?m)^(\s*[-*]\s+)>\s*\[!(\w+)\][+-]?\s*(.*)$',
                 lambda m: m.group(1)+ICON.get(m.group(2).lower(),"•")+" "+m.group(3), md)
     lines = md.split("\n"); out=[]; i=0
-    head = re.compile(r'^>\s?\[!(\w+)\]([+-]?)\s*(.*)$')
+    head = re.compile(r'^\s*>\s?\[!(\w+)\]([+-]?)\s*(.*)$')
     while i < len(lines):
         m = head.match(lines[i])
         if m:
             ctype = m.group(1).lower(); title = m.group(3).strip()
             i += 1; body=[]
-            while i < len(lines) and lines[i].startswith(">"):
-                body.append(re.sub(r'^>\s?','',lines[i])); i += 1
+            while i < len(lines) and re.match(r'^\s*>', lines[i]):
+                body.append(re.sub(r'^\s*>\s?','',lines[i])); i += 1
             ic = ICON.get(ctype,"•")
             out.append(f'::: {{.callout .ct-{ctype}}}')
             label = (ic+" "+title).strip() if title else ic
