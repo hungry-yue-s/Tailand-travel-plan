@@ -333,6 +333,16 @@ svg.map a:hover path[stroke]{stroke-width:2}
 .disclaimer{margin:22px 0 0;font-size:12px;color:var(--ink2);background:rgba(193,82,47,.06);border:1px dashed var(--terra);border-radius:12px;padding:12px 15px;line-height:1.65}
 footer{text-align:center;color:var(--ink2);font-size:12.5px;padding:28px 10px 6px;border-top:1px solid var(--line);margin-top:26px}
 footer a{color:var(--jade-d)}
+.booking{margin:20px 0 4px;background:linear-gradient(160deg,rgba(224,161,51,.12),rgba(15,107,83,.07));border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:16px;padding:15px 18px;box-shadow:var(--shadow)}
+.booking h3{margin:0 0 3px;font-family:var(--serif);font-size:18px}
+.booking .bk-sub{color:var(--ink2);font-size:12.5px;margin:0 0 10px}
+.booking ol{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.booking li{display:flex;flex-wrap:wrap;align-items:baseline;gap:5px 8px;padding:9px 11px;background:rgba(255,255,255,.55);border:1px solid var(--line);border-radius:12px}
+.booking li b{font-family:var(--serif);font-size:14px}
+.booking .bk-when{font-size:11.5px;color:var(--terra);font-family:var(--lat)}
+.booking .bk-links{display:flex;flex-wrap:wrap;gap:6px;margin-top:3px;flex:1 1 100%}
+.booking .bk-links a{font-size:12px;text-decoration:none;color:#fff;background:linear-gradient(150deg,var(--jade),var(--jade-d));padding:4px 10px;border-radius:999px}
+.booking .bk-warn{flex:1 1 100%;font-size:11.5px;color:var(--ink2)}
 @media(min-width:760px){.daycard{padding:18px 22px 20px}}
 """
 
@@ -342,6 +352,29 @@ def build():
     daynav = "".join(
         f'<a href="#d{int(d["date"][8:10])}"><b>{d["date"][5:]}</b> {d["weekday"][1:]}</a>'
         for d in trip["days"])
+    booking = (
+      '<section class="booking">'
+      '<h3>🎟️ 出发前必订清单</h3>'
+      '<p class="bk-sub">这几样先订好：价格更好、不怕满场（链接为官方/主流平台，实时价格与档期以页面为准）</p>'
+      '<ol>'
+      '<li><b>① 蓬扬 Pongyang 丛林飞跃</b> <span class="bk-when">7/16 · 建议 13:00 场</span>'
+      '<span class="bk-links"><a href="https://www.klook.com/en-US/activity/88017-1-day-join-pongyang-jungle-coaster-zipline-chiang-mai/" target="_blank" rel="noopener">Klook</a>'
+      '<a href="https://www.kkday.com/en-us/product/21263" target="_blank" rel="noopener">KKday</a></span>'
+      '<span class="bk-warn">⚠️ 体重连衣物鞋 ≤ ~95–100kg、穿运动鞋不能拖鞋</span></li>'
+      '<li><b>② 情侣马杀鸡</b> <span class="bk-when">7/17 晚</span>'
+      '<span class="bk-links"><a href="https://www.gowabi.com/en/provider/oasis-spa-at-nimman-chiang-mai" target="_blank" rel="noopener">Oasis·GoWabi</a>'
+      '<a href="https://fahlanna.com/spa-nimman/" target="_blank" rel="noopener">Fah Lanna 官网</a></span>'
+      '<span class="bk-warn">⚠️ 务必预约；Fah Lanna 末场 20:00、Oasis 市区免费接送</span></li>'
+      '<li><b>③ Chao Phraya Princess 夜游船</b> <span class="bk-when">7/19 · 19:30 ICONSIAM 码头</span>'
+      '<span class="bk-links"><a href="https://www.klook.com/en-US/activity/88680-upper-deck-seat-chao-phraya-princess-cruise-bangkok/" target="_blank" rel="noopener">Klook 顶层</a>'
+      '<a href="https://www.klook.com/en-US/activity/375-chao-phraya-princess-cruise-bangkok/" target="_blank" rel="noopener">Klook 标准</a>'
+      '<a href="https://www.kkday.com/en-us/product/2567-chao-phraya-princess-river-cruise-with-dinner-buffet-thailand" target="_blank" rel="noopener">KKday</a>'
+      '<a href="https://chaophrayaprincess.com/reservations.php" target="_blank" rel="noopener">官网</a></span>'
+      '<span class="bk-warn">⚠️ 选顶层/前甲板；提前 30 分到 ICONSIAM Pier 2 · SookSiam G 层 Naraya 旁 check-in</span></li>'
+      '<li><b>④ TDAC 电子入境卡</b> <span class="bk-when">免费 · 抵达前 72h（最早 7/11）</span>'
+      '<span class="bk-links"><a href="https://tdac.immigration.go.th/" target="_blank" rel="noopener">tdac.immigration.go.th</a></span>'
+      '<span class="bk-warn">⚠️ 认准 .go.th 免费官网，填完存 QR 截图</span></li>'
+      '</ol></section>')
     page = f"""<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -369,6 +402,8 @@ def build():
   </header>
 
   <nav class="daynav">{daynav}</nav>
+
+  {booking}
 
   {cards}
 

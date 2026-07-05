@@ -26,6 +26,13 @@
 - **清迈**：Travelodge Nimman（宁曼路核心区），7/15 入住 4 晚、7/19 离店（高级房 ×1）
 - **曼谷（后段）**：**True Siam Phayathai Hotel**（Phaya Thai/Ratchathewi，步行 4 分到 ARL 机场快线），7/19 入住、7/20 离店 · **已订**（站内 hotel.html 有实拍）
 
+> [!important] 🎟️ 出发前必订清单（3 张票 + 入境卡）
+> 这几样**出发前先订好**：价格更好、也不怕满场（链接为官方/主流平台，实时价格与档期以打开页面为准；坐标/时间见对应日）。
+> - **① 蓬扬 Pongyang 丛林飞跃**（7/16 · 建议订 **13:00 场**含泰式午餐）→ [Klook](https://www.klook.com/en-US/activity/88017-1-day-join-pongyang-jungle-coaster-zipline-chiang-mai/) · [KKday](https://www.kkday.com/en-us/product/21263)　⚠️ 体重连衣物鞋 ≤ ~95–100kg、穿运动鞋不能拖鞋
+> - **② 情侣马杀鸡**（7/17 晚）→ Oasis：[GoWabi 预约](https://www.gowabi.com/en/provider/oasis-spa-at-nimman-chiang-mai)　|　Fah Lanna Romantic：[官网](https://fahlanna.com/spa-nimman/)　⚠️ 务必预约；Fah Lanna 末场 20:00、Oasis 市区免费接送
+> - **③ Chao Phraya Princess 昭披耶夜游船**（7/19 · 19:30–21:30 ICONSIAM 码头）→ [Klook 顶层 Upper Deck](https://www.klook.com/en-US/activity/88680-upper-deck-seat-chao-phraya-princess-cruise-bangkok/) · [Klook 标准](https://www.klook.com/en-US/activity/375-chao-phraya-princess-cruise-bangkok/) · [KKday](https://www.kkday.com/en-us/product/2567-chao-phraya-princess-river-cruise-with-dinner-buffet-thailand) · [官网](https://chaophrayaprincess.com/reservations.php)　⚠️ 选**顶层/前甲板**；提前 30 分到 **ICONSIAM Pier 2 · SookSiam G 层 Naraya 旁** check-in
+> - **④ TDAC 电子入境卡**（免费）→ 抵达前 72 小时内（最早 7/11）在官方 [tdac.immigration.go.th](https://tdac.immigration.go.th/) 填、认准 `.go.th`，存 QR 截图
+
 ---
 
 ## 🗓️ 7/14 周二 · 曼谷抵达 + 朱拉隆夜市
