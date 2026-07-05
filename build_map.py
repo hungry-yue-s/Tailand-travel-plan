@@ -1,408 +1,378 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Build a single-file travel-map HTML (map.html) from the finished Thailand plan,
-following the travel-plan-viz skill's page-contract. Inlines its map.js/reminders.js
-engines (map.js patched to use Google Maps nav links). No external fonts."""
-import os, re, json, html, datetime
+"""Build a single-file HAND-DRAWN illustrated travel map (map.html).
+
+No tiles, no Leaflet, no external fonts/JS — everything is inline SVG drawn on a
+"Lanna travel journal" cream paper. One little hand-sketched map per day (7 cards);
+cross-city / airport days auto-split into a 曼谷 | 清迈 two-frame vignette joined by a
+dashed plane arc. Every numbered pin and every stop-list row deep-links to Google Maps
+navigation (real coords). Fully offline + China-safe."""
+import os, re, json, html, math, datetime
 
 ROOT = "/home/yuebiao/project/Tailand-travel-plan"
-SKILL = "/home/yuebiao/.claude/skills/travel-plan-viz/assets"
 
-# ---------------- trip data (per page-contract) ----------------
+# ---------------- trip data (verbatim, already proof-read) ----------------
 trip = {
   "title": "泰国清迈 × 曼谷 · 情侣 7 日",
   "startDate": "2026-07-14",
-  "colorScheme": "lanna-jade",
-  "preTrip": {
-    "weather": {
-      "summary": "7 月雨季/绿色季：清迈 31–32℃、曼谷 32–34℃，午后/傍晚多短时强阵雨（约 30–90 分钟），上午多晴。",
-      "typhoon": "非雾霾季（雾霾在 2–4 月），7 月空气清新；曼谷暴雨偶有短时内涝，走排水好的主干道。"
-    },
-    "packing": "一次性雨衣+折叠伞、速干衣、防滑凉鞋/两栖鞋、驱蚊液(含 DEET)、珊瑚友好防晒、万能转换插头(泰国 220V·A/B/C 型，中国插头多可直插)、寺庙用过肩过膝衣物+披肩。",
-    "payment": "现金为主(街摊/双条/夜市只收现金)，备足 20/50/100 泰铢小钞；SuperRich 换汇最优、机场最差；ATM 外卡约 220฿/笔一次取足；大商场可刷卡。",
-    "apps": ["Grab / Bolt（叫车）", "Google Maps（泰国导航首选）", "TDAC 官网 tdac.immigration.go.th（数字入境卡）"],
-    "ticketTip": "中泰互免签证、≤30 天免签；抵达前 72 小时内（最早 7/11）在官方 tdac.immigration.go.th 填 TDAC 并保存 QR 码，认准 .go.th 免费，防收费假站。"
-  },
-  "flights": {
-    "booked": [
-      {"label": "7/14 长沙 → 曼谷廊曼(DMK)", "code": "FD481 泰亚航", "time": "12:55–15:10"},
-      {"label": "7/15 曼谷廊曼(DMK) → 清迈(CNX)", "code": "SL520 泰狮航", "time": "19:30–20:45"},
-      {"label": "7/19 清迈(CNX) → 曼谷素万那普(BKK)", "code": "VZ2103 泰越捷", "time": "10:15–11:35"},
-      {"label": "7/20 曼谷素万那普(BKK) → 海口", "code": "HU7940 海航", "time": "11:05–14:40"},
-      {"label": "7/20 海口 → 长沙", "code": "HU7517 海航", "time": "16:30–18:35"},
-    ],
-    "candidates": []
-  },
-  "hotelAreas": [
-    {"area": "曼谷 · Ratchathewi（前段 7/14）", "reason": "近 Pratunam/Siam 与朱拉美食街，Ratchathewi/Phaya Thai 站步行圈",
-     "options": [{"tier": "已订", "name": "The Quarter Ratchathewi by UHG", "priceRange": "已预订 · 1 晚", "note": "388 Phetchaburi Rd，高级双人间"}]},
-    {"area": "清迈 · 宁曼 Nimman（主场 7/15–7/19）", "reason": "步行逛 One Nimman/Maya、多家美食咖啡，打车古城 15 分钟",
-     "options": [{"tier": "已订", "name": "Travelodge Nimman Chiang Mai", "priceRange": "已预订 · 4 晚", "note": "宁曼核心区，高级房"}]},
-    {"area": "曼谷 · Phayathai/Ratchathewi（后段 7/19–7/20）", "reason": "步行 4 分钟到帕亚泰(Phaya Thai) ARL 机场快线，7/20 早直达素万那普赶国际航班",
-     "options": [
-       {"tier": "已订", "name": "True Siam Phayathai Hotel 真暹罗帕亚泰", "priceRange": "已预订 · ¥291 起/晚", "note": "8.8 分，近 Phaya Thai BTS/ARL；站内 hotel.html 有实拍与介绍"},
-     ]},
-  ],
-  "disclaimer": "本页全部信息（天气、航班、酒店、餐厅、景点、门票、价格、营业时间、坐标、评分等）均为 AI 基于公开资料整理的参考建议，可能不准确或已过时，不保证与实时情况一致；坐标为近似值仅供地图示意，请务必在 Google Maps / 官方渠道 / 订票订房 App 核实后再前往。",
-  "tips": [
-    "叫车优先 Grab（上车前显示固定价），装 Bolt/inDrive 比价；清迈红双条古城内短途约 30–40฿/人，下车付现，别主动问价。",
-    "泰国用 Google Maps 导航（本页 marker 一键跳 Google 地图）；高德海外覆盖差，不建议。",
-    "传统 khao soi/烤鸡多只做午市、卖完即收，想吃中午前去；凤飞飞猪脚饭、打抛牛肉店是傍晚才开。",
-    "雨季把户外(瀑布/寺庙/市集)排上午，午后阵雨转室内(商场/咖啡/按摩)；随身带雨衣。",
-    "现金为主，街摊/双条/夜市/寺庙只收现金；PromptPay 短期游客用不了。",
-    "寺庙过肩过膝、进殿脱鞋；银庙 Wat Sri Suphan 银殿仅限男性入内。尊重王室是法律红线。",
-  ],
-  "reminders": [
-    {"item": "填写 TDAC 泰国数字入境卡（tdac.immigration.go.th，认准 .go.th）", "leadDays": 3},
-    {"item": "购买含医疗+紧急送返的旅行保险（若租摩托确认含两轮条款）", "leadDays": 7},
-    {"item": "备泰铢现金 + 确认手机可用 Grab / Google Maps", "leadDays": 2},
-  ],
+  "disclaimer": "本页坐标为 AI 依公开资料整理的近似值，仅供手绘示意，点位相对位置经纬度投影、非街道级精确；出行请务必在 Google Maps / 官方渠道核实后再前往。导航按钮一律跳转 Google 地图（泰国首选，高德海外覆盖差）。",
   "days": [
     {"date": "2026-07-14", "weekday": "周二", "theme": "抵达曼谷 · 朱拉夜市",
      "tips": ["廊曼(DMK)到市区约 26km；A3 巴士便宜、Grab 走高速更快"],
      "slots": [
-       {"period": "noon", "name": "抵达 曼谷廊曼机场 DMK", "time": "15:10 落地", "lat": 13.9126, "lng": 100.6068,
-        "review": "国际航班到达，填好 TDAC、取托运、出关；打车/A3 巴士进城", "transport": {"mode": "Grab/出租(高速)", "fare": "约 350–500฿", "duration": "约 40–60 分钟"}},
-       {"period": "noon", "name": "入住 The Quarter Ratchathewi", "time": "16:30", "lat": 13.7538, "lng": 100.5324,
-        "review": "放行李、休整；近 Pratunam/Siam", "openingHours": "14:00 后入住"},
-       {"period": "evening", "name": "朱拉/Banthat Thong 美食街夜市", "time": "18:30–22:00", "lat": 13.7365, "lng": 100.5285,
-        "review": "曼谷年轻人气美食街：泰式炒粉、烤串、Elvis Suki、芒果糯米饭，走走吃吃", "seasonal": "露天，遇雨躲进商场"}
-     ],
-     "dining": [{"meal": "晚餐", "place": "Banthat Thong 美食街", "hours": "傍晚–深夜",
-        "dishes": [{"name": "Elvis Suki 干泰式寿喜", "price": "60฿起/道"}, {"name": "芒果糯米饭", "price": "80–150฿"}]}]},
-
+       {"period": "noon", "name": "抵达 曼谷廊曼机场 DMK", "time": "15:10 落地", "lat": 13.9126, "lng": 100.6068},
+       {"period": "noon", "name": "入住 The Quarter Ratchathewi", "time": "16:30", "lat": 13.7538, "lng": 100.5324},
+       {"period": "evening", "name": "朱拉/Banthat Thong 美食街夜市", "time": "18:30–22:00", "lat": 13.7365, "lng": 100.5285}
+     ]},
     {"date": "2026-07-15", "weekday": "周三", "theme": "曼谷半日 → 傍晚飞清迈",
      "tips": ["12:00 前退房、可寄存行李；下午留足时间去廊曼赶 19:30 航班"],
      "slots": [
-       {"period": "morning", "name": "曼谷 Siam 暹罗商圈", "time": "10:00–13:00", "lat": 13.7460, "lng": 100.5340,
-        "review": "Siam Paragon/CentralWorld 逛街吹空调，或就近一座寺庙；午餐后取行李", "transport": {"mode": "BTS 天铁", "fare": "约 25–40฿", "duration": "10–20 分钟"}},
-       {"period": "afternoon", "name": "曼谷廊曼机场 DMK 飞清迈", "time": "17:00 到机场", "lat": 13.9126, "lng": 100.6068,
-        "review": "国内航班提前约 2 小时到；SL520 19:30 起飞", "needsBooking": False},
-       {"period": "evening", "name": "入住 Travelodge Nimman（清迈）", "time": "21:00", "lat": 18.7985, "lng": 98.9668,
-        "review": "20:45 落地清迈，打车约 15 分钟到宁曼；放行李后吃夜宵", "transport": {"mode": "机场出租/Grab", "fare": "约 150–200฿", "duration": "约 15 分钟"}}
-     ],
-     "dining": [{"meal": "夜宵", "place": "凤飞飞猪脚饭（象门 Chang Phueak）", "hours": "约 17:00–午夜",
-        "dishes": [{"name": "五香猪脚饭 khao kha moo", "price": "50–80฿"}]}]},
-
+       {"period": "morning", "name": "曼谷 Siam 暹罗商圈", "time": "10:00–13:00", "lat": 13.7460, "lng": 100.5340},
+       {"period": "afternoon", "name": "曼谷廊曼机场 DMK 飞清迈", "time": "17:00 到机场", "lat": 13.9126, "lng": 100.6068},
+       {"period": "evening", "name": "入住 Travelodge Nimman（清迈）", "time": "21:00", "lat": 18.7985, "lng": 98.9668}
+     ]},
     {"date": "2026-07-16", "weekday": "周四", "theme": "粘粘瀑布 · 便便造纸园 · 马杀鸡",
      "tips": ["城北一日，建议包车(约 1,500–3,000฿/天)；瀑布 Grab 常拒载返程", "早出发避午后雷阵雨；穿防滑鞋爬瀑布"],
      "slots": [
-       {"period": "morning", "name": "Bua Tong 粘粘瀑布", "time": "09:45–12:00", "lat": 19.0475, "lng": 99.0286,
-        "review": "石灰岩不打滑、可赤脚往上爬，雨季水量最壮观", "ticketPrice": "免费（入口登记）", "openingHours": "约 08:00–17:00",
-        "transport": {"mode": "包车", "fare": "约 60km/1–1.25h", "duration": "往北"}},
-       {"period": "noon", "name": "POOPOOPAPER Park 大象粪造纸园", "time": "13:00–14:30", "lat": 18.9208, "lng": 98.8875,
-        "review": "Mae Rim，字面就是“大象粑粑”：手工造纸体验、有中英导览，可动手", "ticketPrice": "约 120–150฿/人", "openingHours": "约 09:00–17:00"},
-       {"period": "evening", "name": "Oasis Spa Nimman 情侣马杀鸡", "time": "18:00–20:30", "lat": 18.7972, "lng": 98.9662,
-        "review": "King & Queen 双人套，市区免费接送；纪念感可选 Fah Lanna Romantic", "ticketPrice": "双人套约 3,045฿ 起", "needsBooking": True, "leadDays": 1}
-     ],
-     "dining": [
-       {"meal": "午餐", "place": "Mae Rim 花园餐厅", "hours": "沿途", "dishes": [{"name": "泰北家常菜", "price": "150–300฿/人"}]},
-       {"meal": "晚餐", "place": "Tong Tem Toh（宁曼 Soi 13）", "hours": "08:00–23:00",
-        "dishes": [{"name": "北部拼盘 Or-dern Muang", "price": "约 187฿"}, {"name": "炭烤猪颈肉配 jaew", "price": "—"}]}]},
-
+       {"period": "morning", "name": "Bua Tong 粘粘瀑布", "time": "09:45–12:00", "lat": 19.0475, "lng": 99.0286},
+       {"period": "noon", "name": "POOPOOPAPER Park 大象粪造纸园", "time": "13:00–14:30", "lat": 18.9208, "lng": 98.8875},
+       {"period": "evening", "name": "Oasis Spa Nimman 情侣马杀鸡", "time": "18:00–20:30", "lat": 18.7972, "lng": 98.9662}
+     ]},
     {"date": "2026-07-17", "weekday": "周五", "theme": "宁曼购物 · 古城打铁片手作",
      "tips": ["上午宁曼，午后打车去古城做打铁片；Lanna Artisans 17:00 关门宜早到"],
      "slots": [
-       {"period": "morning", "name": "One Nimman / 宁曼路购物", "time": "10:00–13:00", "lat": 18.8006, "lng": 98.9673,
-        "review": "One Nimman 意式拱廊+文创、Maya 商场、Think Park；家门口步行圈", "openingHours": "约 11:00–21:00"},
-       {"period": "noon", "name": "打铁片手作 @ Lanna Artisans Art Gallery", "time": "14:15–16:00", "lat": 18.7790, "lng": 98.9836,
-        "review": "南门银庙旁、认门口有三角梅那家：小铁锤敲打铁牌做钥匙扣/戒指，独一无二伴手礼", "ticketPrice": "50฿/件（仅现金）", "openingHours": "约 09:00–17:00",
-        "transport": {"mode": "Grab 宁曼→古城", "fare": "约 80–120฿", "duration": "约 15 分钟"}},
-       {"period": "afternoon", "name": "银庙 Wat Sri Suphan", "time": "16:00–16:40", "lat": 18.7793, "lng": 98.9838,
-        "review": "全球唯一纯银装饰佛殿，兰纳银匠工艺", "ticketPrice": "约 50฿", "openingHours": "银殿仅限男性入内"},
-       {"period": "evening", "name": "塔佩门 Tha Phae Gate / 古城咖啡", "time": "17:00 起", "lat": 18.7877, "lng": 98.9933,
-        "review": "古城地标散步、顺路咖啡馆歇脚，晚餐宁曼或古城"}
-     ],
-     "dining": [
-       {"meal": "早午餐", "place": "宁曼 brunch / 咖啡", "hours": "上午", "dishes": [{"name": "Ristr8to 冠军拉花", "price": "100–150฿"}, {"name": "Joost 山竹果昔", "price": "50฿起"}]},
-       {"meal": "晚餐", "place": "Kao Soy Nimman / 古城餐厅", "hours": "晚市", "dishes": [{"name": "khao soi 咖喱面", "price": "90–100฿"}]}]},
-
+       {"period": "morning", "name": "One Nimman / 宁曼路购物", "time": "10:00–13:00", "lat": 18.8006, "lng": 98.9673},
+       {"period": "noon", "name": "打铁片手作 @ Lanna Artisans Art Gallery", "time": "14:15–16:00", "lat": 18.7790, "lng": 98.9836},
+       {"period": "afternoon", "name": "银庙 Wat Sri Suphan", "time": "16:00–16:40", "lat": 18.7793, "lng": 98.9838},
+       {"period": "evening", "name": "塔佩门 Tha Phae Gate / 古城咖啡", "time": "17:00 起", "lat": 18.7877, "lng": 98.9933}
+     ]},
     {"date": "2026-07-18", "weekday": "周六", "theme": "周末市集 · 艺术村 · 周六夜市",
-     "tips": ["用满这个唯一的周六：上午 Jing Jai 周末市集 + 傍晚 Wualai 周六步行街（都仅周末/周六开）"],
+     "tips": ["用满这个唯一的周六：上午 Jing Jai 周末市集 + 傍晚 Wualai 周六步行街（都仅周末/周六开）", "奶奶厨房 Krua Ya 午餐顺路艺术村（城西南、白天营业、Grab 搜 Krua Ya）"],
      "slots": [
-       {"period": "morning", "name": "Jing Jai 周末市集（JJ Market）", "time": "07:30–11:00", "lat": 18.8067, "lng": 98.9762,
-        "review": "仅周末上午：有机农产+手作+咖啡+北部小吃，树荫下很出片", "openingHours": "约 06:30–14:00（仅周六日）"},
-       {"period": "noon", "name": "Baan Kang Wat 艺术村（白色集市）", "time": "12:30–15:00", "lat": 18.7758, "lng": 98.9436,
-        "review": "手作艺术家社区、文艺小店咖啡；周一休", "openingHours": "约 10:00–18:00（周一休）"},
-       {"period": "evening", "name": "Wualai 周六步行街", "time": "17:30–22:00", "lat": 18.7818, "lng": 98.9852,
-        "review": "仅周六：银器手工艺 + 北部街头小吃（khao soi、香蕉叶烤蛋），比周日街更本地", "seasonal": "全露天，雨季看天（可转 Kalare 有顶食阁）"}
-     ],
-     "dining": [
-       {"meal": "早餐", "place": "Jing Jai 市集", "hours": "上午", "dishes": [{"name": "sai ua 北部香肠 + 咖啡", "price": "市集价"}]},
-       {"meal": "晚餐", "place": "Wualai 周六夜市小吃", "hours": "傍晚", "dishes": [{"name": "香蕉叶烤“野蛋” + 烤串", "price": "夜市价"}]}]},
-
+       {"period": "morning", "name": "Jing Jai 周末市集（JJ Market）", "time": "07:30–11:00", "lat": 18.8067, "lng": 98.9762},
+       {"period": "noon", "name": "Baan Kang Wat 艺术村（白色集市）", "time": "12:30–14:00", "lat": 18.7758, "lng": 98.9436},
+       {"period": "noon", "name": "奶奶厨房 Krua Ya 午餐", "time": "12:15–13:45", "lat": 18.7625, "lng": 98.9420},
+       {"period": "evening", "name": "Wualai 周六步行街", "time": "17:30–22:00", "lat": 18.7818, "lng": 98.9852}
+     ]},
     {"date": "2026-07-19", "weekday": "周日", "theme": "飞回曼谷 · 唐人街扫街",
      "tips": ["清迈上午约 7:30 离店赶 10:15 航班；曼谷落地素万那普(不是廊曼)", "唐人街周日晚正是巅峰、正好避开周一弱夜"],
      "slots": [
-       {"period": "morning", "name": "清迈机场 CNX 飞曼谷", "time": "08:15 到机场 / 10:15 起飞", "lat": 18.7680, "lng": 98.9626,
-        "review": "退房→CNX 约 15 分钟；VZ2103 飞素万那普"},
-       {"period": "afternoon", "name": "入住 True Siam Phayathai Hotel", "time": "12:30", "lat": 13.7565, "lng": 100.5335,
-        "review": "帕亚泰/Ratchathewi，步行 4 分到 ARL 机场快线，放行李后玩曼谷；次日直达素万那普", "openingHours": "近 Phaya Thai BTS/ARL"},
-       {"period": "afternoon", "name": "ICONSIAM（昭披耶河畔）", "time": "13:30–17:00", "lat": 13.7263, "lng": 100.5100,
-        "review": "11:35 落地素万那普→市区；ICONSIAM 室内 SookSiam 水上市场+河景，雨天友好", "transport": {"mode": "ARL 机场快线→市区", "fare": "约 45฿/人", "duration": "约 30 分钟"}},
-       {"period": "evening", "name": "Yaowarat 唐人街扫街", "time": "18:00–22:00", "lat": 13.7405, "lng": 100.5090,
-        "review": "泰国最强街头美食带：烤海鲜、燕窝糖水、卷粉汤，19 点后最旺；MRT Wat Mangkon 1 号口直达"}
-     ],
-     "dining": [{"meal": "晚餐", "place": "唐人街 Yaowarat", "hours": "傍晚–02:00",
-        "dishes": [{"name": "T&K/Lek&Rut 烤大虾·蟹", "price": "50–200฿/道"}, {"name": "Guay Jub 胡椒卷粉汤", "price": "50–100฿"}]}]},
-
+       {"period": "morning", "name": "清迈机场 CNX 飞曼谷", "time": "08:15 到机场 / 10:15 起飞", "lat": 18.7680, "lng": 98.9626},
+       {"period": "afternoon", "name": "入住 True Siam Phayathai Hotel", "time": "12:30", "lat": 13.7565, "lng": 100.5335},
+       {"period": "afternoon", "name": "ICONSIAM（昭披耶河畔）", "time": "13:30–17:00", "lat": 13.7263, "lng": 100.5100},
+       {"period": "evening", "name": "Yaowarat 唐人街扫街", "time": "18:00–22:00", "lat": 13.7405, "lng": 100.5090}
+     ]},
     {"date": "2026-07-20", "weekday": "周一", "theme": "曼谷早餐 · 回国",
      "tips": ["国际航班 11:05，约 07:00 出发去素万那普(留足早高峰时间)，只够吃个早餐"],
      "slots": [
-       {"period": "morning", "name": "Jok Prince 炭香猪肉粥（早餐）", "time": "06:30", "lat": 13.7283, "lng": 100.5160,
-        "review": "必比登，周一也开、6 点开门；或 K.Panich 芒果糯米饭打包", "ticketPrice": "40–60฿", "openingHours": "06:00 起"},
-       {"period": "noon", "name": "曼谷素万那普机场 BKK 回国", "time": "08:15 到机场 / 11:05 起飞", "lat": 13.6900, "lng": 100.7501,
-        "review": "HU7940 经海口转 HU7517 回长沙", "transport": {"mode": "ARL/Grab", "fare": "约 45–650฿", "duration": "早高峰留足时间"}}
-     ],
-     "dining": [{"meal": "早餐", "place": "Jok Prince / K.Panich", "hours": "上午",
-        "dishes": [{"name": "炭香猪肉粥", "price": "40–60฿"}, {"name": "K.Panich 芒果糯米饭(打包)", "price": "100–150฿"}]}]},
+       {"period": "morning", "name": "Jok Prince 炭香猪肉粥（早餐）", "time": "06:30", "lat": 13.7283, "lng": 100.5160},
+       {"period": "noon", "name": "曼谷素万那普机场 BKK 回国", "time": "08:15 到机场 / 11:05 起飞", "lat": 13.6900, "lng": 100.7501}
+     ]},
   ]
 }
 
-# ---------------- engines (inline; patch map.js nav → Google Maps) ----------------
-reminders_js = open(os.path.join(SKILL, "reminders.js"), encoding="utf-8").read()
-map_js = open(os.path.join(SKILL, "map.js"), encoding="utf-8").read()
-map_js = re.sub(
-    r"// 生成跳转手机地图导航的链接。.*?function buildNavLink\(lat, lng, label, ua\) \{.*?\n\}",
-    "// 生成导航链接（泰国用 Google Maps，跨平台唤起 Google 地图）\n"
-    "function buildNavLink(lat, lng, label, ua) {\n"
-    "  return 'https://www.google.com/maps/dir/?api=1&destination=' + lat + ',' + lng;\n"
-    "}",
-    map_js, flags=re.S)
-
-# ---------------- helpers ----------------
+# ---------------- geometry helpers ----------------
 def esc(s): return html.escape(str(s), quote=True)
 
-def deadline(start, lead):
-    d = datetime.date.fromisoformat(start) - datetime.timedelta(days=lead)
-    return d.isoformat()
+def city_of(p): return "cm" if p["lat"] > 16 else "bkk"
+CITY_LABEL = {"cm": "清迈 Chiang Mai", "bkk": "曼谷 Bangkok"}
 
-PERIOD = {"morning": "上午", "noon": "午间", "afternoon": "午后", "evening": "傍晚/晚"}
+# per-day ink accents (Lanna palette, one per day for variety)
+ACCENTS = ["#bd3b73", "#e0a133", "#0f6b53", "#c1522f", "#2f8f6f", "#9a6b14", "#7a5c9e"]
 
-def render_checklist():
-    items = sorted(trip["reminders"], key=lambda r: deadline(trip["startDate"], r["leadDays"]))
-    lis = "".join(
-        f'<li><input type="checkbox"><span class="dl">{deadline(trip["startDate"], r["leadDays"])} 前</span>'
-        f'<span>{esc(r["item"])}（提前 {r["leadDays"]} 天）</span></li>' for r in items)
-    return f'<ul class="checklist" id="checklist">{lis}</ul>'
+def project(points, box):
+    """Project lat/lng into an SVG box, preserving relative geography (cos-lat aspect)."""
+    if len(points) == 1:
+        return [((box[0] + box[2]) / 2, (box[1] + box[3]) / 2)]
+    mlat = sum(p["lat"] for p in points) / len(points)
+    k = math.cos(math.radians(mlat))
+    xs = [p["lng"] * k for p in points]
+    ys = [p["lat"] for p in points]
+    minx, maxx, miny, maxy = min(xs), max(xs), min(ys), max(ys)
+    spanx = (maxx - minx) or 1e-6
+    spany = (maxy - miny) or 1e-6
+    x0, y0, x1, y1 = box
+    pad = 40
+    bw, bh = (x1 - x0 - 2 * pad), (y1 - y0 - 2 * pad)
+    sc = min(bw / spanx, bh / spany)
+    cx, cy = (minx + maxx) / 2, (miny + maxy) / 2
+    mx, my = (x0 + x1) / 2, (y0 + y1) / 2
+    return [(mx + (p["lng"] * k - cx) * sc, my - (p["lat"] - cy) * sc) for p in points]
 
-def render_pretrip():
-    p = trip["preTrip"]
-    apps = " · ".join(esc(a) for a in p["apps"])
-    return f"""<div class="grid2">
-      <div class="info-card"><h4>☔ 天气</h4><p>{esc(p['weather']['summary'])}</p><p class="sub">{esc(p['weather']['typhoon'])}</p></div>
-      <div class="info-card"><h4>🎒 打包</h4><p>{esc(p['packing'])}</p></div>
-      <div class="info-card"><h4>💳 支付</h4><p>{esc(p['payment'])}</p></div>
-      <div class="info-card"><h4>📱 必备 App</h4><p>{apps}</p></div>
-      <div class="info-card wide"><h4>🛂 签证 / TDAC</h4><p>{esc(p['ticketTip'])}</p></div>
-    </div>"""
+def relax(pos, box, min_sep=46, iters=80):
+    """Push overlapping pins apart, keep inside box."""
+    pos = [list(p) for p in pos]
+    x0, y0, x1, y1 = box
+    for _ in range(iters):
+        for i in range(len(pos)):
+            for j in range(i + 1, len(pos)):
+                dx, dy = pos[j][0] - pos[i][0], pos[j][1] - pos[i][1]
+                d = math.hypot(dx, dy) or 0.01
+                if d < min_sep:
+                    push = (min_sep - d) / 2
+                    ux, uy = dx / d, dy / d
+                    pos[i][0] -= ux * push; pos[i][1] -= uy * push
+                    pos[j][0] += ux * push; pos[j][1] += uy * push
+        for p in pos:
+            p[0] = min(max(p[0], x0 + 26), x1 - 26)
+            p[1] = min(max(p[1], y0 + 30), y1 - 30)
+    return [(round(x, 1), round(y, 1)) for x, y in pos]
 
-def render_flights():
-    rows = "".join(
-        f'<div class="fl"><span class="fl-badge">已订</span><div class="fl-main">{esc(f["label"])}<span class="fl-code">{esc(f["code"])}</span></div><div class="fl-time">{esc(f["time"])}</div></div>'
-        for f in trip["flights"]["booked"])
-    return f'<div class="flights">{rows}</div>'
+def nav(s): return f'https://www.google.com/maps/dir/?api=1&destination={s["lat"]},{s["lng"]}'
 
-def render_hotels():
-    blocks = []
-    for a in trip["hotelAreas"]:
-        opts = "".join(
-            f'<div class="ho-opt"><span class="ho-tier">{esc(o["tier"])}</span><b>{esc(o["name"])}</b>'
-            f'<span class="ho-price">{esc(o["priceRange"])}</span><span class="ho-note">{esc(o["note"])}</span></div>'
-            for o in a["options"])
-        blocks.append(f'<div class="ho-area"><h4>{esc(a["area"])}</h4><p class="sub">{esc(a["reason"])}</p>{opts}</div>')
-    return f'<div class="grid2">{"".join(blocks)}</div>'
+def pin_path(cx, cy, r=14.0):
+    return (f"M{cx:.1f} {cy-r:.1f} C {cx-r*1.15:.1f} {cy-r:.1f} {cx-r*1.15:.1f} {cy+r*0.72:.1f} "
+            f"{cx:.1f} {cy+r*1.8:.1f} C {cx+r*1.15:.1f} {cy+r*0.72:.1f} {cx+r*1.15:.1f} {cy-r:.1f} "
+            f"{cx:.1f} {cy-r:.1f} Z")
 
-def render_timeline():
-    out = []
-    for d in trip["days"]:
-        slots = ""
-        for s in d["slots"]:
-            bits = []
-            if s.get("openingHours"): bits.append(f'🕒 {esc(s["openingHours"])}')
-            if s.get("closedDays"): bits.append(f'🚫 {esc(s["closedDays"])}')
-            if s.get("ticketPrice"): bits.append(f'🎫 {esc(s["ticketPrice"])}')
-            if s.get("seasonal"): bits.append(f'✨ {esc(s["seasonal"])}')
-            if s.get("transport"):
-                t = s["transport"]; bits.append("🚕 " + esc(" · ".join(x for x in [t.get("mode"), t.get("fare"), t.get("duration")] if x)))
-            meta = "".join(f'<span class="chip">{b}</span>' for b in bits)
-            badge = f'<span class="rbadge">⚠️ 提前 {s.get("leadDays",0)} 天订</span>' if s.get("needsBooking") else ""
-            nav = f'https://www.google.com/maps/dir/?api=1&destination={s["lat"]},{s["lng"]}'
-            slots += f"""<div class="slot">
-              <div class="slot-h"><span class="slot-p">{PERIOD.get(s['period'],'')}</span><span class="slot-t">{esc(s.get('time',''))}</span></div>
-              <div class="slot-name">{esc(s['name'])}{badge}</div>
-              <p class="slot-r">{esc(s.get('review',''))}</p>
-              <div class="chips">{meta}</div>
-              <a class="navlink" href="{nav}" target="_blank" rel="noopener">🧭 Google 地图导航</a>
-            </div>"""
-        dining = ""
-        for m in d.get("dining", []):
-            dishes = "、".join(f'{esc(x["name"])} <i>{esc(x["price"])}</i>' for x in m.get("dishes", []))
-            dining += f'<div class="dine"><span class="dine-meal">{esc(m["meal"])}</span><b>{esc(m["place"])}</b><span class="sub">{esc(m.get("hours",""))}</span><div class="dishes">{dishes}</div></div>'
-        tips = "".join(f'<li>{esc(t)}</li>' for t in d.get("tips", []))
-        tips_html = f'<ul class="daytips">{tips}</ul>' if tips else ""
-        out.append(f"""<section class="day">
-          <div class="day-head"><span class="day-date">{esc(d['date'][5:])} <em>{esc(d['weekday'])}</em></span><span class="day-theme">{esc(d.get('theme',''))}</span></div>
-          {tips_html}
-          <div class="slots">{slots}</div>
-          <div class="dining"><h5>🍜 当日餐饮</h5>{dining}</div>
-        </section>""")
-    return "".join(out)
+# canvas + frame boxes
+W, H = 780, 470
+ONE = (44, 44, 736, 440)
+LEFT = (36, 44, 374, 440)
+RIGHT = (406, 44, 744, 440)
 
-def render_tips():
-    return '<ul class="tips">' + "".join(f'<li>{esc(t)}</li>' for t in trip["tips"]) + '</ul>'
+# ---------------- decorative doodles ----------------
+def doodle(sym, x, y, w, h, color, op=0.5, rot=0):
+    t = f' transform="rotate({rot} {x+w/2:.0f} {y+h/2:.0f})"' if rot else ""
+    return (f'<use href="#{sym}" x="{x:.0f}" y="{y:.0f}" width="{w:.0f}" height="{h:.0f}"'
+            f' style="color:{color};opacity:{op}"{t}/>')
 
-trip_json = json.dumps(trip, ensure_ascii=False)
+def decorations(city, box, accent):
+    x0, y0, x1, y1 = box
+    w = x1 - x0
+    ink = "#2a2320"
+    d = []
+    if city == "cm":
+        d.append(doodle("d-mtn", x0 + 10, y0 + 6, min(150, w * 0.42), 76, ink, 0.30))
+        d.append(doodle("d-temple", x1 - 66, y1 - 96, 56, 84, accent, 0.32))
+        d.append(doodle("d-eleph", x0 + 14, y1 - 74, 82, 60, ink, 0.26))
+        d.append(doodle("d-palm", x1 - 118, y0 + 18, 40, 56, "#2f8f6f", 0.30))
+    else:
+        d.append(doodle("d-river", x0 + 8, y1 - 52, w - 16, 40, "#2f7fae", 0.38))
+        d.append(doodle("d-temple", x1 - 70, y0 + 12, 54, 80, accent, 0.30))
+        d.append(doodle("d-sun", x0 + 16, y0 + 12, 44, 44, "#e0a133", 0.45))
+        d.append(doodle("d-cloud", x1 - 150, y0 + 8, 78, 46, ink, 0.22))
+    return "".join(d)
+
+def city_tag(city, box):
+    x0, y0, x1, y1 = box
+    return (f'<text x="{x0+16:.0f}" y="{y0+28:.0f}" font-family="Georgia,serif" font-size="15" '
+            f'fill="#5c5044" opacity="0.75" letter-spacing="0.04em">{CITY_LABEL[city]}</text>'
+            f'<path d="M{x0+16:.0f} {y0+34:.0f} q40 5 96 0" fill="none" stroke="#5c5044" '
+            f'stroke-width="1.4" opacity="0.4" filter="url(#rough)"/>')
+
+def frame_border(box):
+    x0, y0, x1, y1 = box
+    return (f'<rect x="{x0}" y="{y0}" width="{x1-x0}" height="{y1-y0}" rx="18" fill="none" '
+            f'stroke="#2a2320" stroke-width="1.5" stroke-dasharray="2 7" opacity="0.22" '
+            f'filter="url(#rough)"/>')
+
+def route_seg(a, b, pa, pb, accent):
+    x1, y1 = pa; x2, y2 = pb
+    mx, my = (x1 + x2) / 2, (y1 + y2) / 2
+    dx, dy = x2 - x1, y2 - y1
+    L = math.hypot(dx, dy) or 1
+    nx, ny = -dy / L, dx / L
+    if city_of(a) != city_of(b):   # inter-city flight → dashed plane arc
+        off = 60
+        cx, cy = mx + nx * off, my + ny * off
+        ang = math.degrees(math.atan2(y2 - y1, x2 - x1)) + 90
+        return (f'<path d="M{x1:.1f} {y1:.1f} Q{cx:.1f} {cy:.1f} {x2:.1f} {y2:.1f}" fill="none" '
+                f'stroke="{accent}" stroke-width="2" stroke-dasharray="7 8" stroke-linecap="round" '
+                f'opacity="0.7" filter="url(#rough)"/>'
+                + doodle("d-plane", cx - 17, cy - 17, 34, 34, accent, 0.9, rot=ang))
+    off = 14
+    cx, cy = mx + nx * off, my + ny * off
+    return (f'<path d="M{x1:.1f} {y1:.1f} Q{cx:.1f} {cy:.1f} {x2:.1f} {y2:.1f}" fill="none" '
+            f'stroke="{accent}" stroke-width="2.6" stroke-dasharray="1 8" stroke-linecap="round" '
+            f'opacity="0.85" filter="url(#rough)"/>')
+
+def pin(cx, cy, n, accent, navurl):
+    p = pin_path(cx, cy)
+    return (f'<a href="{navurl}" target="_blank" rel="noopener">'
+            f'<ellipse cx="{cx:.1f}" cy="{cy+27:.1f}" rx="7" ry="2.6" fill="#2a2320" opacity="0.16"/>'
+            f'<path d="{p}" fill="{accent}" stroke="#2a2320" stroke-width="1.6" filter="url(#rough)"/>'
+            f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="8.6" fill="#ffffff" opacity="0.15"/>'
+            f'<text x="{cx:.1f}" y="{cy:.1f}" text-anchor="middle" dominant-baseline="central" dy="0.5" '
+            f'font-family="Georgia,serif" font-weight="700" font-size="15" fill="#fbf6ec">{n}</text>'
+            f'</a>')
+
+# ---------------- per-day map + stop list ----------------
+def render_day(day, accent):
+    pts = day["slots"]
+    order = []
+    for p in pts:
+        c = city_of(p)
+        if c not in order:
+            order.append(c)
+    boxes = {order[0]: ONE} if len(order) == 1 else {order[0]: LEFT, order[1]: RIGHT}
+
+    coord = {}
+    svg = []
+    svg.append(f'<rect x="0" y="0" width="{W}" height="{H}" rx="20" fill="#faf4e6"/>')
+    svg.append(f'<rect x="0" y="0" width="{W}" height="{H}" rx="20" fill="url(#page)" opacity="0.55"/>')
+    svg.append(f'<rect x="0" y="0" width="{W}" height="{H}" rx="20" filter="url(#grain)" opacity="0.05"/>')
+
+    for c in order:
+        box = boxes[c]
+        cpts = [p for p in pts if city_of(p) == c]
+        pos = relax(project(cpts, box), box)
+        for p, xy in zip(cpts, pos):
+            coord[id(p)] = xy
+        svg.append(frame_border(box))
+        svg.append(decorations(c, box, accent))
+        svg.append(city_tag(c, box))
+
+    # routes first (under pins)
+    for i in range(len(pts) - 1):
+        svg.append(route_seg(pts[i], pts[i + 1], coord[id(pts[i])], coord[id(pts[i + 1])], accent))
+    # pins on top
+    for i, p in enumerate(pts, 1):
+        x, y = coord[id(p)]
+        svg.append(pin(x, y, i, accent, nav(p)))
+
+    svg_html = (f'<svg class="map" viewBox="0 0 {W} {H}" role="img" '
+                f'aria-label="{esc(day["date"])} 手绘地图" xmlns="http://www.w3.org/2000/svg">'
+                + "".join(svg) + "</svg>")
+
+    stops = "".join(
+        f'<li><a href="{nav(s)}" target="_blank" rel="noopener">'
+        f'<span class="sn">{i}</span>'
+        f'<span class="st"><b>{esc(s["name"])}</b><i>{esc(s.get("time",""))}</i></span>'
+        f'<span class="go">导航 ›</span></a></li>'
+        for i, s in enumerate(day["slots"], 1))
+
+    tips = "".join(f"<li>{esc(t)}</li>" for t in day.get("tips", []))
+    tips_html = f'<ul class="tips">{tips}</ul>' if tips else ""
+    n = int(day["date"][8:10])
+    return (f'<section class="daycard" id="d{n}" style="--accent:{accent}">'
+            f'<div class="dh"><span class="dd">{esc(day["date"][5:])} <em>{esc(day["weekday"])}</em></span>'
+            f'<span class="dt">{esc(day["theme"])}</span></div>'
+            f'{tips_html}{svg_html}'
+            f'<ol class="stops">{stops}</ol></section>')
+
+# ---------------- shared SVG defs (filters + doodle symbols) ----------------
+DEFS = """<svg class="defs" width="0" height="0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
+<filter id="rough"><feTurbulence type="turbulence" baseFrequency="0.018" numOctaves="2" seed="7" result="n"/>
+<feDisplacementMap in="SourceGraphic" in2="n" scale="2.2" xChannelSelector="R" yChannelSelector="G"/></filter>
+<filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter>
+<radialGradient id="page" cx="50%" cy="18%" r="90%"><stop offset="0%" stop-color="#fbf6ea"/><stop offset="100%" stop-color="#f0e6cf"/></radialGradient>
+<symbol id="d-mtn" viewBox="0 0 150 80"><path d="M2 76 L40 22 L60 48 L86 16 L148 76" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><path d="M80 24 l7 11 l-14 0 z" fill="currentColor"/><path d="M18 60 q10 -8 20 0" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+<symbol id="d-temple" viewBox="0 0 60 90"><path d="M30 4 L34 18 L26 18 Z" fill="currentColor"/><path d="M30 16 L42 40 L18 40 Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M30 32 L48 66 L12 66 Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M14 66 L46 66 L50 86 L10 86 Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></symbol>
+<symbol id="d-eleph" viewBox="0 0 120 90"><path d="M24 74 Q16 40 46 34 Q82 26 96 46 Q108 44 108 56 Q108 63 99 62 L99 76 L88 76 L88 63 Q70 68 52 63 L52 76 L41 76 L41 60 Q28 56 28 74 Z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M46 60 Q40 76 47 84" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="60" cy="46" r="2.4" fill="currentColor"/></symbol>
+<symbol id="d-palm" viewBox="0 0 80 100"><path d="M40 96 Q43 62 40 46" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><path d="M40 46 Q20 36 8 42 M40 46 Q24 26 18 14 M40 46 Q58 34 72 40 M40 46 Q56 26 66 14 M40 46 Q40 30 40 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+<symbol id="d-sun" viewBox="0 0 60 60"><circle cx="30" cy="30" r="11" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M30 5 V13 M30 47 V55 M5 30 H13 M47 30 H55 M12 12 L18 18 M42 42 L48 48 M48 12 L42 18 M18 42 L12 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+<symbol id="d-cloud" viewBox="0 0 100 60"><path d="M24 48 Q6 48 9 32 Q12 19 26 24 Q30 8 48 13 Q62 6 68 23 Q88 21 85 40 Q84 48 72 48 Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></symbol>
+<symbol id="d-river" viewBox="0 0 160 40"><path d="M0 12 Q20 4 40 12 T80 12 T120 12 T160 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M0 26 Q20 18 40 26 T80 26 T120 26 T160 26" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+<symbol id="d-plane" viewBox="0 0 100 100"><path d="M50 8 L58 44 L90 62 L58 55 L56 82 L66 92 L50 87 L34 92 L44 82 L42 55 L10 62 L42 44 Z" fill="currentColor"/></symbol>
+</defs></svg>"""
+
+# ---------------- CSS (plain string; journal aesthetic) ----------------
+CSS = """
+:root{--paper:#f4ecda;--ink:#2a2320;--ink2:#5c5044;--jade:#0f6b53;--jade-d:#0a4f3d;--terra:#c1522f;--gold:#e0a133;--card:#faf4e6;--line:rgba(42,35,32,.14);--shadow:0 1px 2px rgba(42,35,32,.06),0 14px 34px -16px rgba(42,35,32,.28);--serif:"Songti SC","Noto Serif SC",STSong,serif;--sans:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;--lat:"Georgia",serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.7;
+ background-image:radial-gradient(60vw 60vw at 88% -8%,rgba(224,161,51,.18),transparent 60%),radial-gradient(55vw 55vw at -12% 4%,rgba(15,107,83,.15),transparent 60%);background-attachment:fixed}
+.wrap{max-width:860px;margin:0 auto;padding:0 clamp(12px,4vw,28px) 60px}
+header.top{text-align:center;padding:min(9vw,54px) 0 14px}
+.kick{font-family:var(--lat);letter-spacing:.32em;text-transform:uppercase;font-size:11px;color:var(--terra)}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(28px,7vw,48px);margin:10px 0 6px;letter-spacing:.02em;
+ background:linear-gradient(160deg,var(--jade-d),var(--jade) 55%,var(--terra));-webkit-background-clip:text;background-clip:text;color:transparent}
+.dates{font-family:var(--lat);letter-spacing:.18em;color:var(--ink2);font-size:15px}
+.intro{color:var(--ink2);font-size:13.5px;margin:12px auto 0;max-width:640px}
+.intro b{color:var(--jade-d)}
+/* day quick-nav */
+.daynav{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin:20px 0 6px}
+.daynav a{font-family:var(--lat);font-size:12.5px;text-decoration:none;color:var(--ink2);background:var(--card);
+ border:1px solid var(--line);border-radius:999px;padding:5px 11px;box-shadow:var(--shadow)}
+.daynav a b{color:var(--ink);font-family:var(--serif)}
+/* day card */
+.daycard{margin:20px 0;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:15px clamp(12px,3vw,20px) 17px;box-shadow:var(--shadow);scroll-margin-top:16px;position:relative}
+.daycard::before{content:"";position:absolute;left:0;top:20px;bottom:20px;width:5px;border-radius:0 5px 5px 0;background:var(--accent);opacity:.9}
+.dh{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;border-bottom:2px solid var(--ink);padding-bottom:9px;margin-bottom:8px}
+.dd{font-family:var(--serif);font-weight:600;font-size:20px}.dd em{font-style:normal;color:var(--jade-d);font-size:15px;margin-left:2px}
+.dt{color:var(--terra);font-size:14.5px;font-family:var(--serif)}
+.tips{margin:6px 0 10px;padding-left:18px;color:var(--ink2);font-size:13px}
+.tips li{margin:3px 0}
+svg.map{display:block;width:100%;height:auto;border-radius:16px;filter:drop-shadow(0 8px 22px rgba(42,35,32,.14))}
+svg.map a{cursor:pointer}
+svg.map a:hover path[stroke]{stroke-width:2}
+/* stop list */
+.stops{list-style:none;margin:13px 0 0;padding:0;display:grid;gap:7px;counter-reset:none}
+.stops a{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink);
+ background:rgba(255,255,255,.5);border:1px solid var(--line);border-radius:12px;padding:9px 12px;transition:transform .12s,box-shadow .12s}
+.stops a:active{transform:scale(.985)}
+.stops a:hover{box-shadow:var(--shadow)}
+.sn{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--accent);color:#fbf6ec;
+ display:grid;place-items:center;font-family:var(--lat);font-weight:700;font-size:14px;box-shadow:0 2px 5px rgba(42,35,32,.25)}
+.st{flex:1;min-width:0;display:flex;flex-direction:column}
+.st b{font-family:var(--serif);font-weight:600;font-size:14.5px;line-height:1.35}
+.st i{font-style:normal;color:var(--ink2);font-size:12px;font-family:var(--lat)}
+.go{flex:0 0 auto;font-size:12.5px;color:#fff;background:linear-gradient(150deg,var(--jade),var(--jade-d));
+ padding:5px 11px;border-radius:999px;white-space:nowrap;box-shadow:0 2px 6px rgba(10,79,61,.28)}
+/* legend / disclaimer / footer */
+.legend{display:flex;flex-wrap:wrap;gap:12px 18px;justify-content:center;margin:14px 0 0;font-size:12.5px;color:var(--ink2)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend .k{width:22px;height:0;border-top:2.6px dotted var(--jade);display:inline-block}
+.legend .kf{width:22px;height:0;border-top:2.6px dashed var(--terra);display:inline-block}
+.legend .kp{font-size:14px}
+.disclaimer{margin:22px 0 0;font-size:12px;color:var(--ink2);background:rgba(193,82,47,.06);border:1px dashed var(--terra);border-radius:12px;padding:12px 15px;line-height:1.65}
+footer{text-align:center;color:var(--ink2);font-size:12.5px;padding:28px 10px 6px;border-top:1px solid var(--line);margin-top:26px}
+footer a{color:var(--jade-d)}
+@media(min-width:760px){.daycard{padding:18px 22px 20px}}
+"""
 
 # ---------------- assemble ----------------
-HTML = f"""<!DOCTYPE html>
+def build():
+    cards = "".join(render_day(d, ACCENTS[i % len(ACCENTS)]) for i, d in enumerate(trip["days"]))
+    daynav = "".join(
+        f'<a href="#d{int(d["date"][8:10])}"><b>{d["date"][5:]}</b> {d["weekday"][1:]}</a>'
+        for d in trip["days"])
+    page = f"""<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0f6b53">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230f6b53'/%3E%3Ctext x='50' y='74' font-size='60' text-anchor='middle' fill='%23f7edd7' font-family='Georgia,serif'%3E%E0%B8%97%3C/text%3E%3C/svg%3E">
-<title>{esc(trip['title'])} · 交互地图</title>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-<style>
-:root{{--paper:#f6efe1;--ink:#2a2320;--ink2:#5c5044;--jade:#0f6b53;--jade-d:#0a4f3d;--jade-l:#3f9b7f;--gold:#e0a133;--terra:#c1522f;--magenta:#bd3b73;--card:#fbf6ec;--line:rgba(42,35,32,.13);--shadow:0 1px 2px rgba(42,35,32,.06),0 10px 30px -12px rgba(42,35,32,.22);--serif:"Songti SC","Noto Serif SC",STSong,serif;--sans:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;--lat:"Georgia",serif}}
-*{{box-sizing:border-box}}
-body{{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.7;
- background-image:radial-gradient(60vw 60vw at 88% -8%,rgba(224,161,51,.18),transparent 60%),radial-gradient(55vw 55vw at -12% 6%,rgba(15,107,83,.15),transparent 60%);background-attachment:fixed}}
-.wrap{{max-width:940px;margin:0 auto;padding:0 clamp(14px,4vw,32px) 60px}}
-header.top{{text-align:center;padding:min(10vw,60px) 0 22px}}
-.kick{{font-family:var(--lat);letter-spacing:.3em;text-transform:uppercase;font-size:11px;color:var(--terra)}}
-h1{{font-family:var(--serif);font-weight:600;font-size:clamp(30px,7vw,52px);margin:10px 0 6px;letter-spacing:.02em;
- background:linear-gradient(160deg,var(--jade-d),var(--jade) 55%,var(--terra));-webkit-background-clip:text;background-clip:text;color:transparent}}
-.dates{{font-family:var(--lat);letter-spacing:.18em;color:var(--ink2);font-size:15px}}
-h2{{font-family:var(--serif);font-weight:600;font-size:21px;margin:38px 0 14px;padding-left:13px;border-left:5px solid var(--jade);letter-spacing:.02em}}
-.sub{{color:var(--ink2);font-size:13px}}
-.card{{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}}
-.grid2{{display:grid;grid-template-columns:1fr;gap:12px}}
-.info-card{{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--jade-l);border-radius:12px;padding:13px 15px;box-shadow:var(--shadow)}}
-.info-card h4{{margin:0 0 5px;font-family:var(--serif);font-size:15px}}
-.info-card p{{margin:3px 0;font-size:13.5px}}.info-card .sub{{font-size:12.5px}}
-/* checklist */
-.checklist{{list-style:none;margin:0;padding:0;display:grid;gap:8px}}
-.checklist li{{display:flex;align-items:flex-start;gap:9px;background:var(--card);border:1px solid var(--line);border-radius:11px;padding:11px 13px;box-shadow:var(--shadow);font-size:14px}}
-.checklist .dl{{color:var(--terra);font-weight:700;font-family:var(--lat);white-space:nowrap}}
-.checklist input{{margin-top:4px;accent-color:var(--jade);width:16px;height:16px;flex:0 0 auto}}
-/* flights */
-.flights{{display:grid;gap:9px}}
-.fl{{display:flex;align-items:center;gap:11px;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--jade);border-radius:12px;padding:11px 14px;box-shadow:var(--shadow);flex-wrap:wrap}}
-.fl-badge{{font-size:11px;background:rgba(15,107,83,.14);color:var(--jade-d);padding:2px 8px;border-radius:999px;font-weight:700;flex:0 0 auto}}
-.fl-main{{flex:1;min-width:180px;font-size:14px}}.fl-code{{display:block;color:var(--ink2);font-size:12.5px}}
-.fl-time{{font-family:var(--lat);letter-spacing:.04em;color:var(--jade-d);font-weight:600}}
-/* hotels */
-.ho-area{{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:14px 15px;box-shadow:var(--shadow)}}
-.ho-area h4{{margin:0 0 3px;font-family:var(--serif);font-size:16px}}
-.ho-opt{{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 9px;padding:8px 0;border-top:1px solid var(--line)}}
-.ho-tier{{font-size:11px;background:rgba(224,161,51,.18);color:#9a6b14;padding:1px 8px;border-radius:999px}}
-.ho-price{{color:var(--terra);font-size:13px}}.ho-note{{color:var(--ink2);font-size:12.5px;width:100%}}
-/* map */
-#map{{height:min(66vh,520px);border-radius:16px;border:1px solid var(--line);box-shadow:var(--shadow);z-index:0}}
-.route-pin__num{{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--jade);color:#fff;font-weight:700;font-size:14px;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.3);font-family:var(--lat)}}
-.leaflet-container{{font-family:var(--sans)}}
-/* timeline */
-.day{{margin:16px 0;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:15px 16px;box-shadow:var(--shadow)}}
-.day-head{{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;border-bottom:2px solid var(--ink);padding-bottom:9px;margin-bottom:11px}}
-.day-date{{font-family:var(--serif);font-weight:600;font-size:19px}}.day-date em{{font-style:normal;color:var(--jade-d);font-size:15px}}
-.day-theme{{color:var(--terra);font-size:14px}}
-.daytips{{margin:0 0 11px;padding-left:18px;color:var(--ink2);font-size:13px}}
-.slots{{display:grid;gap:11px}}
-.slot{{border-left:3px solid var(--jade-l);padding:2px 0 2px 13px}}
-.slot-h{{display:flex;gap:10px;align-items:baseline}}
-.slot-p{{font-size:11px;background:var(--jade);color:#f7edd7;padding:1px 8px;border-radius:999px}}
-.slot-t{{font-family:var(--lat);color:var(--ink2);font-size:13px}}
-.slot-name{{font-family:var(--serif);font-weight:600;font-size:16px;margin:3px 0}}
-.slot-r{{margin:2px 0;font-size:13.5px;color:var(--ink2)}}
-.chips{{display:flex;flex-wrap:wrap;gap:5px;margin:5px 0}}
-.chip{{font-size:12px;background:rgba(42,35,32,.05);border:1px solid var(--line);border-radius:8px;padding:1px 8px;color:var(--ink2)}}
-.rbadge{{font-size:11px;background:rgba(193,82,47,.14);color:var(--terra);padding:1px 8px;border-radius:999px;margin-left:8px;white-space:nowrap}}
-.navlink{{display:inline-block;margin-top:4px;font-size:13px;color:#fff;background:linear-gradient(150deg,var(--jade),var(--jade-d));padding:5px 12px;border-radius:999px;text-decoration:none;box-shadow:var(--shadow)}}
-.dining{{margin-top:12px;background:rgba(224,161,51,.07);border-radius:11px;padding:10px 13px}}
-.dining h5{{margin:0 0 6px;font-size:13px;color:#9a6b14;letter-spacing:.04em}}
-.dine{{padding:5px 0;font-size:13.5px;border-top:1px dashed var(--line)}}.dine:first-of-type{{border-top:0}}
-.dine-meal{{display:inline-block;font-size:11px;background:var(--gold);color:#3a2a06;padding:1px 8px;border-radius:999px;margin-right:7px}}
-.dine .sub{{margin-left:7px}}.dishes{{color:var(--ink2);font-size:12.5px;margin-top:2px}}.dishes i{{color:var(--terra);font-style:normal}}
-.tips{{margin:0;padding-left:20px}}.tips li{{margin:6px 0;font-size:14px}}
-.disclaimer{{margin:16px 0;font-size:12px;color:var(--ink2);background:rgba(193,82,47,.06);border:1px dashed var(--terra);border-radius:12px;padding:12px 15px;line-height:1.65}}
-footer{{text-align:center;color:var(--ink2);font-size:12.5px;padding:30px 10px;border-top:1px solid var(--line);margin-top:24px}}
-footer a{{color:var(--jade-d)}}
-@media(min-width:768px){{
-  .grid2{{grid-template-columns:1fr 1fr}}
-  .info-card.wide{{grid-column:1/3}}
-  .slots{{grid-template-columns:1fr 1fr}}
-  .day-head{{grid-column:1/3}}
-}}
-</style>
+<title>{esc(trip['title'])} · 手绘地图</title>
+<style>{CSS}</style>
 </head>
 <body>
+{DEFS}
 <div class="wrap">
   <header class="top">
-    <div class="kick">A COUPLE&#39;S JOURNEY · 交互地图</div>
+    <div class="kick">Hand-drawn Route Journal · 手绘路线</div>
     <h1>{esc(trip['title'])}</h1>
     <div class="dates">2026 · 07 · 14 — 07 · 20</div>
-    <p class="sub" style="margin-top:10px">👇 点击地图编号或行程卡片的「导航」按钮，一键跳转 <b>Google 地图</b></p>
+    <p class="intro">一天一张手绘小地图，牛皮纸上用墨线把当天的脚印连起来。<b>点图钉或下方任意一站</b>，即可一键跳转 <b>Google 地图</b>导航。跨城/机场那天会拆成「曼谷｜清迈」两格、用虚线飞机弧相连。全部离线绘制，无需联网。</p>
+    <div class="legend">
+      <span><i class="k"></i> 当天步行/车行路线</span>
+      <span><i class="kf"></i> 飞机跨城</span>
+      <span><i class="kp">🧭</i> 图钉 = 一键 Google 导航</span>
+    </div>
   </header>
 
-  <h2>🗺️ 全程路线地图</h2>
-  <div id="map"></div>
+  <nav class="daynav">{daynav}</nav>
 
-  <h2>✅ 出发前待办</h2>
-  {render_checklist()}
-
-  <h2>📋 行前须知</h2>
-  {render_pretrip()}
-
-  <h2>✈️ 航班（已预订）</h2>
-  {render_flights()}
-
-  <h2>🏨 住宿（片区 + 价位）</h2>
-  {render_hotels()}
+  {cards}
 
   <div class="disclaimer">{esc(trip['disclaimer'])}</div>
 
-  <h2>🗓️ 每日行程</h2>
-  {render_timeline()}
-
-  <h2>💡 全程实用贴士</h2>
-  {render_tips()}
-
   <footer>
     🐘 {esc(trip['title'])} · 2026/7/14–7/20 ·
-    <a href="./index.html">← 返回完整攻略</a><br>
-    由 Claude + travel-plan-viz 生成 · 坐标为近似示意，导航以 Google 地图为准
+    <a href="./index.html">← 返回完整攻略</a> ·
+    <a href="./hotel.html">曼谷酒店实拍 →</a><br>
+    手绘 SVG · 无外部依赖 · 坐标近似示意，导航以 Google 地图为准
   </footer>
 </div>
-
-<script id="trip-data" type="application/json">{trip_json}</script>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script>{reminders_js}</script>
-<script>{map_js}</script>
-<script>
-(function(){{
-  var trip = JSON.parse(document.getElementById('trip-data').textContent);
-  // 用引擎重渲染出发前清单（离线可读，JS 增强）
-  try {{
-    var rem = computeReminders(trip.startDate, trip.reminders);
-    var el = document.getElementById('checklist');
-    if (el) el.outerHTML = renderChecklistHTML(rem).replace('pretrip-todo','checklist');
-  }} catch(e) {{}}
-  // 汇总所有 slot 为地图点位，按行程顺序
-  var points = [];
-  trip.days.forEach(function(d){{ (d.slots||[]).forEach(function(s){{
-    if (typeof s.lat==='number' && typeof s.lng==='number')
-      points.push({{lat:s.lat, lng:s.lng, name:s.name, time:(d.date.slice(5)+' '+(s.time||''))}});
-  }});}});
-  if (window.initTravelMap && points.length) initTravelMap('map', points);
-}})();
-</script>
 </body>
 </html>"""
+    out = os.path.join(ROOT, "map.html")
+    with open(out, "w", encoding="utf-8") as f:
+        f.write(page)
+    n_points = sum(len(d["slots"]) for d in trip["days"])
+    print(f"wrote {out} — {len(page)} chars, {len(trip['days'])} hand-drawn day maps, {n_points} pins")
 
-out = os.path.join(ROOT, "map.html")
-with open(out, "w", encoding="utf-8") as f:
-    f.write(HTML)
-n_points = sum(len(d["slots"]) for d in trip["days"])
-print(f"wrote {out} — {len(HTML)} chars, {n_points} map points, {len(trip['days'])} days")
+if __name__ == "__main__":
+    build()
