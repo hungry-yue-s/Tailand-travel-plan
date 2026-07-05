@@ -15,7 +15,7 @@ ROOT = "/home/yuebiao/project/Tailand-travel-plan"
 trip = {
   "title": "泰国清迈 × 曼谷 · 情侣 7 日",
   "startDate": "2026-07-14",
-  "disclaimer": "本页坐标为 AI 依公开资料整理的近似值，仅供手绘示意，点位相对位置经纬度投影、非街道级精确；出行请务必在 Google Maps / 官方渠道核实后再前往。导航按钮一律跳转 Google 地图（泰国首选，高德海外覆盖差）。🚕 Grab 叫车按钮为「尽力唤起」：手机已装 Grab 通常会打开叫车页并预填目的地（视 App 版本也可能只打开 Grab 首页），未安装则回退到 grab.com。",
+  "disclaimer": "本页坐标为 AI 依公开资料整理的近似值，仅供手绘示意，点位相对位置经纬度投影、非街道级精确；连线上标注的距离为坐标估算（地面段含道路近似系数、跨城为大圈距离）、时长为按交通方式的参考值，均以实时 Google 导航为准。出行请务必在 Google Maps / 官方渠道核实后再前往。导航按钮一律跳转 Google 地图（泰国首选，高德海外覆盖差）。🚕 Grab 叫车按钮为「尽力唤起」：手机已装 Grab 通常会打开叫车页并预填目的地（视 App 版本也可能只打开 Grab 首页），未安装则回退到 grab.com。",
   "days": [
     {"date": "2026-07-14", "weekday": "周二", "theme": "抵达曼谷 · 朱拉夜市",
      "tips": ["廊曼(DMK)到市区约 26km；A3 巴士便宜、Grab 走高速更快"],
@@ -82,6 +82,17 @@ CITY_LABEL = {"cm": "清迈 Chiang Mai", "bkk": "曼谷 Bangkok"}
 # per-day ink accents (Lanna palette, one per day for variety)
 ACCENTS = ["#bd3b73", "#e0a133", "#0f6b53", "#c1522f", "#2f8f6f", "#9a6b14", "#7a5c9e"]
 
+# 每段行程的「时长/方式」（首站为 None；距离由坐标自动算）
+LEGS = {
+  "2026-07-14": [None, "Grab 40–60min", "Grab 10min"],
+  "2026-07-15": [None, "Grab 30–45min", "SL520 航班 1h05"],
+  "2026-07-16": [None, "包车 40min", "包车 20–25min"],
+  "2026-07-17": [None, "Grab 15min", "步行 2min", "步行/车 10min", "Grab 15min"],
+  "2026-07-18": [None, "Grab 15–20min", "Grab 10–15min", "Grab 20min"],
+  "2026-07-19": [None, "VZ2103 航班 1h20", "Grab 20–30min", "馆内步行", "MRT 15min"],
+  "2026-07-20": [None, "Grab/ARL 30–60min"],
+}
+
 def project(points, box):
     """Project lat/lng into an SVG box, preserving relative geography (cos-lat aspect)."""
     if len(points) == 1:
@@ -129,6 +140,31 @@ def grab(s):
     addr = urllib.parse.quote(s["name"])
     return (f'grab://open?screenType=BOOKING&dropOffLatitude={s["lat"]}'
             f'&dropOffLongitude={s["lng"]}&dropOffAddress={addr}')
+
+def haversine_km(a, b):
+    R = 6371.0
+    p1, p2 = math.radians(a["lat"]), math.radians(b["lat"])
+    dphi = math.radians(b["lat"] - a["lat"])
+    dlmb = math.radians(b["lng"] - a["lng"])
+    h = math.sin(dphi/2)**2 + math.cos(p1)*math.cos(p2)*math.sin(dlmb/2)**2
+    return 2 * R * math.asin(math.sqrt(h))
+
+def fmt_km(km):
+    if km < 0.95: return f"~{int(round(km*20)*50)}m"
+    if km < 20:   return f"~{round(km)}km"
+    if km < 100:  return f"~{int(round(km/5)*5)}km"
+    return f"~{int(round(km/10)*10)}km"
+
+def leg_dist(a, b):
+    km = haversine_km(a, b)
+    if city_of(a) == city_of(b): km *= 1.3   # 直线→道路近似系数
+    return fmt_km(km)
+
+def text_w(s, size):
+    u = 0.0
+    for c in s:
+        u += 1.75 if ord(c) > 0x2E80 else 0.58
+    return u * size
 
 def pin_path(cx, cy, r=14.0):
     return (f"M{cx:.1f} {cy-r:.1f} C {cx-r*1.15:.1f} {cy-r:.1f} {cx-r*1.15:.1f} {cy+r*0.72:.1f} "
@@ -207,6 +243,26 @@ def pin(cx, cy, n, accent, navurl):
             f'font-family="Georgia,serif" font-weight="700" font-size="15" fill="#fbf6ec">{n}</text>'
             f'</a>')
 
+def leg_label(a, b, pa, pb, leg_text, accent):
+    """一段连线上的「≈距离 · 时长」小标签，贴在曲线外侧。"""
+    if not leg_text:
+        return ""
+    x1, y1 = pa; x2, y2 = pb
+    mx, my = (x1 + x2) / 2, (y1 + y2) / 2
+    dx, dy = x2 - x1, y2 - y1
+    L = math.hypot(dx, dy) or 1
+    nx, ny = -dy / L, dx / L
+    off = (60 if city_of(a) != city_of(b) else 16) + 14
+    cx, cy = mx + nx * off, my + ny * off
+    d = leg_dist(a, b)
+    short_walk = d.endswith("m") and ("步行" in leg_text or "馆内" in leg_text)
+    txt = leg_text if short_walk else f"{d} · {leg_text}"
+    w = text_w(txt, 13) + 14
+    return (f'<g><rect x="{cx-w/2:.1f}" y="{cy-10:.1f}" width="{w:.1f}" height="20" rx="10" '
+            f'fill="#ffffff" stroke="{accent}" stroke-width="1.3" opacity="0.97"/>'
+            f'<text x="{cx:.1f}" y="{cy:.1f}" text-anchor="middle" dominant-baseline="central" dy="0.5" '
+            f'font-family="sans-serif" font-size="13" fill="#2a2320">{esc(txt)}</text></g>')
+
 # ---------------- per-day map + stop list ----------------
 def render_day(day, accent):
     pts = day["slots"]
@@ -233,9 +289,14 @@ def render_day(day, accent):
         svg.append(decorations(c, box, accent))
         svg.append(city_tag(c, box))
 
-    # routes first (under pins)
+    # routes first (under labels & pins)
     for i in range(len(pts) - 1):
         svg.append(route_seg(pts[i], pts[i + 1], coord[id(pts[i])], coord[id(pts[i + 1])], accent))
+    # leg labels (≈距离 · 时长) — above routes, below pins
+    legs = LEGS.get(day["date"], [])
+    for i in range(len(pts) - 1):
+        lt = legs[i + 1] if i + 1 < len(legs) else None
+        svg.append(leg_label(pts[i], pts[i + 1], coord[id(pts[i])], coord[id(pts[i + 1])], lt, accent))
     # pins on top
     for i, p in enumerate(pts, 1):
         x, y = coord[id(p)]
@@ -396,6 +457,7 @@ def build():
     <div class="legend">
       <span><i class="k"></i> 当天步行/车行路线</span>
       <span><i class="kf"></i> 飞机跨城</span>
+      <span><i class="kp">📏</i> 连线上 ≈距离 · 时长（估算）</span>
       <span><i class="kp">🧭</i> 图钉/导航 = Google 地图</span>
       <span><i class="kp">🚕</i> Grab = 叫车（预填目的地）</span>
     </div>
