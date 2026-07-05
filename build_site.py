@@ -76,14 +76,17 @@ def build_overview():
         f'<div class="fl-t">{t}</div><div class="fl-n">{n}</div></div>'
         for d,a,b,t,n in flights)
     hotels = [
-        ("曼谷 · 前段","The Quarter Ratchathewi by UHG","7/14 → 7/15 · 1 晚","已订"),
-        ("清迈 · 主场","Travelodge Nimman","7/15 → 7/19 · 4 晚 · 高级房","已订"),
-        ("曼谷 · 后段","（待订，方案见交通页）","7/19 → 7/20 · 1 晚","待订"),
+        ("曼谷 · 前段","The Quarter Ratchathewi by UHG","7/14 → 7/15 · 1 晚","已订",""),
+        ("清迈 · 主场","Travelodge Nimman","7/15 → 7/19 · 4 晚 · 高级房","已订",""),
+        ("曼谷 · 后段","True Siam Phayathai Hotel","7/19 → 7/20 · 1 晚 · ¥291 起 · 步行4分到ARL","查看/预订","hotel.html"),
     ]
     hh = "\n".join(
-        f'<div class="ho"><div class="ho-tag">{tag}</div><div class="ho-name">{name}</div>'
-        f'<div class="ho-meta">{meta}</div><span class="ho-badge {"b-ok" if b=="已订" else "b-todo"}">{b}</span></div>'
-        for tag,name,meta,b in hotels)
+        (f'<a class="ho ho-link" href="{href}">' if href else '<div class="ho">')
+        + f'<div class="ho-tag">{tag}</div><div class="ho-name">{name}</div>'
+        + f'<div class="ho-meta">{meta}</div>'
+        + f'<span class="ho-badge {"b-ok" if b=="已订" else ("b-link" if href else "b-todo")}">{b}{" →" if href else ""}</span>'
+        + ('</a>' if href else '</div>')
+        for tag,name,meta,b,href in hotels)
     facts = [
         ("🛂","签证 / 入境","中泰互免 · ≤30 天免签；抵前 72h 填 <b>TDAC</b>（tdac.immigration.go.th·认准 .go.th）"),
         ("☔","七月天气","雨季/绿色季 · 午后阵雨为主 · 清迈 31–32℃ / 曼谷 32–34℃ · 非雾霾季空气好"),
@@ -253,6 +256,9 @@ body{
 .ho-badge{position:absolute;top:13px;right:13px;font-size:11px;padding:3px 9px;border-radius:999px;font-weight:600}
 .b-ok{background:rgba(15,107,83,.14);color:var(--jade-d)}
 .b-todo{background:rgba(193,82,47,.15);color:var(--terra)}
+.ho-link{text-decoration:none;color:inherit;display:block;transition:.2s}
+.ho-link:hover{transform:translateY(-2px);box-shadow:0 8px 24px -8px rgba(42,35,32,.34);border-color:var(--jade-l)}
+.b-link{background:linear-gradient(150deg,var(--jade),var(--jade-d));color:#f7edd7}
 /* quick facts */
 .qfacts{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:12px}
 .qf{display:flex;gap:13px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px;box-shadow:var(--shadow)}

@@ -99,6 +99,9 @@ body{
 .ho-badge{position:absolute;top:13px;right:13px;font-size:11px;padding:3px 9px;border-radius:999px;font-weight:600}
 .b-ok{background:rgba(15,107,83,.14);color:var(--jade-d)}
 .b-todo{background:rgba(193,82,47,.15);color:var(--terra)}
+.ho-link{text-decoration:none;color:inherit;display:block;transition:.2s}
+.ho-link:hover{transform:translateY(-2px);box-shadow:0 8px 24px -8px rgba(42,35,32,.34);border-color:var(--jade-l)}
+.b-link{background:linear-gradient(150deg,var(--jade),var(--jade-d));color:#f7edd7}
 /* quick facts */
 .qfacts{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:12px}
 .qf{display:flex;gap:13px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px;box-shadow:var(--shadow)}
@@ -204,7 +207,7 @@ body{
 <h2 class="sec-h"><span class="sec-no">02</span>住宿</h2>
 <div class="hotels"><div class="ho"><div class="ho-tag">曼谷 · 前段</div><div class="ho-name">The Quarter Ratchathewi by UHG</div><div class="ho-meta">7/14 → 7/15 · 1 晚</div><span class="ho-badge b-ok">已订</span></div>
 <div class="ho"><div class="ho-tag">清迈 · 主场</div><div class="ho-name">Travelodge Nimman</div><div class="ho-meta">7/15 → 7/19 · 4 晚 · 高级房</div><span class="ho-badge b-ok">已订</span></div>
-<div class="ho"><div class="ho-tag">曼谷 · 后段</div><div class="ho-name">（待订，方案见交通页）</div><div class="ho-meta">7/19 → 7/20 · 1 晚</div><span class="ho-badge b-todo">待订</span></div></div>
+<a class="ho ho-link" href="hotel.html"><div class="ho-tag">曼谷 · 后段</div><div class="ho-name">True Siam Phayathai Hotel</div><div class="ho-meta">7/19 → 7/20 · 1 晚 · ¥291 起 · 步行4分到ARL</div><span class="ho-badge b-link">查看/预订 →</span></a></div>
 
 <h2 class="sec-h"><span class="sec-no">03</span>出行速查</h2>
 <div class="qfacts"><div class="qf"><div class="qf-i">🛂</div><div class="qf-b"><h4>签证 / 入境</h4><p>中泰互免 · ≤30 天免签；抵前 72h 填 <b>TDAC</b>（tdac.immigration.go.th·认准 .go.th）</p></div></div>
