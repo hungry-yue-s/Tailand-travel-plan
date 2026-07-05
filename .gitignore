@@ -10,3 +10,9 @@ Thumbs.db
 # Temp
 *.tmp
 *.log
+
+# QA/浏览器产物
+.playwright-mcp/
+*.png
+desktop-*.png
+mobile-*.png

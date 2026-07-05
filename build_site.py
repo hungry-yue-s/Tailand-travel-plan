@@ -2,7 +2,10 @@
 # -*- coding: utf-8 -*-
 """Build a self-contained index.html travel plan site from the TRAVEL/*.md files.
 No external fonts/CDNs (China + offline friendly). Uses pandoc for md->html."""
-import subprocess, re, os, datetime
+import subprocess, re, os, datetime, urllib.parse
+
+_FAV = "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='#0f6b53'/><text x='50' y='74' font-size='60' text-anchor='middle' fill='#f7edd7' font-family='Georgia,serif'>&#3607;</text></svg>"
+FAVICON = '<link rel="icon" href="data:image/svg+xml,' + urllib.parse.quote(_FAV) + '">'
 
 ROOT = "/home/yuebiao/project/Tailand-travel-plan"
 SRC  = os.path.join(ROOT, "TRAVEL")
@@ -127,7 +130,7 @@ def main():
         secs.append(f'<section id="sec-{key}" class="panel"><div class="md">{body}</div></section>')
     sections_html = "\n".join(secs)
 
-    html = HEAD + f"""
+    html = HEAD.replace("<!--FAVICON-->", FAVICON) + f"""
 <div class="grain"></div>
 <header class="site">
   <div class="brand"><span class="brand-mark">ท</span><div><b>泰国行程手账</b><small>Chiang Mai × Bangkok</small></div></div>
@@ -153,6 +156,7 @@ HEAD = """<!DOCTYPE html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0f6b53">
+<!--FAVICON-->
 <title>泰国清迈 × 曼谷 · 情侣 7 日行程手账</title>
 <meta name="description" content="2026/7/14–7/20 泰国清迈+曼谷情侣自由行：逐日行程、美食、交通、安全、预算全攻略。">
 <style>
