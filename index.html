@@ -1,0 +1,3436 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f6b53">
+<title>泰国清迈 × 曼谷 · 情侣 7 日行程手账</title>
+<meta name="description" content="2026/7/14–7/20 泰国清迈+曼谷情侣自由行：逐日行程、美食、交通、安全、预算全攻略。">
+<style>
+:root{
+  --paper:#f6efe1; --paper2:#efe4cf; --ink:#2a2320; --ink2:#5c5044;
+  --jade:#0f6b53; --jade-d:#0a4f3d; --jade-l:#3f9b7f;
+  --gold:#e0a133; --terra:#c1522f; --magenta:#bd3b73;
+  --card:#fbf6ec; --line:rgba(42,35,32,.13); --line2:rgba(42,35,32,.08);
+  --shadow:0 1px 2px rgba(42,35,32,.06),0 10px 30px -12px rgba(42,35,32,.22);
+  --cjk-serif:"Songti SC","Noto Serif SC","Source Han Serif SC",STSong,"SimSun",serif;
+  --cjk-sans:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+  --lat:"Georgia","Times New Roman",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--cjk-sans);font-size:16px;line-height:1.75;letter-spacing:.01em;
+  background-image:
+    radial-gradient(60vw 60vw at 88% -8%, rgba(224,161,51,.20), transparent 60%),
+    radial-gradient(55vw 55vw at -12% 6%, rgba(15,107,83,.16), transparent 60%),
+    radial-gradient(50vw 50vw at 50% 118%, rgba(189,59,115,.13), transparent 60%);
+  background-attachment:fixed;
+}
+.grain{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");}
+/* header */
+.site{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:14px;
+  padding:10px clamp(14px,4vw,40px);background:rgba(246,239,225,.86);
+  backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);
+  border-bottom:1px solid var(--line);}
+.brand{display:flex;align-items:center;gap:11px;flex:0 0 auto}
+.brand-mark{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;
+  background:linear-gradient(150deg,var(--jade),var(--jade-d));color:#f7edd7;
+  font-size:22px;font-family:var(--cjk-serif);box-shadow:var(--shadow);transform:rotate(-4deg)}
+.brand b{font-family:var(--cjk-serif);font-size:16px;letter-spacing:.04em;display:block;line-height:1.15}
+.brand small{color:var(--ink2);font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-family:var(--lat)}
+.tabs{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;margin-left:auto;padding:2px}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;display:flex;align-items:center;gap:6px;border:1px solid transparent;
+  background:transparent;color:var(--ink2);font-family:var(--cjk-sans);font-size:14px;
+  padding:8px 13px;border-radius:999px;cursor:pointer;transition:.22s;white-space:nowrap}
+.tab i{font-style:normal;font-size:15px}
+.tab:hover{background:var(--paper2);color:var(--ink)}
+.tab.on{background:linear-gradient(150deg,var(--jade),var(--jade-d));color:#f7edd7;
+  box-shadow:var(--shadow);border-color:transparent}
+.tab.on span{font-weight:600}
+/* layout */
+.wrap{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:clamp(18px,4vw,42px) clamp(14px,4vw,40px) 60px}
+.panel{display:none;animation:rise .5s cubic-bezier(.2,.7,.2,1) both}
+.panel.on{display:block}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+/* hero */
+.hero{position:relative;padding:min(11vw,74px) 0 30px;text-align:center}
+.hero-kicker{font-family:var(--lat);letter-spacing:.32em;text-transform:uppercase;font-size:12px;
+  color:var(--terra);margin-bottom:16px;animation:rise .6s .02s both}
+.hero-title{font-family:var(--cjk-serif);font-weight:600;line-height:.98;margin:0;
+  font-size:clamp(58px,17vw,132px);letter-spacing:.02em;
+  background:linear-gradient(160deg,var(--jade-d),var(--jade) 55%,var(--terra));
+  -webkit-background-clip:text;background-clip:text;color:transparent;animation:rise .6s .08s both}
+.ht-sub{display:block;font-size:clamp(19px,5.4vw,34px);letter-spacing:.12em;margin-top:12px;
+  -webkit-text-fill-color:var(--ink);color:var(--ink);font-weight:500}
+.ht-sub em{font-family:var(--lat);font-style:italic;color:var(--gold);padding:0 4px}
+.hero-dates{font-family:var(--lat);letter-spacing:.24em;font-size:clamp(15px,3.6vw,20px);
+  color:var(--ink2);margin-top:20px;animation:rise .6s .16s both}
+.hero-tags{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin-top:24px;animation:rise .6s .24s both}
+.hero-tags span{font-size:13px;padding:6px 14px;border:1px solid var(--line);border-radius:999px;
+  background:var(--card);color:var(--ink2);box-shadow:var(--shadow)}
+.hero-scroll{margin-top:26px;font-size:13.5px;color:var(--jade-d);font-weight:600;letter-spacing:.02em;animation:rise .6s .32s both}
+/* section headings in overview */
+.sec-h{display:flex;align-items:baseline;gap:12px;font-family:var(--cjk-serif);font-weight:600;
+  font-size:23px;margin:44px 0 16px;padding-bottom:11px;border-bottom:2px solid var(--ink);letter-spacing:.03em}
+.sec-no{font-family:var(--lat);font-style:italic;font-size:16px;color:var(--terra);letter-spacing:.05em}
+/* flights */
+.flights{display:grid;gap:10px}
+.fl{display:grid;grid-template-columns:64px 1fr auto;gap:8px 14px;align-items:center;
+  background:var(--card);border:1px solid var(--line);border-left:4px solid var(--jade);
+  border-radius:13px;padding:13px 16px;box-shadow:var(--shadow)}
+.fl-d{font-family:var(--cjk-serif);font-size:15px;font-weight:600;color:var(--jade-d)}
+.fl-r{display:flex;align-items:center;gap:9px;flex-wrap:wrap;font-size:14.5px}
+.fl-r i{color:var(--gold);font-style:normal}
+.fl-t{grid-column:2;font-family:var(--lat);letter-spacing:.06em;color:var(--ink2);font-size:13.5px}
+.fl-n{grid-column:3;grid-row:1/3;align-self:center;font-size:12.5px;color:var(--ink2);text-align:right;max-width:110px}
+/* hotels */
+.hotels{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.ho{position:relative;background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:16px 16px 15px;box-shadow:var(--shadow);overflow:hidden}
+.ho::before{content:"";position:absolute;inset:0 auto 0 0;width:4px;background:linear-gradient(var(--gold),var(--terra))}
+.ho-tag{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);font-family:var(--lat)}
+.ho-name{font-family:var(--cjk-serif);font-size:16.5px;font-weight:600;margin:5px 0 3px;line-height:1.35}
+.ho-meta{font-size:13px;color:var(--ink2)}
+.ho-badge{position:absolute;top:13px;right:13px;font-size:11px;padding:3px 9px;border-radius:999px;font-weight:600}
+.b-ok{background:rgba(15,107,83,.14);color:var(--jade-d)}
+.b-todo{background:rgba(193,82,47,.15);color:var(--terra)}
+/* quick facts */
+.qfacts{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:12px}
+.qf{display:flex;gap:13px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px;box-shadow:var(--shadow)}
+.qf-i{font-size:23px;flex:0 0 auto;filter:saturate(1.1)}
+.qf-b h4{margin:0 0 4px;font-family:var(--cjk-serif);font-size:15.5px;letter-spacing:.02em}
+.qf-b p{margin:0;font-size:13.5px;color:var(--ink2);line-height:1.6}
+.qf-b b{color:var(--jade-d)}
+.ov-note{margin:34px 0 6px;padding:16px 18px;border-radius:14px;font-size:14px;line-height:1.7;
+  background:linear-gradient(150deg,rgba(15,107,83,.09),rgba(224,161,51,.09));
+  border:1px dashed var(--jade-l);color:var(--ink)}
+.ov-note b{color:var(--jade-d)}
+/* ---- markdown content ---- */
+.md{font-size:15.5px}
+.md>h1{font-family:var(--cjk-serif);font-weight:600;font-size:clamp(27px,6vw,38px);
+  line-height:1.2;margin:6px 0 20px;letter-spacing:.02em;
+  background:linear-gradient(160deg,var(--jade-d),var(--terra));-webkit-background-clip:text;background-clip:text;color:transparent}
+.md h2{font-family:var(--cjk-serif);font-weight:600;font-size:22px;letter-spacing:.02em;
+  margin:40px 0 14px;padding:9px 0 9px 15px;border-left:5px solid var(--jade);
+  background:linear-gradient(90deg,rgba(15,107,83,.09),transparent);border-radius:0 10px 10px 0}
+.md h3{font-family:var(--cjk-serif);font-weight:600;font-size:18px;margin:26px 0 10px;color:var(--jade-d);letter-spacing:.02em}
+.md h4{font-size:15.5px;margin:20px 0 8px;color:var(--terra);font-weight:700}
+.md p{margin:11px 0}
+.md a{color:var(--jade-d);text-decoration:none;border-bottom:1.5px solid rgba(15,107,83,.32);transition:.18s;word-break:break-word}
+.md a:hover{border-bottom-color:var(--jade);background:rgba(15,107,83,.07)}
+.md strong{color:var(--ink);font-weight:700}
+.md em{color:var(--terra)}
+.md ul,.md ol{margin:11px 0;padding-left:22px}
+.md li{margin:5px 0}
+.md ul li::marker{color:var(--gold)}
+.md hr{border:0;height:1px;background:var(--line);margin:30px 0;position:relative}
+.md hr::after{content:"❋";position:absolute;left:50%;top:-12px;transform:translateX(-50%);
+  background:var(--paper);padding:0 12px;color:var(--gold);font-size:14px}
+.md code{font-family:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;font-size:.9em;
+  background:var(--paper2);padding:1.5px 6px;border-radius:6px;color:var(--terra)}
+.md blockquote{margin:14px 0;padding:2px 16px;border-left:3px solid var(--line);color:var(--ink2)}
+/* tables */
+.md table{width:100%;border-collapse:collapse;margin:16px 0;font-size:13.8px;
+  display:block;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;
+  border:1px solid var(--line);border-radius:12px}
+.md thead th{background:linear-gradient(150deg,var(--jade),var(--jade-d));color:#f7edd7;
+  font-family:var(--cjk-serif);font-weight:600;text-align:left;padding:11px 13px;position:sticky;top:0}
+.md tbody td{padding:10px 13px;border-top:1px solid var(--line2);vertical-align:top}
+.md tbody tr:nth-child(even){background:rgba(42,35,32,.028)}
+.md tbody tr:hover{background:rgba(224,161,51,.10)}
+/* callouts */
+.callout{margin:16px 0;padding:14px 16px 12px;border-radius:13px;border:1px solid var(--line);
+  border-left:4px solid var(--jade);background:var(--card);box-shadow:var(--shadow)}
+.callout .callout-title{display:block;font-family:var(--cjk-serif);font-weight:700;font-size:15px;
+  margin-bottom:6px;color:var(--jade-d);letter-spacing:.01em}
+.callout>p{margin:7px 0}
+.callout>p:last-child{margin-bottom:0}
+.ct-warning,.ct-caution{border-left-color:var(--gold);background:linear-gradient(150deg,rgba(224,161,51,.13),var(--card) 60%)}
+.ct-warning .callout-title,.ct-caution .callout-title{color:#a9781a}
+.ct-important,.ct-danger,.ct-failure,.ct-bug,.ct-attention{border-left-color:var(--terra);background:linear-gradient(150deg,rgba(193,82,47,.12),var(--card) 60%)}
+.ct-important .callout-title,.ct-danger .callout-title,.ct-failure .callout-title,.ct-bug .callout-title{color:var(--terra)}
+.ct-tip,.ct-success{border-left-color:var(--jade-l);background:linear-gradient(150deg,rgba(63,155,127,.13),var(--card) 60%)}
+.ct-note,.ct-info,.ct-abstract{border-left-color:var(--jade);background:linear-gradient(150deg,rgba(15,107,83,.09),var(--card) 60%)}
+.ct-example,.ct-question,.ct-todo{border-left-color:var(--magenta);background:linear-gradient(150deg,rgba(189,59,115,.10),var(--card) 60%)}
+.ct-example .callout-title,.ct-question .callout-title{color:var(--magenta)}
+/* footer */
+.foot{position:relative;z-index:1;text-align:center;padding:34px 20px 46px;color:var(--ink2);
+  font-size:13px;border-top:1px solid var(--line);margin-top:20px}
+.foot-sub{font-size:12px;margin-top:7px;opacity:.85}
+/* backtotop */
+.top{position:fixed;right:16px;bottom:16px;z-index:30;width:46px;height:46px;border-radius:50%;
+  border:1px solid var(--line);background:var(--card);color:var(--jade-d);font-size:19px;cursor:pointer;
+  box-shadow:var(--shadow);opacity:0;transform:translateY(12px);transition:.28s;display:grid;place-items:center}
+.top.show{opacity:1;transform:none}
+@media(max-width:560px){
+  body{font-size:15.5px}
+  .brand small{display:none}
+  .fl{grid-template-columns:56px 1fr;}
+  .fl-n{grid-column:1/3;grid-row:auto;text-align:left;max-width:none}
+  .fl-t{grid-column:2}
+}
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+<header class="site">
+  <div class="brand"><span class="brand-mark">ท</span><div><b>泰国行程手账</b><small>Chiang Mai × Bangkok</small></div></div>
+  <nav class="tabs"><button class="tab on" data-tab="overview"><i>🧭</i><span>总览</span></button><button class="tab" data-tab="itinerary"><i>🗓️</i><span>逐日行程</span></button><button class="tab" data-tab="food"><i>🍜</i><span>美食</span></button><button class="tab" data-tab="transport"><i>🚕</i><span>交通</span></button><button class="tab" data-tab="safety"><i>🛡️</i><span>安全须知</span></button><button class="tab" data-tab="budget"><i>💰</i><span>预算</span></button></nav>
+</header>
+<main class="wrap">
+<section id="sec-overview" class="panel on">
+<div class="hero">
+  <div class="hero-kicker">A COUPLE&#39;S JOURNEY · 情侣 7 日</div>
+  <h1 class="hero-title">泰国<span class="ht-sub">清迈 <em>×</em> 曼谷</span></h1>
+  <div class="hero-dates">2026 · 07 · 14 &nbsp;—&nbsp; 07 · 20</div>
+  <div class="hero-tags"><span>自然户外 · 大象</span><span>美食 · 夜市</span><span>按摩 SPA · 咖啡慢生活</span></div>
+  <div class="hero-scroll">曼谷 1.5 天 → 清迈 3.5 天（主场） → 曼谷 1 天</div>
+</div>
+
+<h2 class="sec-h"><span class="sec-no">01</span>航班</h2>
+<div class="flights"><div class="fl"><div class="fl-d">7/14 二</div><div class="fl-r"><span>长沙 CSX</span><i>✈</i><span>曼谷廊曼 DMK</span></div><div class="fl-t">12:55–15:10</div><div class="fl-n">FD481 泰亚航</div></div>
+<div class="fl"><div class="fl-d">7/15 三</div><div class="fl-r"><span>曼谷廊曼 DMK</span><i>✈</i><span>清迈 CNX</span></div><div class="fl-t">19:30–20:45</div><div class="fl-n">SL520 泰狮航</div></div>
+<div class="fl"><div class="fl-d">7/19 日</div><div class="fl-r"><span>清迈 CNX</span><i>✈</i><span>曼谷素万那普 BKK</span></div><div class="fl-t">10:15–11:35</div><div class="fl-n">VZ2103 泰越捷</div></div>
+<div class="fl"><div class="fl-d">7/20 一</div><div class="fl-r"><span>曼谷 BKK → 海口</span><i>✈</i><span>→ 长沙 CSX</span></div><div class="fl-t">11:05 起飞</div><div class="fl-n">HU7940 / HU7517 海航</div></div></div>
+
+<h2 class="sec-h"><span class="sec-no">02</span>住宿</h2>
+<div class="hotels"><div class="ho"><div class="ho-tag">曼谷 · 前段</div><div class="ho-name">The Quarter Ratchathewi by UHG</div><div class="ho-meta">7/14 → 7/15 · 1 晚</div><span class="ho-badge b-ok">已订</span></div>
+<div class="ho"><div class="ho-tag">清迈 · 主场</div><div class="ho-name">Travelodge Nimman</div><div class="ho-meta">7/15 → 7/19 · 4 晚 · 高级房</div><span class="ho-badge b-ok">已订</span></div>
+<div class="ho"><div class="ho-tag">曼谷 · 后段</div><div class="ho-name">（待订，方案见交通页）</div><div class="ho-meta">7/19 → 7/20 · 1 晚</div><span class="ho-badge b-todo">待订</span></div></div>
+
+<h2 class="sec-h"><span class="sec-no">03</span>出行速查</h2>
+<div class="qfacts"><div class="qf"><div class="qf-i">🛂</div><div class="qf-b"><h4>签证 / 入境</h4><p>中泰互免 · ≤30 天免签；抵前 72h 填 <b>TDAC</b>（tdac.immigration.go.th·认准 .go.th）</p></div></div>
+<div class="qf"><div class="qf-i">☔</div><div class="qf-b"><h4>七月天气</h4><p>雨季/绿色季 · 午后阵雨为主 · 清迈 31–32℃ / 曼谷 32–34℃ · 非雾霾季空气好</p></div></div>
+<div class="qf"><div class="qf-i">🚨</div><div class="qf-b"><h4>紧急电话</h4><p>旅游警察 <b>1155</b>（英语）· 报警 <b>191</b> · 急救 <b>1669</b></p></div></div>
+<div class="qf"><div class="qf-i">💱</div><div class="qf-b"><h4>货币</h4><p>泰铢 THB · 1 THB ≈ ¥0.20 · SuperRich 换汇最优 · 街摊/双条只收现金</p></div></div>
+<div class="qf"><div class="qf-i">📱</div><div class="qf-b"><h4>叫车 App</h4><p>Grab / Bolt / inDrive · 清迈红双条 30–40฿/人 · 曼谷 ARL 进城 45฿</p></div></div>
+<div class="qf"><div class="qf-i">🔌</div><div class="qf-b"><h4>插座</h4><p>220V · A/B/C 型 · 中国两脚插头可直插</p></div></div></div>
+
+<div class="ov-note">📌 下面每个标签页是一份完整攻略：<b>逐日行程 / 美食 / 交通 / 安全须知 / 预算</b>。手机上可左右滑动查看表格。出行前请对 ⚠️ 项（签证 TDAC、汇率、营业时间、打车费）再做复核。</div>
+</section>
+<section id="sec-itinerary" class="panel"><div class="md"><h1 id="泰国清迈-曼谷-情侣-7-日逐日行程2026-7-14-7-20">泰国清迈 + 曼谷 · 情侣 7 日逐日行程（2026 / 7 / 14 – 7 / 20）</h1>
+<div class="callout ct-abstract">
+<p><span class="callout-title">📄 行程结构总览</span></p>
+<ul>
+<li><strong>曼谷（前段）</strong> 7/14 周二下午 + 7/15 周三上午 → 约 <strong>1.5 天</strong>，把曼谷"必打卡"放这里（时间更充裕）</li>
+<li><strong>清迈（主场）</strong> 7/15 周三夜入住 → 7/16 周四 / 7/17 周五 / 7/18 周六 → <strong>3 个整天 + 首尾</strong></li>
+<li><strong>曼谷（后段）</strong> 7/19 周日下午晚上 + 7/20 周一上午 → 约 <strong>0.75 天</strong>（7/20 只够吃个早餐，无观光时间）</li>
+</ul>
+<p>节奏：自然户外 + 动物 + 美食夜市 + 按摩慢生活，均衡不赶。全程以 <strong>Grab / 出租车 / BTS-MRT-ARL</strong> 为主，清迈近郊用 <strong>包车（红双条 / Grab / 一日司机）</strong>。</p>
+</div>
+<hr />
+<h2 id="航班与住宿速览">✈️ 航班与住宿速览</h2>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>日期</th>
+<th>航段</th>
+<th>航班</th>
+<th>起飞</th>
+<th>到达</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7/14 周二</td>
+<td>长沙 → 曼谷廊曼 (DMK)</td>
+<td>FD481 泰亚航</td>
+<td>12:55</td>
+<td>15:10</td>
+</tr>
+<tr>
+<td>7/15 周三</td>
+<td>曼谷廊曼 (DMK) → 清迈 (CNX)</td>
+<td>SL520 泰狮航</td>
+<td>19:30</td>
+<td>20:45</td>
+</tr>
+<tr>
+<td>7/19 周日</td>
+<td>清迈 (CNX) → 曼谷素万那普 (BKK)</td>
+<td>VZ2103 泰越捷</td>
+<td>10:15</td>
+<td>11:35</td>
+</tr>
+<tr>
+<td>7/20 周一</td>
+<td>曼谷素万那普 (BKK) → 海口</td>
+<td>HU7940 海航</td>
+<td>11:05</td>
+<td>14:40</td>
+</tr>
+<tr>
+<td>7/20 周一</td>
+<td>海口 → 长沙</td>
+<td>HU7517 海航</td>
+<td>16:30</td>
+<td>18:35</td>
+</tr>
+</tbody>
+</table>
+<div class="callout ct-warning">
+<p><span class="callout-title">⚠️ 两个机场别搞混</span></p>
+<p>7/14 到 &amp; 7/15 飞清迈用的是 <strong>廊曼 DMK</strong>；7/19 到 &amp; 7/20 飞回用的是 <strong>素万那普 BKK</strong>。两者不是同一机场，打车/订车务必报对。</p>
+</div>
+<ul>
+<li><strong>曼谷（前段）</strong>：The Quarter Ratchathewi by UHG（388 Phetchaburi Rd, Ratchathewi），7/14 入住、7/15 离店</li>
+<li><strong>清迈</strong>：Travelodge Nimman（宁曼路核心区），7/15 入住 4 晚、7/19 离店（高级房 ×1）</li>
+<li><strong>曼谷（后段）</strong>：7/19–7/20 一晚，<strong>待订</strong>（规划中推荐 Sam Yan / Silom 中心，见 7/19 底部⚠️）</li>
+</ul>
+<hr />
+<h2 id="周二-曼谷抵达-朱拉隆夜市">🗓️ 7/14 周二 · 曼谷抵达 + 朱拉隆夜市</h2>
+<p>落地 <strong>廊曼机场 DMK 15:10</strong>（FD481）。过关取行李约需 45–60 分钟，预计 16:00–16:15 出机场。</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr>
+<th>时间</th>
+<th>地点 / 活动</th>
+<th>交通（从上一点）</th>
+<th>停留</th>
+<th>门票 / 费用</th>
+<th>小贴士 / 推荐理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>16:15–17:00</td>
+<td>DMK → 酒店 <strong>The Quarter Ratchathewi by UHG</strong>（388 Phetchaburi Rd）</td>
+<td>机场 <strong>官方计价出租车</strong>（1 楼 Taxi 柜台取号），约 22 km、20–30 分钟（顺畅），≈250 THB + 50 机场附加费 + 过路费</td>
+<td>—</td>
+<td>≈300–400 THB</td>
+<td>走 1 楼指示牌 "Taxi" 到正规柜台取号排队，别理主动搭讪的黑车。也可坐 <strong>A3 巴士</strong>（50 THB/人，直达 Pratunam，酒店步行约 14 分钟）</td>
+</tr>
+<tr>
+<td>17:00–18:00</td>
+<td>办理入住 + 短暂休整</td>
+<td>—</td>
+<td>1h</td>
+<td>—</td>
+<td>酒店紧邻 <strong>BTS Ratchathewi（步行 2–4 分钟，Exit 3）</strong>，去 Siam 仅 1 站；Pratunam 夜市 / Platinum 商场步行约 14 分钟</td>
+</tr>
+<tr>
+<td>18:00–18:20</td>
+<td>酒店 → <strong>Banthat Thong 美食街（朱拉隆夜市）</strong></td>
+<td>Grab / 出租车约 10 分钟、≈60–90 THB；或 BTS Ratchathewi→Siam→National Stadium 后步行</td>
+<td>—</td>
+<td>—</td>
+<td>⚠️<strong>"朱拉隆夜市"最可能就是这条街</strong>：Banthat Thong Rd 是朱拉大学旁的美食长廊（约 2.2 km），被 Time Out 评为"全球最酷街道"第 14 名，<strong>每天营业</strong>，晚 18:30–21:30 最热闹</td>
+</tr>
+<tr>
+<td>18:20–21:00</td>
+<td>Banthat Thong 街头晚餐</td>
+<td>步行逛吃</td>
+<td>~2.5h</td>
+<td>人均 150–400 THB</td>
+<td>必吃：<strong>Jeh O Chula</strong>（惹 O 朱拉，米其林必比登 2018–2025，招牌妈妈冬阴功泡面 + 三文鱼，<strong>要早排队/取号</strong>）、<strong>Nueng Nom Nua</strong>（鲜奶甜品）、<strong>YOLK</strong>（爆红可颂蛋挞，15:00–23:00）、<strong>HAAB</strong>（炭烤鸡蛋仔）。带现金 + PromptPay</td>
+</tr>
+</tbody>
+</table>
+<div class="callout ct-note">
+<p><span class="callout-title">📝 备选夜市：Jodd Fairs（Ratchada）</span></p>
+<p>若想要更"网红夜市"氛围（拍照、彩虹排、Leng Saap 火山排骨），可改去 <strong>Jodd Fairs</strong>：2025 年已迁至 <strong>MRT Thailand Cultural Centre 站</strong>旁，<strong>每天 16:00/17:00–24:00/01:00</strong> 营业。从酒店 Grab 约 20–30 分钟。但 Banthat Thong 更贴"朱拉"这个词，且顺路。</p>
+</div>
+<hr />
+<h2 id="周三-曼谷上午-傍晚飞清迈">🗓️ 7/15 周三 · 曼谷上午 → 傍晚飞清迈</h2>
+<p><strong>关键约束</strong>：酒店 <strong>12:00 前退房</strong>（可寄存行李），傍晚要赶 <strong>廊曼 DMK 的 SL520 19:30 航班</strong>。DMK 属"廊曼"，与素万那普不是同一机场。建议 <strong>~17:00 出发去机场</strong>（含晚高峰 buffer，19:30 起飞提前 2h 到）。</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr>
+<th>时间</th>
+<th>地点 / 活动</th>
+<th>交通（从上一点）</th>
+<th>停留</th>
+<th>门票 / 费用</th>
+<th>小贴士 / 推荐理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>08:00–09:00</td>
+<td>酒店早餐 + 打包退房、行李寄存前台</td>
+<td>—</td>
+<td>1h</td>
+<td>含房费</td>
+<td>高级房通常含早；先把大件行李寄前台</td>
+</tr>
+<tr>
+<td>09:15–09:25</td>
+<td>酒店 → <strong>Siam 商圈</strong>（Siam Paragon / Siam Center / CentralWorld）</td>
+<td><strong>BTS Ratchathewi → Siam 仅 1 站</strong>（约 2 分钟，~17 THB）</td>
+<td>—</td>
+<td>—</td>
+<td>拖行李不便，所以先寄存再轻装出门</td>
+</tr>
+<tr>
+<td>09:30–12:00</td>
+<td><strong>Siam 逛街 + 咖啡</strong>（情侣轻松款）</td>
+<td>步行 + 空中连廊</td>
+<td>~2.5h</td>
+<td>自由消费</td>
+<td>Siam Paragon 的 <strong>海洋世界 SEA LIFE</strong>（情侣约会向，票 ~990 THB，可选）；或纯逛 Siam Center / Discovery + 星巴克臻选 / % Arabica。<strong>这是曼谷"必逛"塞在前段的核心时段</strong></td>
+</tr>
+<tr>
+<td>12:00–13:00</td>
+<td>午餐（Siam 区商场内）</td>
+<td>步行</td>
+<td>1h</td>
+<td>人均 200–400 THB</td>
+<td>商场 food court（如 Paragon Food Hall）快、凉、选择多，适合带行程压力时</td>
+</tr>
+<tr>
+<td>13:00–13:15</td>
+<td>返回酒店取行李</td>
+<td>BTS Siam → Ratchathewi 1 站</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>13:15–17:00</td>
+<td>⏸️ 机动缓冲：酒店大堂休息 / Pratunam 快速扫货 / 按摩 1h</td>
+<td>步行至 Pratunam 约 14 分钟</td>
+<td>—</td>
+<td>按需</td>
+<td>若不想再折腾，可在 Pratunam / Platinum 商场买衣服，或就近做个 60 分钟泰式按摩（~300–500 THB）放松再赶飞机</td>
+</tr>
+<tr>
+<td>~17:00</td>
+<td>酒店 → <strong>廊曼机场 DMK</strong></td>
+<td>Grab / 出租车，20–40 分钟（晚高峰可能更久），≈300–400 THB</td>
+<td>—</td>
+<td>—</td>
+<td>⚠️<strong>务必留足晚高峰时间</strong>，曼谷 17–19 点极堵；宁可早到机场吃饭</td>
+</tr>
+<tr>
+<td>19:30 → 20:45</td>
+<td><strong>SL520 泰狮航 DMK → 清迈 CNX</strong></td>
+<td>—</td>
+<td>—</td>
+<td>含机票</td>
+<td>落地 CNX 后取行李约 20:45–21:00</td>
+</tr>
+<tr>
+<td>21:00–21:30</td>
+<td>CNX → <strong>Travelodge Nimman</strong>（宁曼路核心）</td>
+<td>机场出租车 / Grab，约 15–20 分钟、≈150–200 THB</td>
+<td>—</td>
+<td>—</td>
+<td>清迈机场离市区很近。入住后如还有力气，见下方"宵夜"👇</td>
+</tr>
+</tbody>
+</table>
+<div class="callout ct-tip">
+<p><span class="callout-title">💡 7/15 深夜宵夜（宁曼 / 古城北门附近）</span></p>
+<ul>
+<li><strong>凤飞飞猪脚饭 Khao Kha Moo Chang Phueak</strong>（古城北门 Chang Phueak Gate，"牛仔帽奶奶"，被 Anthony Bourdain 带火）：营业 <strong>约 17:00 – 午夜（部分资料到凌晨 2:00）</strong>，小份仅 30 THB。离宁曼 Grab 约 8–10 分钟。</li>
+<li>若太累，宁曼路上便利店 / Warorot 一带宵夜摊也可，量力而行。</li>
+</ul>
+</div>
+<hr />
+<h2 id="周四-粘粘瀑布-大象粑粑-宁曼马杀鸡北向一日">🗓️ 7/16 周四 · 粘粘瀑布 + 大象粑粑 + 宁曼马杀鸡（北向一日）</h2>
+<div class="callout ct-important">
+<p><span class="callout-title">❗ ⚠️ 关键冲突提示（务必先读）</span></p>
+<p>✅ <strong>已确认（你已选定）</strong>：大象活动 = <strong>POOPOOPAPER Park 大象粪造纸手工园</strong>。下表即按此（方案 A）编排；方案 B（无骑乘大象营一日游）仅作备选保留在文末。 - <strong>方案 A（推荐，贴合你的时间/预算）</strong>：大象活动 = <strong>POOPOOPAPER Park 大象粪造纸手工园</strong>（就在 Mae Rim，字面就是"大象粑粑"，参观 <strong>约 1 小时、门票约 150 THB</strong>）。它与粘粘瀑布<strong>同在城市正北方向</strong>，顺路，且当天<strong>仍有余力晚上做按摩</strong>。✅ - <strong>方案 B（你们爱动物，但会占满一整天）</strong>：改成"粘粘瀑布 + <strong>道德大象营</strong>（喂食/泥浴/洗澡，无骑乘）"的<strong>一日联游（约 8–9 小时）</strong>，人均约 <strong>1,500–2,200 THB（半日项目）/ 55–56 USD（含瀑布的拼团一日）</strong>。⚠️ <strong>但这样傍晚基本没时间再按摩</strong>，按摩要顺延到别的晚上。</p>
+<p>下表按<strong>方案 A</strong>编排（瀑布 + 造纸园 + 晚按摩）。若选方案 B，见表格下方替代块。</p>
+</div>
+<p><strong>建议交通</strong>：包一天车（Grab 包车 / 一日司机 / 民宿代订），约 <strong>1,500–2,000 THB/天</strong>，比红双条自由。粘粘瀑布约 <strong>60 km、车程 1–1.5 小时</strong>（走 107 号公路往 Chiang Dao 方向）。</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr>
+<th>时间</th>
+<th>地点 / 活动</th>
+<th>交通（从上一点）</th>
+<th>停留</th>
+<th>门票 / 费用</th>
+<th>小贴士 / 推荐理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>08:00–08:30</td>
+<td>酒店早餐 + 出发</td>
+<td>包车司机酒店接</td>
+<td>—</td>
+<td>—</td>
+<td>早出发避开人群和午后雷阵雨（7 月雨季）</td>
+</tr>
+<tr>
+<td>08:30–09:45</td>
+<td>酒店 → <strong>粘粘瀑布 Bua Tong / Nam Phu Chet Si</strong></td>
+<td>包车约 1–1.25h（60 km）</td>
+<td>—</td>
+<td>—</td>
+<td>全程往北，之后回 Mae Rim 顺路</td>
+</tr>
+<tr>
+<td>09:45–12:00</td>
+<td><strong>攀爬粘粘瀑布</strong>（石灰岩不打滑，可赤脚往上爬）</td>
+<td>—</td>
+<td>~2h</td>
+<td><strong>免费</strong>（入口登记姓名/车牌）</td>
+<td>⚠️ <strong>7 月雨季水量最大、最壮观，但岩石更滑</strong>：穿防滑水鞋/凉鞋、扶好绳索、慢行。开放约 <strong>08:00–17:00</strong>（个别资料 06:00–18:00）。入口有厕所/餐厅/野餐区</td>
+</tr>
+<tr>
+<td>12:00–12:45</td>
+<td>瀑布 → Mae Rim 方向，午餐</td>
+<td>包车约 40–50 分钟</td>
+<td>45min</td>
+<td>人均 150–300 THB</td>
+<td>Mae Rim 沿途有不少花园餐厅/咖啡馆</td>
+</tr>
+<tr>
+<td>13:00–14:15</td>
+<td><strong>POOPOOPAPER Park 大象粪造纸园</strong>（87 Moo.10, Mae Raem, Mae Rim）</td>
+<td>包车</td>
+<td>~1–1.5h</td>
+<td><strong>约 150 THB/人</strong>（部分旧资料 100 THB，5 岁以下免费）</td>
+<td>全程有导览讲解"粪→纸"工序，可动手体验（蒸煮/染色/塑形/晾晒），有中/英文导览。营业 <strong>约 09:00–17:00（末场导览 16:00）</strong>。就在 Tiger Kingdom 北侧约 100 m</td>
+</tr>
+<tr>
+<td>14:15–15:00</td>
+<td>返回宁曼酒店</td>
+<td>包车约 30–40 分钟</td>
+<td>—</td>
+<td>—</td>
+<td>离市区仅约 15 分钟车程</td>
+</tr>
+<tr>
+<td>15:00–17:30</td>
+<td>酒店休息 / 宁曼咖啡馆慢时光</td>
+<td>步行</td>
+<td>~2h</td>
+<td>咖啡 100–150 THB</td>
+<td>顺路补一杯 <strong>Ristr8to</strong>（2017 世界拉花冠军，宁曼 Soi 3，骷髅杯拿铁）或 <strong>Graph One Nimman</strong>（招牌氮气玫瑰咖啡 Lost Garden）</td>
+</tr>
+<tr>
+<td>18:00–20:30</td>
+<td><strong>马杀鸡（宁曼按摩 SPA）</strong></td>
+<td>步行 / Grab</td>
+<td>2–2.5h</td>
+<td>见下</td>
+<td>见推荐👇</td>
+</tr>
+<tr>
+<td>20:30–22:00</td>
+<td>宁曼晚餐 / 夜市小吃</td>
+<td>步行</td>
+<td>1.5h</td>
+<td>人均 200–400 THB</td>
+<td>One Nimman 广场、宁曼各巷口都有餐厅酒吧</td>
+</tr>
+</tbody>
+</table>
+<div class="callout ct-tip">
+<p><span class="callout-title">💡 马杀鸡推荐（宁曼，情侣双人）</span></p>
+<ul>
+<li><strong>Oasis Spa Nimman</strong>（Soi 7，距 One Nimman 步行 3 分钟）：<strong>King &amp; Queen 双人套餐</strong>（泰式 + 精油），欧式红楼宅邸、私密房，<strong>市区内免费接送</strong>；营业 10:00–24:00（预约 8:30–21:30）。相对高性价比套餐约 <strong>3,045 THB（150 分钟，含 Lanna Secret）</strong>。</li>
+<li><strong>Fah Lanna Spa 宁曼馆</strong>（Nimman Soi 15）：世界奢华生态 SPA 金奖；<strong>Romantic 情侣套餐</strong>（蒸浴+磨砂+皇家浴+精油+面部）<strong>约 11,300 THB/对</strong>，营业 12:00–21:00（末场 20:00，<strong>最少 2 小时、务必预约</strong>）。 👉 情侣纪念感选 Fah Lanna Romantic；日常放松 + 免费接送选 Oasis。</li>
+</ul>
+</div>
+<div class="callout ct-example">
+<p><span class="callout-title">📋 方案 B 替代编排（若选"瀑布 + 大象营"一日游）</span></p>
+<p>08:00 民宿接 → 上午 <strong>粘粘瀑布</strong>攀爬 → 中午沙滩/营地自助午餐 → 下午 <strong>道德大象营</strong>（喂香蕉、和大象泥浴/河里洗澡，无骑乘无表演）→ 约 17:00–18:00 回宁曼。推荐可搜 <strong>Lanna Kingdom / Maerim Elephant Sanctuary / Elephant Rescue Park（Mae Taeng）</strong> 等无骑乘营地，认准"no riding / no hooks / 小团"。⚠️ 当天较满，<strong>按摩改到 7/17 或 7/18 晚</strong>。</p>
+</div>
+<hr />
+<h2 id="周五-宁曼早午餐购物-古城打铁片手作">🗓️ 7/17 周五 · 宁曼早午餐购物 + 古城打铁片手作</h2>
+<div class="callout ct-warning">
+<p><span class="callout-title">⚠️ ⚠️ "奶奶厨房 Grandma's Kitchen" 定位澄清</span></p>
+<p>全网最有名的 <strong>"Grandma's Kitchen 奶奶厨房"其实在曼谷</strong>（1980 Banthat Thong Rd，就在朱拉/Sam Yan 那条美食街，招牌螃蟹蛋、甜煮鱿鱼籽，<strong>周一休息</strong>，11:30–23:00）。<strong>清迈</strong>并没有同名的"宁曼早午餐店"——同名的 <strong>Krua Ya（Grandma's Kitchen）</strong> 是清迈郊外湖畔的泰餐花园餐厅，<strong>不在宁曼、也不是西式 brunch</strong>。 👉 三个处理选项，请你确认： 1. 你想吃的"奶奶厨房"其实是<strong>曼谷那家</strong> → 那就把它放到 <strong>7/14 晚 Banthat Thong</strong> 一并吃掉（它就在那条街上！），7/17 上午在宁曼另选早午餐。 2. 你只是想在<strong>宁曼吃个西式 brunch</strong> → 我用宁曼高分早午餐替代（见下）。 3. 你确有清迈某家叫"奶奶厨房"的店 → 请给地址/截图，我再精确核对。 下表按<strong>选项 2（宁曼 brunch 替代）</strong>编排，最稳妥。</p>
+</div>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr>
+<th>时间</th>
+<th>地点 / 活动</th>
+<th>交通（从上一点）</th>
+<th>停留</th>
+<th>门票 / 费用</th>
+<th>小贴士 / 推荐理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>09:30–11:00</td>
+<td><strong>宁曼早午餐 brunch</strong>（替代"奶奶厨房"，待你确认）</td>
+<td>酒店步行</td>
+<td>1.5h</td>
+<td>人均 200–400 THB</td>
+<td>宁曼高分 brunch/咖啡候选：<strong>Rustic &amp; Blue</strong>、<strong>Nimman 各精品咖啡馆早午餐</strong>；若确认要曼谷那家奶奶厨房，则此格改普通早餐</td>
+</tr>
+<tr>
+<td>11:00–13:30</td>
+<td><strong>宁曼路购物</strong>：One Nimman → Maya Lifestyle Mall → Think Park</td>
+<td>三点均在宁曼，步行 5–15 分钟互达</td>
+<td>~2.5h</td>
+<td>自由消费</td>
+<td>One Nimman（欧式拱廊 + 文创 + 周末夜市）、Maya（商场 + 顶楼景观）、Think Park（小清新文创拍照）。都在酒店步行范围</td>
+</tr>
+<tr>
+<td>13:30–14:15</td>
+<td>宁曼快速午餐 → Grab 去古城南门（Wualai·银庙一带）</td>
+<td>步行 + Grab 约 15 分</td>
+<td>45min</td>
+<td>午餐人均 200–400 + 车 80–120 THB</td>
+<td>午餐后打车去古城做打铁片</td>
+</tr>
+<tr>
+<td>14:15–16:00</td>
+<td>⭐ <strong>打铁片手作 @ Lanna Artisans Art Gallery</strong>（南门银庙旁，认门口有<strong>三角梅</strong>的那家，别走错）</td>
+<td>步行</td>
+<td>~1.5h</td>
+<td><strong>50 THB/件</strong>（钥匙扣/戒指/手镯·<strong>仅现金</strong>）</td>
+<td>选铁牌底 → 选图案（大象/泰文/祝福语，或自画）→ 小铁锤+钢凿沿线敲打（师傅全程指导）→ 修边抛光打孔 → 门口老奶奶喷漆带走。<strong>独一无二伴手礼 + 雨季室内解压</strong>。⚠️ <strong>17:00 关门宜早到</strong>；选简单图案不手酸；等加工可逛旁边 <strong>杰林寺 Wat Jet Lin</strong>，店内有免费冰水</td>
+</tr>
+<tr>
+<td>16:00–16:40</td>
+<td>顺看 <strong>银庙 Wat Sri Suphan</strong>（就在旁边，Wualai 路）</td>
+<td>步行</td>
+<td>40min</td>
+<td>~50 THB</td>
+<td>全球唯一纯银装饰佛殿，兰纳银匠工艺；⚠️ 银殿<strong>仅限男性入内</strong>，女生可在外围参观</td>
+</tr>
+<tr>
+<td>16:40–17:30</td>
+<td>古城咖啡 / 塔佩门散步（或回宁曼）</td>
+<td>Grab / 步行</td>
+<td>~50min</td>
+<td>咖啡 100–150 THB</td>
+<td>顺路歇脚；晚上宁曼或古城晚餐</td>
+</tr>
+<tr>
+<td>18:00 起</td>
+<td>晚餐 + 可选按摩</td>
+<td>步行</td>
+<td>—</td>
+<td>—</td>
+<td>若 7/16 已按摩，可今晚吃顿好的（宁曼 or 古城）；若想补按摩见 7/16 推荐</td>
+</tr>
+</tbody>
+</table>
+<div class="callout ct-note">
+<p><span class="callout-title">📝 可选半日：素贴山双龙寺 Doi Suthep（OPTIONAL）</span></p>
+<p>你们<strong>非寺庙控</strong>，故此项标记为<strong>可选</strong>——但双龙寺是清迈<strong>最标志性</strong>的山景金塔；7/17 下午已排打铁片，若某个半天想换山景节奏可考虑它： - 交通：宁曼 → 双龙寺约 <strong>30 分钟车程</strong>（红双条在 CMU/清迈动物园附近拼车上山，或 Grab / 包车）。 - 门票：外国人 <strong>30 THB</strong>；缆车往返外国人 50 THB（不想爬 306 级龙梯可坐）。 - 开放 <strong>06:00–20:00</strong>；黄昏可俯瞰清迈城全景。2025.10 起 Doi Suthep–Pui 国家公园对<strong>步道/瀑布</strong>收费，但<strong>走主路进双龙寺 + Wat Pha Lat 免费</strong>。 - 着装：遮肩盖膝；进殿脱鞋，穿易脱的鞋。</p>
+</div>
+<hr />
+<h2 id="周六-jj-集市-白色艺术村-周六夜市周末专属">🗓️ 7/18 周六 · JJ 集市 + 白色艺术村 + 周六夜市（周末专属）</h2>
+<div class="callout ct-tip">
+<p><span class="callout-title">💡 今天把"周末限定"一次性打满</span></p>
+<p>Jing Jai 农夫市集（仅周末）+ Baan Kang Wat 艺术村 + <strong>Wualai 周六夜市（仅周六）</strong>。你们周日一早飞走，所以<strong>周六夜市是唯一的一次周末夜市步行街</strong>，务必安排。</p>
+</div>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr>
+<th>时间</th>
+<th>地点 / 活动</th>
+<th>交通（从上一点）</th>
+<th>停留</th>
+<th>门票 / 费用</th>
+<th>小贴士 / 推荐理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>08:00–08:20</td>
+<td>酒店 → <strong>Jing Jai Market（JJ 集市 / 真心农夫市集）</strong></td>
+<td>Grab / 出租车约 10–15 分钟、≈80–100 THB</td>
+<td>—</td>
+<td>—</td>
+<td>地址 46 Atsadathon Rd（古城北约 1.5 mile）</td>
+</tr>
+<tr>
+<td>08:20–10:30</td>
+<td><strong>Jing Jai 农夫 + Rustic 手作市集</strong></td>
+<td>步行</td>
+<td>~2h</td>
+<td>免费进</td>
+<td>⚠️ <strong>仅周末营业，约 06:30–15:00（部分资料 13:00–14:00 收摊）</strong>，<strong>越早越好</strong>（7–9 点凉快人少）。有机农产、手作、现做小吃；<strong>市集内不用塑料袋、禁摩托，记得自带袋</strong></td>
+</tr>
+<tr>
+<td>10:30–10:50</td>
+<td>JJ → <strong>Baan Kang Wat 白色艺术村 / 艺术家村</strong></td>
+<td>Grab / 出租车约 15–20 分钟（穿城到西南 Suthep 一带）、≈100–130 THB</td>
+<td>—</td>
+<td>—</td>
+<td>两点一北一南，用 Grab 衔接</td>
+</tr>
+<tr>
+<td>10:50–13:00</td>
+<td><strong>Baan Kang Wat 艺术村</strong>逛店 + 午餐</td>
+<td>步行</td>
+<td>~2h</td>
+<td>免费进（消费自理）</td>
+<td>✅ <strong>周六开放</strong>（<strong>周一闭村</strong>），约 <strong>11:00–18:00</strong>（个别店 10:00 起）。手作工作坊、小店、咖啡、文艺拍照；村内有餐食可解决午餐</td>
+</tr>
+<tr>
+<td>13:00–15:30</td>
+<td>返回宁曼，酒店午休 / 咖啡（避开午后暴晒 + 攒体力晚上逛街）</td>
+<td>Grab 约 15 分钟</td>
+<td>~2.5h</td>
+<td>—</td>
+<td>7 月午后常有雷阵雨，室内休整正好</td>
+</tr>
+<tr>
+<td>15:30–16:30</td>
+<td>可选：宁曼补咖啡 / 轻按摩 / 收拾行李（明早飞曼谷）</td>
+<td>步行</td>
+<td>1h</td>
+<td>按需</td>
+<td>明早要早退房赶机，今晚提前理好行李</td>
+</tr>
+<tr>
+<td>17:30–17:50</td>
+<td>酒店 → <strong>Wualai 周六夜市步行街 Saturday Walking Street</strong></td>
+<td>Grab / 出租车约 15 分钟到古城南门 Wualai Rd、≈100 THB</td>
+<td>—</td>
+<td>—</td>
+<td>建议 <strong>18:00–20:00 到</strong>避开最挤时段</td>
+</tr>
+<tr>
+<td>18:00–21:00</td>
+<td><strong>Wualai 周六夜市</strong>：逛吃 + 银器手作 + 街头表演</td>
+<td>步行</td>
+<td>~3h</td>
+<td>免费</td>
+<td>⚠️ <strong>仅周六，约 16:00 起至 22:00–24:00</strong>（Wualai Rd 16:00–23:00 封路禁车）。以<strong>清迈银器/漆器/手工艺 + 街头小吃</strong>闻名，比周日夜市更本地、更松弛。<strong>⚠️ 街上禁饮酒</strong>（最高罚 1 万铢），想喝去食阁/餐厅内。顺看银庙 <strong>Wat Sri Suphan</strong>（周六亮灯有表演）</td>
+</tr>
+<tr>
+<td>21:00–21:30</td>
+<td>夜市 → 酒店</td>
+<td>Grab 约 15 分钟</td>
+<td>—</td>
+<td>—</td>
+<td>回去早点睡，明早早起赶机</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="周日-清迈飞曼谷素万那普-iconsiam-唐人街">🗓️ 7/19 周日 · 清迈飞曼谷（素万那普）+ ICONSIAM + 唐人街</h2>
+<p><strong>早班机</strong>：CNX <strong>VZ2103 10:15 起飞</strong>（提前 2h 到、~08:15），酒店→CNX 约 15–20 分钟 → <strong>~07:30 离店</strong>（早餐 grab-and-go）。落地 <strong>素万那普 BKK 11:35</strong>（与廊曼不是同一机场）。</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr>
+<th>时间</th>
+<th>地点 / 活动</th>
+<th>交通（从上一点）</th>
+<th>停留</th>
+<th>门票 / 费用</th>
+<th>小贴士 / 推荐理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>07:00–07:30</td>
+<td>起床 + 退房，前台拿打包早餐</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>高级房含早，请酒店前一晚备 grab-and-go 或路上便利店解决</td>
+</tr>
+<tr>
+<td>07:30–07:50</td>
+<td><strong>Travelodge Nimman → 清迈机场 CNX</strong></td>
+<td>Grab / 出租车约 15–20 分钟、≈150–200 THB</td>
+<td>—</td>
+<td>—</td>
+<td>早班路况好，20 分钟足够</td>
+</tr>
+<tr>
+<td>08:15</td>
+<td>到 CNX 值机安检</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>国内航段，提前 2h 充裕</td>
+</tr>
+<tr>
+<td>10:15 → 11:35</td>
+<td><strong>VZ2103 泰越捷 CNX → 曼谷 BKK（素万那普）</strong></td>
+<td>—</td>
+<td>—</td>
+<td>含机票</td>
+<td>落地取行李约 11:35–12:00</td>
+</tr>
+<tr>
+<td>12:00–13:00</td>
+<td><strong>BKK 机场 → 曼谷市区酒店</strong>（后段酒店<strong>待订</strong>，见下方⚠️）</td>
+<td><strong>Airport Rail Link（ARL）</strong> 到 Phaya Thai 约 28 分钟、45 THB（避堵首选）；或 Grab/出租车 30–60 分钟、≈300–500 THB</td>
+<td>—</td>
+<td>—</td>
+<td>ARL 在机场 B1 层（"Train to City"）；拖行李且人多可直接 Grab</td>
+</tr>
+<tr>
+<td>13:00–14:00</td>
+<td>酒店入住 + 午餐 + 休整</td>
+<td>—</td>
+<td>1h</td>
+<td>—</td>
+<td>睡个短觉/冲凉，傍晚出门</td>
+</tr>
+<tr>
+<td>15:30–17:30</td>
+<td>⏸️ 轻松下午（情侣二选一）</td>
+<td>见备注</td>
+<td>~2h</td>
+<td>—</td>
+<td><strong>① 屋顶/河景咖啡</strong> 或 <strong>② Lumphini 公园散步</strong>（若住 Silom/Sam Yan 一带）。不想动就酒店泳池</td>
+</tr>
+<tr>
+<td>17:30–18:00</td>
+<td>前往 <strong>ICONSIAM（河畔商场）</strong></td>
+<td>Grab / 出租车约 20–30 分钟；或 BTS 到 Saphan Taksin 换船</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>18:00–19:30</td>
+<td><strong>ICONSIAM</strong>：SookSiam 室内水上市场小吃 + <strong>18:30 音乐喷泉秀</strong></td>
+<td>步行</td>
+<td>1.5h</td>
+<td>进场免费（消费自理）</td>
+<td>营业 <strong>10:00–22:00</strong>；<strong>River Park 音乐喷泉 18:30 / 20:00 / 21:00</strong>（亚洲最长，400 m）。SookSiam 免费进，只付吃/买</td>
+</tr>
+<tr>
+<td>19:30–20:00</td>
+<td>ICONSIAM → <strong>唐人街 Yaowarat（耀华力）</strong></td>
+<td><strong>昭披耶河渡轮</strong>至 Ratchawong 码头约 30 分钟（河景、避堵）⚠️<strong>末班约 22:00，出发前确认</strong>；或 Grab；或 MRT 到 Wat Mangkorn 步行 5 分钟</td>
+<td>—</td>
+<td>渡轮几十铢</td>
+<td>建议<strong>先 ICONSIAM 后唐人街</strong>，末尾坐 MRT 回避免被末班船困住</td>
+</tr>
+<tr>
+<td>20:00–22:00</td>
+<td><strong>Yaowarat 唐人街街头晚餐</strong></td>
+<td>步行逛吃</td>
+<td>~2h</td>
+<td>人均 200–500 THB</td>
+<td>⚠️ <strong>周日正是好时机</strong>（街头摊多周一休市清扫，周日不受影响）；<strong>18:00 后</strong>主街封路摆摊最热闹。招牌：<strong>T&amp;K Seafood</strong>（绿招牌炭烤海鲜）、<strong>Nai Ek Roll Noodle</strong>（胡椒粿汁 8:00–00:30）、<strong>Lim Lao Ngow</strong>（必比登鱼丸面 16:30–21:00）。"小份多样、边走边吃"</td>
+</tr>
+<tr>
+<td>22:00–22:40</td>
+<td>唐人街 → 酒店</td>
+<td><strong>MRT Wat Mangkorn</strong> 上车（避晚间堵车）+ 接驳；或 Grab</td>
+<td>—</td>
+<td>—</td>
+<td>早点回，明早要赶国际航班</td>
+</tr>
+</tbody>
+</table>
+<div class="callout ct-warning">
+<p><span class="callout-title">⚠️ ⚠️ 后段酒店选址建议（7/19–7/20 一晚，尚未预订）</span></p>
+<p>7/20 早上要在<strong>素万那普 BKK</strong> 赶 <strong>11:05 国际航班</strong>，因此后段酒店应<strong>兼顾"市区玩得到"和"次晨去 BKK 方便"</strong>。两种取向： - <strong>稳妥赶机型</strong>：住 <strong>ARL 沿线</strong>（如 Makkasan / Phaya Thai 附近），次晨 ARL 直达 BKK 28 分钟、45 THB，<strong>但 ARL 06:00 才首班</strong>——你 07:00 出门没问题。 - <strong>玩乐优先型</strong>：住 <strong>Sam Yan / Silom / Sukhumvit（Asok-Phrom Phong）</strong> 中心区，晚上逛 ICONSIAM/唐人街更近，次晨打车去 BKK 30–60 分钟（≈300–650 THB，务必留足早高峰时间）。 👉 若想彻底省心，也可考虑机场内 <strong>Boxtel</strong> / 隔壁 <strong>Siam Mandarina（步行 5 分钟到航站楼）</strong>，但那样晚上离市区远、不适合你们还想逛唐人街。<strong>推荐：Sam Yan/Silom 中心酒店</strong>（离唐人街近、次晨打车赶机也来得及）。<strong>请确认后我据此微调 7/19 晚与 7/20 早的交通时间。</strong></p>
+</div>
+<hr />
+<h2 id="周一-曼谷早晨-回程仅够早餐无观光">🗓️ 7/20 周一 · 曼谷早晨 → 回程（仅够早餐，无观光）</h2>
+<div class="callout ct-important">
+<p><span class="callout-title">❗ 请务必知悉：7/20 现实上<strong>没有真正的观光时间</strong></span></p>
+<p>国际航班 <strong>HU7940 11:05 从素万那普 BKK 起飞</strong>（国际航班提前 2.5–3h，~08:15 到机场）。酒店→BKK 早高峰 30–60 分钟 → <strong>~07:00–07:15 离店</strong>。所以 7/20 上午<strong>只够吃个早餐 + 赶路</strong>，不要安排景点。</p>
+</div>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr>
+<th>时间</th>
+<th>地点 / 活动</th>
+<th>交通（从上一点）</th>
+<th>停留</th>
+<th>门票 / 费用</th>
+<th>小贴士</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>06:15–06:50</td>
+<td>起床、收拾、退房</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>前一晚务必打包好行李</td>
+</tr>
+<tr>
+<td>06:50–07:15</td>
+<td>酒店早餐 / 便利店打包</td>
+<td>—</td>
+<td>~25min</td>
+<td>—</td>
+<td>早高峰前吃完出门；ARL 06:00 才首班，太早只能打车</td>
+</tr>
+<tr>
+<td>07:15</td>
+<td>酒店 → <strong>素万那普 BKK</strong></td>
+<td>Grab/出租车早高峰 30–60 分钟、≈300–650 THB；或 ARL（若住沿线，28 分钟/45 THB）</td>
+<td>—</td>
+<td>—</td>
+<td>⚠️ 周一早高峰，宁可早到；打车留足 buffer</td>
+</tr>
+<tr>
+<td>~08:15</td>
+<td>到 BKK 办理值机 / 退税 / 安检</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>国际航班 + 可能退税排队，提前 2.5–3h</td>
+</tr>
+<tr>
+<td>11:05 → 14:40</td>
+<td><strong>HU7940 海航 BKK → 海口</strong></td>
+<td>—</td>
+<td>—</td>
+<td>含机票</td>
+<td>之后 16:30 海口 → 长沙（HU7517，18:35 到）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="待确认-优化建议">✅ 待确认 &amp; 优化建议</h2>
+<div class="callout ct-question">
+<p><span class="callout-title">❓ 需要你拍板的 5 件事</span></p>
+<ol type="1">
+<li><strong>"奶奶厨房 Grandma's Kitchen" 到底指哪家？</strong> 最有名的在<strong>曼谷 Banthat Thong</strong>（螃蟹蛋，周一休，11:30–23:00）——若是它，建议并入 <strong>7/14 晚唐人街那条街</strong>吃；清迈宁曼无同名 brunch 店。→ 影响 7/14 晚 &amp; 7/17 上午。</li>
+<li>✅ <strong>"打铁片" 已确认</strong>：古城 <strong>Lanna Artisans Art Gallery</strong> 敲打铁片手作（南门银庙旁、门口有三角梅那家，50฿/件、约 1–2h、仅现金、17:00 关门），已排入 7/17 下午。</li>
+<li><strong>7/16 大象活动二选一</strong>：方案 A = POOPOOPAPER 造纸园（<sub>1h/</sub>150THB，顺路 + 保住晚按摩，<strong>推荐</strong>）；方案 B = 无骑乘大象营 + 瀑布<strong>一日游（8–9h）</strong>，但<strong>当晚没法按摩</strong>。→ 你们爱动物，若更想<strong>摸/喂/给大象洗澡</strong>，选 B 并把按摩挪到别晚。</li>
+<li><strong>曼谷后段酒店（7/19–20）尚未订</strong>：推荐 <strong>Sam Yan / Silom 中心</strong>（近唐人街、次晨打车赶 BKK 也来得及）。定了告诉我，我微调 7/19 晚 &amp; 7/20 早交通。</li>
+<li><strong>马杀鸡时间/店家</strong>：默认 7/16 晚 Oasis（双人 King&amp;Queen）或 Fah Lanna（Romantic 情侣套）。若选大象营方案 B，按摩改 7/17 或 7/18 晚。</li>
+</ol>
+</div>
+<div class="callout ct-tip">
+<p><span class="callout-title">💡 通用优化提示</span></p>
+<ul>
+<li><strong>7 月雨季</strong>：清迈近郊（瀑布）+ 曼谷午后常雷阵雨，<strong>户外尽量排上午</strong>，午后留室内/商场/按摩，行程已如此编排。带轻便雨衣/伞、防滑鞋。</li>
+<li><strong>两个机场别搞混</strong>：廊曼 <strong>DMK</strong>（7/14 到 &amp; 7/15 飞清迈）≠ 素万那普 <strong>BKK</strong>（7/19 到 &amp; 7/20 飞回）。打车/订车务必报对机场。</li>
+<li><strong>营业时间以官方为准</strong>：粘粘瀑布、JJ 集市、Baan Kang Wat、周六夜市、ICONSIAM 喷泉、渡轮末班等<strong>各资料略有出入</strong>，出发当天再核对官方 FB/官网（尤其周末/节假日）。</li>
+<li><strong>现金 + PromptPay</strong>：夜市/街头摊多不收卡，备足现金。</li>
+<li><strong>包车更省心</strong>：清迈 7/16、7/18 近郊 + 多点，建议<strong>包一日车（1,500–2,000 THB）</strong>，比红双条灵活。</li>
+</ul>
+</div>
+<hr />
+<h3 id="主要信息来源时间价格已尽量-2-来源交叉核对标-者存出入需当天再确认">📎 主要信息来源（时间/价格已尽量 2+ 来源交叉核对，标 ⚠️ 者存出入需当天再确认）</h3>
+<ul>
+<li>粘粘瀑布：<a href="https://forevervacation.com/chiang-mai/bua-tong-waterfalls">forevervacation</a> · <a href="https://chiangmaihub.com/bua-thong-sticky-waterfalls/">chiangmaihub</a> · <a href="https://www.tripadvisor.com/Attraction_Review-g1951349-d1760401-Reviews-Bua_Thong_Waterfalls_Nam_Phu_Chet_Si-Mae_Taeng.html">tripadvisor</a></li>
+<li>POOPOOPAPER 造纸园：<a href="https://www.poopoopaperpark.com/">官网</a> · <a href="https://www.chiangmaitravelhub.com/attractions/elephant-poo-poo-paper-park/">chiangmaitravelhub</a> · <a href="https://www.tourismthailand.org/Attraction/elephant-poopoopaper-park">tourismthailand</a></li>
+<li>大象营（无骑乘）+ 瀑布一日游：<a href="https://www.backpackerswanderlust.com/elephant-sanctuaries-in-chiang-mai/">backpackerswanderlust</a> · <a href="https://elephantrescuepark.com/">elephantrescuepark</a> · <a href="https://www.click2gothailand.com/tours/00973">click2gothailand</a></li>
+<li>Jing Jai 集市：<a href="https://www.facebook.com/jjmarketchiangmai/">官方 FB</a> · <a href="https://www.cktravels.com/jing-jai-weekend-farmers-market-chiang-mai/">cktravels</a> · <a href="https://www.chiangmaitravelhub.com/attractions/jj-market-chiang-mai/">chiangmaitravelhub</a></li>
+<li>Baan Kang Wat 艺术村：<a href="https://roytellstales.com/baan-kang-wat-chiang-mai/">roytellstales</a> · <a href="https://www.feel-chiang-mai.com/handicraft/baan-kang-wat-workshop-guide/">feel-chiang-mai</a> · <a href="https://www.klook.com/en-US/destination/p50291007-baan-kang-wat/">klook</a></li>
+<li>Wualai 周六夜市：<a href="https://www.uhotelsresorts.com/unimmanchiangmai/attractions/wualai-walking-street-saturday-night-market">uhotelsresorts</a> · <a href="https://www.cktravels.com/best-chiang-mai-night-markets/">cktravels</a> · <a href="https://www.chiangmaicitylife.com/citynow/whats-on/kids-and-family/wua-lai-walking-street-saturday-night-market/">chiangmaicitylife</a></li>
+<li>凤飞飞猪脚饭：<a href="https://www.eatingthaifood.com/restaurants/khao-kham-moo-chang-phueak/">eatingthaifood</a> · <a href="https://www.tripadvisor.com/Restaurant_Review-g293917-d9457834-Reviews-Khao_Kha_Moo_Chang_Phueak-Chiang_Mai.html">tripadvisor</a></li>
+<li>宁曼 SPA：<a href="https://fahlanna.com/spa-nimman/">Fah Lanna 官网</a> · <a href="https://www.gowabi.com/en/provider/oasis-spa-at-nimman-chiang-mai">Oasis GoWabi</a> · <a href="https://www.pelago.com/en-US/articles/best-thai-massage-chiang-mai/">pelago</a></li>
+<li>宁曼咖啡：<a href="https://togethertowherever.com/best-cafes-in-nimman-chiang-mai/">togethertowherever</a> · <a href="https://www.graphcoffeeco.com/graph-onenimman">Graph 官网</a></li>
+<li>双龙寺：<a href="https://www.tourismthailand.org/Attraction/wat-phra-that-doi-suthep">tourismthailand</a> · <a href="https://www.chiangmaicitylife.com/citynews/general/entrance-fees-required-at-doi-suthep-pui-starting-october-2025/">chiangmaicitylife 2025 收费更新</a> · <a href="https://forevervacation.com/chiang-mai/doi-suthep-temple">forevervacation</a></li>
+<li>Banthat Thong（朱拉隆夜市）+ 奶奶厨房：<a href="https://yourthaiguide.com/chulalongkorn-food-street-your-complete-guide-to-bangkoks-bhantat-thong-night-market/">yourthaiguide</a> · <a href="https://www.chatrium.com/grandbangkok/stories/banthat-thong-road">chatrium</a> · <a href="https://www.phuket101.net/banthat-thong-road/">phuket101</a></li>
+<li>Jodd Fairs / Sam Yan 对比：<a href="https://www.adventureinyou.com/thailand/bangkok-night-markets/">adventureinyou</a> · <a href="https://www.klook.com/en-US/blog/night-markets-in-bangkok/">klook blog</a> · <a href="https://www.airahotelbangkok.com/jodd-fairs-night-market/">airahotelbangkok</a></li>
+<li>The Quarter Ratchathewi 位置：<a href="https://www.expedia.com/Bangkok-Hotels-The-Quarter-Ratchathewi-By-UHG.h98198396.Hotel-Information">expedia</a> · <a href="http://quarterratchathewi.com/">官网</a> · <a href="https://www.tripadvisor.com/Hotel_Review-g293916-d26678647-Reviews-The_Quarter_Ratchathewi_By_UHG-Bangkok.html">tripadvisor</a></li>
+<li>DMK → 市区交通：<a href="https://thaiest.com/blog/how-to-get-from-bangkok-don-muang-airport-dmk-to-pratunam">thaiest</a> · <a href="https://www.geckoroutes.com/thailand/don-muang-airport-bangkok/">geckoroutes</a></li>
+<li>BKK（素万那普）→ 市区 ARL / 出租：<a href="https://www.thailandwithmonchai.com/blogs/bangkok-airport-rail-link-guide-2025-complete-transportation-guide-from-suvarnabhumi-airport">thailandwithmonchai</a> · <a href="https://www.cktravels.com/bangkok-suvarnabhumi-airport-to-city-train/">cktravels</a> · <a href="https://bangkokairporttrain.com/">bangkokairporttrain</a></li>
+<li>ICONSIAM + 唐人街 + 渡轮：<a href="https://forevervacation.com/bangkok/iconsiam">forevervacation</a> · <a href="https://everythingbkk.com/ferry-service-to-iconsiam/">everythingbkk 渡轮</a> · <a href="https://www.thailandroutes.com/bangkok-chinatown-night-guide-yaowarat-street-food-night-markets-and-real-experiences/">thailandroutes 唐人街夜</a></li>
+<li>素万那普机场旁酒店：<a href="https://www.booking.com/hotel/th/boxtel-suvarnabhumi.html">booking Boxtel</a> · <a href="https://www.marriott.com/en-us/hotels/bkkap-courtyard-bangkok-suvarnabhumi-airport/overview/">marriott courtyard</a></li>
+</ul>
+</div></section>
+<section id="sec-food" class="panel"><div class="md"><h1 id="泰国清迈-曼谷-美食指南">泰国清迈 · 曼谷 美食指南</h1>
+<div class="callout ct-info">
+<p><span class="callout-title">ℹ️ 行程概览</span></p>
+<p><strong>两人同行 · 2026 年 7 月中旬（雨季/绿色季节）</strong> - <strong>清迈（重点，约 3.5 天）</strong>：<strong>7/15（周三）</strong> 晚 ~22:00 抵达 → <strong>7/16（周四）、7/17（周五）、7/18（周六）</strong> 三个完整白天 → <strong>7/19（周日）</strong> 上午约 10:15 离开清迈飞曼谷 - <strong>曼谷（时间很短，约 1 天）</strong>：7/19（周日）下午/傍晚抵达 → <strong>7/20（周一）</strong> 上午飞回家 - <strong>住宿</strong>：==Travelodge Nimman（尼曼/宁曼区）== —— 本指南优先标注尼曼步行可达的餐点。</p>
+<p><strong>口味偏好</strong>：街头小吃、夜市、地道泰餐、咖啡/慢生活（尼曼精品咖啡）。开放预算——街头平价为主，穿插几顿讲究一点的正餐。</p>
+</div>
+<div class="callout ct-important">
+<p><span class="callout-title">❗ 关键日期已核对（2026 真实日历）</span></p>
+<p><strong>7/15 = 周三</strong>，因此：15 周三、16 周四、17 周五、<strong>18 周六</strong>、19 周日、20 周一。 - ✅ <strong>你们在清迈有一个完整的周六（7/18）</strong>——所以两个只在周末开的亮点<strong>都赶得上</strong>：<strong>周六上午 Jing Jai 周末市集</strong> + <strong>周六傍晚 Wualai 周六步行街</strong>。 - ❌ 唯一确定错过：<strong>周日 Tha Phae 步行街</strong>（周日上午就飞走了）。 - 夜市按 <strong>周四 7/16、周五 7/17、周六 7/18</strong> 三个傍晚来排；象门凤飞飞猪脚饭每晚都开，随时补位。</p>
+</div>
+<hr />
+<h2 id="目录">目录</h2>
+<ol type="1">
+<li><a href="#1-传主指定必吃已核实补充">传主指定必吃（已核实+补充）</a></li>
+<li><a href="#2-清迈必吃兰纳北部菜认菜">清迈必吃：兰纳北部菜（认菜）</a></li>
+<li><a href="#3-清迈具体餐厅摊位推荐">清迈具体餐厅/摊位推荐</a></li>
+<li><a href="#4-尼曼片区实用美食住宿步行圈">尼曼片区实用美食（住宿步行圈）</a></li>
+<li><a href="#5-清迈夜市与美食市场按日期对齐">清迈夜市与美食市场（按日期对齐）</a></li>
+<li><a href="#6-尼曼清迈精品咖啡馆">尼曼/清迈精品咖啡馆</a></li>
+<li><a href="#7-曼谷美食1-天高效路线">曼谷美食：1 天高效路线</a></li>
+<li><a href="#8-实用信息">实用信息</a></li>
+<li><a href="#9-雨季提醒-7-月绿色季节">雨季提醒</a></li>
+<li><a href="#参考来源">参考来源</a></li>
+</ol>
+<hr />
+<h2 id="传主指定必吃已核实补充">1. 传主指定必吃（已核实+补充）</h2>
+<div class="callout ct-tip">
+<p><span class="callout-title">💡 这三家是你们自己点名要去的，下面是核实后的准确信息（地点/时间/价格/招牌），不做替换，只做补充与提醒。</span></p>
+</div>
+<h3 id="打抛牛肉饭-kaprao-nuea-nueaกะเพราเนอเนอ-chang-moi-路">1.1 打抛牛肉饭 · Kaprao Nuea Nuea（กะเพราเนื้อเนื้อ）· Chang Moi 路</h3>
+<ul>
+<li><strong>是什么</strong>：清迈知名的<strong>打抛牛肉（pad kaprao nuea）专门店</strong>，原店在<strong>清迈大学后门（后 มช.）</strong>，火到在 <strong>Chang Moi 路开了分店</strong>（离古城/Tha Phae 门更近）。</li>
+<li><strong>招牌</strong>：<strong>碎牛肉打抛饭（kaprao nuea sap）</strong>、<strong>和牛打抛饭（kaprao nuea wagyu）</strong>，配一颗<strong>鸭蛋煎蛋（khai dao pet，蛋黄溏心、蛋白酥脆）</strong>。打抛炒得<strong>干香</strong>、粗蒜粗辣椒，是"够味正宗"的那种打抛。</li>
+<li><strong>价格/口味</strong>：价格偏高但<strong>牛肉量给得足</strong>；==比一般店辣，建议点少辣==（本地黄牛肉，稍有嚼劲）。有空调、店面宽敞。</li>
+<li><strong>营业</strong>：约 <strong>17:00–22:00</strong>（原店每月休 4 天，日期发在店家 IG）。Chang Moi 分店每天开，具体以 <strong>IG <span class="citation" data-cites="kapraonueanuea">@kapraonueanuea</span> / 电话 091-079-9824</strong> 为准。</li>
+<li><strong>提醒</strong>：这是<strong>傍晚才开</strong>的店，别中午去。想吃就晚餐时段来。</li>
+</ul>
+<p>来源：<a href="https://www.tripadvisor.com/Restaurant_Review-g293917-d25135417-Reviews-Kaprao_Nuea_Nuea-Chiang_Mai.html">TripAdvisor</a> · <a href="https://www.instagram.com/kapraonueanuea/">Instagram <span class="citation" data-cites="kapraonueanuea">@kapraonueanuea</span></a> · <a href="https://www.trip.com/moments/chang-moi-2016505/">Trip.com – Chang Moi</a></p>
+<h3 id="joost山竹冰沙-健康果昔-尼曼-soi-11-soi-13">1.2 Joost（山竹冰沙 / 健康果昔）· 尼曼 Soi 11 &amp; Soi 13</h3>
+<ul>
+<li><strong>是什么</strong>：尼曼超人气的<strong>100% 纯水果果昔（smoothie）小店</strong>，无添加。==你们说的"山竹冰"就是它的招牌 <strong>山竹果昔（Mangosteen Smoothie）</strong>==——多份清迈美食清单把"Joost 的山竹果昔"列为全城必喝之一。</li>
+<li><strong>地点</strong>：尼曼 <strong>Soi 11</strong> 与 <strong>Soi 13</strong> 两家分店（都在你们住宿步行圈内）。</li>
+<li><strong>价格/营业</strong>：从 <strong>~50฿</strong> 起；<strong>每天 09:00–21:30</strong>。可 Grab 外送。</li>
+<li><strong>提醒（诚实说明）</strong>：它是<strong>冰沙/果昔</strong>，不是刨冰或 bingsu。如果你们想要的是<strong>真正的山竹"刨冰/绵绵冰"甜品</strong>，尼曼 Soi 7 的 <strong>Cheevit Cheeva</strong> 是当地最有名的泰式 bingsu 刨冰店（招牌是芒果/泰茶绵绵冰，山竹属时令），可作为"想吃冰品"的补充选项。7 月山竹正当季，果昔尤其新鲜。</li>
+</ul>
+<p>来源：<a href="https://www.chiangmailocator.com/chiang-mai-shops-7548:joost-smoothies-drink-healthy-nimman-soi-11-branch">Chiang Mai Locator – Soi 11</a> · <a href="https://www.chiangmailocator.com/chiang-mai-shops-7547:joost-smoothies-drink-healthy-nimman-soi-13-branch">Chiang Mai Locator – Soi 13</a> · <a href="https://www.timeout.com/chiang-mai/health-and-beauty/smoothie-in-chiang-mai">Timeout – Chiang Mai smoothies</a> · <a href="https://www.trip.com/moments/detail/chiang-mai-209-15606636/">Trip.com moments</a></p>
+<h3 id="奶奶厨房-krua-yagrandmas-kitchen">1.3 奶奶厨房 · Krua Ya（Grandma's Kitchen）</h3>
+<ul>
+<li><strong>是什么</strong>：清迈一家<strong>家常/北部泰菜</strong>餐厅，英文名就叫 <strong>Grandma's Kitchen（泰文 ครัวย่า Krua Ya）</strong>。氛围极好——<strong>藏在 Chiang Mai Lake Land 住宅村内，临水/池塘、绿树环绕</strong>，很适合两人安静吃一顿。</li>
+<li><strong>招牌</strong>：<strong>马沙文咖喱（massaman）</strong>、虾、鱼；每天有<strong>"当日主厨菜（dish of the day）"</strong>；隔壁就是一家口碑咖啡馆，可饭后喝咖啡。</li>
+<li><strong>价格/营业</strong>：人均 <strong>~200–300฿</strong>；约 <strong>每天 09:00–15:30（只做白天到午后，含早午餐）</strong>。==分量偏小，建议多点几道配菜。==</li>
+<li><strong>⚠️ 重要位置提醒</strong>：它在 <strong>Su Thep 区 Chiang Mai Lake Land 村内</strong>（城郊、湖区方向），<strong>不在尼曼步行范围</strong>，需 <strong>Grab/打车或自驾</strong>前往，门口有停车位。因为<strong>只做白天</strong>，最好安排在<strong>某天的午餐</strong>（例如逛完景点后），别指望晚上去。官网 <a href="http://www.kruaya.com">kruaya.com</a> 可再确认当日营业时间。</li>
+</ul>
+<p>来源：<a href="https://www.chiangmaicitylife.com/clg/food-drink/thai-restaurants/krua-ya-grandmas-kitchen/">Chiang Mai Citylife</a> · <a href="https://www.tripadvisor.com/Restaurant_Review-g293917-d2408796-Reviews-Krua_Ya_Grandma_s_kitchen-Chiang_Mai.html">TripAdvisor</a> · <a href="https://restaurantguru.com/Krua-Ya-Grandmas-kitchen-Chiang-Mai">Restaurant Guru</a></p>
+<hr />
+<h2 id="清迈必吃兰纳北部菜认菜">2. 清迈必吃：兰纳北部菜（认菜）</h2>
+<div class="callout ct-note">
+<p><span class="callout-title">📝 先懂两件事，点菜不踩坑</span></p>
+<ol type="1">
+<li><strong>北部主食是糯米（khao niao/ข้าวเหนียว），不是茉莉香米</strong>——而且它就是"餐具"：右手捏一小团、搓成球，用来蘸酱、配 larb。</li>
+<li><strong>正宗北部咖喱大多不放椰浆</strong>（高原不产椰子），所以味道偏<strong>草本、泥土香、烟熏、干香料</strong>，而不是甜。==Khao soi（咖喱面）是那个著名的"椰浆例外"。== 整体受缅甸、云南、老挝、掸族（Tai Yai）影响。</li>
+</ol>
+</div>
+<h3 id="招牌菜点这些">招牌菜（点这些）</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>菜名</th>
+<th>泰文</th>
+<th>一句话简述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Khao soi 咖喱面</strong></td>
+<td>ข้าวซอย</td>
+<td>椰香咖喱汤配软蛋面，上面盖一撮炸脆面 + 带骨鸡腿（或牛肉）。醇厚微辣。配四样小料：酸菜、红葱、青柠、辣椒油——用来解腻。一碗即一餐。</td>
+</tr>
+<tr>
+<td><strong>Sai ua 北部香肠</strong></td>
+<td>ไส้อั่ว</td>
+<td>粗颗粒炭烤猪肉肠，塞满香茅、南姜、柠檬叶、红葱、蒜、香菜、辣椒——极其香草浓郁、咸香带辣。配糯米。也是热门伴手礼。</td>
+</tr>
+<tr>
+<td><strong>Nam prik noom 青辣椒蘸酱</strong></td>
+<td>น้ำพริกหนุ่ม</td>
+<td>青辣椒、红葱、蒜<strong>先火烤</strong>再舂碎，加鱼露青柠。粗颗粒、烟熏味、中辣（不冲）。素食友好。配糯米、生/烫蔬菜、炸猪皮。</td>
+</tr>
+<tr>
+<td><strong>Nam prik ong 番茄肉末蘸酱</strong></td>
+<td>น้ำพริกอ่อง</td>
+<td>"北部博洛尼亚肉酱"：猪肉末 + 番茄 + 干辣椒 + 虾酱慢炖，红橙色、酸香、通常温和。配糯米和猪皮。（<strong>记忆法：noom=青/烤/素；ong=红/猪肉番茄</strong>，常一起上。）</td>
+</tr>
+<tr>
+<td><strong>Khanom jeen nam ngiao 番茄猪血米线</strong></td>
+<td>ขนมจีนน้ำเงี้ยว</td>
+<td>发酵米线泡在酸辣番茄猪血汤里，配猪/鸡血块，点睛是干制红色<strong>木棉花（dok ngiw）</strong>增加口感。酸辣咸平衡。掸族菜，很多游客错过的宝藏。</td>
+</tr>
+<tr>
+<td><strong>Gaeng hung lay 缅式猪肉咖喱</strong></td>
+<td>แกงฮังเล</td>
+<td>五花肉炖菜，<strong>不放椰浆</strong>，重用类似 garam masala 的干香料 + 姜 + 腌蒜 + 罗望子——微辣、酸甜、极咸香。<strong>配白米饭</strong>。放一天更好吃。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="其他值得一试的北部特色">其他值得一试的北部特色</h3>
+<ul>
+<li><strong>Kaep moo 炸猪皮</strong>（แคบหมู）：酥脆猪皮，北部几乎当主菜。蘸辣酱 + 糯米。</li>
+<li><strong>Larb khua 北部风味 larb</strong>（ลาบคั่ว）：==和外国人熟悉的酸辣 Isaan larb 完全不同——不放青柠、不放鱼露、不酸==。靠复杂的烤干香料粉（prik laab），常带血。"khua"特指<strong>炒熟、不放血</strong>版本。芳香微苦回甘。</li>
+<li><strong>Kaeng khae 香草蔬菜咖喱</strong>（แกงแค）：苦香、不放椰浆，配鸡/猪/蛙 + 大量时令野菜。</li>
+<li><strong>Tam khanun 青菠萝蜜沙拉</strong>（ตำขนุน）：水煮青菠萝蜜舂碎，配辣椒酱、肉末、番茄、柠檬叶，撒猪皮。软糯有肉感。</li>
+<li><strong>Naem / jin som 酸腌猪肉</strong>（แหนม）：酸香蒜味发酵猪肉。⚠️ 生食版本可能有寄生虫，选可靠摊或点烤/炸熟版本。</li>
+<li><strong>Miang kham 一口花</strong>（เมี่ยงคำ）：自己包的野蒌叶小卷，塞青柠丁、姜、红葱、烤椰、花生、干虾、辣椒 + 一勺棕糖罗望子酱。一口爆发所有味道。</li>
+<li><strong>北部甜点</strong>：不太甜——khanom jok（棕糖馅米粽）、khanom kho（棕糖流心米球）。</li>
+</ul>
+<div class="callout ct-tip">
+<p><span class="callout-title">💡 文化彩蛋 · Khantoke 宴（ขันโตก）</span></p>
+<p>北部传统待客方式：席地而坐围矮圆桌共享（hung lay、sai ua、两种 nam prik、炸猪皮、炸鸡、糯米），配兰纳歌舞。想一次尝遍北部菜可体验一次。</p>
+</div>
+<hr />
+<h2 id="清迈具体餐厅摊位推荐">3. 清迈具体餐厅/摊位推荐</h2>
+<div class="callout ct-note">
+<p><span class="callout-title">📝 区域速记</span></p>
+<p><strong>古城</strong> = 护城河内；<strong>尼曼</strong> = 往西约 2–3 km（你们住这）；<strong>河边</strong> = 滨河（Ping River）Nawarat/铁桥一带（<strong>Charoenrat 路 = 东岸</strong>，<strong>Charoen Prathet 路 = 西岸</strong>）；<strong>Chang Phueak（象门）</strong> = 古城北门外。</p>
+<p>⚠️ <strong>纠正常见误传</strong>：Khao Soi Khun Yai 在<strong>古城</strong>（近象门），不在 Wat Faham；Cherng Doi 烤鸡在 Nimman <strong>Soi Suk Kasem</strong>（不是 Soi 17）；凤飞飞猪脚饭上过 <strong>Anthony Bourdain（不是 Netflix）、也不是米其林</strong>。</p>
+</div>
+<h3 id="著名-khao-soi-咖喱面">3.1 著名 Khao Soi 咖喱面</h3>
+<div class="callout ct-warning">
+<p><span class="callout-title">⚠️ 关键：几乎所有传统 khao soi 店都是<strong>只做午市（约 08:00–16:00）且卖完就收</strong>，务必<strong>中午前到</strong>。注意各店休息日不同。<strong>住尼曼想就近吃 khao soi → 见下方 Kao Soy Nimman / Khao Soi Mae Sai。</strong></span></p>
+</div>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr>
+<th>店名</th>
+<th>区域</th>
+<th>点什么</th>
+<th>价格</th>
+<th>营业</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Kao Soy Nimman</strong>（ข้าวซอยนิมมาน）</td>
+<td>🟢 <strong>尼曼 Soi 7（离住宿最近）</strong></td>
+<td>现做面；鸡/牛/猪/海鲜</td>
+<td>~90–100฿</td>
+<td>10:00–21:00 每天</td>
+<td>有空调、英文友好、<strong>晚上也开</strong>——尼曼最便利，偏贵偏游客向。步行可达。</td>
+</tr>
+<tr>
+<td><strong>Khao Soi Mae Sai</strong>（ข้าวซอยแม่สาย）⭐ <em>必比登 2026</em></td>
+<td>尼曼北/Santitham（Ratchaphruek 路）</td>
+<td>鸡肉；牛肉；nam ngiao</td>
+<td>~40–60฿，现金</td>
+<td>08:00–16:00，<strong>周日休</strong></td>
+<td>公认"第一碗 khao soi"标杆，便宜、20+ 年、现行米其林收录。离尼曼不远，<strong>性价比之王</strong>。</td>
+</tr>
+<tr>
+<td><strong>Khao Soi Khun Yai</strong>（ข้าวซอยคุณยาย）⭐</td>
+<td>古城（近象门）</td>
+<td>鸡腿；猪肉、炖牛肉</td>
+<td>~60–70฿</td>
+<td>10:00–14:00，<strong>周日休</strong>，早售罄</td>
+<td>网红人气第一（Mark Wiens）。露天、现金，约 11 点去否则好部位没了。</td>
+</tr>
+<tr>
+<td><strong>Khao Soi Lung Prakit Kad Kom</strong>（ลุงประกิต）⭐ <em>必比登 2025</em></td>
+<td>古城南（Hai Ya）</td>
+<td><strong>牛肉</strong>（较辣）</td>
+<td>牛+鸡约 80฿，现金</td>
+<td>09:30–16:30</td>
+<td>公认最佳<strong>牛肉</strong>khao soi，绰号"Khao Soi Netflix"。超值。</td>
+</tr>
+<tr>
+<td><strong>Khao Soi Lam Duan Fa Ham</strong>（ลำดวนฟ้าฮ่าม）</td>
+<td>河边/Faham</td>
+<td>鸡肉；猪肉沙嗲、hang lay</td>
+<td>~50–60฿，现金</td>
+<td>~08:00–16:00，售完即止</td>
+<td>号称"始祖"，自称 1943 年发明椰浆 khao soi。朝圣点。</td>
+</tr>
+<tr>
+<td><strong>Khao Soi Islam</strong>（ข้าวซอยอิสลาม）· 清真</td>
+<td>河边/穆斯林区（近夜市）</td>
+<td>牛肉 khao soi + <strong>牛肉手抓饭 biryani</strong></td>
+<td>~40–60฿</td>
+<td>~10:00–18:00，<strong>周五休</strong></td>
+<td>50+ 年。真正必点是那份 biryani。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="地道北部套餐餐厅">3.2 地道北部套餐餐厅</h3>
+<ul>
+<li><p><strong>Huen Phen（เฮือนเพ็ญ）· 古城</strong> ⭐ 112 Ratchamanka 路，近 Wat Chedi Luang。特色<strong>同一地址两副面孔</strong>：白天平价点选式<strong>午市食堂</strong>（约 09:00–16:30，khao soi 只午市有），晚上变身古董满屋的<strong>柚木餐厅</strong>（约 17:00–22:00，价格约翻倍），中间 16:30–17:00 换场。点：khao soi（~90–100฿）、nam prik 套餐配炸猪皮、sai ua（~130฿）、gaeng hung lay（~120฿）。午市 ~60–100฿/人，晚市 ~150–250฿/人，现金。天天营业。==认准古城老屋，别去"Huen Phen Nimman"。==</p></li>
+<li><p><strong>Huen Muan Jai（เฮือนม่วนใจ๋）· Chang Phueak/Santitham</strong> ⭐ <strong>最强背书</strong> 24 Soi Ratchaphruek。<strong>2020–2026 连年米其林必比登</strong>。招牌 <strong>Or-Derp Muang 北部拼盘（~290–305฿）</strong>（sai ua + 两种 nam prik + 炸猪皮 + 蔬菜，认识兰纳菜的最佳入门），gaeng hung lay（<sub>165฿）。</sub>150–300฿/人，可刷卡。 ⚠️ 分时段 11:00–15:00 &amp; 17:00–21:00，<strong>周三休</strong>；<strong>实际 15:00–17:00 关门</strong>；<strong>只现场排队、不接受预订</strong>，晚市常等 25–40 分钟。</p></li>
+<li><p><strong>Tong Tem Toh（ต๋องเต็มโต๊ะ）· 🟢 尼曼 Soi 13（步行可达）</strong> ⭐ 超值 主店 Soi 13，<strong>08:00–23:00 天天开</strong>。招牌 <strong>北部拼盘 Or-dern Muang（~187฿）</strong>、sai ua、gaeng hang lay、<strong>炭烤猪颈肉配 jaew 蘸酱（仅晚市）</strong>。~200–300฿/人。很火——<strong>取号、不接电话预订</strong>，晚市约等 30–45 分钟；17:30 前或 20:30 后到。（Soi 13 原店；Soi 17 是另一分店。）<strong>住尼曼吃地道北部菜首选。</strong></p></li>
+<li><p><strong>精致/升级版北部菜（古城）</strong>：<strong>The House by Ginger</strong>（原 Ginger &amp; Kafe；必比登；1937 老宅重构 khao soi；~500฿/人）· <strong>Dash Teak House</strong>（原 Dash!，Moon Muang Soi 2；出色 khao soi ~225฿；<strong>周日休、只收现金</strong>）· <strong>Baan Landai</strong>（2020 起连年米其林收录；特色豆腐蘑菇 khao soi；<strong>周一休、需预订</strong>；认古城店）。 素食：<strong>Anchan（尼曼）</strong>（口碑好，但<strong>休息日大概周二三，去前核实</strong>；不做 khao soi，想吃素 khao soi 去 Ming Kwan 或 AUM）。</p></li>
+</ul>
+<h3 id="sp-chicken-gai-yang-烤鸡">3.3 SP Chicken / Gai Yang 烤鸡</h3>
+<ul>
+<li><p><strong>SP Chicken（เอสพี ไก่ย่าง）· 古城</strong> ⭐ <em>必比登</em> 9/1 Samlan Rd Soi 1，距 Wat Phra Singh ~80 米。炭火转烤 <strong>gai yang</strong>，配一流的 nam jim jaew + som tam。整只 ~140฿，半只 <sub>75–85฿；</sub>100–200฿/人，<strong>只收现金</strong>。约 10:00/11:00–17:00，<strong>约下午 3 点售罄，中午去</strong>。Andy Ricker 与《纽约时报》都推荐过。</p></li>
+<li><p><strong>Cherng Doi Roast Chicken（ไก่ย่างเชิงดอย）· 🟢 尼曼 Soi Suk Kasem</strong> ⭐ <em>米其林收录</em> 招牌<strong>炭烤</strong>去骨脆皮鸡配招牌<strong>罗望子"酸糖"蘸酱</strong>、炸木瓜沙拉、烤猪颈。一盘 ~70–85฿；两人 ~240–400฿，现金。<strong>周二–周日 11:00–20:00，周一休</strong>。步行可达，带驱蚊液。</p></li>
+<li><p><strong>Kai Yang Wichian Buri（ไก่ย่างวิเชียรบุรี）· 🟢 尼曼 Soi 11</strong> 炭烤 gai yang（整/半只，香茅草本）配酸甜罗望子酱、som tam。整只 ~140–180฿，半只 ~80–130฿。约 09:00–09:30 开，<strong>卖完即止（下午早中段），中午前去；周一休</strong>。被誉为尼曼最佳烤鸡。</p></li>
+</ul>
+<h3 id="河边ping-river氛围餐厅">3.4 河边（Ping River）氛围餐厅</h3>
+<div class="callout ct-tip">
+<p><span class="callout-title">💡 一句话取舍：<strong>氛围/现场乐队</strong> → The Riverside（轻松）或 Good View（更嗨）；<strong>浪漫</strong> → Deck One；<strong>吃得好又有河景</strong> → Comedara（首推地道北部/khao soi）、The River Market 或 Paak Dang；<strong>大手笔</strong> → The Service at 1921 House。</span></p>
+</div>
+<ul>
+<li><strong>The Riverside Bar &amp; Restaurant · Charoenrat 东岸</strong>：40 年老字号（1984），临水座 + **每晚轮换乐队到 <sub>1:00**。招牌鸭肉荔枝咖喱。</sub>100–400฿/人；可加晚间游船 +150–200฿。12:00–01:30 每天。⚠️ 食物评价不稳，深夜吵——为氛围而来。</li>
+<li><strong>The Good View · 就在隔壁</strong>：更大更嗨——<strong>每晚两支乐队 + 深夜 DJ</strong>。烤河虾、khao soi。~500฿+/人，<strong>只用 LINE 预订</strong>。17:00–01:30 每天。</li>
+<li><strong>Deck One（原 Deck 1）· Charoenrat 东岸、近 Nawarat 桥</strong>：<strong>浪漫</strong>首选——130 年雨树下灯串露台，夜里桥灯很美。现代亚洲/西式融合。偏高端（两人 ~1,500฿）。07:00–22:00 每天。景比食强。</li>
+<li><strong>Comedara Restaurant &amp; Art Gallery · Charoenrat 东岸</strong> ⭐ <strong>河边最地道北部菜/khao soi 首推</strong>：2024 前后翻新的"现代兰纳"临水空间。得奖 khao soi、奶奶的 hung lay。中价、性价比好。11:00–23:00，周末有乐队。建议预订。</li>
+<li><strong>The River Market · Charoen Prathet 西岸、铁桥旁</strong>：泰式经典 + 几乎每桌河景，泰缅柚木建筑。中高价（两人 ~1,800฿），约 11:00–22:30。</li>
+<li><strong>Paak Dang · 古城南侧河边</strong>：<strong>疫情后已搬迁（忽略旧地址）</strong>。兰纳柚木屋地道泰餐，社会企业，有素食/无麸质。中价（两人 ~500฿），<strong>只做晚市 ~17:00–22:30 每天</strong>。</li>
+<li><strong>The Service at 1921 House（原 The Service 1921）· Anantara、Charoen Prathet 西岸</strong> · 大手笔：1915 殖民柚木大宅（前英领事馆）临 Ping 河；<strong>2025 泼水节后改为当代扒房</strong>，7 道菜"殖民晚宴"（<strong>4,590฿++/人</strong>）。曾获米其林 <strong>Plate</strong>（收录，非星非必比登）。午 12:00–15:00、晚 17:30–22:00 每天。</li>
+</ul>
+<div class="callout ct-warning">
+<p><span class="callout-title">⚠️ 需更新的店名/状态</span></p>
+<ul>
+<li><strong>Woo Cafe → 现名 PoonPoon</strong>（80 Charoenrat 路）：约 2025-11 那家网红花艺咖啡馆翻新改名，<strong>改成傍晚营业（店 15:00–24:00、餐厅 17:00–24:00），现在周三、周四休</strong>（和过去白天营业相反）。仍是河边最出片空间，去前核对名字和时间。</li>
+<li><strong>不在河边（别弄错）</strong>：The Larder（尼曼 brunch）、Raming Tea House（古城茶馆）都还开着但不在河边；<strong>Rustic &amp; Blue 清迈店已永久关闭</strong>。</li>
+</ul>
+</div>
+<h3 id="平价街头宝藏">3.5 平价街头宝藏</h3>
+<ul>
+<li><p><strong>⭐ 凤飞飞猪脚饭 · Khao Kha Moo Chang Phueak · 象门对面 Manee Nopparat 路</strong> 全城最标志性一盘：<strong>khao kha moo</strong>——慢炖五香猪脚盖饭，配青菜、酸菜、卤蛋、辣醋。<strong>普通 ~30–50฿，大份 ~80฿</strong>。<strong>约 17:00–午夜+ 每天（只做傍晚），~18:00 到</strong>避免排队/售罄。2025-11 有到店确认仍旺。⚠️ 她上过 <strong>Anthony Bourdain（不是 Netflix）</strong>，也<strong>不是米其林必比登</strong>。</p></li>
+<li><p><strong>Warorot Market / Kad Luang · 近 Ping 河的中式市场</strong>：<strong>买北部小吃打包</strong>一站式最佳——sai ua（~34฿/100g）、nam prik noom &amp; ong、炸猪皮、现成咖喱、香蕉叶甜点。室内约 06:00–17:00/18:00 每天（生鲜 10 点前最好）；外围夜摊约 18:00–23:00。</p></li>
+<li><p><strong>Warorot/东岸一带必比登平价</strong>：<strong>Patongo Ko Neng</strong>（动物造型油条 + 豆浆，原味 3฿）· <strong>Kanomjeen Sanpakoi</strong>（khanom jeen 配 nam ngiao，~20–40฿/碗，周日休）· <strong>Guay Jub Chang Moi Tat Mai</strong>（胡椒卷粉汤配脆猪，<sub>40–60฿，</sub>13:30 售罄）。</p></li>
+<li><p><strong>Roti Pa Day · Tha Phae 路 Wat Mahawan 前</strong> ⭐ <em>必比登 2025 &amp; 2026</em>：香蕉/鸡蛋/Nutella roti，原味 8฿、香蕉 25฿、Nutella 香蕉 45฿。<strong>17:00–午夜 每天</strong>。</p></li>
+<li><p><strong>⭐ Mana Sticky Rice · 古城 Ratvithi 路 Yupparaj 学校前</strong>——平价芒果糯米饭首选：~50฿小/80฿大，约 10:30–17:00 每天（早售罄），50+ 年老店。 &gt; [!warning] <strong>芒果时令</strong>：泰国芒果旺季 4–6 月，<strong>7 月中已是尾声</strong>——优先全年供应的 Mana；Mango Tango（尼曼）是 ~200–250฿ 咖啡馆价、且已搬迁。</p></li>
+<li><p><strong>每晚都开的傍晚市场</strong>：<strong>Chiang Mai Gate / South Gate 市场</strong>（南护城河，每天 ~17:00–23:00，明码标价；<strong>周日摊主移到步行街</strong>）· <strong>Anusarn Market</strong>（夜市区最超值美食带，菜 40–80฿）。象门夜市另有泰式寿喜锅（~55–65฿）、烤鸭、串烧。</p></li>
+</ul>
+<div class="callout ct-note">
+<p><span class="callout-title">📝 各店关键提醒汇总</span></p>
+<ul>
+<li><strong>休息日</strong>：周日休 → Khun Yai、Mae Sai、Dash；周一休 → Cherng Doi、Kai Yang Wichian Buri、Baan Landai；周三休 → Huen Muan Jai（+15:00–17:00 空档）；周五休 → Khao Soi Islam；周三四休 → PoonPoon（原 Woo）。</li>
+<li><strong>中午前去（怕售罄）</strong>：所有传统 khao soi、SP Chicken、Kai Yang Wichian Buri、Mana Sticky Rice、Krua Ya（只到 ~15:30）；<strong>傍晚才开</strong>：凤飞飞猪脚饭、Kaprao Nuea Nuea（~18:00 到）。</li>
+<li><strong>只收现金</strong>：多数 khao soi 摊、SP Chicken、Cherng Doi、Kai Yang Wichian Buri、Dash、所有街头摊。</li>
+</ul>
+</div>
+<hr />
+<h2 id="尼曼片区实用美食住宿步行圈">4. 尼曼片区实用美食（住宿步行圈）</h2>
+<div class="callout ct-tip">
+<p><span class="callout-title">💡 你们住 <strong>Travelodge Nimman</strong>，以下都在尼曼步行或几分钟车程内，适合"懒得跑远"的一餐、宵夜、或雨天。</span></p>
+</div>
+<ul>
+<li><p><strong>步行可达的招牌店</strong>（详见上文）：<strong>Tong Tem Toh</strong>（Soi 13，北部拼盘）· <strong>Kao Soy Nimman</strong>（Soi 7，晚上也开的 khao soi）· <strong>Cherng Doi</strong>（Soi Suk Kasem，炭烤鸡，周一休）· <strong>Kai Yang Wichian Buri</strong>（Soi 11，烤鸡，周一休/中午前）· <strong>Kaprao Nuea Nuea</strong>（Chang Moi，打抛牛肉，傍晚开）· <strong>Joost</strong>（Soi 11/13，山竹果昔）。</p></li>
+<li><p><strong>One Nimman（1 Nimmanhaemin 路，MAYA 对面）</strong>：认那座<strong>意大利钟楼</strong>。有<strong>楼下美食广场（ground floor，洗手间旁）</strong>——亚洲+西式，价格实惠（如中式慢炖猪肉饭 ~50฿，Madame Beef 也不错），==卫生条件好，适合怕街头卫生的人（"清迈街头 2.0"）==。坐下选择：<strong>Ginger Farm</strong>（很新鲜的泰餐）、<strong>Xie Tongxing</strong>（2020–2022 连续米其林收录的中餐）、<strong>% Arabica</strong> 咖啡。<strong>周末</strong>广场有露天街头美食市集（周五–日最热，正好覆盖你们周五、周六）。</p></li>
+<li><p><strong>MAYA Lifestyle 购物中心（尼曼路口）</strong>：<strong>4 楼美食广场</strong>（需在收银台买储值卡，类似曼谷 Terminal 21）；<strong>Maya 外的露天美食市场</strong>（本地/游客都爱，芒果糯米饭很好、有香蕉 roti 摊，菜 20–100฿）；6 楼 <strong>Nimman Hill</strong> 免费天台可俯瞰清迈群山（走过影院即到）。有 Swensen's 冰淇淋、Coco Ichibanya 日式咖喱、顶楼 CAMP 共享空间餐饮。</p></li>
+<li><p><strong>CMU / Kad Na Mor 夜市</strong>（Huay Kaew 路，清迈大学对面，距尼曼 ~6 分钟）：每天 ~17:00–23:00，超便宜学生餐、大食阁、火锅，有免费 songthaew/接驳连尼曼。</p></li>
+</ul>
+<p>来源：<a href="https://www.cktravels.com/nimman-chiang-mai-nimmanhaemin-road/">CK Travels – Nimman</a> · <a href="https://www.onenimman.com/">One Nimman 官网</a> · <a href="https://live-less-ordinary.com/best-restaurants-in-nimman-chiang-mai/">Live Less Ordinary – Nimman</a> · <a href="https://www.tripadvisor.com/ShowUserReviews-g293917-d13496628-r613468677-One_Nimman-Chiang_Mai.html">TripAdvisor – One Nimman food court</a></p>
+<hr />
+<h2 id="清迈夜市与美食市场按日期对齐">5. 清迈夜市与美食市场（按日期对齐）</h2>
+<div class="callout ct-important">
+<p><span class="callout-title">❗ 结论先行</span></p>
+<p>你们在清迈可用的<strong>傍晚是 7/16（周四）、7/17（周五）、7/18（周六）</strong>（15 号 ~22:00 到得太晚，19 号周日上午飞走）。 - ✅ <strong>周六 7/18 上午 Jing Jai 周末市集 → 赶得上！</strong> - ✅ <strong>周六 7/18 傍晚 Wualai 周六步行街 → 赶得上！</strong> - ❌ <strong>周日 Tha Phae 步行街 → 错过</strong>（周日上午离开）。 - ✅ 清迈大量<strong>每晚都开</strong>的夜市，周四/周五不愁；象门凤飞飞猪脚饭每晚都开随时补位。</p>
+</div>
+<h3 id="关键对照表市场-营业日-你们能不能去">5.1 关键对照表：市场 → 营业日 → 你们能不能去</h3>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 12%" />
+</colgroup>
+<thead>
+<tr>
+<th>市场</th>
+<th>营业日</th>
+<th>时间</th>
+<th style="text-align: center;">周四 16</th>
+<th style="text-align: center;">周五 17</th>
+<th style="text-align: center;">周六 18</th>
+<th>结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Jing Jai / JJ 周末市集</strong></td>
+<td><strong>仅周六、周日上午</strong></td>
+<td>~06:30–14:00</td>
+<td style="text-align: center;">✗</td>
+<td style="text-align: center;">✗</td>
+<td style="text-align: center;">✅上午</td>
+<td>✅ <strong>周六 7/18 上午去！</strong>（无夜市，详见下）</td>
+</tr>
+<tr>
+<td><strong>Wualai 周六步行街</strong></td>
+<td><strong>仅周六</strong></td>
+<td>~16/17:00–22:30/午夜</td>
+<td style="text-align: center;">✗</td>
+<td style="text-align: center;">✗</td>
+<td style="text-align: center;">✅</td>
+<td>✅ <strong>周六 7/18 傍晚去！</strong> 银器手工艺 + 北部小吃</td>
+</tr>
+<tr>
+<td><strong>Tha Phae 周日步行街</strong></td>
+<td><strong>仅周日</strong></td>
+<td>~16/17:00–22:30/午夜</td>
+<td style="text-align: center;">✗</td>
+<td style="text-align: center;">✗</td>
+<td style="text-align: center;">✗</td>
+<td>❌ <strong>错过</strong>（周日上午已离开）</td>
+</tr>
+<tr>
+<td><strong>象门夜市</strong>（凤飞飞猪脚饭）</td>
+<td><strong>每晚</strong></td>
+<td>~17:00–午夜</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>✅ 任意一晚，猪脚饭首选，~18:00 到</td>
+</tr>
+<tr>
+<td><strong>Night Bazaar 夜市</strong>（长康路）</td>
+<td><strong>每晚</strong></td>
+<td>18:00–午夜</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>✅ 任意一晚，可靠锚点</td>
+</tr>
+<tr>
+<td><strong>Kalare Night Bazaar</strong> 美食广场</td>
+<td><strong>每晚</strong></td>
+<td>17:00–午夜</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>✅ 有顶棚，<strong>雨夜首选</strong></td>
+</tr>
+<tr>
+<td><strong>One Nimman</strong> 傍晚/市集</td>
+<td>商场每天；街头市集 <strong>周五–日</strong> 最热</td>
+<td>商场 11:00–21:00；夜市区 ~22:00</td>
+<td style="text-align: center;">✅商场</td>
+<td style="text-align: center;">✅✅</td>
+<td style="text-align: center;">✅✅</td>
+<td>✅ <strong>周五、周六最佳</strong>（就在住宿旁）</td>
+</tr>
+<tr>
+<td><strong>Ploen Ruedee 夜市</strong></td>
+<td>周一–六（<strong>周日休</strong>）</td>
+<td>18:00–午夜</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>✅ 三晚都可（状态见下）</td>
+</tr>
+<tr>
+<td><strong>CMU/Kad Na Mor</strong>（近尼曼）· <strong>Anusarn · South Gate</strong></td>
+<td>各<strong>每晚</strong></td>
+<td>~17:00–23:00/午夜</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>✅ 便宜好吃备选</td>
+</tr>
+<tr>
+<td><em>加分：</em> <strong>Friday Night 步行街</strong></td>
+<td><strong>仅周五</strong></td>
+<td>17:00–22:00</td>
+<td style="text-align: center;">✗</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✗</td>
+<td>✅ 周五想要"步行街"感可来</td>
+</tr>
+</tbody>
+</table>
+<h3 id="各市场要点">5.2 各市场要点</h3>
+<ul>
+<li><p><strong>Jing Jai / JJ 市集（จริงใจ）· 仅周六日上午，无夜市 → ✅ 7/18 上午可去</strong>：出名的<strong>农夫 + 手作周末市集只在周六、周日上午</strong>（周六 = Hobby/跳蚤；周日 = Rustic/手作），约 <strong>06:30–13:00/14:00</strong>（7–9 点最佳）。可吃：sai ua、khao soi、芒果糯米饭、草本茶、优质本地咖啡、有机高地农产。大树荫下，很出片。<strong>没有夜市</strong>（尽管有人这么问）。</p></li>
+<li><p><strong>Wualai 周六步行街（ถนนวัวลาย）· 仅周六 → ✅ 7/18 傍晚去</strong>：古城南墙外，距 Tha Phae 门步行 10–15 分钟。以<strong>兰纳银器、漆器</strong>手工艺 + 北部街头小吃（khao soi、sai ua、香蕉叶"野蛋"）著称，比周日那场更本地、更手工艺。==全露天，雨季受影响。== 注意 Wualai/Ratchadamnoen <strong>禁酒</strong>（10,000฿ 罚款告示）。</p></li>
+<li><p><strong>Tha Phae 周日步行街 · 仅周日 → ❌ 错过</strong>：从 Tha Phae 门往 Wat Phra Singh 延伸约 1 km，是<strong>最大最有名</strong>的一场，美食带巨长 + 全城最大手工艺/纪念品选择。你们周日上午飞走，遗憾错过。</p></li>
+<li><p><strong>象门夜市 · 每晚 → ✅</strong>：招牌就是<strong>凤飞飞猪脚饭</strong>（见 §3.5）。周边还有泰式寿喜锅、烤鸭、串烧。==全露天，雨天受影响（部分有雨棚）。== 三晚任意一晚的"必吃"首选，<strong>~18:00 到</strong>。</p></li>
+<li><p><strong>Night Bazaar 夜市（长康路）· 每晚 → ✅</strong>：古城东，三区连成一片 = 露天街摊 + <strong>Kalare</strong> + <strong>Anusarn</strong>。街摊最便宜（30–80฿/道，找 khao soi、sai ua）。⚠️ 街摊露天（雨天躲进 Kalare/Anusarn）；<strong>2026 年有大规模重建工程（Lannatique 项目），部分区域施工</strong>。</p></li>
+<li><p><strong>Kalare Night Bazaar · 每晚 → ✅ 雨夜首选</strong>：<strong>大型有顶棚拱廊 + 美食广场（代金券制</strong>：买 20/40/60฿ 券点餐）。~300฿ 喂饱两人。免费现场音乐 + 泰舞/木偶秀。<strong>有顶棚——夜市区最佳雨夜用餐。</strong></p></li>
+<li><p><strong>One Nimman · 商场每天/美食市集周五–日 → ✅（周五、周六最佳，就在住宿旁）</strong>：街头美食市集<strong>周五–日 ~15:00–22:00</strong>，有现场音乐。<strong>周五、周六</strong>正是甜蜜点，且离 Travelodge Nimman 极近。<strong>有顶棚走廊、较抗雨</strong>。</p></li>
+<li><p><strong>Ploen Ruedee · 周一–六，周日休 → ✅</strong>：28/3-4 Chang Khlan 路，<strong>美食广场式</strong>。<strong>周三乐队、周五六 DJ</strong>。清迈最贵夜市，露天。 &gt; [!warning] 状态存疑：TripAdvisor 显示"暂时关闭"，另有 2026 指南说仍开——<strong>去前查 Facebook/Google 实时状态</strong>，用 Anusarn/Kalare 兜底。</p></li>
+<li><p><strong>每晚兜底（周四五六都 ✅）</strong>：<strong>CMU/Kad Na Mor</strong>（清迈大学对面，距尼曼 ~6 分钟，超便宜学生餐）· <strong>Anusarn</strong>（海鲜、酒吧）· <strong>South Gate 市场</strong>（古城南门本地街头）。<strong>周五加分</strong>：Friday Night 步行街给"步行街"感。</p></li>
+</ul>
+<h3 id="建议-3-晚-周六安排贴合住宿在尼曼">5.3 建议 3 晚 + 周六安排（贴合住宿在尼曼）</h3>
+<ul>
+<li><strong>周四 7/16</strong>：<strong>象门夜市</strong>（~18:00 吃凤飞飞猪脚饭）→ 顺逛 <strong>Night Bazaar</strong>；雨大转 <strong>Kalare</strong> 有顶棚食阁。</li>
+<li><strong>周五 7/17</strong>：家门口的 <strong>One Nimman</strong> 街头美食市集（周五开）+ 尼曼晚餐（Tong Tem Toh / Kao Soy Nimman）；想要步行街感加 <strong>Friday Night 步行街</strong>。</li>
+<li><strong>周六 7/18（用满这天）</strong>：==上午 <strong>Jing Jai/JJ 市集</strong>（~7–9 点，早餐+咖啡+农产）→ 傍晚 <strong>Wualai 周六步行街</strong>（银器 + 北部小吃）==。这是你们唯一的周末，两个只在周末开的亮点一网打尽。（白天想安排一顿远一点的：可去城郊 <strong>Krua Ya 奶奶厨房</strong> 午餐，见 §1.3。）</li>
+</ul>
+<hr />
+<h2 id="尼曼清迈精品咖啡馆">6. 尼曼/清迈精品咖啡馆</h2>
+<div class="callout ct-note">
+<p><span class="callout-title">📝 出发前须知</span></p>
+<ul>
+<li><strong>Ristr8to vs Roast8ry 是两个品牌</strong>：2017 世界拿铁拉花冠军 <strong>Arnon "Tong" Thitiprasert</strong> 约 2020 年从 Ristr8to 出走，现在在 <strong>Roast8ry</strong> 掌杯。两家都有冠军血统、都还开着、还很近——<strong>可以都去</strong>。</li>
+<li><strong>现金</strong>：Ristr8to 只收现金；独立咖啡馆多偏好现金。</li>
+<li><strong>7 月绿色/雨季、闷热</strong>：中午优先有空调室内；清晨最适合下午下雨前的慢时光。<strong>以下大多在你们住宿步行/短车程圈内。</strong></li>
+</ul>
+</div>
+<h3 id="一线-尼曼精品咖啡必访">一线 · 尼曼精品咖啡必访</h3>
+<p><strong>1. Ristr8to（原店）· 尼曼 Soi 3</strong>——全城拉花/意式标杆。招牌 <strong>"Satan Latte"</strong>（骷髅玻璃杯）+ "Shakerato from Hell"。一杯 ~100–150฿。空间小、音乐大、常排队——"认真喝一杯"的地方，<strong>不是笔电久坐店</strong>。只收现金，约 07:30–18:30。</p>
+<p><strong>2. Roast8ry Lab / 旗舰 · 尼曼 Soi 17</strong>——Arnon 现在的品牌，被称"尼曼最好喝的拿铁"。招牌<strong>摇摇罐装拿铁</strong>。旗舰是<strong>清水混凝土 + 木材的四层野兽派建筑</strong>，空间大、有食物——想<strong>咖啡 + 正餐又不想排 Ristr8to 的队</strong>就来这。</p>
+<p><strong>3. Graph One Nimman（+ 烘豆厂 Gateway Coffee Roasters）· 尼曼（One Nimman 内）</strong>——小而精速度吧，用自家 <strong>Gateway</strong> 烘焙的单品，从 ~135฿ 起。想认真喝手冲单品可专程去 <strong>Gateway Coffee Roasters</strong>（Thapae 路，60 年老楼开放式烘焙，~09:30–17:30）。GRAPH 是清迈第三波先驱（2009）。</p>
+<p><strong>4. % Arabica · 尼曼（One Nimman）</strong>——京都名店<strong>泰北首店</strong>，现场新鲜烘豆。日式极简 + 泰式工艺，明亮上镜，适合慢启动清晨。每天 09:00–21:00。</p>
+<h3 id="二线-慢生活美学咖啡馆">二线 · 慢生活/美学咖啡馆</h3>
+<p><strong>5. The Baristro（Barisotel）· 尼曼</strong>——全白精品酒店附属咖啡馆，尼曼最"设计感"空间之一。~90–150฿。纯美学 + 放松坐坐首选。</p>
+<p><strong>6. Toffee Roasters · 尼曼 Soi 5</strong>——尼曼<strong>"安静慢坐"最佳</strong>。小而隐蔽<strong>自家烘焙</strong>馆，招牌<strong>滴滤与手冲</strong>。~60–150฿（品质远超价格）。</p>
+<p><strong>7. Terroir.cnx · 尼曼</strong>——给<strong>咖啡纯粹主义者</strong>：极简裸空间，专注杯中物。豆子从泰国本地到国际名品，~100–160฿。</p>
+<p><strong>8. Fohhide · 尼曼（5 楼天台）</strong>——<strong>要景观</strong>：俯瞰尼曼、群山与<strong>素贴山寺</strong>。~90–150฿。（时间以社媒为准。）</p>
+<h3 id="三线-为产地故事-建筑值得跨区古城距尼曼-10-分钟">三线 · 为"产地故事 + 建筑"值得跨区（古城，距尼曼 ~10 分钟）</h3>
+<p><strong>9. Akha Ama Coffee（Phrasingh 店）· 古城、近 Wat Phra Singh</strong>——清迈第三波元老（2010），<strong>最好的产地/公平贸易故事</strong>：阿卡族 <strong>Lee Ayu Chuepa</strong> 的社会企业，豆子直接来自家乡高地村 <strong>Mae Chan Tai</strong>，每杯可溯源。红砖 + 巨大 S 形吧台盘旋到夹层。拿铁 ~80–130฿。 &gt; [!tip] 豆子小知识：Akha Ama 自家产地是 <strong>Mae Chan Tai，不是 Doi Chang</strong>（Doi Chang 是清莱另一家）。想再来个泰国本土豆角度：尼曼的 <strong>Nine One Coffee</strong>（老板在 Doi Saket 有机种植）。（Chang Phuak 总店周三休；Phrasingh 店每天 ~08:00–17:00。）</p>
+<p><strong>可选加码</strong>：<strong>Graph Contemporary</strong>（Ping 河东，暗黑清水混凝土 + 网红楼梯）· <strong>Cottontree Coffee Roasters</strong>（尼曼 MAYA 后，2015 起自烘）· <strong>The Barn: Eatery Design</strong>（近 Wat Suan Dok 花园，尼曼可步行；花园乡村谷仓，更偏全天泡+吃）。</p>
+<div class="callout ct-note">
+<p><span class="callout-title">📝 3.5 天节奏建议（尼曼为中心）</span></p>
+<ul>
+<li><strong>慢启动早晨</strong>：Toffee Roasters / The Baristro / % Arabica（都在住宿附近）</li>
+<li><strong>认真喝一杯</strong>：Ristr8to（骷髅杯拉花）+ Roast8ry（尼曼最佳拿铁 + 野兽派设计），两家很近，都去</li>
+<li><strong>纯手冲单品</strong>：Terroir.cnx / Graph One Nimman</li>
+<li><strong>午后看景</strong>：Fohhide</li>
+<li><strong>一次古城产地之旅</strong>：Akha Ama Phrasingh</li>
+</ul>
+<p>未发现这些店有 2026 关闭消息，均有 2025+ 佐证。泰国独立店<strong>时间随季节浮动</strong>，去前一天查各家 IG/FB，尤其 Fohhide 与 The Barn。</p>
+</div>
+<hr />
+<h2 id="曼谷美食1-天高效路线">7. 曼谷美食：1 天高效路线</h2>
+<div class="callout ct-important">
+<p><span class="callout-title">❗ 好消息：你们的时间点几乎是最优的</span></p>
+<p><strong>唐人街 Yaowarat 周日晚上正处于巅峰状态</strong>，而你们唯一不在的周一晚恰恰是很多摊位为全城每周街道清扫而休息的日子——完美避开最差一天。两家最佳早餐级老店（Jok Prince 粥、K.Panich 芒果糯米饭）<strong>周一上午都开</strong>。路线自然成型：==<strong>周日晚唐人街扫街 + 周一上午粥/芒果糯米饭</strong>==。</p>
+<p>⚠️ <strong>两个不适合本次、提前排除</strong>： - <strong>Jay Fai（痣姐）</strong>——周一、二休，且要 ~7 点去排 3–5 小时。这次别想了。 - <strong>K.Panich 芒果糯米饭</strong>——==周日休！== 只能周一上午吃，不是周日。</p>
+</div>
+<h3 id="唐人街-yaowarat周日晚-重头戏">7.1 唐人街 Yaowarat（周日晚 · 重头戏）</h3>
+<p><strong>判定：周日晚绝佳。</strong> 每晚都热闹，天黑后活过来，摊子做到 01:00–02:00+。<strong>到达</strong>：~17:30–19:00 到，19:00–21:00 最挤。<strong>交通：地铁 MRT Wat Mangkon（BL29）1 号出口</strong>直达 Yaowarat 路——<strong>17 点后别打车</strong>（堵成停车场）。带<strong>现金</strong>，人均 ~300–500฿ 吃 4–5 样。</p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>摊位</th>
+<th>招牌</th>
+<th>价格</th>
+<th>营业/休息</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>T&amp;K Seafood</strong>（绿衣）</td>
+<td>烤大虾、青柠辣椒蒸鲈鱼、冬阴功、咖喱炒蟹</td>
+<td>฿50–200+/道</td>
+<td>~16:30–02:00 <strong>每天</strong></td>
+<td>Soi Texas × Yaowarat 转角，标志性街边海鲜</td>
+</tr>
+<tr>
+<td><strong>Lek &amp; Rut Seafood</strong>（红衣）</td>
+<td>同类海鲜；收尾 <strong>燕窝 ฿200/碗</strong></td>
+<td>฿50–200/道</td>
+<td>每天</td>
+<td>与 T&amp;K 隔巷对打。⚠️ 近期翻修，露天座可能有变</td>
+</tr>
+<tr>
+<td><strong>Guay Jub Ouan Pochana</strong>（必比登）</td>
+<td><em>kuay jap nam sai</em> 胡椒浓汤卷粉 + 脆五花</td>
+<td>฿50/100，加蛋+฿10</td>
+<td>多数说 18:00–03:00 每天；一处说周一休。<strong>周日都没问题</strong></td>
+<td>China Town Rama 戏院前，50+ 年</td>
+</tr>
+<tr>
+<td><strong>Nai Ek Roll Noodle</strong>（必比登）</td>
+<td>胡椒卷粉汤；脆皮烧肉饭</td>
+<td>~฿50–100</td>
+<td>~08:00–24:00 每天</td>
+<td>442 Yaowarat 路，大红招牌，周日晚可靠</td>
+</tr>
+<tr>
+<td><strong>Jek Pui Curry Rice</strong>（必比登）</td>
+<td>黄咖喱猪肉盖饭——坐小凳"抢座"</td>
+<td>~฿50–70</td>
+<td>傍晚起</td>
+<td>70+ 年，好玩、快、便宜</td>
+</tr>
+<tr>
+<td><strong>Pa Tong Go Savoey</strong>（米其林）</td>
+<td>炸油条配香兰卡仕达 + 热豆浆</td>
+<td>~฿20–40</td>
+<td>傍晚</td>
+<td>扫街开场好一口</td>
+</tr>
+</tbody>
+</table>
+<p><strong>避坑</strong>：拉客的海鲜摊绕开；<strong>唐人街别点 pad thai</strong>（留给 Thipsamai）；芒果糯米饭主路多摊现做可当场解决。</p>
+<h3 id="thipsamai-pad-thaiผดไทยประตผ-两天都开">7.2 Thipsamai Pad Thai（ผัดไทยประตูผี）· 两天都开</h3>
+<p>313–315 Maha Chai 路（老城，近金山寺）。MRT <strong>Sam Yot</strong> + 步行。<strong>09:00–24:00，周二休</strong>（官网确认）——<strong>周日晚、周一上午都开</strong>。招牌蛋皮包虾油炒河粉 ~120–150฿；高配 500฿/700฿ 被认为偏贵。<strong>只收现金</strong>。招牌鲜橙汁 ~100–160฿。 <strong>值不值</strong>：评价两极，多数觉得值得试一次。<strong>外带队快很多</strong>；~17:00 到常常不排队。 <strong>更好替代（不排队）</strong>：<strong>Pad Thai Fai Ta Lu（ไฟทะลุ）</strong>——Andy Yang 主厨，必比登，脆 Berkshire 猪肉 + 深色酱。 &gt; 提示：Thipsamai 与唐人街<strong>二选一</strong>做周日晚主场——<strong>唐人街性价比/氛围更高</strong>。</p>
+<h3 id="芒果糯米饭-mango-sticky-rice">7.3 芒果糯米饭 Mango Sticky Rice</h3>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>店</th>
+<th>区域</th>
+<th>价格</th>
+<th>营业/休息</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>K.Panich（Kor Panich）</strong> ⭐ 必比登</td>
+<td>老城 Tanao 路（近大皇宫/考山路）</td>
+<td>~฿100–150，现金</td>
+<td><strong>07:00–18:00，周一–六——⚠️ 周日休</strong></td>
+<td>1932 至今皇室配方。<strong>最佳。周一上午开——理想外带早餐，周日买不到</strong></td>
+</tr>
+<tr>
+<td><strong>Mae Varee</strong></td>
+<td>Thonglor（BTS Thong Lo 即到）</td>
+<td>~฿80–150</td>
+<td><strong>24 小时</strong></td>
+<td>最方便可靠；在素坤逸就选它，周日晚、周一清晨都行</td>
+</tr>
+<tr>
+<td><strong>Mango Tango</strong></td>
+<td>Siam Square Soi 3</td>
+<td>฿120–220</td>
+<td>白天–傍晚</td>
+<td>网红、空调、上镜；偏游客向，品质仍不错</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本次建议</strong>：老城 → 周一上午 <strong>K.Panich</strong> 打包去机场；住素坤逸 → <strong>Mae Varee（24h）</strong>，周日晚也能吃。</p>
+<h3 id="必比登街头贴合时窗">7.4 必比登街头（贴合时窗）</h3>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>摊</th>
+<th>招牌</th>
+<th>价格</th>
+<th>营业/休息</th>
+<th>本次是否现实</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Jay Fai</strong> ⭐（1 米其林<strong>星</strong>）</td>
+<td>蟹肉煎蛋</td>
+<td>煎蛋 ฿1,400–1,500</td>
+<td>周三–日，<strong>周一二休</strong></td>
+<td>❌ 排 3–5 小时且两天都休。仅文化清单</td>
+</tr>
+<tr>
+<td><strong>Jok Prince</strong>（必比登）</td>
+<td>炭香猪肉粥</td>
+<td>฿40–60，现金</td>
+<td><strong>06:00–13:00 &amp; 15:00–23:00 每天</strong>（含周一）</td>
+<td>✅ <strong>周一早餐首选</strong>。Bang Rak/Silom，BTS Saphan Taksin ~10 分钟。早去防售罄</td>
+</tr>
+<tr>
+<td><strong>Rung Rueang 猪肉面</strong>（必比登）</td>
+<td>冬阴猪肉面、脆鱼皮</td>
+<td>฿50/60/70</td>
+<td>上午–下午，售罄即止</td>
+<td>✅ 住素坤逸：Soi 26（BTS Phrom Phong）</td>
+</tr>
+<tr>
+<td><strong>Elvis Suki</strong>（必比登）</td>
+<td>干泰式寿喜、黄油烤扇贝</td>
+<td>฿60/道起</td>
+<td>~15:30–24:00 每天</td>
+<td>✅ 傍晚。Banthat Thong（近 Siam）</td>
+</tr>
+<tr>
+<td><strong>Prachak Roast Duck</strong>（必比登）</td>
+<td>烧鸭/红烧肉饭</td>
+<td>~฿100–200</td>
+<td>白天–傍晚</td>
+<td>✅ 近 BTS Saphan Taksin，可与 Jok Prince 同区串。1909 至今</td>
+</tr>
+</tbody>
+</table>
+<h3 id="推荐现实路线">7.5 推荐现实路线</h3>
+<div class="callout ct-example">
+<p><span class="callout-title">📋 方案 A（住老城/能到唐人街，推荐）</span></p>
+<p><strong>周日傍晚 · 唐人街 Yaowarat（重头戏）</strong> 1. ~17:30–18:00 出门，<strong>MRT 到 Wat Mangkon（1 号出口）</strong>。 2. 热身：<strong>Pa Tong Go Savoey</strong>（油条+豆浆）→ <strong>Jek Pui</strong> 咖喱饭（抢凳子）。 3. 主菜：<strong>T&amp;K</strong> 或 <strong>Lek &amp; Rut</strong>（烤虾/蟹、冬阴）on Soi Texas。 4. 面食：<strong>Guay Jub Ouan</strong> 或 <strong>Nai Ek</strong> 胡椒卷粉。 5. 甜点：Lek &amp; Rut <strong>燕窝</strong> + 主路芒果糯米饭。 <em>人均 ~400–600฿，全部周日晚开，摊到午夜–02:00，不赶。</em></p>
+<p><strong>周一上午 · 粥 + 芒果糯米饭（登机前）</strong> 1. <strong>Jok Prince</strong>（6 点开，每天）——炭香猪肉粥 ฿40–60，Bang Rak/Silom，早去。 2. <strong>K.Panich</strong>（7 点开，周一–六，==正因是周一才吃得到==）——芒果糯米饭<strong>打包</strong>去机场。 <em>想吃硬一点的送别餐：Thipsamai 9 点开，蛋皮 pad thai + 招牌橙汁。</em></p>
+</div>
+<div class="callout ct-example">
+<p><span class="callout-title">📋 方案 B（住素坤逸、不去唐人街）</span></p>
+<ul>
+<li><strong>周日傍晚</strong>：<strong>Banthat Thong 路</strong>（BTS National Stadium）——Elvis Suki + Pad Thai Fai Ta Lu；或 <strong>Here Hai</strong>（Ekkamai）粉丝焗蟹。</li>
+<li><strong>周日深夜/周一清晨</strong>：<strong>Mae Varee</strong>（Thong Lo，24h）芒果糯米饭。</li>
+<li><strong>周一早餐</strong>：<strong>Rung Rueang</strong> 猪肉面（Phrom Phong），或再来 Mae Varee 打包。</li>
+</ul>
+</div>
+<div class="callout ct-note">
+<p><span class="callout-title">📝 曼谷关键休息日/提醒</span></p>
+<ul>
+<li>✅ 唐人街、Thipsamai、T&amp;K、Nai Ek、Jok Prince、Mae Varee——<strong>周日晚和周一都开</strong>。</li>
+<li>⚠️ <strong>K.Panich 周日休</strong>，只能周一上午。</li>
+<li>❌ <strong>Jay Fai 周一二休</strong> + 排 3–5 小时，放弃。</li>
+<li>⚠️ <strong>周一是 Yaowarat 弱夜</strong>（街道清扫），但你们<strong>周日</strong>去不受影响——别安排周一晚唐人街。</li>
+<li>💵 几乎<strong>全部只收现金</strong>，带够泰铢。</li>
+</ul>
+</div>
+<hr />
+<h2 id="实用信息">8. 实用信息</h2>
+<h3 id="小费习惯">8.1 小费习惯</h3>
+<p>泰国小费<strong>低压、完全自愿</strong>；日常几乎不给。最重要习惯：==加小费前先看账单有没有 service charge。==</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>场景</th>
+<th>怎么做</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>街头/市场摊</td>
+<td>从不给；硬给可能被退回。留零钱是好意但不必要</td>
+</tr>
+<tr>
+<td>本地小馆（人均 &lt;~100฿）</td>
+<td>基本不给，留硬币零钱足矣</td>
+</tr>
+<tr>
+<td>中档餐厅</td>
+<td>看账单。已加 <strong>10% service charge</strong> 就不用再给；没加则好服务给 5–10%</td>
+</tr>
+<tr>
+<td>高档餐厅</td>
+<td>未含服务费时 10–15%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>"++" 定价</strong>：很多旅游区/高档店自动加 <strong>10% 服务费 + 7% VAT（合计 ~17.7%）</strong>。给小费用<strong>现金泰铢</strong>（即使刷卡结账）。注意 <strong>100 与 1000 铢纸币都偏橙/棕</strong>、易混。</p>
+<h3 id="点辣度">8.2 点辣度</h3>
+<p>泰语是声调语言，<strong>微笑 + 短语 + 手指指点</strong>比纠结声调更管用。现实：==本地馆的"不辣"对西方人常常还是辣==。头几天用"一点点辣"（phet nit noi）最稳又不失风味。</p>
+<table>
+<thead>
+<tr>
+<th>中文</th>
+<th>泰文</th>
+<th>罗马音</th>
+<th>近似读法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>辣</td>
+<td>เผ็ด</td>
+<td><em>phet</em></td>
+<td>"pet"（宠物）</td>
+</tr>
+<tr>
+<td>不辣</td>
+<td>ไม่เผ็ด</td>
+<td><em>mai phet</em></td>
+<td>"my pet"</td>
+</tr>
+<tr>
+<td>一点都不辣</td>
+<td>ไม่เผ็ดเลย</td>
+<td><em>mai phet loei</em></td>
+<td>"my pet ler-y"</td>
+</tr>
+<tr>
+<td>一点点辣</td>
+<td>เผ็ดนิดหน่อย</td>
+<td><em>phet nit noi</em></td>
+<td>"pet nit noy"</td>
+</tr>
+<tr>
+<td>少辣</td>
+<td>เผ็ดน้อย</td>
+<td><em>phet noi</em></td>
+<td>"pet noy"</td>
+</tr>
+<tr>
+<td>很辣</td>
+<td>เผ็ดมาก</td>
+<td><em>phet mak</em></td>
+<td>"pet mahk"</td>
+</tr>
+<tr>
+<td>不要辣</td>
+<td>ไม่เอาเผ็ด</td>
+<td><em>mai ao phet</em></td>
+<td>"my ow pet"</td>
+</tr>
+<tr>
+<td>不放辣椒</td>
+<td>ไม่ใส่พริก</td>
+<td><em>mai sai prik</em></td>
+<td>"my sigh prik"</td>
+</tr>
+</tbody>
+</table>
+<p>句尾加礼貌词：男 <strong>ครับ khráp</strong>、女 <strong>ค่ะ khâ</strong>。例：<em>"Ao pad thai, phet nit noi, khráp/khâ"</em>。 &gt; 💡 你们要去的 <strong>Kaprao Nuea Nuea 打抛牛肉比一般更辣</strong>，点餐时记得说 <em>phet nit noi</em>。</p>
+<h3 id="素食-过敏泰语">8.3 素食 / 过敏泰语</h3>
+<div class="callout ct-important">
+<p><span class="callout-title">❗ 两个词差别很大</span></p>
+<ul>
+<li><strong>เจ（<em>je / jay</em>）</strong> = 严格佛教纯素：<strong>不含肉、鱼、蛋、奶，也不含蒜/洋葱/浓味香草</strong>。对纯素/严格素食者<strong>更可靠</strong>。说 <strong>"gin je"（กินเจ，我吃斋）</strong> 是高手做法。</li>
+<li><strong>มังสวิรัติ（<em>mang sa wirat</em>）</strong> = 普通素食："无肉"，但<strong>蛋、奶、隐藏的鱼露/蚝油/虾酱常还在</strong>。严格者只说这个词有风险。</li>
+</ul>
+</div>
+<table>
+<thead>
+<tr>
+<th>短语</th>
+<th>泰文</th>
+<th>罗马音</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>我吃素</td>
+<td>ฉันทานมังสวิรัติ</td>
+<td><em>chan taan mang sa wirat</em></td>
+</tr>
+<tr>
+<td>我吃斋（纯素）</td>
+<td>ฉันกินเจ</td>
+<td><em>chan gin je</em></td>
+</tr>
+<tr>
+<td>我不吃肉</td>
+<td>ฉันไม่ทานเนื้อสัตว์</td>
+<td><em>chan mai taan nuea sat</em></td>
+</tr>
+<tr>
+<td>有素食吗？</td>
+<td>มีอาหารมังสวิรัติไหม</td>
+<td><em>mii aahaan mang sa wirat mai</em></td>
+</tr>
+<tr>
+<td>不放鱼露</td>
+<td>ไม่ใส่น้ำปลา</td>
+<td><em>mai sai nam plaa</em></td>
+</tr>
+<tr>
+<td>不放虾酱</td>
+<td>ไม่ใส่กะปิ</td>
+<td><em>mai sai gapi</em></td>
+</tr>
+<tr>
+<td>不放蛋</td>
+<td>ไม่ใส่ไข่</td>
+<td><em>mai sai khai</em></td>
+</tr>
+<tr>
+<td>不放味精</td>
+<td>ไม่ใส่ผงชูรส</td>
+<td><em>mai sai phong chu rot</em></td>
+</tr>
+<tr>
+<td><strong>对花生过敏</strong></td>
+<td><strong>แพ้ถั่ว</strong></td>
+<td><strong><em>phae tua</em></strong></td>
+</tr>
+</tbody>
+</table>
+<p>过敏句式 = <strong>แพ้ + [食物]（<em>phae ...</em>）</strong>，如 <em>phae goong</em>（แพ้กุ้ง）对虾过敏。 ::: {.callout .ct-warning} <span class="callout-title">⚠️ 隐藏成分与安全</span></p>
+<ul>
+<li><strong>鱼露（nam plaa）</strong> 像盐一样无处不在；<strong>虾酱（gapi）</strong> 藏在咖喱酱、som tam 里。</li>
+<li><strong>花生过敏（可能致命）</strong>和"不放鱼露"==别只靠口说声调==——<strong>写在纸卡上用泰文给摊主看</strong>（严重者带 EpiPen）。"过敏 <strong>แพ้ phae</strong>"比"别放"被更认真对待。</li>
+<li><strong>黄底红字"เจ"旗/招牌</strong> = 纯素（斋）友好摊。 :::</li>
+</ul>
+<h3 id="饮用水与冰">8.4 饮用水与冰</h3>
+<ul>
+<li><strong>自来水：不要喝。</strong> 连本地人也不直饮。<strong>喝瓶装水</strong>（500ml ~7–15฿、1.5L ~12–25฿；7-Eleven 遍地），确认封口完好。餐厅本就上密封瓶/过滤水。</li>
+<li><strong>冰：一般安全。</strong> 多数场所用<strong>纯净水工厂冰</strong>。认形状：==<strong>中间有孔的管状/圆柱冰 = 工厂制、安全</strong>==。只对很本地摊的<strong>碎冰/刨冰</strong>稍谨慎。正常冰饮没问题。</li>
+<li><strong>雨季（6–10 月）</strong>水质更需警惕（可能内涝影响管网）——多一个理由只喝密封瓶装水。</li>
+</ul>
+<h3 id="人均花费thb">8.5 人均花费（THB）</h3>
+<p>物价比 2021 涨 ~20–30%，但仍全球最便宜美食地之一。==地点比什么都影响价格。==</p>
+<table>
+<thead>
+<tr>
+<th>档次</th>
+<th>曼谷</th>
+<th>清迈（约便宜 20–30%）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>街头单品</td>
+<td>40–80฿</td>
+<td>40–75฿（本地 khao soi ~50–70；游客区 90–140）</td>
+</tr>
+<tr>
+<td>街头一顿</td>
+<td>100–200฿</td>
+<td>~70–150฿</td>
+</tr>
+<tr>
+<td>中档小馆（每道）</td>
+<td>~80–150฿</td>
+<td>~150–220฿</td>
+</tr>
+<tr>
+<td>商场食阁</td>
+<td>50–60฿</td>
+<td>50–60฿</td>
+</tr>
+<tr>
+<td>高档/西餐（每人）</td>
+<td>~400–800+฿（另加 ++17.7%）</td>
+<td>~300–600+฿</td>
+</tr>
+</tbody>
+</table>
+<p><strong>两人每日餐饮预算（街头为主 + 几顿讲究）</strong>：贴合你们风格 <strong>≈ 1,200–1,800฿/天两人</strong>（约 $33–50）；一顿高档晚餐再加 800–1,600฿/两人。清迈整体偏低端。 💵 街头<strong>只收现金</strong>且难破大钞——多备 <strong>20/50/100฿</strong>。</p>
+<h3 id="必喝饮品">8.6 必喝饮品</h3>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>饮品</th>
+<th>泰文</th>
+<th>是什么</th>
+<th>价格</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>泰式冰茶</strong></td>
+<td>ชาเย็น <em>cha yen</em></td>
+<td>橙色招牌：浓红茶 + 炼乳/淡奶，很甜</td>
+<td>20–40฿</td>
+</tr>
+<tr>
+<td><strong>泰式冰奶茶</strong></td>
+<td>ชานมเย็น <em>cha nom yen</em></td>
+<td>cha yen 更奶版</td>
+<td>20–40฿</td>
+</tr>
+<tr>
+<td><strong>泰式冰咖啡（oliang）</strong></td>
+<td>โอเลี้ยง <em>oliang</em></td>
+<td>传统黑冰咖啡（掺烤米/芝麻，布袋滤），可黑或加炼乳</td>
+<td>20–40฿</td>
+</tr>
+<tr>
+<td><strong>鲜嫩椰子</strong></td>
+<td>น้ำมะพร้าว <em>nam maprao</em></td>
+<td>清爽补电解质，喝完吃椰肉</td>
+<td>整只带吸管 50–70฿</td>
+</tr>
+<tr>
+<td><strong>鲜果冰沙</strong></td>
+<td>ปั่น <em>pan</em></td>
+<td>鲜果 + 冰 ± 糖/炼乳</td>
+<td>~40–80฿</td>
+</tr>
+<tr>
+<td><strong>山竹果昔</strong></td>
+<td>—</td>
+<td>==你们要去的 <strong>Joost</strong> 招牌==，100% 纯果</td>
+<td>从 ~50฿</td>
+</tr>
+</tbody>
+</table>
+<p>想少糖说 <strong>"wan nit noi"（หวานนิดหน่อย，少甜）</strong>——默认都很甜。 <strong>啤酒（三大，皆 <sub>5%）<strong>：</strong>Chang**（象，最便宜、偏甜、派对，</sub>33–35฿/罐）· </strong>Leo<strong>（豹，中价、销量第一、本地人真爱，~35–39฿/罐）· </strong>Singha**（最老 1933、100% 麦芽、贵几铢，~37–41฿/罐）。<em>要麦香选 Singha，要派对选 Chang，跟着泰国人喝选 Leo。</em></p>
+<hr />
+<h2 id="雨季提醒7-月绿色季节">9. 雨季提醒（7 月绿色季节）</h2>
+<p>7 月是<strong>绿色/淡季</strong>：白天温暖潮湿，<strong>午后/傍晚有短时强阵雨</strong>（典型是早上晴、~16:00 下雨），通常 <strong>30–60 分钟就过</strong>，不是整天下。</p>
+<div class="callout ct-warning">
+<p><span class="callout-title">⚠️ 与美食相关的实操</span></p>
+<ul>
+<li><strong>露天市场/街摊在暴雨时会受影响</strong>（收摊或盖布）——<strong>随身带折伞或雨衣</strong>。但雨不会关掉美食场景，雨后更凉爽人更少。</li>
+<li><strong>围着雨安排</strong>：干燥早上逛市场/景点，午后阵雨当作坐下慢慢吃午餐/喝咖啡/进室内的信号。曼谷 <strong>ICONSIAM（含室内 SookSiam"水上市场"美食馆）</strong> 和商场食阁是雨天备胎；清迈用 <strong>Kalare（有顶棚）/One Nimman/MAYA/Warorot 室内</strong>。</li>
+<li><strong>本次露天、雨天需备选的</strong>：Wualai 周六步行街、象门夜市、Ploen Ruedee、Jing Jai（有树荫、上午风险低）——重雨转有顶棚的 Kalare 或 One Nimman。</li>
+<li><strong>绿色季好处</strong>：7 月是<strong>水果旺季</strong>（榴莲、山竹、红毛丹最好最便宜——正好配 Joost 山竹果昔）；清迈翠绿凉爽（~24–34°C）；酒店机票降 30–50%，热门餐厅/市场人少很多。</li>
+<li><strong>鞋</strong>：凉鞋/拖鞋优于白球鞋；带<strong>驱蚊液</strong>（雨季也是蚊季，露天夜宴相关）。</li>
+</ul>
+</div>
+<hr />
+<h2 id="参考来源">参考来源</h2>
+<p><strong>传主指定三家</strong>：<a href="https://www.tripadvisor.com/Restaurant_Review-g293917-d25135417-Reviews-Kaprao_Nuea_Nuea-Chiang_Mai.html">Kaprao Nuea Nuea – TripAdvisor</a> · <a href="https://www.instagram.com/kapraonueanuea/">Kaprao Nuea Nuea – IG</a> · <a href="https://www.chiangmailocator.com/chiang-mai-shops-7548:joost-smoothies-drink-healthy-nimman-soi-11-branch">Joost – Chiang Mai Locator (Soi 11)</a> · <a href="https://www.timeout.com/chiang-mai/health-and-beauty/smoothie-in-chiang-mai">Joost – Timeout</a> · <a href="https://www.chiangmaicitylife.com/clg/food-drink/thai-restaurants/krua-ya-grandmas-kitchen/">Krua Ya – Chiang Mai Citylife</a> · <a href="https://www.tripadvisor.com/Restaurant_Review-g293917-d2408796-Reviews-Krua_Ya_Grandma_s_kitchen-Chiang_Mai.html">Krua Ya – TripAdvisor</a></p>
+<p><strong>清迈北部菜与餐厅</strong>：<a href="https://guide.michelin.com/th/en">Michelin Guide</a> · <a href="https://www.eatingthaifood.com/">Eating Thai Food</a> · <a href="https://www.chiangmaicitylife.com/">Chiang Mai Citylife</a> · <a href="https://www.theinfatuation.com/chiang-mai/reviews/cowboy-hat-lady-khao-kha-moo-chang-phueak">The Infatuation – Cowboy Hat Lady</a> · TripAdvisor / Wongnai / Restaurant Guru（各店 2024–2026 评价）</p>
+<p><strong>尼曼片区 &amp; 夜市</strong>：<a href="https://www.cktravels.com/nimman-chiang-mai-nimmanhaemin-road/">CK Travels – Nimman</a> · <a href="https://www.cktravels.com/best-chiang-mai-night-markets/">CK Travels – Best Night Markets</a> · <a href="https://www.cktravels.com/jing-jai-weekend-farmers-market-chiang-mai/">CK Travels – Jing Jai Market</a> · <a href="https://www.onenimman.com/">One Nimman 官网</a> · <a href="https://live-less-ordinary.com/best-restaurants-in-nimman-chiang-mai/">Live Less Ordinary – Nimman</a> · <a href="https://www.uhotelsresorts.com/unimmanchiangmai/attractions/wualai-walking-street-saturday-night-market">U Hotels – Wualai</a> · <a href="https://www.tourismthailand.org/Shop/chiang-mai-night-bazaar">Tourism Thailand – Night Bazaar</a></p>
+<p><strong>尼曼咖啡</strong>：<a href="https://www.thaiholidayguide.com/best-cafes-chiang-mai/">Thai Holiday Guide (2026)</a> · <a href="https://sprudge.com/ristr8to-chiang-mai-120389.html">Sprudge – Ristr8to</a> · <a href="https://simplychiangmai.com/roast8ry-coffee-flagship-store/">Simply Chiang Mai – Roast8ry</a> · <a href="https://www.graphcoffeeco.com/gatewaycoffeeroasters">GRAPH – Gateway</a> · <a href="https://arabica.com/en/location/arabica-chiang-mai-one-nimman/">% Arabica – One Nimman</a> · <a href="https://www.akhaamacoffee.com/">Akha Ama 官网</a> · <a href="https://www.wheregoesrose.com/chiang-mai-cafes-coffee/">Where Goes Rose</a></p>
+<p><strong>曼谷美食</strong>：<a href="https://guide.michelin.com/th/en/article/dining-out/five-incredible-street-food-stalls-in-yaowarat-s-chinatown">Michelin – Yaowarat 5 Stalls</a> · <a href="https://guide.michelin.com/en/th/bangkok-region/bangkok/restaurants/bib-gourmand">Michelin – Bib Gourmand Bangkok</a> · <a href="https://thipsamai.com/">Thipsamai 官网</a> · <a href="https://guide.michelin.com/en/bangkok-region/bangkok/restaurant/k-panich">Michelin – K.Panich</a> · <a href="https://danielfooddiary.com/2019/09/21/jokprince/">Daniel Food Diary – Jok Prince</a> · <a href="https://www.eatingthaifood.com/restaurants/t-k-seafood-restaurant-yaowarat-chinatown-bangkok-thailand/">Eating Thai Food – T&amp;K</a> · <a href="https://littlebigreddot.com/yaowarat-after-dark-the-ultimate-top-5-street-food-spots-in-bangkoks-chinatown-2025/">Little Big Red Dot – Yaowarat</a></p>
+<p><strong>实用信息</strong>：<a href="https://www.thethailandlife.com/thai-language-guide-vegans-vegetarians-travelling-thailand">The Thailand Life – 素食泰语</a> · <a href="https://thai-awesome.com/en/tips/How-to-Handle-the-Spice-Level:-How-to-Ask-for-%22Not-Spicy%22-or-%22Thai-Spicy%22-in-Thai">Thai-Awesome – 点辣</a> · <a href="https://healthdeliver.asia/is-tap-water-in-thailand-safe-to-drink-for-tourists/">HealthDeliver – 饮水</a> · <a href="https://offpaththailand.com/thailand-street-food-prices-2026/">Off Path Thailand – 物价 2026</a> · <a href="https://wise.com/us/travel-money/tip-calculator/thailand">Wise – 小费</a> · <a href="https://thethaiger.com/travel/thai-drinks-you-must-try-while-in-thailand">Thaiger – 泰国饮品</a> · <a href="https://www.thailandhighlights.com/thailand/weather-in-july">Thailand Highlights – 7 月天气</a></p>
+<p><strong>日期核对</strong>：<a href="https://www.calendar-365.com/calendar/2026/July.html">Calendar-365 – 2026 年 7 月</a>（确认 7/15/2026 = 周三）</p>
+<div class="callout ct-note">
+<p><span class="callout-title">📝 可靠性说明</span></p>
+<p>本指南高置信度店家均有 2+ 独立近期（2024–2026）来源佐证。传主指定三家已逐一核实（地点/时间/价格/招牌）：Kaprao Nuea Nuea（打抛牛肉，Chang Moi，傍晚开）、Joost（山竹果昔而非刨冰，尼曼 Soi 11/13）、Krua Ya 奶奶厨房（城郊 Lake Land 村内、只做白天、需打车）。以下<strong>去前建议再确认</strong>：Ploen Ruedee/Phaploen 营业状态、Anchan 休息日、Woo→PoonPoon 改名后时间、Kaprao Nuea Nuea 当月休息日（看店家 IG）、Krua Ya 当日时间（kruaya.com）、芒果糯米饭时令（7 月尾季，优先全年供应）。泰国独立店时间随季节浮动，行前一天查各家 IG/FB 最稳妥。</p>
+</div>
+</div></section>
+<section id="sec-transport" class="panel"><div class="md"><h1 id="泰国交通与物流指南2026年7月1420日">泰国交通与物流指南（2026年7月14–20日）</h1>
+<blockquote>
+<p>本指南针对一对情侣的行程，聚焦<strong>交通接驳</strong>（机场往返、市内出行、一日游、包车）与<strong>7/19曼谷过夜酒店推荐</strong>。清迈段酒店已订（Travelodge Nimman），曼谷前段酒店已订（The Quarter Ratchathewi），曼谷后段（7/19晚）待订，本文给出推荐。所有价格为2026年参考值，浮动项（打车费、路况）已标注。</p>
+</blockquote>
+<h2 id="行程交通概览">行程交通概览</h2>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 37%" />
+<col style="width: 37%" />
+</colgroup>
+<thead>
+<tr>
+<th>日期</th>
+<th>交通任务</th>
+<th>核心方案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>7/14 周二</strong></td>
+<td>廊曼(DMK) 15:10到达 → The Quarter Ratchathewi 酒店（约13km）</td>
+<td>Grab/出租车走高速，约350–500泰铢</td>
+</tr>
+<tr>
+<td><strong>7/15 周三</strong></td>
+<td>曼谷(Ratchathewi) → 廊曼(DMK) 赶国内航班 SL520 19:30</td>
+<td>Grab/出租车，提前约2h+路况；白天可寄存行李出游</td>
+</tr>
+<tr>
+<td>7/15 晚</td>
+<td>清迈机场(CNX) → Travelodge Nimman</td>
+<td>Grab 或 机场出租车，约110–180泰铢</td>
+</tr>
+<tr>
+<td>7/16</td>
+<td>Bua Tong 黏黏瀑布 + 湄林(Mae Rim)大象活动</td>
+<td><strong>包车一日游</strong>（推荐）约2,500–3,000泰铢</td>
+</tr>
+<tr>
+<td>7/16–18</td>
+<td>清迈市内</td>
+<td>双条车30–40泰铢 / Grab / 步行</td>
+</tr>
+<tr>
+<td><strong>7/19 周日</strong></td>
+<td>酒店 → CNX 国内航班出发（VZ2103 10:15）</td>
+<td>Grab，提前约2h到机场</td>
+</tr>
+<tr>
+<td><strong>7/19 周日</strong></td>
+<td>素万那普(BKK) 11:35到达 → 曼谷市区（酒店待订）</td>
+<td>ARL机场快线 vs Grab/出租车</td>
+</tr>
+<tr>
+<td><strong>7/20 周一</strong></td>
+<td>曼谷市区 → 素万那普(BKK) 国际出发（HU7940 11:05）</td>
+<td>目标08:15到机场，避周一早高峰</td>
+</tr>
+</tbody>
+</table>
+<div class="callout ct-important">
+<p><span class="callout-title">❗ 两个机场务必分清</span></p>
+<ul>
+<li><strong>廊曼机场（Don Muang / DMK）</strong>：7/14国际入境、7/15飞清迈，都在这里。位于曼谷<strong>北侧</strong>。</li>
+<li><strong>素万那普机场（Suvarnabhumi / BKK）</strong>：7/19从清迈飞抵、7/20回国出发，都在这里。位于曼谷<strong>东侧</strong>。</li>
+<li>两机场相距约30–40公里、车程1小时以上，<strong>切勿走错航站楼</strong>。</li>
+</ul>
+</div>
+<hr />
+<h2 id="周二廊曼机场dmk-the-quarter-ratchathewi-酒店">1. 7/14 周二：廊曼机场(DMK) → The Quarter Ratchathewi 酒店</h2>
+<p><strong>航班</strong>：FD481 泰亚航 15:10 落地廊曼(DMK) T1（国际航站楼）。 <strong>酒店</strong>：The Quarter Ratchathewi by UHG（388 Phetchaburi Rd, Ratchathewi），曼谷市中心，距廊曼约<strong>13公里（约13英里）</strong>。</p>
+<h3 id="入境流程先办这一步">入境流程（先办这一步）</h3>
+<div class="callout ct-warning">
+<p><span class="callout-title">⚠️ 必办：TDAC 泰国数字入境卡（免费）</span></p>
+<ul>
+<li>所有外国人入境泰国<strong>必须</strong>在线填写TDAC（已取代旧版纸质TM6卡）。</li>
+<li><strong>最早只能在抵达前3天（72小时）内提交</strong>。你7/14抵达，即<strong>最早7/11</strong>可填。<strong>强烈建议出发前在手机上填好</strong>。</li>
+<li>官方网站：<strong>tdac.immigration.go.th</strong>，<strong>完全免费</strong>，任何收费网站都是诈骗。</li>
+<li>提交后二维码发到邮箱，<strong>截图存手机</strong>离线备用。婴幼儿也需要；一人一卡、一次入境一张。</li>
+<li>2026年3月起部分旅客可走<strong>自动通关闸机(ABC)</strong>人脸识别，省约70%排队时间。</li>
+<li>廊曼也有自助Kiosk，但旺季排队20–40分钟，不如提前网上办。</li>
+</ul>
+</div>
+<p>落地后：跟随 Immigration 指示牌入境查验 → 提取托运行李 → 过海关 → 出到达大厅打车。整个入境+取行李约30–60分钟（7月旺季偏长）。</p>
+<h3 id="到酒店的交通方案">到酒店的交通方案</h3>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 37%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>方式</th>
+<th>价格(泰铢)</th>
+<th>时间</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>① Grab / 打表出租车（推荐）</strong></td>
+<td>约350–500（含机场附加费50+路桥费70–120）</td>
+<td>顺畅约18–25分钟，堵车可达45–60分钟</td>
+<td>门到门最省心；Grab明码标价</td>
+</tr>
+<tr>
+<td>② A1/A2 巴士 → BTS 天铁</td>
+<td>巴士30–50 + BTS约30–40</td>
+<td>约1–1.5小时</td>
+<td>最省钱但要拖行李换乘，不推荐带大件</td>
+</tr>
+<tr>
+<td>③ SRT红线市郊铁路 → 换乘</td>
+<td>约30–40起 + 换乘</td>
+<td>落地高峰时可避堵</td>
+<td>到Ratchathewi需多次换乘，较麻烦</td>
+</tr>
+</tbody>
+</table>
+<p><strong>推荐方案①（Grab/出租车走高速）</strong>：</p>
+<ul>
+<li><strong>打表出租车</strong>：机场出租车柜台叫车，按表计费 + <strong>50泰铢机场附加费</strong> + 高速路桥费（乘客付）。到Ratchathewi约280–350泰铢车费，加附加费和路桥费<strong>合计约350–500泰铢</strong>。</li>
+<li><strong>Grab</strong>：落地后在App内叫车（可先约好再出门），优点是<strong>上车前知道总价</strong>，省去排队。上车点见App实时指引。</li>
+<li><strong>务必走高速（Utraphimuk/廊曼收费高速）</strong>：避开Vibhavadi Rangsit路的拥堵。此路可能有<strong>两段收费</strong>（约50泰铢 + 70泰铢，2024年12月已调价，现价有效至2029年），合计约70–120泰铢。</li>
+<li>💡 周末/节假日/旺季，机场出租车排队可能30–60分钟，<strong>预约Grab可省去排队</strong>。备好小额泰铢现金（司机难找开500/1000大钞）。</li>
+</ul>
+<p>15:10落地，正常16:30–17:00左右可到酒店，避开了最严重的傍晚高峰尾段，但仍可能遇到市区拥堵，预留充足时间。</p>
+<p><strong>信息来源</strong>：<a href="https://www.talesoup-travel.com/en/dmk-to-bangkok/">廊曼到曼谷2026费用指南</a>｜<a href="https://www.donmueangairport.com/transportation/">廊曼机场官方交通</a>｜<a href="https://www.tollway.co.th/en/our-services/toll-rates">廊曼高速收费官网</a>｜<a href="https://tdac.immigration.go.th/">泰国TDAC官网</a></p>
+<hr />
+<h2 id="周三曼谷ratchathewi-廊曼机场dmk-赶国内航班">2. 7/15 周三：曼谷(Ratchathewi) → 廊曼机场(DMK) 赶国内航班</h2>
+<p><strong>航班</strong>：SL520 泰狮航 19:30 从廊曼(DMK) T2（国内航站楼）起飞飞清迈。 <strong>要点</strong>：Ratchathewi 距廊曼约13公里，白天可先出游，傍晚回程赶飞机。</p>
+<h3 id="白天行李寄存出游用">白天行李寄存（出游用）</h3>
+<p>7/15是从Ratchathewi退房、傍晚才飞清迈，白天可寄存行李轻装出游：</p>
+<ul>
+<li><strong>首选：酒店前台寄存</strong>——The Quarter Ratchathewi 退房后通常可<strong>免费</strong>帮你寄存行李到傍晚，最方便、免费、离你出游起点近。<strong>优先用这个</strong>。</li>
+<li><strong>备选：廊曼机场行李寄存</strong>（若想直接把行李带到机场附近）：
+<ul>
+<li><strong>AIRPORTELs</strong>（T2一楼9号门附近）：100泰铢/件/天，营业6:00–24:00，现金。</li>
+<li><strong>Bellugg</strong>（T1，8号门附近）：120泰铢/件/天，<strong>24小时</strong>。</li>
+<li>机场也有官方Left Baggage和LOCK BOX自助柜（T1/T2均有，24小时）。</li>
+<li>第三方（Bounce/Radical等）机场周边点约65–160泰铢/天。</li>
+</ul></li>
+</ul>
+<div class="callout ct-tip">
+<p><span class="callout-title">💡 最省事：把行李寄存在酒店前台，市区玩到下午，回酒店取行李后直接打车去廊曼，避免行李两头折腾。</span></p>
+</div>
+<h3 id="酒店-廊曼交通">酒店 → 廊曼交通</h3>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 37%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>方式</th>
+<th>价格(泰铢)</th>
+<th>时间</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Grab / 打表出租车（推荐）</strong></td>
+<td>约250–350（+50机场附加费另说，去程一般不加；走高速加路桥70–120）</td>
+<td>顺畅约16–20分钟，晚高峰30–45分钟</td>
+<td>带行李门到门最省心</td>
+</tr>
+<tr>
+<td>A1/A2巴士 + BTS</td>
+<td>巴士30–50 + BTS</td>
+<td>约1–1.5小时</td>
+<td>省钱但慢、要换乘</td>
+</tr>
+</tbody>
+</table>
+<h3 id="何时出发去机场">何时出发去机场</h3>
+<ul>
+<li>国内航班建议<strong>提前约2小时到机场</strong>（19:30起飞 → <strong>约17:30到廊曼</strong>）。</li>
+<li>廊曼傍晚17–19点是市区拥堵高峰，从Ratchathewi打车预留<strong>45–60分钟</strong>较稳妥。</li>
+<li><strong>建议时间线</strong>：约<strong>16:15–16:30 从Ratchathewi出发</strong>（先回酒店取行李）→ 约<strong>17:15–17:30 到廊曼T2</strong> → 办泰狮航值机/托运/国内安检 → 从容登机。</li>
+<li><strong>务必提前网上值机</strong>（泰狮航App/官网），拿到手机登机牌可省柜台时间。</li>
+<li>泰狮航SL520是<strong>国内航班在T2</strong>，注意别跑到T1。</li>
+</ul>
+<p><strong>信息来源</strong>：<a href="https://www.rome2rio.com/s/Ratchathewi/Don-Muang-Airport-DMK">Ratchathewi到廊曼(Rome2Rio)</a>｜<a href="https://www.talesoup-travel.com/en/donmueang-luggage-storage-transfer/">廊曼行李寄存2026</a>｜<a href="https://www.airportels.asia/luggage-storage/don-muang-airport-luggage-storage/">AIRPORTELs廊曼寄存</a></p>
+<hr />
+<h2 id="清迈机场cnx-travelodge-nimman-接驳">3. 清迈机场(CNX) ↔︎ Travelodge Nimman 接驳</h2>
+<p>CNX 距 Nimman（宁曼区）仅约 <strong>4公里</strong>，是泰国离市区最近的机场之一，车程 <strong>约15分钟</strong>（畅通时更短）。</p>
+<h3 id="方案对比">方案对比</h3>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 37%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>方式</th>
+<th>价格(泰铢)</th>
+<th>车程</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Grab（打车App）</strong></td>
+<td>约110–180</td>
+<td>约15分钟</td>
+<td>清迈Grab费用比曼谷/普吉便宜；到达大厅内提前叫车省时</td>
+</tr>
+<tr>
+<td><strong>机场官方出租车</strong></td>
+<td><strong>固定150</strong>（大车最多6人200）</td>
+<td>约15分钟</td>
+<td>柜台叫车，无需App等待；<strong>24小时同价，无午夜附加费</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="晚约2100抵达清迈飞来落地2045">7/15 晚约21:00抵达（清迈飞来落地20:45）</h3>
+<ul>
+<li>两种都可行、价格几乎持平。</li>
+<li><strong>推荐机场官方出租车（固定150泰铢）</strong>：晚间到达，柜台叫车最省心、不用等Grab司机。</li>
+<li>若用Grab：落地后在到达大厅<strong>先在App叫车</strong>再出门（Grab不能在机场内停车候客，需到指定上车点，可能要等几分钟）。深夜/周末23点后Grab可能有1.2–1.5倍溢价。</li>
+</ul>
+<h3 id="早上离店去机场详见第7节">7/19 早上离店去机场（详见第7节）</h3>
+<ul>
+<li>早上路况好，Grab约110–150泰铢，约15分钟即到。</li>
+</ul>
+<div class="callout ct-tip">
+<p><span class="callout-title">💡 浮动提醒</span></p>
+<p>Grab价格随时段/天气浮动，雨季傍晚高峰或周末夜间可能溢价；机场固定出租车150泰铢则不受影响。</p>
+</div>
+<p><strong>信息来源</strong>：<a href="https://www.airporttransferportal.com/airport-guides/cnx/cost-to-city">CNX机场到市区费用</a>｜<a href="https://chiangmaigotours.com/travel-guide/grab-vs-taxi-chiang-mai">清迈Grab vs 出租车</a>｜<a href="https://cnxlocal.com/a-digital-nomads-guide-to-cnx-chiang-mai-international-airport/">CNX机场2026指南</a></p>
+<hr />
+<h2 id="清迈市内交通">4. 清迈市内交通</h2>
+<p>Nimman（宁曼）与古城之间约2–3公里，主要靠<strong>双条车、Grab/Bolt、tuk-tuk、步行</strong>组合。</p>
+<h3 id="双条车红色-songthaew-rot-daeng最实惠">双条车（红色 Songthaew / Rot Daeng）——最实惠</h3>
+<ul>
+<li><strong>本质</strong>：红色皮卡改装的共享小巴，后厢两排长凳（"song thaew"意为"两排"），<strong>无固定路线</strong>但常沿热门线路循环。</li>
+<li><strong>费用（2026）</strong>：古城内短途及宁曼↔︎古城约 <strong>30泰铢/人</strong>；稍远路线40–60泰铢；到素贴山/机场100–150泰铢。<strong>上限不应超过100泰铢</strong>（否则不如直接叫Grab/tuk-tuk）。</li>
+<li><strong>怎么拦车</strong>：站在你要去的方向的路边，<strong>手臂伸出、手掌向下、像拍篮球一样上下摆动</strong>（泰式招手手势）；停下后直接告诉司机目的地，司机点头即上车。</li>
+<li><strong>怎么付钱</strong>：<strong>下车时付现金</strong>。接近目的地时<strong>按车厢内蜂鸣器或敲车顶</strong>示意停车，下车付<strong>固定车费</strong>。</li>
+<li>💡 省钱要点：古城内标准短途<strong>不要</strong>主动问价（一问司机常报高价），直接上车、下车给30泰铢即可。<strong>只有去市区以外较远处才需上车前先议价</strong>。</li>
+<li>也可用 <strong>Grab RodDaeng</strong>（App内叫双条车）提前看到价格。</li>
+<li>缺点：会多次停靠上下客，比Grab慢。</li>
+</ul>
+<h3 id="grab-bolt打车app">Grab / Bolt（打车App）</h3>
+<ul>
+<li>市内短途典型车费约 <strong>60–100泰铢</strong>（GrabCar经济型），比tuk-tuk便宜、明码标价、无需议价。</li>
+<li>GrabBike（摩托）约40–80泰铢，堵车时最快，适合单人。</li>
+<li>推荐日常出行主力，尤其带行李、下雨或夜间。</li>
+</ul>
+<h3 id="tuk-tuk三轮突突车">Tuk-tuk（三轮突突车）</h3>
+<ul>
+<li>起步约50–60泰铢；但<strong>不打表、对游客报价偏高</strong>，Grab收60–100的路程tuk-tuk常要100–200泰铢。</li>
+<li><strong>必须上车前谈好价</strong>。适合古城内短途"就在眼前、懒得等Grab"时，或纯体验。</li>
+</ul>
+<h3 id="宁曼nimman-古城old-city-距离与步行">宁曼(Nimman) ↔︎ 古城(Old City) 距离与步行</h3>
+<ul>
+<li>宁曼就在古城护城河<strong>西侧</strong>，两地约2–3公里。</li>
+<li>宁曼↔︎古城是双条车最常见循环线路之一，约30–40泰铢/人。</li>
+<li>天气好时局部可步行（如宁曼内部、古城内部逛街），但两区之间跨越距离较长，通常仍建议双条车或Grab。</li>
+</ul>
+<h3 id="摩托车踏板车租赁谨慎">摩托车/踏板车租赁——<strong>谨慎</strong></h3>
+<div class="callout ct-warning">
+<p><span class="callout-title">⚠️ 雨季自驾踏板车注意</span></p>
+<ul>
+<li><strong>法律</strong>：泰国要求持有效摩托车驾照（国内摩托车驾照+<strong>国际驾照IDP</strong>），否则被查罚款、且<strong>保险可能拒赔</strong>。</li>
+<li><strong>头盔</strong>：必须戴（法律强制，也是安全底线）。</li>
+<li><strong>雨季路况</strong>：7月为雨季，路面湿滑、午后常有阵雨，事故风险显著上升。</li>
+<li><strong>保险</strong>：务必确认租车含保险，并检查车况、拍照留存。</li>
+<li>情侣市内出行，<strong>更推荐Grab+双条车组合</strong>，除非有经验且持证。踏板车日租约200–300泰铢，汽车日租约1,000泰铢起。</li>
+</ul>
+</div>
+<p><strong>信息来源</strong>：<a href="https://sg.trip.com/guide/transport/chiang-mai-transport.html">清迈交通指南2026(Trip.com)</a>｜<a href="https://www.thailandroutes.com/how-to-use-songthaews-in-chiang-mai-a-complete-guide-to-local-red-truck-transportation/">双条车使用完整指南</a>｜<a href="https://backpackthailand.com/guides/songthaew-tuk-tuk-guide">双条/tuk-tuk指南(BackpackThailand)</a></p>
+<hr />
+<h2 id="bua-tong-黏黏瀑布-湄林mae-rim大象活动-交通方案">5. 7/16 Bua Tong 黏黏瀑布 + 湄林(Mae Rim)大象活动 交通方案</h2>
+<h3 id="目的地基本情况">目的地基本情况</h3>
+<ul>
+<li><strong>Bua Tong 黏黏瀑布（Sticky Waterfalls）</strong>：位于清迈以北约<strong>60公里</strong>（实际在湄登Mae Taeng县，途经湄林Mae Rim），车程约<strong>1.5小时（75分钟）</strong>。石灰岩瀑布，含碳酸钙矿物层可<strong>赤脚攀爬不打滑</strong>。<strong>免费</strong>，每日8:00–17:00开放（需登记姓名/车牌）。</li>
+<li><strong>大象营地</strong>：多在湄登/湄林一带，距瀑布约30–45分钟车程，两者<strong>天然可拼成一日游</strong>。</li>
+<li>全程约<strong>6–8小时</strong>。</li>
+</ul>
+<h3 id="方案对比2人">方案对比（2人）</h3>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 42%" />
+<col style="width: 28%" />
+</colgroup>
+<thead>
+<tr>
+<th>方案</th>
+<th>大致费用</th>
+<th>优劣</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>① 私人包车/司机（推荐）</strong></td>
+<td>约 <strong>2,500–3,000泰铢/车/日</strong>（8小时，SUV可坐3–4人；部分含油，部分需自付油费）</td>
+<td>灵活、按你节奏走、司机可推荐吃饭点；<strong>回程有保障</strong>。行程外景点门票/餐费自理</td>
+</tr>
+<tr>
+<td>② 拼团一日游（含大象营+瀑布）</td>
+<td>约 <strong>$59–$80/人（约2,000–2,900泰铢/人）</strong></td>
+<td>含空调车、门票、自助午餐、保险、喂象食料；省心但按固定行程、时间不自由</td>
+</tr>
+<tr>
+<td>③ 自驾踏板车</td>
+<td>约200–300泰铢/日</td>
+<td><strong>最不推荐</strong>：单程60公里山路+雨季湿滑，往返超120公里，风险高</td>
+</tr>
+</tbody>
+</table>
+<div class="callout ct-important">
+<p><span class="callout-title">❗ 强烈建议包车（方案①），原因：</span></p>
+<ol type="1">
+<li><strong>Grab在瀑布常常拒绝载客回程</strong>——瀑布离市区远，返程叫不到车会很被动。包车全程往返有保障。</li>
+<li>2人成行，包车2,500–3,000泰铢均摊后与拼团人均相当，且<strong>自由度高</strong>（可自定停留时长、加停景点）。</li>
+<li>雨季山路自驾风险大，交给专业司机更安全。</li>
+</ol>
+</div>
+<h3 id="包车实用信息">包车实用信息</h3>
+<ul>
+<li><strong>典型全日</strong>约8:00–17:00；超时（18点后）通常加收约300泰铢/小时。</li>
+<li>报价一般<strong>含车、司机、路桥费、保险</strong>；<strong>门票、餐费、（部分）油费</strong>自理——预订前务必<strong>确认是否含油</strong>。</li>
+<li>可通过 <strong>Klook</strong>（含油含司机的一日包车，可选轿车/SUV/面包车）或本地运营商（多支持WhatsApp、"先预订到当地付现金"）预订。</li>
+<li>建议提前把行程（瀑布+指定大象营地名称）发给运营商，便于规划路线。</li>
+<li>请自备现金付门票/餐费/小费；瀑布免费但需登记。</li>
+</ul>
+<div class="callout ct-tip">
+<p><span class="callout-title">💡 时间安排：工作日<strong>上午11点前</strong>到瀑布最佳（人少）。建议早上8点左右从Nimman出发，先到瀑布攀爬，再去大象营地，午后返程。</span></p>
+</div>
+<p><strong>信息来源</strong>：<a href="https://www.bonvoyagethailand.com/travel-guides/chiang-mai/bua-tong-sticky-waterfalls-chiang-mai/">Bua Tong瀑布2026(Bon Voyage)</a>｜<a href="https://chiangmaidrivingtours.com/pricing/">清迈私人司机报价</a>｜<a href="https://www.ecotourschiangmai.com/tours/private-car-and-driver-in-chiang-mai/">Eco Tours清迈包车3000泰铢/日含油</a>｜<a href="https://www.getyourguide.com/bua-thong-sticky-waterfalls-l97938/">瀑布+大象拼团(GetYourGuide)</a>｜<a href="https://www.pm-tours.com/pm-tours-blog/visiting-chiang-mais-sticky-waterfall">黏黏瀑布往返注意(PM Tours)</a></p>
+<hr />
+<h2 id="周日从清迈机场cnx出发">6. 7/19 周日：从清迈机场(CNX)出发</h2>
+<p><strong>航班</strong>：CNX 10:15 起飞（国内 VZ2103 泰国越捷）→ 素万那普 11:35 到达。</p>
+<h3 id="酒店机场">酒店→机场</h3>
+<ul>
+<li><strong>Grab / 出租车</strong>：约110–180泰铢，车程约<strong>15分钟</strong>（早上路况好）。</li>
+<li>Travelodge Nimman距CNX仅约4公里，很近。</li>
+</ul>
+<h3 id="建议到机场时间国内航班提前约2小时即约0815到机场">建议到机场时间：<strong>国内航班提前约2小时（即约08:15到机场）</strong></h3>
+<ul>
+<li>CNX是小机场、通关快，但<strong>7月为旺季，排队可能比平时长30–50%</strong>，且早上6–9点是安检高峰，故按<strong>2小时</strong>留足余量更稳妥。</li>
+<li><strong>CNX特殊双重安检</strong>：进航站楼要过一次安检，值机后进候机区再过一次，会多花时间。</li>
+<li><strong>值机截止</strong>：国内航班通常起飞前<strong>1小时</strong>关闭柜台/行李托运；建议<strong>提前网上值机</strong>、用手机登机牌，可直接去安检。</li>
+<li>时间线建议：约<strong>07:45–08:00 离开酒店</strong> → 约<strong>08:15 到CNX</strong> → 值机/托运/双重安检 → 从容登机。</li>
+</ul>
+<p><strong>信息来源</strong>：<a href="https://flightqueue.com/how-early-to-arrive-at-chiang-mai-international-airport">CNX提前到机场2026指南</a>｜<a href="https://8adventures.com/chiang-mai-airport-guide/">CNX机场指南(8Adventures)</a></p>
+<hr />
+<h2 id="周日素万那普bkk-曼谷市区">7. 7/19 周日：素万那普(BKK) → 曼谷市区</h2>
+<p><strong>抵达时间</strong>：约 <strong>11:35 落地</strong>（提行李后出关约<strong>12:00–12:30</strong>），<strong>行李较多</strong>。</p>
+<div class="callout ct-note">
+<p><span class="callout-title">📝 方案取决于7/19过夜酒店位置（见第9节推荐）</span></p>
+<p>若选<strong>Phaya Thai / Makkasan（ARL沿线）</strong>酒店，机场快线(ARL)最优；若选<strong>Sukhumvit/Phrom Phong</strong>，也在ARL/BTS可达范围。以下同时给出两方案。</p>
+</div>
+<h3 id="方案对比-1">方案对比</h3>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>方式</th>
+<th>价格</th>
+<th>时间</th>
+<th>适用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>机场快线 ARL → Phaya Thai</strong></td>
+<td><strong>45泰铢/人</strong></td>
+<td>约26–30分钟（不受堵车影响）</td>
+<td>酒店在ARL沿线(Phaya Thai/Makkasan)、行李可控</td>
+</tr>
+<tr>
+<td><strong>Grab / 打表出租车</strong></td>
+<td>约400–650泰铢 + 路桥费50–200泰铢</td>
+<td>45分钟–1小时（堵车可能更久）</td>
+<td><strong>行李多、门到门、酒店离地铁远</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="推荐约1230抵达行李较多">推荐（约12:30抵达、行李较多）</h3>
+<ul>
+<li><strong>若酒店在ARL沿线（强烈建议选这类，见第9节）</strong>：<strong>首选ARL机场快线</strong>，45泰铢、约30分钟、完全避堵；ARL站在机场地下B层，可刷信用卡进闸。到Phaya Thai/Makkasan直接出站到酒店，几乎不用拖箱走远路。</li>
+<li><strong>若酒店离地铁远或想省事</strong>：Grab/打表出租车门到门，约400–650泰铢+路桥费。Grab上车点在到达层1楼<strong>4号门(Gate 4)</strong>交通枢纽区A/B/C/D点（以App实时指引为准）。</li>
+<li>中午非最高峰，但曼谷路况多变、雨季午后阵雨可能加堵，<strong>若酒店在ARL沿线，ARL时间最可控</strong>。</li>
+</ul>
+<p><strong>信息来源</strong>：<a href="https://thailandawaits.com/train-from-bangkok-airport/">BKK机场火车vs出租车2026</a>｜<a href="https://www.cktravels.com/grab-taxi-suvarnabhumi-bangkok-airport/">素万那普Grab指南2026(CK Travels)</a>｜<a href="https://thailandinsiderguide.com/en/getting-around/transportation/airport-rail-link-bangkok/">曼谷机场快线指南2026</a></p>
+<hr />
+<h2 id="周一曼谷市区-素万那普bkk-国际出发">8. 7/20 周一：曼谷市区 → 素万那普(BKK) 国际出发</h2>
+<p><strong>航班</strong>：BKK 11:05 起飞（国际 HU7940 海南航空）→ 海口 → 长沙。</p>
+<div class="callout ct-important">
+<p><span class="callout-title">❗ 目标：约 <strong>08:15 到达素万那普机场</strong>（提前约3小时）</span></p>
+<p>国际航班建议提前<strong>3小时</strong>到（7/8/12月旺季或周五建议3.5小时）。11:05起飞 → <strong>08:00–08:15到机场</strong>为宜。</p>
+</div>
+<h3 id="周一早高峰路况现实">周一早高峰路况现实</h3>
+<ul>
+<li><strong>进城→机场方向早上相对顺畅</strong>（早高峰主流是反方向进城），但<strong>最后10公里进出机场路段</strong>受时段/天气影响大：可能35分钟，也可能95分钟。</li>
+<li><strong>周一是工作日</strong>，市区道路早高峰拥堵明显，走高速进机场方向通常尚可，但仍需留缓冲。</li>
+<li><strong>雨季（5–10月）午后及阵雨</strong>可给市区段加堵30–60分钟；清晨风险相对小。</li>
+</ul>
+<h3 id="方案对比-2">方案对比</h3>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>方式</th>
+<th>价格</th>
+<th>时间</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>机场快线 ARL</strong></td>
+<td>45泰铢/人</td>
+<td>约26–30分钟（<strong>不受堵车影响，最可控</strong>）</td>
+<td>首班约05:10–05:15发车；酒店在ARL沿线时最佳</td>
+</tr>
+<tr>
+<td><strong>Grab / 出租车</strong></td>
+<td>约400–650泰铢 + 路桥费</td>
+<td>40分钟–1小时+</td>
+<td>门到门、行李方便；周一早高峰进机场方向通常可接受</td>
+</tr>
+</tbody>
+</table>
+<h3 id="推荐">推荐</h3>
+<ul>
+<li><strong>若酒店在ARL沿线（Phaya Thai/Makkasan，见第9节）</strong>：<strong>首选机场快线ARL</strong>（45泰铢，约30分钟，完全避堵，周一早高峰照样准时）。约<strong>07:15–07:30乘ARL</strong> → 约08:00到机场，从容赶11:05国际机。</li>
+<li><strong>若坐Grab/出租车</strong>：<strong>务必约07:00前出发</strong>给周一堵车留缓冲，雨天再提前。</li>
+<li><strong>务必确认航站楼</strong>：素万那普部分航班在<strong>卫星厅SAT-1</strong>，需额外乘无人驾驶捷运10–15分钟到登机口，看清登机牌指示。</li>
+<li>值机时间线：约08:15到机场 → 4楼(Level 4)值机（国际航班起飞前<strong>50分钟</strong>关柜） → 出境边检（早上6–9点为高峰，可能排队45分钟+） → 从容登机。</li>
+</ul>
+<p><strong>信息来源</strong>：<a href="https://flightqueue.com/how-early-to-arrive-at-bangkok-suvarnabhumi-airport">素万那普提前到机场2026指南</a>｜<a href="https://sabairides.com/guides/suvarnabhumi-traffic-guide">素万那普路况分时指南(SabaiRide)</a>｜<a href="https://mrtbangkok.com/airport-rail-link/timetable">曼谷机场快线时刻</a></p>
+<hr />
+<h2 id="曼谷过夜酒店推荐待订">9. 7/19 曼谷过夜酒店推荐（待订）</h2>
+<p><strong>核心需求</strong>：(a) 情侣周日晚过得舒适惬意；(b) <strong>周一早上方便去素万那普赶11:05国际航班</strong>。 <strong>结论</strong>：优先选 <strong>ARL机场快线沿线（Phaya Thai / Makkasan）</strong> 的舒适酒店——既能兼顾市区体验，又能让周一早上一趟ARL直达机场、避开曼谷早高峰堵车，是"舒适+省心"的最佳平衡。舒适度定位3–4★以上，开放预算。</p>
+<h3 id="推荐一首选eastin-grand-hotel-phayathai5">推荐一（首选）：Eastin Grand Hotel Phayathai（5★）</h3>
+<ul>
+<li><strong>位置优势</strong>：<strong>全曼谷唯一</strong>通过私人天桥<strong>直连Phaya Thai站ARL机场快线+BTS天铁</strong>的酒店——<strong>拖行李不用走出户外</strong>，周一早上过天桥即上ARL，约45分钟直达素万那普，早高峰零焦虑。</li>
+<li><strong>舒适度</strong>：5★，无边泳池、SPA、24小时健身房，早餐6:00起（利于早出发）。</li>
+<li><strong>参考价</strong>：约 <strong>5,000–6,700泰铢/晚</strong>（约$141–187，淡季/周一周五更便宜，起价约$104）。</li>
+<li><strong>优劣</strong>：机场接驳几乎无可挑剔、设施顶级；价格偏高但物有所值。<strong>最推荐给"周一早班机+想住得好"的情侣</strong>。</li>
+</ul>
+<h3 id="推荐二性价比之选mercure-bangkok-makkasan4">推荐二（性价比之选）：Mercure Bangkok Makkasan（4★）</h3>
+<ul>
+<li><strong>位置优势</strong>：紧邻<strong>Makkasan站ARL机场快线</strong>（步行几步），约30分钟直达素万那普；旁边就是Petchaburi地铁站(MRT)，去市区、Terminal 21、水门市场都方便。</li>
+<li><strong>舒适度</strong>：4★现代风，户外泳池、全日餐厅"The Station"可俯瞰市景、健身房、24小时前台。</li>
+<li><strong>参考价</strong>：约 <strong>2,500–4,000泰铢/晚</strong>（4★中端，具体随日期浮动）。</li>
+<li><strong>优劣</strong>：ARL近、性价比高、周边生活便利；设施不如5★但舒适够用。<strong>推荐给想省钱又要机场方便的情侣</strong>。</li>
+</ul>
+<h3 id="推荐三可选更市区sukhumvit-phrom-phong-一带如-phrom-phong-bts-沿线4酒店">推荐三（可选/更市区）：Sukhumvit / Phrom Phong 一带（如 Phrom Phong BTS 沿线4★酒店）</h3>
+<ul>
+<li><strong>位置优势</strong>：Sukhumvit是曼谷精华夜生活/餐饮/商场区（EmQuartier、EmSphere等），<strong>周日晚情侣氛围最好</strong>；去素万那普可走ARL（需先到Makkasan换乘）或Grab（约30–45分钟）。</li>
+<li><strong>舒适度</strong>：区域内4★酒店众多，选择丰富。</li>
+<li><strong>参考价</strong>：4★约 <strong>2,500–4,500泰铢/晚</strong>。</li>
+<li><strong>优劣</strong>：<strong>周日晚体验最佳</strong>（吃喝玩最热闹）；但周一早去机场不如ARL沿线直接——需Grab（早高峰有堵车风险）或换乘。<strong>若更看重周日晚的情侣氛围、可接受周一早打车，选这里</strong>。</li>
+</ul>
+<h3 id="选择建议">选择建议</h3>
+<div class="callout ct-tip">
+<p><span class="callout-title">💡 三选一怎么定</span></p>
+<ul>
+<li><strong>最省心、机场优先</strong> → <strong>Eastin Grand Phayathai</strong>（ARL直连、5★）。</li>
+<li><strong>省钱又要机场方便</strong> → <strong>Mercure Makkasan</strong>（ARL旁、4★、性价比）。</li>
+<li><strong>周日晚情侣氛围优先、可接受周一早打车</strong> → <strong>Sukhumvit/Phrom Phong</strong> 4★。</li>
+</ul>
+<p>综合"舒适 + 周一早班机省心"，<strong>首推 Eastin Grand Phayathai 或 Mercure Makkasan</strong>，因为周一11:05国际航班容不得早高峰堵车风险，住ARL沿线可一趟直达、时间最可控。</p>
+<p><strong>提示</strong>：酒店价格高度动态，请以实际入住日期在Booking/Agoda/Trip等平台查询确认。</p>
+</div>
+<p><strong>信息来源</strong>：<a href="https://ph.trip.com/hotels/landmark/th/airport-rail-link-makkasan-station.html">Makkasan站附近酒店(Trip.com)</a>｜<a href="https://www.booking.com/landmark/th/phayathai-airport-rail-link-station.en-gb.html">Phaya Thai站附近酒店(Booking)</a>｜<a href="https://www.kayak.com/Bangkok-Hotels-Eastin-Grand-Hotel-Phayathai.1070722500.ksp">Eastin Grand Phayathai 2026价格(KAYAK)</a>｜<a href="https://www.eastinhotelsresidences.com/eastingrandhotelphayathai">Eastin Grand Phayathai官网</a></p>
+<hr />
+<h2 id="关键提醒汇总">10. 关键提醒汇总</h2>
+<div class="callout ct-warning">
+<p><span class="callout-title">⚠️ 务必记牢</span></p>
+<ol type="1">
+<li><strong>两个机场不同</strong>：7/14入境 &amp; 7/15飞清迈都走<strong>廊曼DMK</strong>（曼谷北）；7/19飞抵 &amp; 7/20回国都走<strong>素万那普BKK</strong>（曼谷东）。相距30–40公里，勿走错。</li>
+<li><strong>TDAC入境卡</strong>：抵达前3天内（最早7/11）在官网 tdac.immigration.go.th <strong>免费</strong>在线办好，截图存手机。</li>
+<li><strong>7/14 廊曼→酒店</strong>：Grab/出租车走高速约350–500泰铢；预约Grab避排队。</li>
+<li><strong>7/15 去廊曼赶国内机</strong>：行李寄存酒店前台（免费最省事），约16:15出发、17:30到T2，提前2小时。</li>
+<li><strong>黏黏瀑布回程</strong>：Grab常拒载返程，<strong>务必包车往返</strong>（约2,500–3,000泰铢/日）。</li>
+<li><strong>7/19 过夜酒店优先选ARL沿线</strong>（Eastin Grand Phayathai 或 Mercure Makkasan），为周一早班机省心。</li>
+<li><strong>7/20早班国际机</strong>：目标08:15到BKK（提前3小时），ARL沿线酒店坐机场快线避周一早高峰；坐车则07:00前出发。</li>
+<li>建议购买含<strong>航班延误</strong>的旅行保险；全程备<strong>足额泰铢现金</strong>（双条车、tuk-tuk、瀑布登记、包车小费、寄存等多为现金）。</li>
+</ol>
+</div>
+<hr />
+<p><strong>说明</strong>：清迈段（第3–6节，CNX接驳、市内交通、黏黏瀑布/大象一日游）按要求保持不变；曼谷段已按修正后的行程（7/14入住Ratchathewi、7/15傍晚从廊曼飞清迈、7/19飞抵素万那普）全面重写，并新增第9节7/19过夜酒店推荐。</p>
+<p>主要浮动/不确定项已标注：打车费(Grab/出租车)随时段天气浮动、曼谷路况(尤其周一早高峰与雨季午后)、包车是否含油需向运营商确认、<strong>7/19曼谷过夜酒店待订</strong>（已给3组推荐，价格需按实际日期查询确认）。</p>
+</div></section>
+<section id="sec-safety" class="panel"><div class="md"><h1 id="泰国清迈-曼谷情侣出行实用与安全指南2026年7月1520日">泰国清迈 + 曼谷｜情侣出行实用与安全指南（2026年7月15–20日）</h1>
+<div class="callout ct-important">
+<p><span class="callout-title">❗ 关于本指南</span></p>
+<p>面向<strong>中国护照持有者</strong>的情侣，行程：<strong>7月15日抵达廊曼机场 (DMK) → 7月20日从素万那普机场 (BKK) 离境</strong>，正值泰国<strong>雨季 / 绿色季</strong>。 所有关键信息已用官方来源交叉核实。⚠️ 标注项为<strong>易变动、临行前（约7月上旬–中旬）需重新核实</strong>的事项，主要集中在<strong>签证 / TDAC / 汇率 / SIM 价格</strong>。 数据截至 <strong>2026年7月初</strong>。</p>
+</div>
+<h2 id="出发前-60-秒速览清单">出发前 60 秒速览清单</h2>
+<ul class="task-list">
+<li><label><input type="checkbox" />护照有效期自 2026-07-15 起 <strong>≥6个月</strong>（至少到 2027年1月中旬），有空白页、无破损</label></li>
+<li><label><input type="checkbox" />中国护照赴泰<strong>免签</strong>，5天行程无忧（停留上限远超）</label></li>
+<li><label><input type="checkbox" /><strong>7月12日之后</strong>、抵达前72小时内，在 <strong><code>tdac.immigration.go.th</code>（认准 .go.th）</strong> 免费填写 <strong>TDAC 数字入境卡</strong>，保存 QR 码到手机</label></li>
+<li><label><input type="checkbox" />随身备好<strong>回程电子机票行程单</strong>（7/20 离境）+ 建议现金人均约 20,000 泰铢等值（免签抽查标准）</label></li>
+<li><label><input type="checkbox" />手机装好 <strong>Grab</strong>；确认手机是否支持 eSIM（国行手机多不支持，落地买实体 SIM）</label></li>
+<li><label><input type="checkbox" />打包：<strong>一次性雨衣 + 折叠伞 + 速干衣 + 防滑鞋 + 驱蚊液(含DEET) + 矿泉水习惯 + 万能转换插头</strong></label></li>
+<li><label><input type="checkbox" />买好<strong>含医疗+紧急送返的旅行保险</strong>（若骑摩托，确认含"两轮/探险"条款）</label></li>
+<li><label><input type="checkbox" />存急救电话：旅游警察 <strong>1155</strong>、报警 <strong>191</strong>、急救 <strong>1669</strong></label></li>
+</ul>
+<hr />
+<h2 id="签证与入境中国护照">1. 签证与入境（中国护照）</h2>
+<h3 id="中泰互免签证永久有效2026年7月仍有效">1.1 中泰互免签证：永久有效，2026年7月仍有效 ✅</h3>
+<ul>
+<li>中泰《互免持普通护照人员签证协定》于 <strong>2024年3月1日正式生效</strong>，是<strong>永久性双边条约</strong>（非临时政策）。2026年7月仍然有效——中国公民持普通护照赴泰旅游<strong>无需提前办签证</strong>。</li>
+<li><strong>停留天数</strong>：你们同时受益于两套机制——
+<ol type="1">
+<li><strong>双边条约（永久保底）</strong>：单次停留 <strong>≤30天</strong>（每180天累计 ≤90天）。</li>
+<li><strong>单边免签升级（临时）</strong>：自2024年7月15日起临时上调至 <strong>≤60天</strong>。</li>
+</ol></li>
+<li><strong>你们只停留5天，无论30天还是60天上限都绰绰有余，此项无需担心。</strong></li>
+</ul>
+<div class="callout ct-warning">
+<p><span class="callout-title">⚠️ ⚠️ 需临行前核实：停留期政策正在收缩（不影响你们）</span></p>
+<p>2026年5月19日泰国内阁已批准把单边免签停留期从60天缩回30天，但<strong>须在《皇家公报》刊登后满15天才生效</strong>；截至2026年6月底尚未刊登生效，边境仍发60天。<strong>对5天行程零影响</strong>，仅供了解。</p>
+</div>
+<h3 id="护照有效期">1.2 护照有效期</h3>
+<ul>
+<li>护照有效期须自<strong>入境之日起 ≥6个月</strong>，护照无破损，建议保留一页空白页用于盖章。</li>
+</ul>
+<h3 id="tdac-泰国数字入境卡强制必办">1.3 TDAC 泰国数字入境卡（强制，必办）⚠️</h3>
+<ul>
+<li><strong>强制性</strong>：<strong>是</strong>。自2025年5月1日起，TDAC 取代旧纸质 TM.6 卡，<strong>所有非泰籍旅客</strong>（含免签、落地签、婴幼儿/儿童）入境必填。仅"过境不入境"旅客和机组免填。</li>
+<li><strong>唯一官方网址</strong>：<strong><code>https://tdac.immigration.go.th/</code></strong> —— 认准 <strong><code>.go.th</code></strong> 政府域名，<strong>没有官方 App</strong>。</li>
+<li><strong>何时填</strong>：<strong>抵达前3天（72小时）内</strong>（含抵达当日）。系统不接受更早提交。→ 你们7月15日抵达，<strong>最早7月12日可填</strong>。</li>
+<li><strong>如何填 / 费用</strong>：<strong>完全免费</strong>，约10分钟，需填护照信息、个人资料、航班信息、在泰住宿地址、抵达日期。核心信息（姓名/护照号/出生日期/国籍）<strong>提交后不可改</strong>，填错须重新提交一份。</li>
+<li><strong>填完拿到什么</strong>：系统将<strong>确认信息 + QR 码</strong>发到你邮箱。<strong>入境时向移民官出示 QR 码</strong>（手机屏幕即可，建议截图备份）。无 QR 码可能被航司拒绝登机或被拒入境。</li>
+<li><strong>廊曼机场 (DMK)</strong> 也在强制范围内，现场设有 Kiosk 和 Wi-Fi 可补填。<strong>每次入境都要重填一份。</strong></li>
+</ul>
+<div class="callout ct-danger">
+<p><span class="callout-title">🚨 ⚠️ TDAC 诈骗网站警示（务必看）</span></p>
+<p>泰国移民局警告：存在大量<strong>假冒收费网站</strong>（收费 $20–90 美元），据官方统计<strong>约10%入境者误用假网站</strong>，可能盗取个人信息。这些假站常排在搜索结果前列（付费广告）。<strong>切勿在非 <code>.go.th</code> 网站输入护照信息或付费。</strong></p>
+</div>
+<h3 id="入境抽查回程机票-资金证明">1.4 入境抽查：回程机票 + 资金证明</h3>
+<ul>
+<li><strong>回程/续程机票</strong>：免签入境时移民官有权要求出示<strong>已确认出票</strong>的离境机票（开口票不接受）。你们有明确往返行程，<strong>随身备好回程电子行程单</strong>（手机可出示）即可。⚠️ 2026年部分航司/口岸会在<strong>始发地登机前</strong>预先核查行程与资金，无法说明者可能被拒登机。</li>
+<li><strong>资金证明（免签通道标准）</strong>：<strong>人均 20,000 泰铢 / 每户 40,000 泰铢</strong>（约合人均 ¥4,000+ 或等值外币）。
+<ul>
+<li>⚠️ 注意：常听说的"人均10,000泰铢"是<strong>落地签(VOA)</strong>标准，中国旅客走<strong>免签</strong>通道对应的是 <strong>20,000/人</strong>。</li>
+<li>该要求2023年11月曾暂停，<strong>2025年5月起恢复执行</strong>，抽查趋严（已有旅客因无法出示被拒入境的实例）。</li>
+<li><strong>随机抽查、非人人必查</strong>，大机场多数游客反映从未被要求；但移民官有自由裁量权，被查到又无法出示则可能被拒。<strong>保险起见：随身携带等值现金（人均约20,000泰铢），辅以银行余额截图。</strong></li>
+</ul></li>
+</ul>
+<p><strong>来源（官方优先）</strong>： - <a href="https://cs.mfa.gov.cn/zggmcg/ljmdd/yz_645708/tg_647570/rjjl_647580/">中国外交部领事服务网（免签入境泰国）</a>｜<a href="https://cs.mfa.gov.cn/gyls/lsgz/fwxx/202504/t20250414_11594222.shtml">中外互免签证协定一览表</a> - <a href="https://th.china-embassy.gov.cn/eng/zgqz/va/">中国驻泰国大使馆·签证</a> - <a href="https://tdac.immigration.go.th/">泰国移民局 TDAC 官网</a>｜<a href="https://tdac.immigration.go.th/manual/en/faq.html">TDAC 官方 FAQ</a> - <a href="https://www.tatnews.org/2026/05/thai-cabinet-approves-revision-of-60-day-visa-exemption-scheme-pending-royal-gazette-publication/">泰国旅游局 TAT（60天签免调整）</a>｜<a href="https://www.bangkokpost.com/business/general/3257580/thailand-ends-60day-visafree-stay">Bangkok Post（60天免签结束）</a> - <a href="https://www.bangkokpost.com/thailand/general/3226524/immigration-warns-of-scam-digital-arrival-card-websites">Bangkok Post（TDAC 诈骗网站警告）</a>｜<a href="https://www.fragomen.com/insights/thailand-advisory-on-fraudulent-thailand-digital-arrival-card-websites.html">Fragomen 律所（TDAC 诈骗提示）</a> - <a href="https://www.thaiexaminer.com/thai-news-foreigners/2025/12/09/woman-denied-entry-to-thailand-on-proof-of-funds-criteria-rule-brought-back-in-may-to-tighten-security/">Thai Examiner（资金证明拒签实例）</a>｜<a href="https://www.thaiembassy.com/travel-to-thailand/thailand-entry-requirements">ThaiEmbassy.com（入境要求）</a></p>
+<hr />
+<h2 id="七月天气清迈-vs-曼谷">2. 七月天气（清迈 vs 曼谷）</h2>
+<div class="callout ct-important">
+<p><span class="callout-title">❗ 一句话</span></p>
+<p>7月是<strong>西南季风雨季 / 绿色季</strong>，两城都热且潮湿，但<strong>雨以午后/傍晚短时阵雨为主，很少整天下雨</strong>，上午通常晴好宜观光。<strong>关键利好：7月完全不是清迈烧芭季，空气清新</strong>——雾霾季是每年2–4月，你们避开了。</p>
+</div>
+<h3 id="气温降雨湿度对比">2.1 气温、降雨、湿度对比</h3>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>清迈 Chiang Mai</th>
+<th>曼谷 Bangkok</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>白天最高温</td>
+<td>约 <strong>31–32°C</strong></td>
+<td>约 <strong>32–34°C</strong>（更闷热）</td>
+</tr>
+<tr>
+<td>夜间最低温</td>
+<td>约 <strong>24°C</strong></td>
+<td>约 <strong>26–27°C</strong></td>
+</tr>
+<tr>
+<td>月降雨量</td>
+<td>约 <strong>160–200 mm</strong></td>
+<td>约 <strong>155–188 mm</strong></td>
+</tr>
+<tr>
+<td>平均雨天数</td>
+<td>约 <strong>16–19 天</strong></td>
+<td>约 <strong>13–16 天</strong></td>
+</tr>
+<tr>
+<td>湿度</td>
+<td>约 <strong>79–85%</strong></td>
+<td>约 <strong>75%</strong></td>
+</tr>
+<tr>
+<td>内涝风险</td>
+<td>较低（路面湿滑）</td>
+<td><strong>有短时积水风险</strong>（低洼、排水压力大）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="降雨规律重点">2.2 降雨规律（重点）</h3>
+<ul>
+<li><strong>两城都以午后/傍晚强阵雨为主</strong>（thundershower），单场约 <strong>30–90 分钟</strong>，雨停后天空更清澈。<strong>不是绵绵细雨、也不是整天下雨。</strong></li>
+<li>典型节奏："上午晴 → 午后/傍晚一场暴雨 → 傍晚转晴凉爽"。<strong>把户外景点/寺庙安排在上午更稳妥。</strong></li>
+<li><strong>曼谷内涝提示</strong>：强降雨可造成"及踝"积水，但通常10–20分钟退去。暴雨时<strong>走排水快的主干道，避开低洼小巷 (soi)</strong>。</li>
+</ul>
+<h3 id="空气质量7月清新放心呼吸">2.3 空气质量：7月清新，放心呼吸 ✅</h3>
+<ul>
+<li><strong>烧芭/雾霾季是每年2–4月（3月最严重）</strong>，届时清迈盆地 PM2.5 可飙到近 100 µg/m³（约 WHO 安全值20倍），2026年3月清迈曾一度全球污染排名第一（AQI 233）。</li>
+<li><strong>5月雨季一到，烟霾散去，PM2.5 骤降至 5–10 µg/m³。</strong> 7月 AQI 预期为"良（绿色）"级别，雨水持续冲刷空气，对户外活动无碍。</li>
+</ul>
+<p><strong>来源</strong>：<a href="https://weather-and-climate.com/Chiang-Mai-July-averages">清迈7月天气 Weather &amp; Climate</a>｜<a href="https://www.weather-atlas.com/en/thailand/chiang-mai-weather-july">Weather Atlas 清迈</a>｜<a href="https://weather-and-climate.com/Bangkok-July-averages">曼谷7月天气 Weather &amp; Climate</a>｜<a href="https://www.thailandhighlights.com/thailand/bangkok/weather-in-july">Thailand Highlights 曼谷7月</a>｜<a href="https://cnxlocal.com/chiang-mai-burning-season-essential-guide-travel-safety-tips-from-a-local/">清迈烧芭季指南 CNX Local</a>｜<a href="https://www.iqair.com/th-en/newsroom/chiang-mai-ranks-among-the-top-10-most-polluted-cities-during-thailand-s-burning-season-3-4-2026">IQAir 清迈污染(3月)</a></p>
+<hr />
+<h2 id="打包清单雨季-你们的活动定制">3. 打包清单（雨季 + 你们的活动定制）</h2>
+<h3 id="雨具与衣鞋">3.1 雨具与衣鞋</h3>
+<ul>
+<li><strong>雨具</strong>：<strong>一次性雨衣/雨披优先于伞</strong>（热带暴雨常伴风，雨衣能腾出双手护住背包）+ 折叠伞（遮阳兼挡小雨）+ <strong>手机防水袋</strong>。泰国 <strong>7-Eleven 到处有卖雨衣雨伞</strong>（约50–150泰铢），无需从国内背太多。</li>
+<li><strong>衣物</strong>：<strong>速干、透气、轻薄</strong>面料为王（干得快、防霉）；备一件<strong>薄长袖</strong>（清迈夜间偏凉、防晒、进空调场所/寺庙叠穿）；泳衣。</li>
+<li><strong>鞋</strong>：<strong>防水/速干 + 防滑</strong>（雨季寺庙台阶、湿石、船板都很滑）。建议<strong>带绑带的凉鞋/两栖鞋 + 一双速干运动鞋</strong>换着穿，<strong>避免光滑鞋底</strong>。</li>
+<li><strong>防潮</strong>：带几包干燥剂、速干毛巾。</li>
+</ul>
+<h3 id="分场景专项">3.2 分场景专项</h3>
+<div class="callout ct-tip">
+<p><span class="callout-title">💡 大象营（清迈）</span></p>
+<ul>
+<li><strong>穿旧衣、深色衣</strong>（象泥/食物渍洗不掉），<strong>备一套换洗衣物 + 毛巾 + 泳衣</strong>（河边给大象洗澡）。很多营地会<strong>提供传统 Karen 服装</strong>换穿，自己衣服可能没那么脏，但备件 T 恤保险。</li>
+<li><strong>穿可下水的防滑鞋/凉鞋</strong>（河床多石，勿光脚；鞋要能固定，别被水冲走），别穿人字拖走路。</li>
+<li>带防晒、驱蚊、帽子、墨镜、防水袋装湿衣。<strong>别喷香水</strong>（会惊扰大象），<strong>别从大象背后靠近</strong>。</li>
+</ul>
+</div>
+<div class="callout ct-tip">
+<p><span class="callout-title">💡 寺庙 / 大皇宫（曼谷 + 清迈）</span></p>
+<ul>
+<li><strong>过肩过膝</strong>是铁律：<strong>男</strong>——有袖上衣 + 长裤或过膝短裤；<strong>女</strong>——有袖上衣 + 过膝裙/长裤。避免无袖、背心、短裤、短裙、破洞裤、透视装、紧身legging。</li>
+<li><strong>大皇宫 / 玉佛寺 / 素贴山寺 是最严格的一档（零容忍）</strong>：女士<strong>最好直接穿有袖衬衫（不要只靠披肩遮肩），下身过膝甚至遮脚踝</strong>——大皇宫常不接受用披肩临时遮肩，还可能要求遮脚踝。</li>
+<li><strong>随身带一条轻薄披肩/纱笼</strong>几乎能解决一切着装问题；忘带也别慌，大皇宫门口有租借（约30泰铢/件+押金），门外小摊有卖"大象裤"（约100–150泰铢）。</li>
+<li><strong>进殿脱鞋</strong>——选<strong>易穿脱的鞋</strong>（会反复脱）。曼谷炎热，别穿两层，进大皇宫前只穿一层，逛完再加衣去别处。</li>
+</ul>
+</div>
+<h3 id="药与防护">3.3 药与防护</h3>
+<ul>
+<li><strong>驱蚊液（雨季登革热，重点）</strong>：带<strong>含 20–30% DEET</strong> 或 <strong>20% Picaridin</strong> 的旅行装（登革热蚊子<strong>白天也咬</strong>，早上日出后2小时和日落前几小时最凶）。落地后可在任意 7-Eleven 补货：<strong>Soffell</strong>（约45–89泰铢，温和）、<strong>Sketolene Shield</strong>（DEET浓度更高，适合丛林/瀑布/傍晚）。高湿易出汗，<strong>每4–6小时补涂</strong>。</li>
+<li><strong>防晒</strong>：泰国 UV 指数常达 11–12（极高），阴天也要防。⚠️ <strong>去海洋国家公园须用"珊瑚友好"矿物防晒（含氧化锌/二氧化钛）</strong>——泰国海洋国家公园<strong>立法禁用</strong>含 oxybenzone、octinoxate 等成分的防晒，最高罚 <strong>100,000 泰铢</strong>（2025年执法加强）。别只信"reef friendly"字样，要看成分表。<strong>顺序：先涂防晒，等约20分钟，再涂驱蚊。</strong></li>
+<li><strong>常用药</strong>：退烧止痛用<strong>对乙酰氨基酚（paracetamol）</strong>，⚠️ 疑似登革热时<strong>忌用阿司匹林/布洛芬</strong>（增加出血风险）；肠胃药、创可贴、晕车药、个人处方药。泰国药房 <strong>Boots / Watsons</strong>（各大商场）可买常用药。</li>
+</ul>
+<h3 id="电源转换插头">3.4 电源转换插头</h3>
+<ul>
+<li><strong>泰国：220V / 50Hz</strong>；插座为 <strong>A / B / C / F / O 型</strong>混用。</li>
+<li><strong>好消息（中国电器高度兼容）</strong>：中国常用的 <strong>A型（扁脚）和 C型（圆脚）插头可直接插入泰国插座</strong>，<strong>电压 220V 一致、频率同为 50Hz，无需变压器</strong>。</li>
+<li>中国的 <strong>I型（斜三脚）插头</strong>需一个简单转换头。<strong>建议带一个万能转换插头</strong>即可（兼顾泰国及以后行程）。7-Eleven/FamilyMart 也有卖（约50–150泰铢）。</li>
+<li>高功率电器（吹风机等）看铭牌，标 <code>Input 100–240V</code> 即可安全使用。</li>
+</ul>
+<p><strong>来源</strong>：<a href="https://www.trip.com/guide/info/thailand-plug.html">泰国插座电压 Trip.com</a>｜<a href="https://www.thingstopack.com/en/travel-adapter/thailand/china">中国→泰国转换头 ThingsToPack</a>｜<a href="https://elephantjunglesanctuary.com/blog/what-to-wear-to-elephant-sanctuary/">大象营穿搭 Elephant Jungle Sanctuary</a>｜<a href="https://yourthaiguide.com/dress-code-for-grand-palace-and-temples-in-and-around-bangkok/">大皇宫/寺庙着装 Your Thai Guide</a>｜<a href="https://thairanked.com/en/blogs/thai-temple-dress-code-guide/">泰国寺庙着装 Thairanked</a>｜<a href="https://thairanked.com/en/rankings/best-mosquito-repellent-thailand/">泰国驱蚊液 Thairanked</a>｜<a href="https://phuket-tropic-tours.com/news/zapret-sunscreen-thailand">珊瑚友好防晒禁令 Phuket Tropic Tours</a></p>
+<hr />
+<h2 id="安全与常见骗局">4. 安全与常见骗局</h2>
+<div class="callout ct-success">
+<p><span class="callout-title">✅ 总体治安：安全，情侣出行放心</span></p>
+<p>泰国是东南亚对游客最安全的目的地之一，美国国务院对大部分地区维持 <strong>Level 1（正常防范）</strong>（与法德同级），年接待 3000万+ 游客，针对游客的暴力犯罪罕见。主要风险是<strong>小骗局、摩托车事故、扒手</strong>。（仅<strong>最南部 Yala/Pattani/Narathiwat 三府</strong>因分离主义冲突为高风险，远离曼谷/清迈，与你们无关。）</p>
+</div>
+<h3 id="交通宰客突突车-出租车">4.1 交通宰客（突突车 / 出租车）</h3>
+<ul>
+<li>突突车<strong>无表全靠议价</strong>，对游客极易抬价；曼谷出租车常<strong>拒绝打表</strong>。<strong>上车前务必谈好价或要求打表（turn on the meter）</strong>，不肯就换一辆。</li>
+<li>参考：曼谷市中心短途突突车不应超过 <strong>100–150泰铢</strong>，若报500泰铢即是宰客。</li>
+<li><strong>对策</strong>：景点门口排队的车往往不打表报高价，<strong>别坐第一辆</strong>；优先用 <strong>Grab</strong>（见第5节）。</li>
+</ul>
+<h3 id="大皇宫今天关门骗局-宝石裁缝骗局曼谷经典">4.2 "大皇宫今天关门"骗局 + 宝石/裁缝骗局（曼谷经典）</h3>
+<ul>
+<li><strong>套路</strong>：门口有衣着体面、态度友好的人告诉你"大皇宫今天因皇家仪式关门 / 只对泰国人开放"，然后热心提议用突突车带你去"特别的寺庙"，最终把你拉到<strong>宝石店或裁缝店</strong>高价购物；常谎称"政府一日特卖"。</li>
+<li><strong>真相</strong>：<strong>大皇宫238年历史里只对公众关闭过3次</strong>；泰国政府和王室<strong>从不经营任何珠宝/宝石店</strong>。所谓"宝石可带回国转卖赚差价"是骗局，"宝石"多为玻璃或合成材料，一文不值。</li>
+<li><strong>对策</strong>：<strong>不理会门口任何搭讪，自己走到入口核实</strong>（或查 Google Maps/官网营业时间）；坚持直达不绕路、不接受额外购物行程。</li>
+</ul>
+<h3 id="水上摩托-jet-ski-摩托车租赁假损坏索赔骗局">4.3 水上摩托 (jet ski) / 摩托车租赁"假损坏索赔"骗局</h3>
+<ul>
+<li><strong>套路</strong>：租来的车早有旧损，或商家在你还车后自行制造划痕，然后声称你损坏、索要 <strong>10,000–50,000泰铢</strong>（甚至更高）赔偿，<strong>扣押你的护照/押金</strong>，有时还叫上"同伙警察"施压、甚至威胁恐吓。</li>
+<li><strong>对策</strong>：
+<ul>
+<li><strong>绝不押原件护照</strong>（护照是政府财产，被当筹码后果严重）。</li>
+<li><strong>租前用视频+照片完整记录车况</strong>（每个角度、水下部分，有商家在场并口头确认无损）。</li>
+<li><strong>只选口碑好/酒店推荐的正规商家</strong>，看在线评价，签书面协议。</li>
+<li>出问题打<strong>旅游警察 1155</strong>。<strong>最稳妥：海边水上摩托干脆不租。</strong></li>
+</ul></li>
+</ul>
+<h3 id="清迈租摩托车注意事项">4.4 清迈租摩托车注意事项</h3>
+<ul>
+<li><strong>证件</strong>：需<strong>本国摩托车驾照 + 国际驾照(IDP) 且带"A"类（摩托车）签注</strong>，<strong>必须出发前在本国车管/汽车协会办好</strong>（泰国境内办不了）。⚠️ 常见坑：默认发的 IDP 多为 B类（汽车），<strong>办理时要专门要求摩托车签注</strong>；无摩托签注属无证驾驶，警察可开罚单。</li>
+<li><strong>头盔</strong>：<strong>强制、单独可罚</strong>，务必全程戴。</li>
+<li><strong>警察设卡查证</strong>：清迈古城护城河主干道（如 Thapae 门、Huay Kaew 路、Canal 路）常设卡查驾照/头盔，<strong>无 IDP/无头盔当场罚约 500–1,000泰铢</strong>。⚠️ 2026年<strong>不要在路边直接给现金"私了"</strong>（对试图路边塞钱的打击加强）——按流程是被没收钥匙/开罚单，去警察局交官方罚款拿收据再取车。</li>
+<li><strong>押金</strong>：正规店只收<strong>现金押金1,000–3,000泰铢 + 护照复印件</strong>；<strong>坚持要押原件护照的店，掉头就走</strong>。租前<strong>拍视频记录已有划痕</strong>。</li>
+<li><strong>保险</strong>：⚠️ <strong>无有效驾照骑行出事故，多数旅行保险不赔</strong>——务必确认保单含"两轮/摩托"条款。</li>
+</ul>
+<h3 id="扒手-夜生活-下药">4.5 扒手 / 夜生活 / 下药</h3>
+<ul>
+<li><strong>扒手</strong>：多在人群密集处（市场、公交、夜市），有的用<strong>刀片划包</strong>、团伙分工（一人分散注意力）。<strong>别把钱包放后裤袋</strong>，贵重物品贴身收好、少带大量现金。</li>
+<li><strong>下药 (drink spiking)</strong>：夜生活区真实存在，常followed by 盗窃/性侵。典型是"友善陌生人（常是年轻女性）搭讪→饮料被下药"。<strong>不接受陌生人递的饮品，饮料不离视线，手盖杯口</strong>。</li>
+<li><strong>女性/情侣夜间</strong>：夜里走照明良好的路、别落单；深夜<strong>用 Grab/Bolt 叫车（有 GPS 记录）</strong>而非街边随意拦车；与国内亲友共享行程/实时位置。</li>
+</ul>
+<p><strong>来源</strong>：<a href="https://th.usembassy.gov/common-scams-to-avoid/">美国驻泰使馆·常见骗局</a>｜<a href="https://www.thailandroutes.com/bangkok-scams-the-complete-2025-guide-to-tourist-traps-and-how-to-stay-safe/">Thailand Routes 曼谷骗局2025</a>｜<a href="https://www.emerald-buddha.com/scams">玉佛寺官网·突突车骗局</a>｜<a href="https://www.byklo.rent/en/blog/motorbike-rental-checklist-thailand/">清迈摩托车租赁/查证 Byklo</a>｜<a href="https://www.bikago.com/blog/chiangmai-scooter-rental-mistakes-to-avoid-in-2025/">Bikago 清迈租车避坑2025</a>｜<a href="https://www.smartraveller.gov.au/destinations/asia/thailand">澳洲 Smartraveller·泰国</a>｜<a href="https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/thailand-travel-advisory.html">美国务院·泰国旅行提示</a></p>
+<hr />
+<h2 id="交通-app-与叫车">5. 交通 App 与叫车</h2>
+<h3 id="grab头号推荐出发前装好">5.1 Grab（头号推荐，出发前装好）</h3>
+<ul>
+<li>泰国最大叫车/外卖平台，<strong>曼谷、清迈全覆盖，24/7</strong>。<strong>上车前显示固定价、无需砍价</strong>，GPS 全程记录、司机实名，可绑卡或<strong>现金支付</strong>（中国卡若绑不上就选现金）。</li>
+<li>清迈参考价：GrabBike(摩托) 40–80泰铢｜GrabCar(轿车) 80–150泰铢｜市区约5km 约80–120泰铢。曼谷约5km 约100–150泰铢。</li>
+<li>⚠️ 曼谷晚高峰(17:00–19:00)或下雨会加价50–80%，等15分钟通常回落。</li>
+</ul>
+<h3 id="bolt-indrive更便宜的替代一起装">5.2 Bolt / inDrive（更便宜的替代，一起装）</h3>
+<ul>
+<li>均可用于曼谷、清迈。<strong>Bolt</strong> 界面类似 Grab，常便宜10–35%（清迈司机较少、等待稍久，<strong>泰国要付现金</strong>）；<strong>inDrive</strong> 是"你出价、司机接单"模式，会砍价往往最便宜（司机最少、多现金）。<strong>多装几个 App 每次比价。</strong></li>
+</ul>
+<h3 id="曼谷-bts-天铁-mrt-地铁避堵首选">5.3 曼谷 BTS 天铁 / MRT 地铁（避堵首选）</h3>
+<ul>
+<li><strong>BTS/MRT</strong> 单程约 <strong>25–40泰铢</strong>，运营约06:00–24:00。<strong>素万那普机场可坐 Airport Rail Link 机场快线</strong>进城，比打车便宜快捷、免机场附加费和高速费。</li>
+<li><strong>Rabbit 兔子卡</strong>可刷 BTS（⚠️ 不能刷 MRT 蓝/紫线和机场快线）。短途游客买单程票也方便。</li>
+</ul>
+<h3 id="曼谷出租车metered-taxi">5.4 曼谷出租车（metered taxi）</h3>
+<ul>
+<li>起步价 <strong>35泰铢</strong>（含首1公里），此后约 6.5泰铢/公里，堵车按时间计。⚠️ 起步价或已上调至40泰铢，可现场确认。</li>
+<li><strong>机场打车</strong>：从官方出租车站上车，打表费之外<strong>另加50泰铢机场附加费 + 高速过路费</strong>。</li>
+<li>遇拒载/纠纷打 <strong>1155</strong>。</li>
+</ul>
+<h3 id="清迈双条车红色-songthaew-红车市内主力">5.5 清迈双条车（红色 Songthaew / 红车，市内主力）</h3>
+<ul>
+<li><strong>怎么坐</strong>：站路边<strong>手掌朝下向下挥手招停</strong> → <strong>告诉司机目的地</strong>（司机多说泰语，<strong>用 Google Maps 显示目的地</strong>或备泰文地址） → 到站前<strong>按车厢蜂鸣器</strong> → <strong>下车付现金</strong>（备小面额和硬币）。</li>
+<li><strong>价格</strong>：<strong>古城内短途每人 20–40泰铢（常见固定30泰铢/人）</strong>；机场往返约120泰铢；素贴山拼车约60泰铢/人。</li>
+<li>⚠️ <strong>避宰关键</strong>：<strong>古城内标准短途不必主动问价</strong>，按惯例付30泰铢即可；<strong>较远/非标准路程（机场、素贴山）上车前先谈好价</strong>，觉得贵可礼貌还价或等下一辆。<strong>先用 Grab 查该段大概价</strong>做基准——若双条车报价≥Grab，不如直接叫 Grab。</li>
+</ul>
+<h3 id="突突车体验为主">5.6 突突车（体验为主）</h3>
+<ul>
+<li>无表全靠砍价，同距离通常比出租车贵，<strong>上车前谈好价</strong>。更多是体验项目，省心省钱用 Grab 或双条车。</li>
+</ul>
+<p><strong>来源</strong>：<a href="https://www.thatbangkoklife.com/using-grab-in-thailand/">That Bangkok Life·Grab指南2026</a>｜<a href="https://www.thethailandlife.com/ride-hailing-apps-thailand">The Thailand Life·叫车App对比</a>｜<a href="https://www.thailandroutes.com/how-to-use-songthaews-in-chiang-mai-a-complete-guide-to-local-red-truck-transportation/">Thailand Routes·清迈双条车指南</a>｜<a href="https://suvarnabhumi.airportthai.co.th/service/transportation/detail/834">素万那普机场官方费率</a>｜<a href="https://thaiest.com/blog/bangkok-bts-skytrain-rabbit-card">Thaiest·曼谷BTS兔子卡</a></p>
+<hr />
+<h2 id="网络通讯sim-esim">6. 网络通讯（SIM / eSIM）</h2>
+<div class="callout ct-warning">
+<p><span class="callout-title">⚠️ ⚠️ 中国手机 eSIM 兼容性（先确认再决定）</span></p>
+<p><strong>国行手机普遍不支持 eSIM</strong>（国行 iPhone 无 eSIM；国行安卓多无 eSIM 硬件，同型号国际版才支持）。<strong>若用国行手机，优先落地机场买实体旅游 SIM</strong>，不要贸然买 eSIM。买 eSIM 前务必在手机"设置"确认支持。</p>
+</div>
+<h3 id="实体-sim-vs-esim">6.1 实体 SIM vs eSIM</h3>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>实体旅游 SIM</th>
+<th>eSIM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>国行手机</td>
+<td>✅ 通用（推荐）</td>
+<td>❌ 多不支持</td>
+</tr>
+<tr>
+<td>落地即用</td>
+<td>机场柜台当场装好</td>
+<td>需提前买、存激活码</td>
+</tr>
+<tr>
+<td>本地号码</td>
+<td>✅ 有</td>
+<td>多数无</td>
+</tr>
+<tr>
+<td>购买</td>
+<td>需<strong>护照</strong>登记</td>
+<td>线上购买</td>
+</tr>
+</tbody>
+</table>
+<h3 id="三大运营商-机场购买">6.2 三大运营商 + 机场购买</h3>
+<ul>
+<li><strong>AIS</strong>（覆盖最广，去清迈周边山区/大象营首选）、<strong>TrueMove H</strong>（速度最快）、<strong>dtac</strong>（现属 True，预算型）。⚠️ 城市信号都好，<strong>偏远山区/大象营可能弱，AIS 相对最稳</strong>。</li>
+<li><strong>DMK 与 BKK 机场都有三大运营商 24/7 柜台</strong>，帮你装好、落地即有网。⚠️ <strong>必带护照</strong>（2025年8月起买 SIM 强制实名登记）。机场比市区略贵但省心。</li>
+</ul>
+<h3 id="套餐价格-会变出发前核对">6.3 套餐价格（⚠️ 会变，出发前核对）</h3>
+<ul>
+<li>旅游 SIM 约 <strong>299–899泰铢</strong>（大套餐到1,199+）。<strong>dtac</strong> 约349泰铢(10天)起、多含<strong>无限流量</strong>+本地无限通话；<strong>AIS/True</strong> 类似。</li>
+<li><strong>你们5天行程建议</strong>：一张 <strong>8–10天无限流量套餐（约300–450泰铢）</strong> 足够，两人各买一张，或一张开热点共享。</li>
+<li>eSIM（仅限支持的手机）：<strong>Saily / Airalo</strong> 固定流量套餐最划算（如 5GB/30天约 $8–9）；Holafly 无限流量但偏贵。</li>
+</ul>
+<p><strong>来源</strong>：<a href="https://www.trip.com/guide/phone/thailand-sim-card.html">Trip.com·泰国SIM卡2026</a>｜<a href="https://saily.com/blog/thailand-sim-card-for-tourists/">Saily·泰国SIM卡在哪买</a>｜<a href="https://www.true.th/en/prepaid/sim/tourist">True-dtac官网·旅游SIM</a>｜<a href="https://travelsimasia.com/blogs/thailand-guides/thailand-esim-prices-2026">TravelSimAsia·泰国eSIM价格2026</a>｜<a href="https://tradingshenzhen.com/en/blog/why-don-t-chinese-smartphones-have-an-esim-n8">为何中国手机没eSIM Trading Shenzhen</a></p>
+<hr />
+<h2 id="货币与支付">7. 货币与支付</h2>
+<div class="callout ct-important">
+<p><span class="callout-title">❗ ⚠️ 汇率每天波动，以下为2026年7月初参考值，交易前查实时</span></p>
+<ul>
+<li><strong>1 CNY ≈ 4.90 THB</strong>（¥1 ≈ ฿4.90）；<strong>1 THB ≈ 0.204 CNY</strong></li>
+<li><strong>心算</strong>：฿100 ≈ ¥20；฿1,000 ≈ ¥204</li>
+<li>对美元参考：约 <strong>1 USD ≈ 32.5 THB</strong>（换汇比价用）</li>
+</ul>
+</div>
+<h3 id="换汇superrich-最好机场最差">7.1 换汇：SuperRich 最好，机场最差</h3>
+<ul>
+<li><strong>SuperRich</strong>（连锁换汇）汇率最佳，<strong>有橙色与绿色两家，绿色通常略优</strong>；其它口碑好的有 Vasu Exchange、K79。</li>
+<li>⚠️ <strong>机场和国内换汇最差</strong>（差市场价5–10%）。<strong>实操</strong>：国内/机场只换少量应急（打车、买SIM），<strong>大头到市区 SuperRich 换</strong>；带<strong>大面额、干净整洁的美元</strong>汇率更好。</li>
+</ul>
+<h3 id="atm-取现外卡手续费约-220泰铢笔">7.2 ATM 取现：外卡手续费约 220泰铢/笔</h3>
+<ul>
+<li>泰国几乎所有 ATM 对外卡收<strong>固定约220泰铢/笔</strong>（约¥45，泰国银行方收取、无法避免，与本国银行手续费另算；个别银行约150–250）。<strong>AEON 银行 ATM 最低（约150泰铢）</strong>。</li>
+<li><strong>省钱</strong>：因是固定费，<strong>一次取足</strong>（取满占比才低）；⚠️ <strong>务必拒绝 DCC</strong>——ATM 问"是否按本国货币计费"时一律选<strong>"以泰铢(THB)计费"</strong>（DCC 加价差3–5%）。</li>
+</ul>
+<h3 id="刷卡接受度-promptpay-现金场景">7.3 刷卡接受度 + PromptPay + 现金场景</h3>
+<ul>
+<li><strong>可刷卡</strong>：大商场、酒店、连锁餐厅/便利店、大型景点。<strong>能刷卡尽量用免外币手续费的卡</strong>（如 Wise/Revolut）。</li>
+<li><strong>PromptPay</strong>：泰国国民扫码支付，<strong>需本地银行账户，短期游客用不了</strong>；你会常看到商家出示其收款码，了解即可。<strong>支付宝/微信</strong>部分面向游客商家可用，但覆盖有限，<strong>以现金为主、扫码为辅</strong>。</li>
+<li><strong>现金为主的场景</strong>：夜市 / 路边摊 / <strong>清迈双条车</strong> / 突突车 / 传统出租车 / 寺庙门票与功德箱 / 街边按摩 / 小民宿。<strong>务必随身备小面额纸币和硬币。</strong></li>
+</ul>
+<p><strong>来源</strong>：<a href="https://wise.com/us/currency-converter/cny-to-thb-rate">Wise·CNY/THB汇率</a>｜<a href="https://www.xe.com/currencyconverter/convert/?Amount=1&amp;From=THB&amp;To=CNY">XE·THB/CNY</a>｜<a href="https://thaiguys.link/en/tips/bangkok-currency-exchange">ThaiGuys·SuperRich绿vs橙</a>｜<a href="https://go2-thailand.com/practical-info/atm-money/">go2-thailand·ATM与货币2026</a>｜<a href="https://newasialiving.com/the-baht-trap-why-a-1000-baht-transaction-can-cost-you-10-extra/">NewAsiaLiving·泰国支付实测</a></p>
+<hr />
+<h2 id="文化礼仪">8. 文化礼仪</h2>
+<h3 id="合十礼-wai">8.1 合十礼 (Wai)</h3>
+<ul>
+<li><strong>双手合十于胸前、指尖朝上、微微低头</strong>。是<strong>分等级</strong>的礼——晚辈/下位者先行，长辈/上位者回礼。<strong>作为游客，别人对你行 wai 时回一个即可</strong>（合十胸前+点头）。</li>
+<li><strong>不必对儿童、便利店店员、街边摊贩、服务员行 wai</strong>（微笑 + "khob khun krap/ka"谢谢即可）；<strong>手里拿东西时不 wai</strong>（先放下，或以微笑点头代替）。<strong>僧侣和国王不回 wai</strong>。别怕不标准，泰国人看重的是心意。</li>
+</ul>
+<h3 id="尊重王室-冒犯君主罪刑法112条-极其严重">8.2 尊重王室 / 冒犯君主罪（刑法112条）—— 极其严重 ⚠️</h3>
+<div class="callout ct-danger">
+<p><span class="callout-title">🚨 ⚠️ 这是最需警惕的法律红线</span></p>
+<ul>
+<li>刑法112条："诋毁、侮辱或威胁国王、王后、王储或摄政者，处3–15年监禁"，且<strong>按项累加</strong>（多项可累计数十年）。<strong>执法极严，明确适用于外国人</strong>（含在境外/网上的言论），已有瑞士、澳、美等国公民被判刑入狱的实例。</li>
+<li><strong>任何私人</strong>都可到警局举报，警方<strong>必须立案调查</strong>；起诉率约99%、定罪率约80%，保释常被拒（外国人被视为潜逃风险）。范围极广——公开言论、书籍、<strong>社交媒体点赞/转发</strong>都可能触发。</li>
+<li><strong>实操红线</strong>：❌ 不对王室发表任何负面评论/玩笑（公开或网上）；❌ 不踩踏印有国王头像的<strong>硬币/钞票</strong>；❌ 不损毁任何王室图像；✅ 影院放皇家颂歌时<strong>起立</strong>；✅ 不确定是否违禁的内容就<strong>不分享</strong>。</li>
+</ul>
+</div>
+<h3 id="寺庙礼仪">8.3 寺庙礼仪</h3>
+<ul>
+<li><strong>进殿脱鞋</strong>（看门口鞋堆）；<strong>过肩过膝</strong>着装（详见3.2）。</li>
+<li><strong>女性绝不可触碰僧侣、不可直接递物到僧侣手上</strong>（需放在布/桌上让其取，或经"僧侣助手"转交）；女性不与僧侣并坐、公交上遇僧侣不坐其旁、路上为僧侣让路。</li>
+<li><strong>头要低于佛像/僧侣</strong>，不背对佛像自拍，不爬坐佛像或佛塔结构，绕塔<strong>顺时针</strong>走。拍僧侣需尊重、保持距离、不用闪光、不摆拍。</li>
+</ul>
+<h3 id="脚-foot-与头-head-禁忌">8.4 脚 (foot) 与头 (head) 禁忌</h3>
+<ul>
+<li><strong>脚是最低贱的</strong>：❌ 不用脚指人/指佛像，❌ 脚底不朝人/佛像，❌ 不跨过他人或食物，❌ 脚不放桌椅上。席地而坐时<strong>把脚收到身后或侧边</strong>。不慎用脚碰到人要立即道歉。</li>
+<li><strong>头最神圣</strong>：❌ 不摸别人头（<strong>包括小孩</strong>）。</li>
+</ul>
+<h3 id="其它">8.5 其它</h3>
+<ul>
+<li><strong>室内脱鞋</strong>（寺庙、民宅、部分店铺）。</li>
+<li><strong>公共场合别大声争吵/发怒</strong>——"丢脸(losing face)"，即使你有理也已输；<strong>保持冷静、轻声、微笑</strong>解决问题。</li>
+<li><strong>指人用平摊手掌（掌心向下）</strong>，别用食指；招呼人也掌心向下摆手（西式勾食指"过来"很不礼貌，只用于动物）。</li>
+</ul>
+<p><strong>来源</strong>：<a href="https://www.visitthailandtoday.com/guides/thailand-cultural-etiquette">Thailand 文化礼仪指南2026 VisitThailandToday</a>｜<a href="https://go2-thailand.com/travel-guides/thai-etiquette-dos-donts/">go2-thailand·泰式礼仪2026</a>｜<a href="https://www.centarahotelsresorts.com/journal/sacred-spaces-how-to-behave-and-dress-in-a-buddhist-temple">Centara·寺庙着装与礼仪</a>｜<a href="https://en.wikipedia.org/wiki/L%C3%A8se-majest%C3%A9_in_Thailand">Lèse-majesté in Thailand（维基）</a>｜<a href="https://www.thaizer.com/thailands-lese-majeste-laws/">Thaizer·冒犯君主法</a></p>
+<hr />
+<h2 id="健康与紧急">9. 健康与紧急</h2>
+<h3 id="紧急电话存进手机">9.1 紧急电话（存进手机）</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>用途</th>
+<th>号码</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>旅游警察</strong></td>
+<td><strong>1155</strong></td>
+<td>24/7 英语，游客首选：报案、纠纷、失窃、护照丢失。也有 "i lert u" App</td>
+</tr>
+<tr>
+<td>报警（综合）</td>
+<td><strong>191</strong></td>
+<td>类似110/911，接线员未必说英语</td>
+</tr>
+<tr>
+<td>急救 / 医疗</td>
+<td><strong>1669</strong></td>
+<td>全国急救，城市响应约10分钟，偏远30分钟+</td>
+</tr>
+<tr>
+<td>火警</td>
+<td><strong>199</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>TAT 旅游热线</td>
+<td><strong>1672</strong></td>
+<td>旅游咨询</td>
+</tr>
+</tbody>
+</table>
+<div class="callout ct-tip">
+<p><span class="callout-title">💡 城市里医疗急症，直接打私立医院往往比 1669 更快（见下）。</span></p>
+</div>
+<h3 id="可靠医院均为-jci-认证有国际部中文翻译">9.2 可靠医院（均为 JCI 认证、有国际部/中文翻译）</h3>
+<p><strong>清迈</strong> - <strong>Bangkok Hospital Chiang Mai</strong>（曼谷清迈医院）：地址 88/8-9 Moo 6, Nong Pa Khrang, Mueang, Chiang Mai 50000（清迈-南邦高速旁，距机场约15分钟）。电话 <strong>+66 52 089 888 / 1719</strong>。122床 JCI 三级医院，国际部提供<strong>中文/英文</strong>等翻译，可直接对接国际保险。 - <strong>Chiangmai Ram Hospital</strong>（清迈兰医院）：地址 8 Boon Rueangrit Rd, Sriphum, Mueang, Chiang Mai 50200（古城附近）。电话 <strong>+66 52 004 699</strong>。JCI 认证，翻译含<strong>中文/英文</strong>等。</p>
+<p><strong>曼谷</strong> - <strong>Bumrungrad International Hospital</strong>（康民国际医院，最知名）：地址 33 Sukhumvit Soi 3 (Nana Nua), Wattana, Bangkok 10110（距 BKK 机场约30分钟）。电话 <strong>+66 2066 8888</strong>。580床，年接待190国110万+患者，亚洲首家 JCI，国际部含<strong>中文</strong>翻译、签证与空中救护协助。 - <strong>Samitivej Sukhumvit Hospital</strong>（三美泰医院）：地址 133 Sukhumvit 49, Klongtan Nua, Vadhana, Bangkok 10110（近 BTS Thong Lor 站，距 BKK 约40–50分钟）。电话总机同 BDMS 集团。275床，JCI（2007起），约40%为国际患者，翻译含<strong>中文/英文/日/阿拉伯语</strong>，含机场接送。</p>
+<h3 id="旅行保险务必买">9.3 旅行保险（务必买）</h3>
+<ul>
+<li>泰国私立医院质量高但对外国人<strong>较贵、通常需先自费再报销</strong>，美国医保等不被接受。</li>
+<li><strong>建议保额</strong>：<strong>医疗 ≥$50,000 + 紧急医疗送返 ≥$100,000</strong>（去偏远/海岛更高）。</li>
+<li>⚠️ <strong>若打算骑摩托/水上摩托等</strong>，务必确认保单含<strong>"两轮/探险活动"条款</strong>，否则出事故常拒赔；<strong>无有效驾照骑行也多不赔</strong>。</li>
+</ul>
+<h3 id="登革热雨季重点防蚊">9.4 登革热（雨季重点防蚊）</h3>
+<ul>
+<li>泰国<strong>登革热全年有、雨季（约5–10月，6–9月高峰）加剧</strong>，蚊媒（Aedes 伊蚊）；<strong>白天也咬</strong>（日出后2小时、日落前几小时最凶）。无普遍疫苗保护（泰国有 Qdenga，但需提前接种；行前可咨询旅行门诊）。</li>
+<li><strong>症状</strong>：高热、剧烈头痛、眼球后疼、肌肉关节痛、皮疹——<strong>发热持续/加重立即就医</strong>；退烧用<strong>对乙酰氨基酚</strong>，忌阿司匹林/布洛芬。</li>
+<li><strong>防护</strong>：全天用驱蚊液（见3.3）、穿浅色长袖长裤、住处清积水。2025–2026 泰国登革热处于典型水平（较前几年下降），但仍需防范。</li>
+</ul>
+<h3 id="饮食饮水">9.5 饮食饮水</h3>
+<ul>
+<li><strong>只喝瓶装水</strong>（Singha/Crystal 等，约6–15泰铢/600ml，认准<strong>密封完好</strong>）；泰国<strong>自来水不可直饮</strong>（管道/水箱污染，当地人也不直饮）。<strong>刷牙</strong>在大城市用自来水低风险，肠胃敏感就用瓶装水（别吞下）。</li>
+<li><strong>冰块</strong>：连锁店/餐厅的<strong>圆柱形中空冰</strong>是净化水商业制冰，一般安全；<strong>街边小摊/乡村不明冰块慎用</strong>。</li>
+<li><strong>食物</strong>：<strong>选人多、现做、熟食热食</strong>（汤/咖喱/热炒经烹煮较安全）；生冷、久放慎吃。带肠胃药。</li>
+<li><strong>药房</strong>：<strong>Boots / Watsons</strong>（各大商场）可买常用药、驱蚊液、防晒。</li>
+</ul>
+<p><strong>来源</strong>：<a href="https://itsbetterinthailand.com/emergency-numbers-and-other-useful-contacts-in-thailand/">泰国急救电话 It's Better in Thailand</a>｜<a href="https://www.bangkokhospital-chiangmai.com/en/contact-us/">Bangkok Hospital Chiang Mai 官网</a>｜<a href="https://www.chiangmairam.com/">Chiangmai Ram Hospital 官网</a>｜<a href="https://www.bumrungrad.com/en">Bumrungrad 官网</a>｜<a href="https://www.konkai.health/locations/samitivej-sukhumvit-hospital">Samitivej Sukhumvit（Konkai Health）</a>｜<a href="https://wwwnc.cdc.gov/travel/destinations/traveler/none/thailand">CDC·泰国登革热风险</a>｜<a href="https://www.chiangraitimes.com/health/dengue-fever-in-thailand-2026/">Chiang Rai Times·泰国登革热2026</a>｜<a href="https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Thailand.html">美国务院·泰国医疗与保险</a>｜<a href="https://watertogousa.com/blogs/all/can-you-drink-the-water-in-thailand">泰国饮水安全 Water to Go</a></p>
+<hr />
+<h2 id="临行前约7月上旬中旬必须重新核实的事项汇总">⚠️ 临行前（约7月上旬–中旬）必须重新核实的事项汇总</h2>
+<ol type="1">
+<li><strong>中泰免签本身</strong>：作为永久双边条约几乎确定有效，但重大政策变动应临行前扫一眼中国驻泰使馆/外交部领事服务网公告。</li>
+<li><strong>TDAC 数字入境卡</strong>：系统上线较新（2025.5），字段/流程可能微调；<strong>务必7月12日后在官方 <code>tdac.immigration.go.th</code> 及时填写</strong>，认准 <code>.go.th</code>、免费、防诈骗网站。</li>
+<li><strong>60→30天停留缩减</strong>：是否已在《皇家公报》生效（<strong>不影响你们5天行程</strong>）。</li>
+<li><strong>资金证明执行力度</strong>：2025年5月恢复后趋严，金额/是否要现金可能变化。</li>
+<li><strong>汇率 / SIM 套餐价 / ATM 手续费 / 曼谷出租车起步价</strong>：均会变动，交易前查实时。</li>
+<li><strong>旅行安全等级</strong>：出发前查 <a href="https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/thailand-travel-advisory.html">美国务院</a> / <a href="https://www.smartraveller.gov.au/destinations/asia/thailand">澳洲 Smartraveller</a> 最新提示（泰柬边境等偶有摩擦，你们行程不涉及）。</li>
+</ol>
+<p>祝旅途平安愉快！🐘🌧️</p>
+</div></section>
+<section id="sec-budget" class="panel"><div class="md"><h1 id="泰国-7-日预算估算情侣-2-人">泰国 7 日预算估算（情侣 2 人）</h1>
+<blockquote>
+<p>行程：<strong>2026/7/14–7/20（7 天）</strong>，曼谷（前段 1.5 天）+ 清迈（主场 3.5 天）+ 曼谷（后段 0.75 天），共 2 人。 币种：<strong>THB（泰铢），均为 2 人合计</strong>。汇率取 <code>safety_and_tips.md</code> 现值 <strong>1 THB ≈ 0.204 CNY</strong>（即 ฿1,000 ≈ ¥204）。 标注：<strong>[已订]</strong> = 已预订/已付，不计入可支配总额，仅备注；<strong>[来源]</strong> = 直接取自 4 份文档的价格；<strong>[估]</strong> = 在文档区间基础上按合理餐数/次数推算。</p>
+</blockquote>
+<hr />
+<h2 id="一已订-已付项不计入可支配总额仅备注">一、已订 / 已付项（不计入可支配总额，仅备注）</h2>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>项目</th>
+<th>状态</th>
+<th>估值（备注用，THB / 2 人）</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>国际机票 长沙↔︎曼谷（经海口，FD481 / HU7940+HU7517）</td>
+<td><strong>[已订]</strong></td>
+<td>本预算不计</td>
+<td>仅备注，按要求不估值</td>
+</tr>
+<tr>
+<td>国内机票 曼谷→清迈 SL520（7/15）</td>
+<td><strong>[已订]</strong></td>
+<td>≈ 2,400–4,000（备注估值）</td>
+<td>泰狮航廉航单程约 1,200–2,000/人 [估]</td>
+</tr>
+<tr>
+<td>国内机票 清迈→曼谷 VZ2103（7/19）</td>
+<td><strong>[已订]</strong></td>
+<td>≈ 2,400–4,000（备注估值）</td>
+<td>泰越捷廉航单程约 1,200–2,000/人 [估]</td>
+</tr>
+<tr>
+<td>曼谷 The Quarter Ratchathewi（7/14，1 晚）</td>
+<td><strong>[已订]</strong></td>
+<td>已付，不计</td>
+<td>前段酒店</td>
+</tr>
+<tr>
+<td>清迈 Travelodge Nimman（7/15–7/19，4 晚·高级房）</td>
+<td><strong>[已订]</strong></td>
+<td>已付，不计</td>
+<td>主场酒店</td>
+</tr>
+</tbody>
+</table>
+<div class="callout ct-note">
+<p><span class="callout-title">📝 唯一计入总额的住宿 = 7/19 曼谷过夜（<strong>未订</strong>），见下方分类表。</span></p>
+</div>
+<hr />
+<h2 id="二分类预算表thb2-人合计">二、分类预算表（THB，2 人合计）</h2>
+<blockquote>
+<p>经济档 = 取区间下限 + 精打细算（双条/合乘/街头为主）；舒适档 = 取区间上限 + 适度享受（Grab/餐厅/情侣按摩）。</p>
+</blockquote>
+<table>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 23%" />
+<col style="width: 23%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr>
+<th>分类</th>
+<th>明细（数据来源）</th>
+<th style="text-align: right;">经济档</th>
+<th style="text-align: right;">舒适档</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>住宿（仅 7/19 待订）</strong></td>
+<td>曼谷后段 1 晚，Mercure Makkasan 4★ 约 2,500–4,000 / Eastin 5★ 约 5,000–6,700；按题给 ~1,500–3,000 取值</td>
+<td style="text-align: right;">1,500</td>
+<td style="text-align: right;">3,000</td>
+<td>[来源] transportation.md §9（题给区间）</td>
+</tr>
+<tr>
+<td><strong>市内交通与包车</strong></td>
+<td>见下方"交通拆分"合计</td>
+<td style="text-align: right;">4,900</td>
+<td style="text-align: right;">7,750</td>
+<td>[来源] transportation.md</td>
+</tr>
+<tr>
+<td><strong>景点门票与活动</strong></td>
+<td>见下方"活动拆分"合计</td>
+<td style="text-align: right;">3,540</td>
+<td style="text-align: right;">6,700</td>
+<td>[来源] itinerary.md</td>
+</tr>
+<tr>
+<td><strong>餐饮</strong></td>
+<td>见下方"餐饮拆分"合计</td>
+<td style="text-align: right;">5,700</td>
+<td style="text-align: right;">12,800</td>
+<td>[估] food_guide.md 人均价</td>
+</tr>
+<tr>
+<td><strong>夜市 / 购物零花</strong></td>
+<td>朱拉夜市、宁曼、One Nimman、Wualai 周六夜市、JJ 集市、ICONSIAM/唐人街购物手信</td>
+<td style="text-align: right;">2,000</td>
+<td style="text-align: right;">5,000</td>
+<td>[估]</td>
+</tr>
+<tr>
+<td><strong>杂项</strong></td>
+<td>SIM 2 张（8–10 天无限流量 ~300–450/张）、瓶装水、小费、门票/交通缓冲</td>
+<td style="text-align: right;">1,500</td>
+<td style="text-align: right;">2,800</td>
+<td>[来源] safety §6 SIM + [估] 缓冲</td>
+</tr>
+<tr>
+<td><strong>合计（计入可支配总额）</strong></td>
+<td></td>
+<td style="text-align: right;"><strong>19,140</strong></td>
+<td style="text-align: right;"><strong>38,050</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="交通拆分thb2-人合计">交通拆分（THB，2 人合计）</h3>
+<table>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 23%" />
+<col style="width: 23%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr>
+<th>段</th>
+<th>方案</th>
+<th style="text-align: right;">经济档</th>
+<th style="text-align: right;">舒适档</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7/14 DMK→Ratchathewi 酒店</td>
+<td>A3 巴士 2 人 ~100 / Grab 走高速 350–500</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">500</td>
+<td>[来源] transp §1</td>
+</tr>
+<tr>
+<td>7/15 酒店→DMK（赶清迈机）</td>
+<td>Grab/出租 250–350</td>
+<td style="text-align: right;">250</td>
+<td style="text-align: right;">350</td>
+<td>[来源] transp §2</td>
+</tr>
+<tr>
+<td>7/15 晚 CNX→Travelodge Nimman</td>
+<td>机场固定出租 150（大车 200）/ Grab 110–180</td>
+<td style="text-align: right;">150</td>
+<td style="text-align: right;">200</td>
+<td>[来源] transp §3</td>
+</tr>
+<tr>
+<td><strong>7/16 粘粘瀑布 + Mae Rim 包车一日</strong></td>
+<td>私人包车 2,500–3,000/车/日（含司机，回程有保障）</td>
+<td style="text-align: right;">2,500</td>
+<td style="text-align: right;">3,000</td>
+<td>[来源] transp §5</td>
+</tr>
+<tr>
+<td>7/16–18 清迈市内（双条/Grab，多趟）</td>
+<td>双条 30–40/人 × 多趟 / Grab 60–100/趟</td>
+<td style="text-align: right;">600</td>
+<td style="text-align: right;">1,200</td>
+<td>[来源] transp §4</td>
+</tr>
+<tr>
+<td>7/18 JJ 集市↔︎艺术村↔︎Wualai 夜市接驳</td>
+<td>Grab 80–130/趟 × 数趟</td>
+<td style="text-align: right;">400</td>
+<td style="text-align: right;">700</td>
+<td>[来源] itinerary 7/18</td>
+</tr>
+<tr>
+<td>7/19 CNX→机场 + BKK→曼谷市区</td>
+<td>早班 Grab 110–180 + ARL 45/人（2 人 90）/ Grab 400–650</td>
+<td style="text-align: right;">250</td>
+<td style="text-align: right;">850</td>
+<td>[来源] transp §6·§7</td>
+</tr>
+<tr>
+<td>7/19 曼谷市内（ICONSIAM/唐人街渡轮·MRT·Grab）</td>
+<td>渡轮几十铢 + MRT/Grab</td>
+<td style="text-align: right;">250</td>
+<td style="text-align: right;">500</td>
+<td>[来源] itinerary 7/19</td>
+</tr>
+<tr>
+<td>7/20 曼谷市区→BKK（赶国际机）</td>
+<td>ARL 45/人（2 人 90）/ Grab 早高峰 400–650</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">650</td>
+<td>[来源] transp §8</td>
+</tr>
+<tr>
+<td><strong>交通小计</strong></td>
+<td></td>
+<td style="text-align: right;"><strong>4,900</strong></td>
+<td style="text-align: right;"><strong>7,750</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="活动拆分thb2-人合计">活动拆分（THB，2 人合计）</h3>
+<table>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 23%" />
+<col style="width: 23%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr>
+<th>项目</th>
+<th>单价（来源）</th>
+<th style="text-align: right;">经济档</th>
+<th style="text-align: right;">舒适档</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>粘粘瀑布 Bua Tong</strong></td>
+<td><strong>免费</strong>（入口仅登记姓名/车牌）</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td>[来源] itinerary/transp</td>
+</tr>
+<tr>
+<td><strong>POOPOOPAPER 大象粪造纸园</strong></td>
+<td>~120–150/人（题给 120；文档 ~150，旧资料 100）</td>
+<td style="text-align: right;">240</td>
+<td style="text-align: right;">300</td>
+<td>[来源] itinerary 7/16</td>
+</tr>
+<tr>
+<td><strong>情侣马杀鸡（宁曼）</strong></td>
+<td>经济：普通泰式 60min ~300–500/人；舒适：Oasis King&amp;Queen 双人套 ~3,045/对（或 Fah Lanna Romantic ~11,300/对）</td>
+<td style="text-align: right;">800</td>
+<td style="text-align: right;">3,045</td>
+<td>[来源] itinerary 7/16</td>
+</tr>
+<tr>
+<td>7/15 曼谷可选按摩 60min（机动）</td>
+<td>~300–500/人</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">800</td>
+<td>[来源] itinerary 7/15（可选）</td>
+</tr>
+<tr>
+<td>咖啡馆慢时光（宁曼多次·Ristr8to/%Arabica 等）</td>
+<td>~60–160/杯 × 数次</td>
+<td style="text-align: right;">400</td>
+<td style="text-align: right;">900</td>
+<td>[来源] food_guide §4</td>
+</tr>
+<tr>
+<td>山竹冰沙 Joost / 甜品饮品（数次）</td>
+<td>冰沙 ~50 起</td>
+<td style="text-align: right;">200</td>
+<td style="text-align: right;">500</td>
+<td>[来源] food_guide</td>
+</tr>
+<tr>
+<td><strong>可选</strong>：素贴山双龙寺（非寺庙控，选做才计）</td>
+<td>门票 30/人 + 缆车 50/人</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">300</td>
+<td>[来源] itinerary 7/17 可选</td>
+</tr>
+<tr>
+<td><strong>可选</strong>：SEA LIFE 海洋世界（情侣向）</td>
+<td>~990/人</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0（默认不做）</td>
+<td>[来源] itinerary 7/15</td>
+</tr>
+<tr>
+<td>活动缓冲（银器/手作/JJ 手作小额）</td>
+<td>—</td>
+<td style="text-align: right;">1,900</td>
+<td style="text-align: right;">855</td>
+<td>[估]</td>
+</tr>
+<tr>
+<td><strong>活动小计</strong></td>
+<td></td>
+<td style="text-align: right;"><strong>3,540</strong></td>
+<td style="text-align: right;"><strong>6,700</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>舒适档若把马杀鸡换成 <strong>Fah Lanna Romantic 情侣套 ~11,300/对</strong>，活动小计将升至约 <strong>15,000</strong>，整体舒适档上浮约 8,300 THB（约 ¥1,690）。</p>
+</blockquote>
+<h3 id="餐饮拆分thb2-人合计-估单价源自-food_guide.md">餐饮拆分（THB，2 人合计）· [估]，单价源自 food_guide.md</h3>
+<blockquote>
+<p>单价来源 [来源]：街头/夜市 <strong>~40–100฿/人/餐</strong>；北部菜馆/餐厅 <strong>~150–300฿/人/餐</strong>；河边氛围餐厅 <strong>~500–1,500฿/两人</strong>。 餐数按 7 天合理估：约 <strong>6 顿街头 + 8 顿餐厅 + 1 顿河边氛围 + 若干早餐</strong>（部分早餐含于已订酒店房费，不重复计）。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>餐数（2 人）</th>
+<th>经济档单价</th>
+<th>舒适档单价</th>
+<th style="text-align: right;">经济档</th>
+<th style="text-align: right;">舒适档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>街头 / 夜市正餐</td>
+<td>6 顿</td>
+<td>40×2</td>
+<td>100×2</td>
+<td style="text-align: right;">2,880</td>
+<td style="text-align: right;">7,200（含加点）</td>
+</tr>
+<tr>
+<td>餐厅 / 北部菜馆</td>
+<td>8 顿</td>
+<td>150×2</td>
+<td>300×2</td>
+<td style="text-align: right;">2,400</td>
+<td style="text-align: right;">4,800</td>
+</tr>
+<tr>
+<td>河边氛围餐厅（1 晚，可选）</td>
+<td>1 顿</td>
+<td>—</td>
+<td>500–1,500/两人</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1,500</td>
+</tr>
+<tr>
+<td>早餐/便利店（非含早日）</td>
+<td>若干</td>
+<td>—</td>
+<td>—</td>
+<td style="text-align: right;">420</td>
+<td style="text-align: right;">800</td>
+</tr>
+<tr>
+<td><strong>餐饮小计</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td style="text-align: right;"><strong>5,700</strong></td>
+<td style="text-align: right;"><strong>12,800</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="三逐日花费估算表714720thb2-人合计">三、逐日花费估算表（7/14–7/20，THB，2 人合计）</h2>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 21%" />
+<col style="width: 28%" />
+<col style="width: 28%" />
+</colgroup>
+<thead>
+<tr>
+<th>日期</th>
+<th>当日主要花费点</th>
+<th style="text-align: right;">经济档</th>
+<th style="text-align: right;">舒适档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>7/14 周二</strong> 曼谷抵达</td>
+<td>DMK→酒店 + 朱拉隆(Banthat Thong)夜市晚餐 + 零花</td>
+<td style="text-align: right;">800</td>
+<td style="text-align: right;">1,900</td>
+</tr>
+<tr>
+<td><strong>7/15 周三</strong> 曼谷→清迈</td>
+<td>Siam 午餐 + 酒店→DMK + CNX→宁曼 + 深夜宵夜（含早）</td>
+<td style="text-align: right;">1,300</td>
+<td style="text-align: right;">3,000</td>
+</tr>
+<tr>
+<td><strong>7/16 周四</strong> 瀑布+造纸+按摩</td>
+<td><strong>包车 2,500–3,000</strong> + 造纸园门票 + 午晚餐 + 马杀鸡</td>
+<td style="text-align: right;">4,900</td>
+<td style="text-align: right;">8,400</td>
+</tr>
+<tr>
+<td><strong>7/17 周五</strong> 宁曼 brunch+购物+咖啡</td>
+<td>三餐 + 咖啡 + 市内双条/Grab + 购物零花</td>
+<td style="text-align: right;">2,100</td>
+<td style="text-align: right;">4,300</td>
+</tr>
+<tr>
+<td><strong>7/18 周六</strong> JJ 集市+艺术村+周六夜市</td>
+<td>多趟 Grab 接驳 + 三餐 + Wualai 夜市小吃购物</td>
+<td style="text-align: right;">2,300</td>
+<td style="text-align: right;">4,600</td>
+</tr>
+<tr>
+<td><strong>7/19 周日</strong> 清迈→曼谷+ICONSIAM+唐人街</td>
+<td>CNX→BKK 交通 + <strong>7/19 酒店 1,500–3,000</strong> + 唐人街晚餐 + 市内交通</td>
+<td style="text-align: right;">3,540</td>
+<td style="text-align: right;">6,850</td>
+</tr>
+<tr>
+<td><strong>7/20 周一</strong> 曼谷→回程</td>
+<td>早餐/便利店 + 市区→BKK（ARL/Grab）</td>
+<td style="text-align: right;">300</td>
+<td style="text-align: right;">1,200</td>
+</tr>
+<tr>
+<td><strong>杂项（全程一次性）</strong></td>
+<td>SIM×2 + 瓶装水 + 小费 + 缓冲</td>
+<td style="text-align: right;">1,500</td>
+<td style="text-align: right;">2,800</td>
+</tr>
+<tr>
+<td><strong>合计</strong></td>
+<td></td>
+<td style="text-align: right;"><strong>约 16,740</strong></td>
+<td style="text-align: right;"><strong>约 33,050</strong></td>
+</tr>
+</tbody>
+</table>
+<div class="callout ct-note">
+<p><span class="callout-title">📝 逐日表与分类表口径差异说明</span></p>
+<p>逐日表把"夜市/购物零花"并入各当日、把部分餐饮从紧估算，故合计（<strong>16,740 / 33,050</strong>）略低于分类表（<strong>19,140 / 38,050</strong>）。<strong>建议以分类表区间为准并向上取整做预算</strong>；逐日表用于把控每天现金携带节奏。两表差额即为"弹性缓冲"。</p>
+</div>
+<hr />
+<h2 id="四总计">四、总计</h2>
+<blockquote>
+<p>仅含<strong>计入可支配的花费</strong>（已订机票/酒店除外；含 7/19 待订酒店）。</p>
+</blockquote>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 26%" />
+<col style="width: 26%" />
+<col style="width: 26%" />
+</colgroup>
+<thead>
+<tr>
+<th>档位</th>
+<th style="text-align: right;">2 人合计 THB</th>
+<th style="text-align: right;">约合 CNY（×0.204）</th>
+<th style="text-align: right;">人均 CNY</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>经济档</strong></td>
+<td style="text-align: right;"><strong>约 19,000–20,000</strong></td>
+<td style="text-align: right;"><strong>约 ¥3,900–4,080</strong></td>
+<td style="text-align: right;">约 ¥1,950–2,040</td>
+</tr>
+<tr>
+<td><strong>舒适档</strong></td>
+<td style="text-align: right;"><strong>约 37,000–38,000</strong></td>
+<td style="text-align: right;"><strong>约 ¥7,550–7,750</strong></td>
+<td style="text-align: right;">约 ¥3,775–3,875</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>推荐打包预算（含弹性缓冲）</strong>：备 <strong>THB 22,000–40,000（约 ¥4,500–8,160）/ 2 人</strong> 的可支配现金+刷卡额度较稳妥。</li>
+<li>若舒适档选 <strong>Fah Lanna 情侣按摩套（11,300/对）</strong> 或 <strong>Eastin 5★ 酒店（~6,700）</strong>，上限再加约 <strong>8,000–11,000 THB（约 ¥1,630–2,240）</strong>。</li>
+</ul>
+<div class="callout ct-warning">
+<p><span class="callout-title">⚠️ 汇率提示</span></p>
+<p><code>safety_and_tips.md</code> 明确 <strong>汇率每日波动，1 CNY ≈ 4.90 THB / 1 THB ≈ 0.204 CNY 为 2026/7 初参考值</strong>，交易前请查实时。本预算 CNY 折算均按 0.204 计。</p>
+</div>
+<hr />
+<h2 id="五省钱贴士源自-4-份文档">五、省钱贴士（源自 4 份文档）</h2>
+<div class="callout ct-tip">
+<p><span class="callout-title">💡 交通省钱</span></p>
+<ul>
+<li><strong>双条车（红车）</strong>：宁曼↔︎古城、古城内短途 <strong>固定 30–40฿/人</strong>，古城内标准短途<strong>别主动问价</strong>，直接上车、下车付 30฿；只有机场/素贴山等远程才上车前议价。[transp §4 / safety §5.5]</li>
+<li><strong>Grab 合乘 + 多 App 比价</strong>：2 人同乘一辆 GrabCar 均摊最划算；同时装 <strong>Grab / Bolt / inDrive</strong>，Bolt 常便宜 10–35%。曼谷晚高峰(17–19 点)/雨天加价 50–80%，<strong>等 15 分钟通常回落</strong>。[safety §5]</li>
+<li><strong>机场进城用 ARL</strong>：素万那普 BKK 往返曼谷市区坐 <strong>机场快线 45฿/人</strong>，避堵、免机场附加费和高速费，比 Grab（400–650）省一大截 —— 前提是 7/19 酒店选 <strong>ARL 沿线（Makkasan/Phaya Thai）</strong>。[transp §7·§8]</li>
+<li><strong>7/14 DMK 进城</strong>可选 <strong>A3 巴士 50฿/人</strong>（直达 Pratunam，步行 14 分钟到酒店），比打车省 250–400฿；带大件行李才建议 Grab。[itinerary/transp §1]</li>
+</ul>
+</div>
+<div class="callout ct-tip">
+<p><span class="callout-title">💡 包车 vs 拼团（7/16 瀑布+大象）</span></p>
+<ul>
+<li><strong>2 人成行选包车</strong>（2,500–3,000฿/车/日）比拼团（$59–80 ≈ 2,000–2,900฿/<strong>人</strong>）更划算且自由；<strong>关键</strong>：粘粘瀑布 <strong>Grab 常拒载返程</strong>，包车全程往返有保障。[transp §5]</li>
+<li>预订前<strong>确认是否含油</strong>；门票/餐费/小费自理，自备现金。超 18 点通常加收 ~300฿/小时。</li>
+</ul>
+</div>
+<div class="callout ct-tip">
+<p><span class="callout-title">💡 美食省钱</span></p>
+<ul>
+<li><strong>街头/夜市为主</strong>：一餐仅 40–100฿/人，远低于餐厅 150–300฿/人；粘粘瀑布<strong>免费</strong>、多数夜市/集市（JJ、Wualai、ICONSIAM SookSiam）<strong>进场免费只付吃喝</strong>。[food_guide §6 / itinerary]</li>
+<li>咖啡/甜品适度：宁曼精品咖啡 60–160฿/杯，山竹冰沙 Joost 仅 ~50฿ 起，控制次数即可。</li>
+<li><strong>带够小额现金</strong>：夜市/双条/街边摊/寺庙多<strong>只收现金</strong>，PromptPay 短期游客用不了。[safety §7.3]</li>
+</ul>
+</div>
+<div class="callout ct-tip">
+<p><span class="callout-title">💡 换汇 / 取现省钱</span></p>
+<ul>
+<li><strong>换汇认准 SuperRich</strong>（绿色略优于橙色），汇率最好；<strong>机场/国内换汇最差（差 5–10%）</strong>，只在机场换少量应急（打车、买 SIM），大头到市区 SuperRich 换，带<strong>大面额、干净美元</strong>更优。[safety §7.1]</li>
+<li><strong>ATM 外卡固定 ~220฿/笔</strong>（AEON 最低 ~150฿）→ <strong>一次取足</strong>摊薄手续费；取现/刷卡遇 DCC 一律选<strong>"以泰铢(THB)计费"</strong>（否则加价 3–5%）。[safety §7.2]</li>
+</ul>
+</div>
+<div class="callout ct-tip">
+<p><span class="callout-title">💡 住宿 / 杂项省钱</span></p>
+<ul>
+<li>7/19 待订酒店：<strong>Mercure Makkasan 4★（~2,500–4,000）</strong> 兼顾 ARL 直达与性价比，比 Eastin 5★（~5,000–6,700）省一半且次晨赶机同样省心。[transp §9]</li>
+<li><strong>SIM</strong>：一张 8–10 天无限流量套餐（~300–450฿）够用，<strong>两人各一张或一张开热点共享</strong>即可省一半。[safety §6.3]</li>
+</ul>
+</div>
+<div class="callout ct-important">
+<p><span class="callout-title">❗ 数字口径提醒</span></p>
+<p>表中 <strong>[来源]</strong> = 直接取自 4 份文档；<strong>[估]</strong> = 在文档给出的人均单价/区间上，按 7 天合理餐数与次数推算（主要是餐饮、夜市购物、活动缓冲、机票备注估值）。机票（国际+国内）与已订两处酒店均<strong>不计入可支配总额</strong>，仅备注。所有价格为 2026/7 参考，<strong>打车费/路况/汇率/SIM 价临行前需再核实</strong>。</p>
+</div>
+</div></section>
+</main>
+<footer class="foot">
+  <div>🐘 泰国清迈 × 曼谷 · 情侣 7 日 · 2026/7/14–7/20</div>
+  <div class="foot-sub">由 Claude 多智能体研究生成 · 更新于 2026-07-05 · 价格/营业时间/签证规则为 2026/7 参考，出行前请复核 ⚠️</div>
+</footer>
+
+<button class="top" id="toTop" aria-label="回到顶部">↑</button>
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.tab'));
+  var panels=[].slice.call(document.querySelectorAll('.panel'));
+  function show(key,push){
+    tabs.forEach(function(t){t.classList.toggle('on',t.dataset.tab===key)});
+    panels.forEach(function(p){p.classList.toggle('on',p.id==='sec-'+key)});
+    var act=document.querySelector('.tab[data-tab="'+key+'"]');
+    if(act)act.scrollIntoView({inline:'center',block:'nearest'});
+    if(push)history.replaceState(null,'','#'+key);
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  tabs.forEach(function(t){t.addEventListener('click',function(){show(t.dataset.tab,true)})});
+  var h=(location.hash||'').replace('#','');
+  if(h&&document.getElementById('sec-'+h))show(h,false);
+  var top=document.getElementById('toTop');
+  addEventListener('scroll',function(){top.classList.toggle('show',scrollY>640)},{passive:true});
+  top.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+})();
+</script>
+
+</body></html>
