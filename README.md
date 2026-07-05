@@ -18,7 +18,7 @@
 
 - **曼谷（前段）**：The Quarter Ratchathewi by UHG（Ratchathewi 区，388 Phetchaburi Rd），7/14 入住、7/15 离店
 - **清迈**：Travelodge Nimman（宁曼路核心区），7/15 入住 4 晚、7/19 离店，高级房 ×1
-- **曼谷（后段）**：7/19–7/20 一晚，**待订**（规划中推荐）
+- **曼谷（后段）**：True Siam Phayathai Hotel（Phaya Thai/Ratchathewi，步行 4 分到 ARL 机场快线），7/19 入住、7/20 离店 · **已订**
 
 ## 🧭 行程重心
 
