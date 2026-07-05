@@ -385,6 +385,13 @@ svg.map a:hover path[stroke]{stroke-width:2}
 .go{color:#fff;background:linear-gradient(150deg,var(--jade),var(--jade-d));box-shadow:0 2px 6px rgba(10,79,61,.28)}
 .grab{color:#fff;background:#00b14f;font-weight:600;box-shadow:0 2px 6px rgba(0,177,79,.32)}
 @media(min-width:560px){.stops li{grid-template-columns:auto 1fr auto}.acts{grid-column:3;grid-row:1;flex-wrap:nowrap}}
+/* alt groups */
+.alt-group{margin:4px 0 4px 35px;border:1px dashed var(--line);border-radius:10px;padding:0;overflow:hidden}
+.alt-group summary{font-size:12px;color:var(--ink2);cursor:pointer;padding:6px 10px;user-select:none}
+.alt-group summary:hover{color:var(--accent);background:rgba(0,0,0,.02)}
+.alt-list{list-style:none;margin:0;padding:0 8px 8px;display:grid;gap:5px}
+.alt-item{background:rgba(255,255,255,.4);border:1px dashed var(--line);border-radius:10px;padding:7px 10px}
+.sn-alt{width:22px;height:22px;font-size:11.5px;background:transparent;color:var(--accent);border:2px dashed var(--accent);box-shadow:none}
 </style>
 </head>
 <body>

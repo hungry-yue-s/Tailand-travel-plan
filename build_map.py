@@ -22,7 +22,11 @@ trip = {
      "slots": [
        {"period": "noon", "name": "抵达 曼谷廊曼机场 DMK", "time": "15:10 落地", "lat": 13.9126, "lng": 100.6068},
        {"period": "noon", "name": "入住 The Quarter Ratchathewi", "time": "16:30", "lat": 13.7538, "lng": 100.5324},
-       {"period": "evening", "name": "朱拉/Banthat Thong 美食街夜市", "time": "18:30–22:00", "lat": 13.7365, "lng": 100.5285}
+       {"period": "evening", "name": "Banthat Thong 美食街晚餐", "time": "18:30–21:00", "lat": 13.7365, "lng": 100.5285,
+        "alts": [
+          {"name": "Jimjoom99 陶锅火锅（99฿/锅·米其林必比登）", "time": "18:00–01:00", "lat": 13.7368, "lng": 100.5278},
+          {"name": "Pungdet 炭烤吐司（22种馅·有空调）", "time": "16:00–23:00", "lat": 13.7363, "lng": 100.5282},
+        ]},
      ]},
     {"date": "2026-07-15", "weekday": "周三", "theme": "曼谷半日 → 傍晚飞清迈",
      "tips": ["12:00 前退房、可寄存行李；下午留足时间去廊曼赶 19:30 航班"],
@@ -45,14 +49,24 @@ trip = {
        {"period": "morning", "name": "One Nimman / 宁曼路购物", "time": "11:30–14:30", "lat": 18.8006, "lng": 98.9673},
        {"period": "noon", "name": "打铁片手作 @ Lanna Artisans Art Gallery", "time": "15:00–16:30", "lat": 18.7790, "lng": 98.9836},
        {"period": "afternoon", "name": "银庙 Wat Sri Suphan", "time": "16:30–17:00", "lat": 18.7793, "lng": 98.9838},
-       {"period": "evening", "name": "塔佩门 Tha Phae Gate / 古城咖啡", "time": "17:00–18:15", "lat": 18.7877, "lng": 98.9933},
-       {"period": "evening", "name": "⭐ Oasis Spa Nimman 情侣马杀鸡", "time": "19:00–21:00", "lat": 18.7972, "lng": 98.9662}
+       {"period": "evening", "name": "塔佩门 Tha Phae Gate / 古城咖啡", "time": "17:00–18:15", "lat": 18.7877, "lng": 98.9933,
+        "alts": [
+          {"name": "Ristr8to 尼曼·世界拉花冠军·骷髅杯", "time": "07:30–18:30", "lat": 18.7967, "lng": 98.9680},
+          {"name": "Roast8ry Lab 尼曼·冠军新品牌", "time": "08:00–17:00", "lat": 18.7985, "lng": 98.9655},
+        ]},
+       {"period": "evening", "name": "⭐ Oasis Spa Nimman 情侣马杀鸡", "time": "19:00–21:00", "lat": 18.7972, "lng": 98.9662,
+        "alts": [
+          {"name": "Fah Lanna Spa Romantic 情侣套餐（奢华）", "time": "12:00–21:00", "lat": 18.7978, "lng": 98.9648},
+        ]},
      ]},
     {"date": "2026-07-18", "weekday": "周六", "theme": "周末市集 · 艺术村 · 周六夜市",
      "tips": ["用满这个唯一的周六：上午 Jing Jai 周末市集（约 14:00 收摊、越早越好）+ 傍晚 Wualai 周六步行街（都仅周末/周六开）", "艺术村 Baan Kang Wat 顺便在村里咖啡馆吃午餐（奶奶厨房已挪到 7/17 早上）"],
      "slots": [
        {"period": "morning", "name": "Jing Jai 周末市集（JJ Market）", "time": "07:30–11:00", "lat": 18.8067, "lng": 98.9762},
-       {"period": "noon", "name": "Baan Kang Wat 艺术村（白色集市）+ 村内午餐", "time": "11:30–14:00", "lat": 18.7758, "lng": 98.9436},
+       {"period": "noon", "name": "Baan Kang Wat 艺术村（白色集市）+ 村内午餐", "time": "11:30–14:00", "lat": 18.7758, "lng": 98.9436,
+        "alts": [
+          {"name": "Krua Ya 奶奶厨房（如果7/17没去）", "time": "09:00–15:30", "lat": 18.7625, "lng": 98.9420},
+        ]},
        {"period": "evening", "name": "Wualai 周六步行街", "time": "17:30–22:00", "lat": 18.7818, "lng": 98.9852}
      ]},
     {"date": "2026-07-19", "weekday": "周日", "theme": "飞回曼谷 · ICONSIAM · 昭披耶河夜游船",
@@ -67,7 +81,10 @@ trip = {
     {"date": "2026-07-20", "weekday": "周一", "theme": "曼谷早餐 · 回国",
      "tips": ["国际航班 11:05，约 07:00 出发去素万那普(留足早高峰时间)，只够吃个早餐"],
      "slots": [
-       {"period": "morning", "name": "Jok Prince 炭香猪肉粥（早餐）", "time": "06:30", "lat": 13.7283, "lng": 100.5160},
+       {"period": "morning", "name": "Jok Prince 炭香猪肉粥（早餐）", "time": "06:30", "lat": 13.7283, "lng": 100.5160,
+        "alts": [
+          {"name": "K.Panich 芒果糯米饭（周一才开·打包去机场）", "time": "07:00–16:00", "lat": 13.7440, "lng": 100.5060},
+        ]},
        {"period": "noon", "name": "曼谷素万那普机场 BKK 回国", "time": "08:15 到机场 / 11:05 起飞", "lat": 13.6900, "lng": 100.7501}
      ]},
   ]
@@ -233,8 +250,16 @@ def route_seg(a, b, pa, pb, accent):
             f'stroke="{accent}" stroke-width="2.6" stroke-dasharray="1 8" stroke-linecap="round" '
             f'opacity="0.85" filter="url(#rough)"/>')
 
-def pin(cx, cy, n, accent, navurl):
+def pin(cx, cy, n, accent, navurl, alt=False):
     p = pin_path(cx, cy)
+    if alt:
+        return (f'<a href="{navurl}" target="_blank" rel="noopener">'
+                f'<ellipse cx="{cx:.1f}" cy="{cy+27:.1f}" rx="7" ry="2.6" fill="#2a2320" opacity="0.10"/>'
+                f'<path d="{p}" fill="none" stroke="{accent}" stroke-width="2" stroke-dasharray="4 3" filter="url(#rough)" opacity="0.7"/>'
+                f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="8.6" fill="#ffffff" opacity="0.10"/>'
+                f'<text x="{cx:.1f}" y="{cy:.1f}" text-anchor="middle" dominant-baseline="central" dy="0.5" '
+                f'font-family="Georgia,serif" font-weight="400" font-size="13" fill="{accent}" opacity="0.85">{n}</text>'
+                f'</a>')
     return (f'<a href="{navurl}" target="_blank" rel="noopener">'
             f'<ellipse cx="{cx:.1f}" cy="{cy+27:.1f}" rx="7" ry="2.6" fill="#2a2320" opacity="0.16"/>'
             f'<path d="{p}" fill="{accent}" stroke="#2a2320" stroke-width="1.6" filter="url(#rough)"/>'
@@ -266,8 +291,15 @@ def leg_label(a, b, pa, pb, leg_text, accent):
 # ---------------- per-day map + stop list ----------------
 def render_day(day, accent):
     pts = day["slots"]
-    order = []
+    # collect all points including alts for layout
+    all_pts = []
     for p in pts:
+        all_pts.append(p)
+        for a in p.get("alts", []):
+            all_pts.append(a)
+
+    order = []
+    for p in all_pts:
         c = city_of(p)
         if c not in order:
             order.append(c)
@@ -281,7 +313,7 @@ def render_day(day, accent):
 
     for c in order:
         box = boxes[c]
-        cpts = [p for p in pts if city_of(p) == c]
+        cpts = [p for p in all_pts if city_of(p) == c]
         pos = relax(project(cpts, box), box)
         for p, xy in zip(cpts, pos):
             coord[id(p)] = xy
@@ -289,7 +321,7 @@ def render_day(day, accent):
         svg.append(decorations(c, box, accent))
         svg.append(city_tag(c, box))
 
-    # routes first (under labels & pins)
+    # routes first (under labels & pins) — only between main slots
     for i in range(len(pts) - 1):
         svg.append(route_seg(pts[i], pts[i + 1], coord[id(pts[i])], coord[id(pts[i + 1])], accent))
     # leg labels (≈距离 · 时长) — above routes, below pins
@@ -297,7 +329,18 @@ def render_day(day, accent):
     for i in range(len(pts) - 1):
         lt = legs[i + 1] if i + 1 < len(legs) else None
         svg.append(leg_label(pts[i], pts[i + 1], coord[id(pts[i])], coord[id(pts[i + 1])], lt, accent))
-    # pins on top
+    # alt pins first (behind main pins)
+    for i, p in enumerate(pts, 1):
+        alts = p.get("alts", [])
+        for j, a in enumerate(alts):
+            x, y = coord[id(a)]
+            label = f"{i}{chr(97+j)}"  # 1a, 1b, ...
+            svg.append(pin(x, y, label, accent, nav(a), alt=True))
+            # dashed line from main to alt
+            mx, my = coord[id(p)]
+            svg.append(f'<line x1="{mx:.1f}" y1="{my:.1f}" x2="{x:.1f}" y2="{y:.1f}" '
+                       f'stroke="{accent}" stroke-width="1.2" stroke-dasharray="3 4" opacity="0.45"/>')
+    # main pins on top
     for i, p in enumerate(pts, 1):
         x, y = coord[id(p)]
         svg.append(pin(x, y, i, accent, nav(p)))
@@ -306,14 +349,31 @@ def render_day(day, accent):
                 f'aria-label="{esc(day["date"])} 手绘地图" xmlns="http://www.w3.org/2000/svg">'
                 + "".join(svg) + "</svg>")
 
-    stops = "".join(
-        f'<li><span class="sn">{i}</span>'
-        f'<span class="st"><b>{esc(s["name"])}</b><i>{esc(s.get("time",""))}</i></span>'
-        f'<span class="acts">'
-        f'<a class="btn go" href="{nav(s)}" target="_blank" rel="noopener">🧭 导航</a>'
-        f'<a class="btn grab" href="{grab(s)}" data-fb="https://www.grab.com/th/" target="_blank" rel="noopener">🚕 Grab</a>'
-        f'</span></li>'
-        for i, s in enumerate(day["slots"], 1))
+    # stops list with collapsible alts
+    stops_parts = []
+    for i, s in enumerate(pts, 1):
+        alts = s.get("alts", [])
+        alt_html = ""
+        if alts:
+            alt_items = "".join(
+                f'<li class="alt-item"><span class="sn sn-alt">{i}{chr(97+j)}</span>'
+                f'<span class="st"><b>{esc(a["name"])}</b><i>{esc(a.get("time",""))}</i></span>'
+                f'<span class="acts">'
+                f'<a class="btn go" href="{nav(a)}" target="_blank" rel="noopener">🧭</a>'
+                f'<a class="btn grab" href="{grab(a)}" data-fb="https://www.grab.com/th/" target="_blank" rel="noopener">🚕</a>'
+                f'</span></li>'
+                for j, a in enumerate(alts))
+            alt_html = (f'<details class="alt-group"><summary>🔀 还有 {len(alts)} 个备选</summary>'
+                        f'<ol class="alt-list">{alt_items}</ol></details>')
+        stops_parts.append(
+            f'<li><span class="sn">{i}</span>'
+            f'<span class="st"><b>{esc(s["name"])}</b><i>{esc(s.get("time",""))}</i></span>'
+            f'<span class="acts">'
+            f'<a class="btn go" href="{nav(s)}" target="_blank" rel="noopener">🧭 导航</a>'
+            f'<a class="btn grab" href="{grab(s)}" data-fb="https://www.grab.com/th/" target="_blank" rel="noopener">🚕 Grab</a>'
+            f'</span></li>'
+            + alt_html)
+    stops = "".join(stops_parts)
 
     tips = "".join(f"<li>{esc(t)}</li>" for t in day.get("tips", []))
     tips_html = f'<ul class="tips">{tips}</ul>' if tips else ""
@@ -385,6 +445,13 @@ svg.map a:hover path[stroke]{stroke-width:2}
 .go{color:#fff;background:linear-gradient(150deg,var(--jade),var(--jade-d));box-shadow:0 2px 6px rgba(10,79,61,.28)}
 .grab{color:#fff;background:#00b14f;font-weight:600;box-shadow:0 2px 6px rgba(0,177,79,.32)}
 @media(min-width:560px){.stops li{grid-template-columns:auto 1fr auto}.acts{grid-column:3;grid-row:1;flex-wrap:nowrap}}
+/* alt groups */
+.alt-group{margin:4px 0 4px 35px;border:1px dashed var(--line);border-radius:10px;padding:0;overflow:hidden}
+.alt-group summary{font-size:12px;color:var(--ink2);cursor:pointer;padding:6px 10px;user-select:none}
+.alt-group summary:hover{color:var(--accent);background:rgba(0,0,0,.02)}
+.alt-list{list-style:none;margin:0;padding:0 8px 8px;display:grid;gap:5px}
+.alt-item{background:rgba(255,255,255,.4);border:1px dashed var(--line);border-radius:10px;padding:7px 10px}
+.sn-alt{width:22px;height:22px;font-size:11.5px;background:transparent;color:var(--accent);border:2px dashed var(--accent);box-shadow:none}
 /* legend / disclaimer / footer */
 .legend{display:flex;flex-wrap:wrap;gap:12px 18px;justify-content:center;margin:14px 0 0;font-size:12.5px;color:var(--ink2)}
 .legend span{display:inline-flex;align-items:center;gap:6px}
