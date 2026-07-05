@@ -7,7 +7,7 @@ No tiles, no Leaflet, no external fonts/JS — everything is inline SVG drawn on
 cross-city / airport days auto-split into a 曼谷 | 清迈 two-frame vignette joined by a
 dashed plane arc. Every numbered pin and every stop-list row deep-links to Google Maps
 navigation (real coords). Fully offline + China-safe."""
-import os, re, json, html, math, datetime
+import os, re, json, html, math, datetime, urllib.parse
 
 ROOT = "/home/yuebiao/project/Tailand-travel-plan"
 
@@ -15,7 +15,7 @@ ROOT = "/home/yuebiao/project/Tailand-travel-plan"
 trip = {
   "title": "泰国清迈 × 曼谷 · 情侣 7 日",
   "startDate": "2026-07-14",
-  "disclaimer": "本页坐标为 AI 依公开资料整理的近似值，仅供手绘示意，点位相对位置经纬度投影、非街道级精确；出行请务必在 Google Maps / 官方渠道核实后再前往。导航按钮一律跳转 Google 地图（泰国首选，高德海外覆盖差）。",
+  "disclaimer": "本页坐标为 AI 依公开资料整理的近似值，仅供手绘示意，点位相对位置经纬度投影、非街道级精确；出行请务必在 Google Maps / 官方渠道核实后再前往。导航按钮一律跳转 Google 地图（泰国首选，高德海外覆盖差）。🚕 Grab 叫车按钮为「尽力唤起」：手机已装 Grab 通常会打开叫车页并预填目的地（视 App 版本也可能只打开 Grab 首页），未安装则回退到 grab.com。",
   "days": [
     {"date": "2026-07-14", "weekday": "周二", "theme": "抵达曼谷 · 朱拉夜市",
      "tips": ["廊曼(DMK)到市区约 26km；A3 巴士便宜、Grab 走高速更快"],
@@ -119,6 +119,14 @@ def relax(pos, box, min_sep=46, iters=80):
     return [(round(x, 1), round(y, 1)) for x, y in pos]
 
 def nav(s): return f'https://www.google.com/maps/dir/?api=1&destination={s["lat"]},{s["lng"]}'
+
+def grab(s):
+    """Best-effort Grab app deep link with drop-off pre-filled (app URI scheme).
+    Not an officially-guaranteed format; page JS falls back to grab.com if the app
+    isn't installed. Worst case it just opens Grab, best case pre-fills the drop-off."""
+    addr = urllib.parse.quote(s["name"])
+    return (f'grab://open?screenType=BOOKING&dropOffLatitude={s["lat"]}'
+            f'&dropOffLongitude={s["lng"]}&dropOffAddress={addr}')
 
 def pin_path(cx, cy, r=14.0):
     return (f"M{cx:.1f} {cy-r:.1f} C {cx-r*1.15:.1f} {cy-r:.1f} {cx-r*1.15:.1f} {cy+r*0.72:.1f} "
@@ -236,10 +244,12 @@ def render_day(day, accent):
                 + "".join(svg) + "</svg>")
 
     stops = "".join(
-        f'<li><a href="{nav(s)}" target="_blank" rel="noopener">'
-        f'<span class="sn">{i}</span>'
+        f'<li><span class="sn">{i}</span>'
         f'<span class="st"><b>{esc(s["name"])}</b><i>{esc(s.get("time",""))}</i></span>'
-        f'<span class="go">导航 ›</span></a></li>'
+        f'<span class="acts">'
+        f'<a class="btn go" href="{nav(s)}" target="_blank" rel="noopener">🧭 导航</a>'
+        f'<a class="btn grab" href="{grab(s)}" data-fb="https://www.grab.com/th/" target="_blank" rel="noopener">🚕 Grab</a>'
+        f'</span></li>'
         for i, s in enumerate(day["slots"], 1))
 
     tips = "".join(f"<li>{esc(t)}</li>" for t in day.get("tips", []))
@@ -298,18 +308,20 @@ svg.map{display:block;width:100%;height:auto;border-radius:16px;filter:drop-shad
 svg.map a{cursor:pointer}
 svg.map a:hover path[stroke]{stroke-width:2}
 /* stop list */
-.stops{list-style:none;margin:13px 0 0;padding:0;display:grid;gap:7px;counter-reset:none}
-.stops a{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink);
- background:rgba(255,255,255,.5);border:1px solid var(--line);border-radius:12px;padding:9px 12px;transition:transform .12s,box-shadow .12s}
-.stops a:active{transform:scale(.985)}
-.stops a:hover{box-shadow:var(--shadow)}
-.sn{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--accent);color:#fbf6ec;
- display:grid;place-items:center;font-family:var(--lat);font-weight:700;font-size:14px;box-shadow:0 2px 5px rgba(42,35,32,.25)}
-.st{flex:1;min-width:0;display:flex;flex-direction:column}
-.st b{font-family:var(--serif);font-weight:600;font-size:14.5px;line-height:1.35}
-.st i{font-style:normal;color:var(--ink2);font-size:12px;font-family:var(--lat)}
-.go{flex:0 0 auto;font-size:12.5px;color:#fff;background:linear-gradient(150deg,var(--jade),var(--jade-d));
- padding:5px 11px;border-radius:999px;white-space:nowrap;box-shadow:0 2px 6px rgba(10,79,61,.28)}
+.stops{list-style:none;margin:13px 0 0;padding:0;display:grid;gap:7px}
+.stops li{display:grid;grid-template-columns:auto 1fr;column-gap:10px;row-gap:6px;align-items:center;color:var(--ink);
+ background:rgba(255,255,255,.5);border:1px solid var(--line);border-radius:12px;padding:9px 12px}
+.sn{grid-column:1;grid-row:1;width:25px;height:25px;border-radius:50%;background:var(--accent);color:#fbf6ec;
+ display:grid;place-items:center;font-family:var(--lat);font-weight:700;font-size:13.5px;box-shadow:0 2px 5px rgba(42,35,32,.25)}
+.st{grid-column:2;grid-row:1;min-width:0;display:flex;flex-direction:column}
+.st b{font-family:var(--serif);font-weight:600;font-size:14px;line-height:1.34}
+.st i{font-style:normal;color:var(--ink2);font-size:11.5px;font-family:var(--lat)}
+.acts{grid-column:1/-1;grid-row:2;display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end}
+.btn{font-size:12px;text-decoration:none;white-space:nowrap;padding:5px 11px;border-radius:999px;transition:transform .12s}
+.btn:active{transform:scale(.94)}
+.go{color:#fff;background:linear-gradient(150deg,var(--jade),var(--jade-d));box-shadow:0 2px 6px rgba(10,79,61,.28)}
+.grab{color:#fff;background:#00b14f;font-weight:600;box-shadow:0 2px 6px rgba(0,177,79,.32)}
+@media(min-width:560px){.stops li{grid-template-columns:auto 1fr auto}.acts{grid-column:3;grid-row:1;flex-wrap:nowrap}}
 /* legend / disclaimer / footer */
 .legend{display:flex;flex-wrap:wrap;gap:12px 18px;justify-content:center;margin:14px 0 0;font-size:12.5px;color:var(--ink2)}
 .legend span{display:inline-flex;align-items:center;gap:6px}
@@ -345,11 +357,12 @@ def build():
     <div class="kick">Hand-drawn Route Journal · 手绘路线</div>
     <h1>{esc(trip['title'])}</h1>
     <div class="dates">2026 · 07 · 14 — 07 · 20</div>
-    <p class="intro">一天一张手绘小地图，牛皮纸上用墨线把当天的脚印连起来。<b>点图钉或下方任意一站</b>，即可一键跳转 <b>Google 地图</b>导航。跨城/机场那天会拆成「曼谷｜清迈」两格、用虚线飞机弧相连。全部离线绘制，无需联网。</p>
+    <p class="intro">一天一张手绘小地图，牛皮纸上用墨线把当天的脚印连起来。每一站都能<b>一键跳 Google 地图导航</b>，或 <b>🚕 唤起 Grab 叫车</b>（尽力预填目的地）。跨城/机场那天会拆成「曼谷｜清迈」两格、用虚线飞机弧相连。全部离线绘制，无需联网。</p>
     <div class="legend">
       <span><i class="k"></i> 当天步行/车行路线</span>
       <span><i class="kf"></i> 飞机跨城</span>
-      <span><i class="kp">🧭</i> 图钉 = 一键 Google 导航</span>
+      <span><i class="kp">🧭</i> 图钉/导航 = Google 地图</span>
+      <span><i class="kp">🚕</i> Grab = 叫车（预填目的地）</span>
     </div>
   </header>
 
@@ -366,6 +379,17 @@ def build():
     手绘 SVG · 无外部依赖 · 坐标近似示意，导航以 Google 地图为准
   </footer>
 </div>
+<script>
+/* Grab 深链：点按先尝试唤起 App，未安装/桌面端则回退 grab.com；不影响离线阅读 */
+document.addEventListener('click',function(e){{
+  var a=e.target.closest('a.grab');if(!a)return;
+  var app=a.getAttribute('href'),fb=a.getAttribute('data-fb');
+  if(!app||app.indexOf('grab://')!==0){{return;}}
+  e.preventDefault();var t=Date.now();
+  setTimeout(function(){{if(!document.hidden&&Date.now()-t<1700){{window.location=fb;}}}},1200);
+  window.location=app;
+}});
+</script>
 </body>
 </html>"""
     out = os.path.join(ROOT, "map.html")
