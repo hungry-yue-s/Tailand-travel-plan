@@ -38,21 +38,21 @@ trip = {
        {"period": "noon", "name": "POOPOOPAPER Park 大象粪造纸园", "time": "11:30–12:40", "lat": 18.9208, "lng": 98.8875},
        {"period": "afternoon", "name": "⭐ 蓬扬 Pongyang 丛林飞跃 + 自控丛林过山车", "time": "13:00–15:30", "lat": 18.916638, "lng": 98.821402}
      ]},
-    {"date": "2026-07-17", "weekday": "周五", "theme": "宁曼购物 · 古城打铁片手作 · 马杀鸡",
-     "tips": ["上午宁曼，午后打车去古城做打铁片；Lanna Artisans 17:00 关门宜早到", "今晚做马杀鸡(从 7/16 挪来)：Oasis 双人套需预约，市区免费接送"],
+    {"date": "2026-07-17", "weekday": "周五", "theme": "奶奶厨房 · 宁曼购物 · 古城打铁片 · 马杀鸡",
+     "tips": ["先去城西南奶奶厨房 Krua Ya 早午餐(9:00–15:30，早去，下午 3 点半收)，再回宁曼逛街", "午后打车去古城做打铁片；Lanna Artisans 17:00 关门宜早到", "今晚做马杀鸡：Oasis 双人套需预约，市区免费接送"],
      "slots": [
-       {"period": "morning", "name": "One Nimman / 宁曼路购物", "time": "10:00–13:00", "lat": 18.8006, "lng": 98.9673},
-       {"period": "noon", "name": "打铁片手作 @ Lanna Artisans Art Gallery", "time": "14:15–16:00", "lat": 18.7790, "lng": 98.9836},
-       {"period": "afternoon", "name": "银庙 Wat Sri Suphan", "time": "16:00–16:40", "lat": 18.7793, "lng": 98.9838},
+       {"period": "morning", "name": "⭐ 奶奶厨房 Krua Ya 早午餐", "time": "09:30–11:00", "lat": 18.7625, "lng": 98.9420},
+       {"period": "morning", "name": "One Nimman / 宁曼路购物", "time": "11:30–14:30", "lat": 18.8006, "lng": 98.9673},
+       {"period": "noon", "name": "打铁片手作 @ Lanna Artisans Art Gallery", "time": "15:00–16:30", "lat": 18.7790, "lng": 98.9836},
+       {"period": "afternoon", "name": "银庙 Wat Sri Suphan", "time": "16:30–17:00", "lat": 18.7793, "lng": 98.9838},
        {"period": "evening", "name": "塔佩门 Tha Phae Gate / 古城咖啡", "time": "17:00–18:15", "lat": 18.7877, "lng": 98.9933},
        {"period": "evening", "name": "⭐ Oasis Spa Nimman 情侣马杀鸡", "time": "19:00–21:00", "lat": 18.7972, "lng": 98.9662}
      ]},
     {"date": "2026-07-18", "weekday": "周六", "theme": "周末市集 · 艺术村 · 周六夜市",
-     "tips": ["用满这个唯一的周六：上午 Jing Jai 周末市集 + 傍晚 Wualai 周六步行街（都仅周末/周六开）", "奶奶厨房 Krua Ya 午餐顺路艺术村（城西南、白天营业、Grab 搜 Krua Ya）"],
+     "tips": ["用满这个唯一的周六：上午 Jing Jai 周末市集（约 14:00 收摊、越早越好）+ 傍晚 Wualai 周六步行街（都仅周末/周六开）", "艺术村 Baan Kang Wat 顺便在村里咖啡馆吃午餐（奶奶厨房已挪到 7/17 早上）"],
      "slots": [
        {"period": "morning", "name": "Jing Jai 周末市集（JJ Market）", "time": "07:30–11:00", "lat": 18.8067, "lng": 98.9762},
-       {"period": "noon", "name": "Baan Kang Wat 艺术村（白色集市）", "time": "12:30–14:00", "lat": 18.7758, "lng": 98.9436},
-       {"period": "noon", "name": "奶奶厨房 Krua Ya 午餐", "time": "12:15–13:45", "lat": 18.7625, "lng": 98.9420},
+       {"period": "noon", "name": "Baan Kang Wat 艺术村（白色集市）+ 村内午餐", "time": "11:30–14:00", "lat": 18.7758, "lng": 98.9436},
        {"period": "evening", "name": "Wualai 周六步行街", "time": "17:30–22:00", "lat": 18.7818, "lng": 98.9852}
      ]},
     {"date": "2026-07-19", "weekday": "周日", "theme": "飞回曼谷 · ICONSIAM · 昭披耶河夜游船",
@@ -87,8 +87,8 @@ LEGS = {
   "2026-07-14": [None, "Grab 40–60min", "Grab 10min"],
   "2026-07-15": [None, "Grab 30–45min", "SL520 航班 1h05"],
   "2026-07-16": [None, "包车 40min", "包车 20–25min"],
-  "2026-07-17": [None, "Grab 15min", "步行 2min", "步行/车 10min", "Grab 15min"],
-  "2026-07-18": [None, "Grab 15–20min", "Grab 10–15min", "Grab 20min"],
+  "2026-07-17": [None, "Grab 15–20min", "Grab 15min", "步行 2min", "步行/车 10min", "Grab 15min"],
+  "2026-07-18": [None, "Grab 15–20min", "Grab 15–20min"],
   "2026-07-19": [None, "VZ2103 航班 1h20", "Grab 20–30min", "馆内步行", "MRT 15min"],
   "2026-07-20": [None, "Grab/ARL 30–60min"],
 }
