@@ -3,6 +3,7 @@
 """Build a self-contained index.html travel plan site from the TRAVEL/*.md files.
 No external fonts/CDNs (China + offline friendly). Uses pandoc for md->html."""
 import subprocess, re, os, datetime, urllib.parse
+import build_map
 
 _FAV = "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='#0f6b53'/><text x='50' y='74' font-size='60' text-anchor='middle' fill='#f7edd7' font-family='Georgia,serif'>&#3607;</text></svg>"
 FAVICON = '<link rel="icon" href="data:image/svg+xml,' + urllib.parse.quote(_FAV) + '">'
@@ -107,7 +108,7 @@ def build_overview():
   <div class="hero-scroll">曼谷 1.5 天 → 清迈 3.5 天（主场） → 曼谷 1 天</div>
 </div>
 
-<a href="./map.html" style="display:block;text-align:center;margin:8px 0 2px;padding:15px 16px;border-radius:14px;text-decoration:none;font-family:var(--cjk-serif);font-size:16px;letter-spacing:.02em;color:#f7edd7;background:linear-gradient(150deg,var(--jade),var(--jade-d));box-shadow:var(--shadow)">🗺️ 翻开手绘路线地图 · 逐日手绘 · 点图钉一键 Google 导航 →</a>
+<a href="./map.html" style="display:block;text-align:center;margin:8px 0 2px;padding:12px 16px;border-radius:14px;text-decoration:none;font-family:var(--cjk-serif);font-size:14px;letter-spacing:.02em;color:var(--ink2);background:var(--card);border:1px solid var(--line)">🗺️ 手绘地图也有独立版 →</a>
 
 <h2 class="sec-h"><span class="sec-no">01</span>航班</h2>
 <div class="flights">{fh}</div>
@@ -121,6 +122,18 @@ def build_overview():
 <div class="ov-note">📌 下面每个标签页是一份完整攻略：<b>逐日行程 / 美食 / 交通 / 安全须知 / 预算</b>。手机上可左右滑动查看表格。出行前请对 ⚠️ 项（签证 TDAC、汇率、营业时间、打车费）再做复核。</div>
 """
 
+def _inject_day_maps(itinerary_html):
+    """Inject hand-drawn map cards after each day's <h2> heading in itinerary."""
+    fragments = build_map.render_day_fragments()
+    # Match <h2> headings like: 🗓️ 7/14 周二 · ...
+    pattern = re.compile(r'(<h2[^>]*>.*?7/(\d{2})\s*周.*?</h2>)', re.DOTALL)
+    def replacer(m):
+        h2 = m.group(1)
+        day_num = int(m.group(2))
+        frag = fragments.get(day_num, "")
+        return h2 + "\n" + frag if frag else h2
+    return pattern.sub(replacer, itinerary_html)
+
 def main():
     today = datetime.date.today().isoformat()
     # nav
@@ -132,10 +145,13 @@ def main():
     secs = [f'<section id="sec-overview" class="panel on">{build_overview()}</section>']
     for key, fn, label, ic in SECTIONS:
         body = md_to_html(os.path.join(SRC, fn))
+        if key == "itinerary":
+            body = _inject_day_maps(body)
         secs.append(f'<section id="sec-{key}" class="panel"><div class="md">{body}</div></section>')
     sections_html = "\n".join(secs)
 
     html = HEAD.replace("<!--FAVICON-->", FAVICON) + f"""
+{build_map.DEFS}
 <div class="grain"></div>
 <header class="site">
   <div class="brand"><span class="brand-mark">ท</span><div><b>泰国行程手账</b><small>Chiang Mai × Bangkok</small></div></div>
@@ -149,6 +165,17 @@ def main():
   <div class="foot-sub">由 Claude 多智能体研究生成 · 更新于 {today} · 价格/营业时间/签证规则为 2026/7 参考，出行前请复核 ⚠️</div>
 </footer>
 {SCRIPT}
+<script>
+/* Grab 深链：点按先尝试唤起 App，未安装/桌面端则回退 grab.com */
+document.addEventListener('click',function(e){{
+  var a=e.target.closest('a.grab');if(!a)return;
+  var app=a.getAttribute('href'),fb=a.getAttribute('data-fb');
+  if(!app||app.indexOf('grab://')!==0){{return;}}
+  e.preventDefault();var t=Date.now();
+  setTimeout(function(){{if(!document.hidden&&Date.now()-t<1700){{window.location=fb;}}}},1200);
+  window.location=app;
+}});
+</script>
 </body></html>"""
     out = os.path.join(ROOT, "index.html")
     with open(out, "w", encoding="utf-8") as f:
@@ -334,6 +361,30 @@ body{
   .fl-n{grid-column:1/3;grid-row:auto;text-align:left;max-width:none}
   .fl-t{grid-column:2}
 }
+/* ---- hand-drawn map cards (from build_map) ---- */
+.daycard{margin:20px 0;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:15px clamp(12px,3vw,20px) 17px;box-shadow:var(--shadow);scroll-margin-top:16px;position:relative}
+.daycard::before{content:"";position:absolute;left:0;top:20px;bottom:20px;width:5px;border-radius:0 5px 5px 0;background:var(--accent);opacity:.9}
+.dh{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px;margin:0 0 8px}
+.dd{font-family:var(--lat);font-size:14px;color:var(--terra);font-weight:600;letter-spacing:.04em}
+.dd em{font-style:normal;color:var(--ink2);font-weight:400}
+.dt{font-family:var(--cjk-serif);font-size:17px;font-weight:600}
+.tips{list-style:none;margin:8px 0 12px;padding:0;font-size:13px;color:var(--ink2);line-height:1.6}
+.tips li::before{content:"💡 "}
+svg.map{display:block;width:100%;height:auto;border-radius:16px;filter:drop-shadow(0 8px 22px rgba(42,35,32,.14))}
+svg.map a{cursor:pointer}
+svg.map a:hover path[stroke]{stroke-width:2}
+.stops{list-style:none;margin:13px 0 0;padding:0;display:grid;gap:7px}
+.stops li{display:grid;grid-template-columns:auto 1fr;column-gap:10px;row-gap:6px;align-items:center;color:var(--ink);background:rgba(255,255,255,.5);border:1px solid var(--line);border-radius:12px;padding:9px 12px}
+.sn{grid-column:1;grid-row:1;width:25px;height:25px;border-radius:50%;background:var(--accent);color:#fbf6ec;display:grid;place-items:center;font-family:var(--lat);font-weight:700;font-size:13.5px;box-shadow:0 2px 5px rgba(42,35,32,.25)}
+.st{grid-column:2;grid-row:1;min-width:0;display:flex;flex-direction:column}
+.st b{font-family:var(--cjk-serif);font-weight:600;font-size:14px;line-height:1.34}
+.st i{font-style:normal;color:var(--ink2);font-size:11.5px;font-family:var(--lat)}
+.acts{grid-column:1/-1;grid-row:2;display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end}
+.btn{font-size:12px;text-decoration:none;white-space:nowrap;padding:5px 11px;border-radius:999px;transition:transform .12s}
+.btn:active{transform:scale(.94)}
+.go{color:#fff;background:linear-gradient(150deg,var(--jade),var(--jade-d));box-shadow:0 2px 6px rgba(10,79,61,.28)}
+.grab{color:#fff;background:#00b14f;font-weight:600;box-shadow:0 2px 6px rgba(0,177,79,.32)}
+@media(min-width:560px){.stops li{grid-template-columns:auto 1fr auto}.acts{grid-column:3;grid-row:1;flex-wrap:nowrap}}
 </style>
 </head>
 <body>

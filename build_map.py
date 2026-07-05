@@ -497,5 +497,14 @@ document.addEventListener('click',function(e){{
     n_points = sum(len(d["slots"]) for d in trip["days"])
     print(f"wrote {out} — {len(page)} chars, {len(trip['days'])} hand-drawn day maps, {n_points} pins")
 
+def render_day_fragments():
+    """Return {day_num: html_fragment} for embedding into index.html."""
+    fragments = {}
+    for i, d in enumerate(trip["days"]):
+        accent = ACCENTS[i % len(ACCENTS)]
+        n = int(d["date"][8:10])
+        fragments[n] = render_day(d, accent)
+    return fragments
+
 if __name__ == "__main__":
     build()
