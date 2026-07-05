@@ -246,8 +246,8 @@
 ### 5.3 建议 3 晚 + 周六安排（贴合住宿在尼曼）
 
 - **周四 7/16**：**象门夜市**（~18:00 吃凤飞飞猪脚饭）→ 顺逛 **Night Bazaar**；雨大转 **Kalare** 有顶棚食阁。
-- **周五 7/17**：家门口的 **One Nimman** 街头美食市集（周五开）+ 尼曼晚餐（Tong Tem Toh / Kao Soy Nimman）；想要步行街感加 **Friday Night 步行街**。
-- **周六 7/18（用满这天）**：==上午 **Jing Jai/JJ 市集**（~7–9 点，早餐+咖啡+农产）→ 傍晚 **Wualai 周六步行街**（银器 + 北部小吃）==。这是你们唯一的周末，两个只在周末开的亮点一网打尽。（白天想安排一顿远一点的：可去城郊 **Krua Ya 奶奶厨房** 午餐，见 §1.3。）
+- **周五 7/17**：**先去城郊奶奶厨房 Krua Ya 早午餐**（09:30–11:00，营业 09:00–15:30，趁早去）→ 回 **宁曼路逛街**（One Nimman / Maya / Think Park）→ 午后古城**打铁片手作** → 晚上**马杀鸡**（Oasis / Fah Lanna）。见 §1.3。
+- **周六 7/18（用满这天）**：==上午 **Jing Jai/JJ 市集**（~7–9 点，早餐+咖啡+农产，约14:00收摊、越早越好）→ 中午 **Baan Kang Wat 艺术村**午餐 → 傍晚 **Wualai 周六步行街**（银器 + 北部小吃）==。这是你们唯一的周末，两个只在周末开的亮点一网打尽。
 
 ---
 
@@ -364,7 +364,7 @@
 > *想吃硬一点的送别餐：Thipsamai 9 点开，蛋皮 pad thai + 招牌橙汁。*
 
 > [!example] 方案 B（住素坤逸、不去唐人街）
-> - **周日傍晚**：**Banthat Thong 路**（BTS National Stadium）——Elvis Suki + Pad Thai Fai Ta Lu；或 **Here Hai**（Ekkamai）粉丝焗蟹。
+> - **周日傍晚**：**Banthat Thong 路**（BTS National Stadium）——**Jimjoom99 จิ้มจุ่มหม้อดิน99**（泰式陶锅冬阴功火锅，99฿/锅，米其林必比登）+ **Pungdet ปังเด็ด 炭烤吐司**（22种馅，炭烤外脆内软）+ Elvis Suki + Pad Thai Fai Ta Lu；或 **Here Hai**（Ekkamai）粉丝焗蟹。
 > - **周日深夜/周一清晨**：**Mae Varee**（Thong Lo，24h）芒果糯米饭。
 > - **周一早餐**：**Rung Rueang** 猪肉面（Phrom Phong），或再来 Mae Varee 打包。
 
