@@ -16,3 +16,4 @@ Thumbs.db
 *.png
 desktop-*.png
 mobile-*.png
+__pycache__/
