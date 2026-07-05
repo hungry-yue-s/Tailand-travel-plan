@@ -38,11 +38,9 @@ trip = {
      "options": [{"tier": "已订", "name": "The Quarter Ratchathewi by UHG", "priceRange": "已预订 · 1 晚", "note": "388 Phetchaburi Rd，高级双人间"}]},
     {"area": "清迈 · 宁曼 Nimman（主场 7/15–7/19）", "reason": "步行逛 One Nimman/Maya、多家美食咖啡，打车古城 15 分钟",
      "options": [{"tier": "已订", "name": "Travelodge Nimman Chiang Mai", "priceRange": "已预订 · 4 晚", "note": "宁曼核心区，高级房"}]},
-    {"area": "曼谷 · 素万那普沿线（后段 7/19，待订）", "reason": "7/20 上午 11:05 国际航班，需好赶素万那普；建议 ARL 机场快线沿线",
+    {"area": "曼谷 · Phayathai/Ratchathewi（后段 7/19–7/20）", "reason": "步行 4 分钟到帕亚泰(Phaya Thai) ARL 机场快线，7/20 早直达素万那普赶国际航班",
      "options": [
-       {"tier": "舒适 4★", "name": "Mercure Bangkok Makkasan", "priceRange": "约 2,500–4,000฿", "note": "ARL Makkasan 站，性价比+赶机方便（推荐）"},
-       {"tier": "轻奢 5★", "name": "Eastin Grand Sathorn / 素万那普机场旁酒店", "priceRange": "约 5,000–6,700฿", "note": "更省心，价更高"},
-       {"tier": "机动", "name": "Sukhumvit(Phrom Phong/Asok) 一带", "priceRange": "约 2,500–4,500฿", "note": "夜生活/餐饮方便，早高峰去机场留足时间"},
+       {"tier": "已订", "name": "True Siam Phayathai Hotel 真暹罗帕亚泰", "priceRange": "已预订 · ¥291 起/晚", "note": "8.8 分，近 Phaya Thai BTS/ARL；站内 hotel.html 有实拍与介绍"},
      ]},
   ],
   "disclaimer": "本页全部信息（天气、航班、酒店、餐厅、景点、门票、价格、营业时间、坐标、评分等）均为 AI 基于公开资料整理的参考建议，可能不准确或已过时，不保证与实时情况一致；坐标为近似值仅供地图示意，请务必在 Google Maps / 官方渠道 / 订票订房 App 核实后再前往。",
@@ -56,7 +54,6 @@ trip = {
   ],
   "reminders": [
     {"item": "填写 TDAC 泰国数字入境卡（tdac.immigration.go.th，认准 .go.th）", "leadDays": 3},
-    {"item": "预订 7/19 曼谷过夜酒店（素万那普沿线，方便次日赶机）", "leadDays": 7},
     {"item": "购买含医疗+紧急送返的旅行保险（若租摩托确认含两轮条款）", "leadDays": 7},
     {"item": "备泰铢现金 + 确认手机可用 Grab / Google Maps", "leadDays": 2},
   ],
@@ -139,6 +136,8 @@ trip = {
      "slots": [
        {"period": "morning", "name": "清迈机场 CNX 飞曼谷", "time": "08:15 到机场 / 10:15 起飞", "lat": 18.7680, "lng": 98.9626,
         "review": "退房→CNX 约 15 分钟；VZ2103 飞素万那普"},
+       {"period": "afternoon", "name": "入住 True Siam Phayathai Hotel", "time": "12:30", "lat": 13.7565, "lng": 100.5335,
+        "review": "帕亚泰/Ratchathewi，步行 4 分到 ARL 机场快线，放行李后玩曼谷；次日直达素万那普", "openingHours": "近 Phaya Thai BTS/ARL"},
        {"period": "afternoon", "name": "ICONSIAM（昭披耶河畔）", "time": "13:30–17:00", "lat": 13.7263, "lng": 100.5100,
         "review": "11:35 落地素万那普→市区；ICONSIAM 室内 SookSiam 水上市场+河景，雨天友好", "transport": {"mode": "ARL 机场快线→市区", "fare": "约 45฿/人", "duration": "约 30 分钟"}},
        {"period": "evening", "name": "Yaowarat 唐人街扫街", "time": "18:00–22:00", "lat": 13.7405, "lng": 100.5090,
