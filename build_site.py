@@ -108,7 +108,6 @@ def build_overview():
   <div class="hero-scroll">曼谷 1.5 天 → 清迈 3.5 天（主场） → 曼谷 1 天</div>
 </div>
 
-<a href="./map.html" style="display:block;text-align:center;margin:8px 0 2px;padding:12px 16px;border-radius:14px;text-decoration:none;font-family:var(--cjk-serif);font-size:14px;letter-spacing:.02em;color:var(--ink2);background:var(--card);border:1px solid var(--line)">🗺️ 手绘地图也有独立版 →</a>
 
 <h2 class="sec-h"><span class="sec-no">01</span>航班</h2>
 <div class="flights">{fh}</div>
