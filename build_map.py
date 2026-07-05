@@ -31,20 +31,21 @@ trip = {
        {"period": "afternoon", "name": "曼谷廊曼机场 DMK 飞清迈", "time": "17:00 到机场", "lat": 13.9126, "lng": 100.6068},
        {"period": "evening", "name": "入住 Travelodge Nimman（清迈）", "time": "21:00", "lat": 18.7985, "lng": 98.9668}
      ]},
-    {"date": "2026-07-16", "weekday": "周四", "theme": "粘粘瀑布 · 便便造纸园 · 马杀鸡",
-     "tips": ["城北一日，建议包车(约 1,500–3,000฿/天)；瀑布 Grab 常拒载返程", "早出发避午后雷阵雨；穿防滑鞋爬瀑布"],
+    {"date": "2026-07-16", "weekday": "周四", "theme": "自然大满贯：粘粘瀑布 · 丛林飞跃 · 便便造纸园",
+     "tips": ["城北 Mae Rim 一日，务必包车(约 1,500–3,000฿/天)：瀑布→造纸园→蓬扬全在北线顺路，瀑布 Grab 常拒载返程", "早出发(约 07:30)避午后雷阵雨、穿防滑鞋爬瀑布；蓬扬有体重限制(连衣物鞋约 ≤95–100kg)，建议订 11:00 或 13:00 场(含泰式午餐)", "今晚不做马杀鸡——已挪到 7/17 晚(见 7/17)"],
      "slots": [
-       {"period": "morning", "name": "Bua Tong 粘粘瀑布", "time": "09:45–12:00", "lat": 19.0475, "lng": 99.0286},
-       {"period": "noon", "name": "POOPOOPAPER Park 大象粪造纸园", "time": "13:00–14:30", "lat": 18.9208, "lng": 98.8875},
-       {"period": "evening", "name": "Oasis Spa Nimman 情侣马杀鸡", "time": "18:00–20:30", "lat": 18.7972, "lng": 98.9662}
+       {"period": "morning", "name": "Bua Tong 粘粘瀑布", "time": "08:45–10:45", "lat": 19.0475, "lng": 99.0286},
+       {"period": "noon", "name": "POOPOOPAPER Park 大象粪造纸园", "time": "11:30–12:40", "lat": 18.9208, "lng": 98.8875},
+       {"period": "afternoon", "name": "⭐ 蓬扬 Pongyang 丛林飞跃 + 自控丛林过山车", "time": "13:00–15:30", "lat": 18.916638, "lng": 98.821402}
      ]},
-    {"date": "2026-07-17", "weekday": "周五", "theme": "宁曼购物 · 古城打铁片手作",
-     "tips": ["上午宁曼，午后打车去古城做打铁片；Lanna Artisans 17:00 关门宜早到"],
+    {"date": "2026-07-17", "weekday": "周五", "theme": "宁曼购物 · 古城打铁片手作 · 马杀鸡",
+     "tips": ["上午宁曼，午后打车去古城做打铁片；Lanna Artisans 17:00 关门宜早到", "今晚做马杀鸡(从 7/16 挪来)：Oasis 双人套需预约，市区免费接送"],
      "slots": [
        {"period": "morning", "name": "One Nimman / 宁曼路购物", "time": "10:00–13:00", "lat": 18.8006, "lng": 98.9673},
        {"period": "noon", "name": "打铁片手作 @ Lanna Artisans Art Gallery", "time": "14:15–16:00", "lat": 18.7790, "lng": 98.9836},
        {"period": "afternoon", "name": "银庙 Wat Sri Suphan", "time": "16:00–16:40", "lat": 18.7793, "lng": 98.9838},
-       {"period": "evening", "name": "塔佩门 Tha Phae Gate / 古城咖啡", "time": "17:00 起", "lat": 18.7877, "lng": 98.9933}
+       {"period": "evening", "name": "塔佩门 Tha Phae Gate / 古城咖啡", "time": "17:00–18:15", "lat": 18.7877, "lng": 98.9933},
+       {"period": "evening", "name": "⭐ Oasis Spa Nimman 情侣马杀鸡", "time": "19:00–21:00", "lat": 18.7972, "lng": 98.9662}
      ]},
     {"date": "2026-07-18", "weekday": "周六", "theme": "周末市集 · 艺术村 · 周六夜市",
      "tips": ["用满这个唯一的周六：上午 Jing Jai 周末市集 + 傍晚 Wualai 周六步行街（都仅周末/周六开）", "奶奶厨房 Krua Ya 午餐顺路艺术村（城西南、白天营业、Grab 搜 Krua Ya）"],
@@ -54,13 +55,14 @@ trip = {
        {"period": "noon", "name": "奶奶厨房 Krua Ya 午餐", "time": "12:15–13:45", "lat": 18.7625, "lng": 98.9420},
        {"period": "evening", "name": "Wualai 周六步行街", "time": "17:30–22:00", "lat": 18.7818, "lng": 98.9852}
      ]},
-    {"date": "2026-07-19", "weekday": "周日", "theme": "飞回曼谷 · 唐人街扫街",
-     "tips": ["清迈上午约 7:30 离店赶 10:15 航班；曼谷落地素万那普(不是廊曼)", "唐人街周日晚正是巅峰、正好避开周一弱夜"],
+    {"date": "2026-07-19", "weekday": "周日", "theme": "飞回曼谷 · ICONSIAM · 昭披耶河夜游船",
+     "tips": ["清迈上午约 7:30 离店赶 10:15 航班；曼谷落地素万那普(不是廊曼)", "游船 19:30 从 ICONSIAM 码头发船：先在 ICONSIAM 看 18:30 音乐喷泉再登船；建议提前订顶层/前甲板座", "游船顶掉唐人街正餐；船靠岸后想扫街可 MRT 去吃个宵夜(Yaowarat 开到 00:00+)"],
      "slots": [
        {"period": "morning", "name": "清迈机场 CNX 飞曼谷", "time": "08:15 到机场 / 10:15 起飞", "lat": 18.7680, "lng": 98.9626},
        {"period": "afternoon", "name": "入住 True Siam Phayathai Hotel", "time": "12:30", "lat": 13.7565, "lng": 100.5335},
-       {"period": "afternoon", "name": "ICONSIAM（昭披耶河畔）", "time": "13:30–17:00", "lat": 13.7263, "lng": 100.5100},
-       {"period": "evening", "name": "Yaowarat 唐人街扫街", "time": "18:00–22:00", "lat": 13.7405, "lng": 100.5090}
+       {"period": "afternoon", "name": "ICONSIAM + 18:30 音乐喷泉", "time": "17:30–19:10", "lat": 13.7263, "lng": 100.5100},
+       {"period": "evening", "name": "⭐ Chao Phraya Princess 夜游船 @ ICONSIAM 码头", "time": "19:30–21:30", "lat": 13.7266, "lng": 100.5099},
+       {"period": "evening", "name": "唐人街 Yaowarat 宵夜（可选）", "time": "21:45–22:45", "lat": 13.7405, "lng": 100.5090}
      ]},
     {"date": "2026-07-20", "weekday": "周一", "theme": "曼谷早餐 · 回国",
      "tips": ["国际航班 11:05，约 07:00 出发去素万那普(留足早高峰时间)，只够吃个早餐"],

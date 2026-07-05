@@ -66,40 +66,37 @@
 
 ---
 
-## 🗓️ 7/16 周四 · 粘粘瀑布 + 大象粑粑 + 宁曼马杀鸡（北向一日）
+## 🗓️ 7/16 周四 · 自然大满贯：粘粘瀑布 + 便便造纸园 + 丛林飞跃（Mae Rim 北向一日）
 
-> [!important] ⚠️ 关键冲突提示（务必先读）
-> ✅ **已确认（你已选定）**：大象活动 = **POOPOOPAPER Park 大象粪造纸手工园**。下表即按此（方案 A）编排；方案 B（无骑乘大象营一日游）仅作备选保留在文末。
-> - **方案 A（推荐，贴合你的时间/预算）**：大象活动 = **POOPOOPAPER Park 大象粪造纸手工园**（就在 Mae Rim，字面就是"大象粑粑"，参观 **约 1 小时、门票约 150 THB**）。它与粘粘瀑布**同在城市正北方向**，顺路，且当天**仍有余力晚上做按摩**。✅
-> - **方案 B（你们爱动物，但会占满一整天）**：改成"粘粘瀑布 + **道德大象营**（喂食/泥浴/洗澡，无骑乘）"的**一日联游（约 8–9 小时）**，人均约 **1,500–2,200 THB（半日项目）/ 55–56 USD（含瀑布的拼团一日）**。⚠️ **但这样傍晚基本没时间再按摩**，按摩要顺延到别的晚上。
->
-> 下表按**方案 A**编排（瀑布 + 造纸园 + 晚按摩）。若选方案 B，见表格下方替代块。
+> [!important] ⚠️ 今日节奏（务必先读）
+> ✅ **你已选定新增：丛林飞跃 = 蓬扬 Pongyang Jungle Coaster & Zipline**（Mae Rim，飞索 34 站 + **自控丛林过山车** + 巨型秋千 + 网红悬崖瀑布餐厅）。它与**粘粘瀑布、便便造纸园同在城北 Mae Rim 方向、一条线顺路**，所以今天做成「自然大满贯」一日游（约 **07:30–16:30**）。
+> - ⚠️ 为腾时间，**今晚的马杀鸡已挪到 7/17 晚**（推荐店家见 7/17）。
+> - ⚠️ 蓬扬有**体重/穿戴限制**（连衣物鞋约 ≤ 95–100 kg）、需**订场次**（09:00 / 11:00 / 13:00，含泰式午餐），本行程排 **13:00 场**衔接上午瀑布 + 造纸；营业约 08:00–17:00，坐标 18.9166, 98.8214。
+> - 大象活动仍是 **POOPOOPAPER 便便造纸园**（方案 A）；"无骑乘大象营"方案 B 仍作备选保留在文末（选它就要和造纸/飞索取舍）。
 
-**建议交通**：包一天车（Grab 包车 / 一日司机 / 民宿代订），约 **1,500–2,000 THB/天**，比红双条自由。粘粘瀑布约 **60 km、车程 1–1.5 小时**（走 107 号公路往 Chiang Dao 方向）。
+**建议交通**：**包一天车**（约 1,500–3,000฿/天）最顺——**粘粘瀑布(Mae Taeng，最北 ~60km) → 便便造纸园(Mae Rim) → 蓬扬(Mae Rim)** 一路向南收，回程有保障（瀑布 Grab 常拒载）。走 107 号公路往 Chiang Dao/Mae Rim 方向。
 
 | 时间 | 地点 / 活动 | 交通（从上一点） | 停留 | 门票 / 费用 | 小贴士 / 推荐理由 |
 |---|---|---|---|---|---|
-| 08:00–08:30 | 酒店早餐 + 出发 | 包车司机酒店接 | — | — | 早出发避开人群和午后雷阵雨（7 月雨季） |
-| 08:30–09:45 | 酒店 → **粘粘瀑布 Bua Tong / Nam Phu Chet Si** | 包车约 1–1.25h（60 km） | — | — | 全程往北，之后回 Mae Rim 顺路 |
-| 09:45–12:00 | **攀爬粘粘瀑布**（石灰岩不打滑，可赤脚往上爬）| — | ~2h | **免费**（入口登记姓名/车牌） | ⚠️ **7 月雨季水量最大、最壮观，但岩石更滑**：穿防滑水鞋/凉鞋、扶好绳索、慢行。开放约 **08:00–17:00**（个别资料 06:00–18:00）。入口有厕所/餐厅/野餐区 |
-| 12:00–12:45 | 瀑布 → Mae Rim 方向，午餐 | 包车约 40–50 分钟 | 45min | 人均 150–300 THB | Mae Rim 沿途有不少花园餐厅/咖啡馆 |
-| 13:00–14:15 | **POOPOOPAPER Park 大象粪造纸园**（87 Moo.10, Mae Raem, Mae Rim） | 包车 | ~1–1.5h | **约 150 THB/人**（部分旧资料 100 THB，5 岁以下免费） | 全程有导览讲解"粪→纸"工序，可动手体验（蒸煮/染色/塑形/晾晒），有中/英文导览。营业 **约 09:00–17:00（末场导览 16:00）**。就在 Tiger Kingdom 北侧约 100 m |
-| 14:15–15:00 | 返回宁曼酒店 | 包车约 30–40 分钟 | — | — | 离市区仅约 15 分钟车程 |
-| 15:00–17:30 | 酒店休息 / 宁曼咖啡馆慢时光 | 步行 | ~2h | 咖啡 100–150 THB | 顺路补一杯 **Ristr8to**（2017 世界拉花冠军，宁曼 Soi 3，骷髅杯拿铁）或 **Graph One Nimman**（招牌氮气玫瑰咖啡 Lost Garden） |
-| 18:00–20:30 | **马杀鸡（宁曼按摩 SPA）** | 步行 / Grab | 2–2.5h | 见下 | 见推荐👇 |
-| 20:30–22:00 | 宁曼晚餐 / 夜市小吃 | 步行 | 1.5h | 人均 200–400 THB | One Nimman 广场、宁曼各巷口都有餐厅酒吧 |
+| 07:30–07:50 | 酒店早餐 + 出发（今天早起） | 包车司机酒店接 | — | — | 早出发避午后雷阵雨、抢瀑布凉爽人少（7 月雨季） |
+| 07:50–09:00 | 酒店 → **粘粘瀑布 Bua Tong / Nam Phu Chet Si**（Mae Taeng，最北） | 包车约 1–1.25h（60 km） | — | — | 全程往北，之后一路南下回 Mae Rim 顺路 |
+| 09:00–10:45 | **攀爬粘粘瀑布**（石灰岩不打滑，可赤脚往上爬）| — | ~1.75h | **免费**（入口登记姓名/车牌） | ⚠️ **7 月雨季水量最壮观但岩石更滑**：穿防滑水鞋/凉鞋、扶好绳索、慢行。开放约 **08:00–17:00**。入口有厕所/餐厅/野餐区 |
+| 10:45–11:25 | 瀑布 → **Mae Rim** 便便造纸园 | 包车约 40 分钟 | — | — | 南下回 Mae Rim；沿途也可买点心 |
+| 11:25–12:30 | **POOPOOPAPER Park 大象粪造纸园**（87 Moo.10, Mae Raem, Mae Rim） | 包车 | ~1h | **约 120–150 THB/人**（5 岁以下免费） | "大象粑粑"手工造纸体验，导览讲"粪→纸"、可动手（蒸煮/染色/塑形/晾晒），有中/英文导览。营业 **约 09:00–17:00（末场导览 16:00）**，故排上午稳妥。就在 Tiger Kingdom 北侧约 100 m |
+| 12:30–12:55 | 造纸园 → **蓬扬 Pongyang** | 包车约 20–25 分钟 | — | — | 两点都在 Mae Rim、很近 |
+| 13:00–15:30 | ⭐ **蓬扬丛林飞跃 Pongyang**（13:00 场·含泰式午餐）：飞索 34 站 + **自控丛林过山车** + 巨型秋千 + 丛林自行车 | — | ~2.5h | 约 **1,890 THB/人**（飞索+过山车套餐，含接送/午餐/保险） | 独创**自己控速的丛林过山车** + **网红悬崖瀑布餐厅**拍照；教练可中文讲安全。⚠️ 体重连衣物鞋 ≤ ~95–100kg、不能穿拖鞋、别戴过多首饰；孕妇/心脏病/术后一年内不宜。**Klook/KKday 提前订更便宜** |
+| 15:30–16:20 | 返回宁曼酒店 | 包车约 40–50 分钟 | — | — | Mae Rim 回市区约 40 分钟 |
+| 16:20 起 | 宁曼休整 + 晚餐 / 夜市小吃 | 步行 | — | 人均 200–400 THB | 今晚不按摩（马杀鸡在 7/17）；顺补一杯 **Ristr8to**（世界拉花冠军·骷髅杯）或 **Graph One Nimman**（氮气玫瑰咖啡）。晚餐 Tong Tem Toh 等 |
 
-> [!tip] 马杀鸡推荐（宁曼，情侣双人）
-> - **Oasis Spa Nimman**（Soi 7，距 One Nimman 步行 3 分钟）：**King & Queen 双人套餐**（泰式 + 精油），欧式红楼宅邸、私密房，**市区内免费接送**；营业 10:00–24:00（预约 8:30–21:30）。相对高性价比套餐约 **3,045 THB（150 分钟，含 Lanna Secret）**。
-> - **Fah Lanna Spa 宁曼馆**（Nimman Soi 15）：世界奢华生态 SPA 金奖；**Romantic 情侣套餐**（蒸浴+磨砂+皇家浴+精油+面部）**约 11,300 THB/对**，营业 12:00–21:00（末场 20:00，**最少 2 小时、务必预约**）。
-> 👉 情侣纪念感选 Fah Lanna Romantic；日常放松 + 免费接送选 Oasis。
+> [!tip] 今晚不做马杀鸡 → 已挪到 **7/17 周五晚**
+> 今天玩满一整天，按摩安排在 7/17 晚（Oasis / Fah Lanna 双人套推荐详见 7/17 表格下方）。
 
-> [!example] 方案 B 替代编排（若选"瀑布 + 大象营"一日游）
-> 08:00 民宿接 → 上午 **粘粘瀑布**攀爬 → 中午沙滩/营地自助午餐 → 下午 **道德大象营**（喂香蕉、和大象泥浴/河里洗澡，无骑乘无表演）→ 约 17:00–18:00 回宁曼。推荐可搜 **Lanna Kingdom / Maerim Elephant Sanctuary / Elephant Rescue Park（Mae Taeng）** 等无骑乘营地，认准"no riding / no hooks / 小团"。⚠️ 当天较满，**按摩改到 7/17 或 7/18 晚**。
+> [!example] 方案 B 替代编排（若把丛林飞跃换成"无骑乘大象营"）
+> 若你更想**摸/喂/给大象洗澡**而不是造纸 + 飞索：把 Mae Rim 段换成"**粘粘瀑布 + 道德大象营**（喂香蕉、和大象泥浴/河里洗澡，无骑乘无表演）"一日联游（约 8–9h），人均约 **1,500–2,200 THB**。推荐搜 **Lanna Kingdom / Maerim Elephant Sanctuary / Elephant Rescue Park（Mae Taeng）** 等无骑乘小团，认准"no riding / no hooks / 小团"。⚠️ 这样**丛林飞跃与便便造纸需二选一**、当天更满，按摩仍在 7/17。
 
 ---
 
-## 🗓️ 7/17 周五 · 宁曼早午餐购物 + 古城打铁片手作
+## 🗓️ 7/17 周五 · 宁曼早午餐购物 + 古城打铁片手作 + 马杀鸡
 
 > [!success] ✅ "奶奶厨房" 已确认 = 清迈 Krua Ya（Grandma's Kitchen）
 > 就是清迈郊外 **Chiang Mai Lake Land** 别墅村里的泰餐花园餐厅（临池塘绿树、**只做白天**、需 Grab、非西式 brunch）。因它在城**西南郊**、而 7/17 下午你们在**古城**（打铁片，方向相反），已把它挪到 **7/18 午餐**（和同在西南的艺术村 Baan Kang Wat 顺路）——见 7/18。7/17 上午改在宁曼就近早午餐即可。
@@ -111,8 +108,14 @@
 | 13:30–14:15 | 宁曼快速午餐 → Grab 去古城南门（Wualai·银庙一带） | 步行 + Grab 约 15 分 | 45min | 午餐人均 200–400 + 车 80–120 THB | 午餐后打车去古城做打铁片 |
 | 14:15–16:00 | ⭐ **打铁片手作 @ Lanna Artisans Art Gallery**（南门银庙旁，认门口有**三角梅**的那家，别走错） | 步行 | ~1.5h | **50 THB/件**（钥匙扣/戒指/手镯·**仅现金**） | 选铁牌底 → 选图案（大象/泰文/祝福语，或自画）→ 小铁锤+钢凿沿线敲打（师傅全程指导）→ 修边抛光打孔 → 门口老奶奶喷漆带走。**独一无二伴手礼 + 雨季室内解压**。⚠️ **17:00 关门宜早到**；选简单图案不手酸；等加工可逛旁边 **杰林寺 Wat Jet Lin**，店内有免费冰水 |
 | 16:00–16:40 | 顺看 **银庙 Wat Sri Suphan**（就在旁边，Wualai 路） | 步行 | 40min | ~50 THB | 全球唯一纯银装饰佛殿，兰纳银匠工艺；⚠️ 银殿**仅限男性入内**，女生可在外围参观 |
-| 16:40–17:30 | 古城咖啡 / 塔佩门散步（或回宁曼） | Grab / 步行 | ~50min | 咖啡 100–150 THB | 顺路歇脚；晚上宁曼或古城晚餐 |
-| 18:00 起 | 晚餐 + 可选按摩 | 步行 | — | — | 若 7/16 已按摩，可今晚吃顿好的（宁曼 or 古城）；若想补按摩见 7/16 推荐 |
+| 16:40–17:30 | 回宁曼 / 古城咖啡歇脚 | Grab / 步行 | ~50min | 咖啡 100–150 THB | 顺路歇脚，回宁曼准备晚餐 + 按摩 |
+| 17:30–19:00 | 宁曼晚餐 | 步行 | 1.5h | 人均 200–400 THB | 宁曼各巷餐厅；按摩前别吃太饱 |
+| 19:00–21:00 | ⭐ **马杀鸡（宁曼情侣按摩 SPA）**（从 7/16 挪来） | 步行 / Grab / 免费接送 | ~2h | 见下👇 | Oasis King&Queen 双人套 或 Fah Lanna Romantic；**务必预约**、Oasis 市区免费接送 |
+
+> [!tip] 马杀鸡推荐（宁曼，情侣双人 · 今晚 7/17）
+> - **Oasis Spa Nimman**（Soi 7，距 One Nimman 步行 3 分钟）：**King & Queen 双人套餐**（泰式 + 精油），欧式红楼宅邸、私密房，**市区内免费接送**；营业 10:00–24:00（预约 8:30–21:30）。相对高性价比套餐约 **3,045 THB（150 分钟，含 Lanna Secret）**。
+> - **Fah Lanna Spa 宁曼馆**（Nimman Soi 15）：世界奢华生态 SPA 金奖；**Romantic 情侣套餐**（蒸浴+磨砂+皇家浴+精油+面部）**约 11,300 THB/对**，营业 12:00–21:00（末场 20:00，**最少 2 小时、务必预约**）。
+> 👉 情侣纪念感选 Fah Lanna Romantic；日常放松 + 免费接送选 Oasis。⚠️ 都要**提前预约**（尤其 Fah Lanna 末场 20:00），今早或前一天订好。
 
 > [!note] 可选半日：素贴山双龙寺 Doi Suthep（OPTIONAL）
 > 你们**非寺庙控**，故此项标记为**可选**——但双龙寺是清迈**最标志性**的山景金塔；7/17 下午已排打铁片，若某个半天想换山景节奏可考虑它：
@@ -143,7 +146,7 @@
 
 ---
 
-## 🗓️ 7/19 周日 · 清迈飞曼谷（素万那普）+ ICONSIAM + 唐人街
+## 🗓️ 7/19 周日 · 清迈飞曼谷（素万那普）+ ICONSIAM + 昭披耶河夜游船
 
 **早班机**：CNX **VZ2103 10:15 起飞**（提前 2h 到、~08:15），酒店→CNX 约 15–20 分钟 → **~07:30 离店**（早餐 grab-and-go）。落地 **素万那普 BKK 11:35**（与廊曼不是同一机场）。
 
@@ -156,11 +159,11 @@
 | 12:00–13:00 | **BKK 机场 → True Siam Phayathai（Phaya Thai）** | **Airport Rail Link（ARL）直达 Phaya Thai 站**约 28 分钟、45 THB（酒店步行 4 分、避堵首选）；或 Grab/出租车 30–60 分钟、≈300–500 THB | — | — | ARL 在机场 B1 层（"Train to City"），到 Phaya Thai 出站步行几分钟到店；行李多也可 Grab |
 | 13:00–14:00 | 酒店入住 + 午餐 + 休整 | — | 1h | — | 睡个短觉/冲凉，傍晚出门 |
 | 15:30–17:30 | ⏸️ 轻松下午（情侣二选一） | 见备注 | ~2h | — | **① 屋顶/河景咖啡** 或 **② Lumphini 公园散步**（若住 Silom/Sam Yan 一带）。不想动就酒店泳池 |
-| 17:30–18:00 | 前往 **ICONSIAM（河畔商场）** | Grab / 出租车约 20–30 分钟；或 BTS 到 Saphan Taksin 换船 | — | — | — |
-| 18:00–19:30 | **ICONSIAM**：SookSiam 室内水上市场小吃 + **18:30 音乐喷泉秀** | 步行 | 1.5h | 进场免费（消费自理） | 营业 **10:00–22:00**；**River Park 音乐喷泉 18:30 / 20:00 / 21:00**（亚洲最长，400 m）。SookSiam 免费进，只付吃/买 |
-| 19:30–20:00 | ICONSIAM → **唐人街 Yaowarat（耀华力）** | **昭披耶河渡轮**至 Ratchawong 码头约 30 分钟（河景、避堵）⚠️**末班约 22:00，出发前确认**；或 Grab；或 MRT 到 Wat Mangkorn 步行 5 分钟 | — | 渡轮几十铢 | 建议**先 ICONSIAM 后唐人街**，末尾坐 MRT 回避免被末班船困住 |
-| 20:00–22:00 | **Yaowarat 唐人街街头晚餐** | 步行逛吃 | ~2h | 人均 200–500 THB | ⚠️ **周日正是好时机**（街头摊多周一休市清扫，周日不受影响）；**18:00 后**主街封路摆摊最热闹。招牌：**T&K Seafood**（绿招牌炭烤海鲜）、**Nai Ek Roll Noodle**（胡椒粿汁 8:00–00:30）、**Lim Lao Ngow**（必比登鱼丸面 16:30–21:00）。"小份多样、边走边吃" |
-| 22:00–22:40 | 唐人街 → 酒店 | **MRT Wat Mangkorn** 上车（避晚间堵车）+ 接驳；或 Grab | — | — | 早点回，明早要赶国际航班 |
+| 17:30–18:00 | 前往 **ICONSIAM（河畔商场，也是游船码头）** | Grab / 出租车约 20–30 分钟；或 BTS 到 Saphan Taksin 换免费接驳船 | — | — | ICONSIAM 就是今晚游船的码头所在，先逛后登船 |
+| 18:00–19:05 | **ICONSIAM**：SookSiam 室内水上市场小吃 + **18:30 音乐喷泉秀** | 步行 | ~1h | 进场免费（消费自理） | River Park 音乐喷泉 **18:30**（亚洲最长 400m）先看一场；看完直接去码头 check-in |
+| 19:05–19:25 | 到 **ICONSIAM 码头（Pier）** check-in 登船 | 步行 | — | — | 游船提前 15–20 分钟到、对号入座；带好订票二维码 |
+| 19:30–21:30 | ⭐ **Chao Phraya Princess 昭披耶河夜游船**（ICONSIAM 码头发船） | 河上巡游 | 2h | 约 **1,000–1,300 THB/人**（泰式 + 国际自助餐 + 现场乐队） | 曼谷最有名的夜游船之一；船行经**郑王庙 Wat Arun、大皇宫、Rama VIII 大桥**打灯夜景，情侣浪漫拉满。⚠️ **务必提前订**（顶层 Top Deck / 前甲板视野最好、常售罄）；ICONSIAM 或 Asiatique 均可登船 |
+| 21:30–22:30 | 可选：**唐人街 Yaowarat 宵夜** 或 回酒店 | 靠岸后 MRT 到 Wat Mangkorn 约 15 分；或 Grab 回店 | — | 宵夜人均 150–300 THB | 想扫街就 MRT 过去吃个宵夜（Yaowarat 开到 00:00+：**T&K 海鲜 / 卷粉汤 / 燕窝糖水**）；不想折腾直接回店早睡，明早赶国际航班 |
 
 > [!success] ✅ 后段酒店已定：True Siam Phayathai Hotel（Phaya Thai / Ratchathewi）
 > 8.8 分、约 ¥291 起/晚，**步行约 4 分钟到帕亚泰(Phaya Thai) ARL 机场快线站**——正是"稳妥赶机"最优解：7/20 早一趟 ARL 直达素万那普 28 分钟 / 45฿，完全避开曼谷早高峰堵车；近 Phaya Thai BTS，晚上去 ICONSIAM/唐人街也方便。站内 `hotel.html` 有实拍与介绍。
@@ -185,12 +188,15 @@
 
 ## ✅ 待确认 & 优化建议
 
-> [!question] 需要你拍板的 5 件事
-> 1. ✅ **"奶奶厨房" 已确认 = 清迈 Krua Ya**（城郊 Chiang Mai Lake Land、白天营业、需 Grab），已排入 **7/18 午餐**（顺路艺术村 Baan Kang Wat）。
-> 2. ✅ **"打铁片" 已确认**：古城 **Lanna Artisans Art Gallery** 敲打铁片手作（南门银庙旁、门口有三角梅那家，50฿/件、约 1–2h、仅现金、17:00 关门），已排入 7/17 下午。
-> 3. **7/16 大象活动二选一**：方案 A = POOPOOPAPER 造纸园（~1h/~150THB，顺路 + 保住晚按摩，**推荐**）；方案 B = 无骑乘大象营 + 瀑布**一日游（8–9h）**，但**当晚没法按摩**。→ 你们爱动物，若更想**摸/喂/给大象洗澡**，选 B 并把按摩挪到别晚。
-> 4. ✅ **曼谷后段酒店已定**：**True Siam Phayathai Hotel**（Phaya Thai/Ratchathewi，步行 4 分到 ARL 机场快线），7/19 入住、7/20 离店，约 ¥291 起/晚。
-> 5. **马杀鸡时间/店家**：默认 7/16 晚 Oasis（双人 King&Queen）或 Fah Lanna（Romantic 情侣套）。若选大象营方案 B，按摩改 7/17 或 7/18 晚。
+> [!success] ✅ 已敲定（原 5 项 + 新增两处玩乐都排好了）
+> 1. ✅ **奶奶厨房 = 清迈 Krua Ya**，已排入 **7/18 午餐**（顺路艺术村 Baan Kang Wat）。
+> 2. ✅ **打铁片 = 古城 Lanna Artisans**，已排入 **7/17 下午**（50฿/件、仅现金、17:00 关门）。
+> 3. ✅ **7/16 = 自然大满贯**：粘粘瀑布 + 便便造纸园（方案 A）+ **新增丛林飞跃「蓬扬 Pongyang」**（Mae Rim 同北线顺路，飞索 34 站 + 自控丛林过山车，~1,890฿/人）。无骑乘大象营（方案 B）仍作备选（会与造纸/飞索取舍）。
+> 4. ✅ **曼谷后段酒店已定**：True Siam Phayathai（步行 4 分到 ARL），7/19 入住、7/20 离店。
+> 5. ✅ **马杀鸡已排 7/17 晚**（从 7/16 挪来）：Oasis King&Queen 双人套 或 Fah Lanna Romantic。
+> 6. ✅ **新增曼谷夜游船**：**Chao Phraya Princess**，7/19 从 ICONSIAM 码头 19:30–21:30，~1,000–1,300฿/人，顶掉唐人街正餐（可船后 MRT 去吃宵夜）。
+>
+> ⚠️ **需你出发前动手订的 3 张票**：① 蓬扬 **Pongyang** 场次（建议 13:00 · Klook/KKday 更便宜）；② 7/17 晚 **马杀鸡**（Oasis / Fah Lanna，务必预约）；③ 昭披耶 **Chao Phraya Princess 游船**（选顶层/前甲板、提前订）。
 
 > [!tip] 通用优化提示
 > - **7 月雨季**：清迈近郊（瀑布）+ 曼谷午后常雷阵雨，**户外尽量排上午**，午后留室内/商场/按摩，行程已如此编排。带轻便雨衣/伞、防滑鞋。
@@ -206,6 +212,9 @@
 - 粘粘瀑布：[forevervacation](https://forevervacation.com/chiang-mai/bua-tong-waterfalls) · [chiangmaihub](https://chiangmaihub.com/bua-thong-sticky-waterfalls/) · [tripadvisor](https://www.tripadvisor.com/Attraction_Review-g1951349-d1760401-Reviews-Bua_Thong_Waterfalls_Nam_Phu_Chet_Si-Mae_Taeng.html)
 - POOPOOPAPER 造纸园：[官网](https://www.poopoopaperpark.com/) · [chiangmaitravelhub](https://www.chiangmaitravelhub.com/attractions/elephant-poo-poo-paper-park/) · [tourismthailand](https://www.tourismthailand.org/Attraction/elephant-poopoopaper-park)
 - 大象营（无骑乘）+ 瀑布一日游：[backpackerswanderlust](https://www.backpackerswanderlust.com/elephant-sanctuaries-in-chiang-mai/) · [elephantrescuepark](https://elephantrescuepark.com/) · [click2gothailand](https://www.click2gothailand.com/tours/00973)
+- 蓬扬丛林飞跃 Pongyang（坐标 18.9166,98.8214·营 08:00–17:00）：[chiangmailocator](https://www.chiangmailocator.com/chiang-mai-hangouts-7029:pongyang-zipline-jungle-coaster) · [trip.com](https://www.trip.com/travel-guide/attraction/mae-rim/pongyang-jungle-coaster-and-zipline-27256310/) · [tripadvisor](https://www.tripadvisor.com/Attraction_Review-g293917-d10091634-Reviews-Pongyang_Zipline_and_Jungle_Coaster-Chiang_Mai.html)
+- 清迈丛林飞跃对比（长臂猿/丛林之光等）：[backpackthailand](https://backpackthailand.com/guides/zip-lining-thailand-guide) · [actionsportasia](https://www.actionsportasia.com/how-to-choose-a-chiangmai-zipline/) · [Flight of the Gibbon 官网](https://www.flightofthegibbon.com/zh-hans/locations/chiang-mai)
+- 昭披耶河夜游船（ICONSIAM 码头）：[ticket2attraction](https://www.ticket2attraction.com/blogs/chao-phraya-dinner-cruise-iconsiam-bangkok/) · [Chao Phraya Princess/traveloka](https://www.traveloka.com/en-sg/activities/thailand/product/chao-phraya-princess-dinner-cruise-tickets-at-iconsiam-pier-2001130822045) · [bangkok-river-cruise](https://www.bangkok-river-cruise.com/)
 - Jing Jai 集市：[官方 FB](https://www.facebook.com/jjmarketchiangmai/) · [cktravels](https://www.cktravels.com/jing-jai-weekend-farmers-market-chiang-mai/) · [chiangmaitravelhub](https://www.chiangmaitravelhub.com/attractions/jj-market-chiang-mai/)
 - Baan Kang Wat 艺术村：[roytellstales](https://roytellstales.com/baan-kang-wat-chiang-mai/) · [feel-chiang-mai](https://www.feel-chiang-mai.com/handicraft/baan-kang-wat-workshop-guide/) · [klook](https://www.klook.com/en-US/destination/p50291007-baan-kang-wat/)
 - Wualai 周六夜市：[uhotelsresorts](https://www.uhotelsresorts.com/unimmanchiangmai/attractions/wualai-walking-street-saturday-night-market) · [cktravels](https://www.cktravels.com/best-chiang-mai-night-markets/) · [chiangmaicitylife](https://www.chiangmaicitylife.com/citynow/whats-on/kids-and-family/wua-lai-walking-street-saturday-night-market/)
