@@ -463,17 +463,18 @@ body{
 svg.map{display:block;width:100%;height:auto;border-radius:16px;filter:drop-shadow(0 8px 22px rgba(42,35,32,.14));touch-action:none}
 svg.map a{cursor:pointer}
 svg.map a:hover path[stroke]{stroke-width:2}
-.map-fs{position:absolute;top:26px;right:10px;z-index:5;width:34px;height:34px;border:1px solid var(--line);border-radius:10px;background:rgba(250,244,230,.92);color:var(--ink2);font-size:18px;line-height:1;cursor:pointer;box-shadow:var(--shadow);display:grid;place-items:center;transition:.15s}
-.map-fs:hover{background:#fff;color:var(--jade-d);transform:scale(1.05)}
-.map-fs:active{transform:scale(.95)}
+.map-fs,.map-reset{position:absolute;right:10px;z-index:5;width:34px;height:34px;border:1px solid var(--line);border-radius:10px;background:rgba(250,244,230,.92);color:var(--ink2);font-size:18px;line-height:1;cursor:pointer;box-shadow:var(--shadow);display:grid;place-items:center;transition:.15s}
+.map-fs{top:26px}
+.map-reset{top:64px;font-size:16px}
+.map-fs:hover,.map-reset:hover{background:#fff;color:var(--jade-d);transform:scale(1.05)}
+.map-fs:active,.map-reset:active{transform:scale(.95)}
 .daycard:fullscreen{position:fixed;inset:0;width:100vw;height:100vh;max-width:none;border-radius:0;display:flex;flex-direction:column;padding:0;overflow:hidden;background:#faf4e6}
 .daycard:fullscreen .dh,.daycard:fullscreen .tips,.daycard:fullscreen .stops{display:none}
 .daycard:fullscreen svg.map{flex:1;width:100%;height:100%;max-width:none;border-radius:0}
 .daycard:-webkit-full-screen{position:fixed;inset:0;width:100vw;height:100vh;max-width:none;border-radius:0;display:flex;flex-direction:column;padding:0;overflow:hidden;background:#faf4e6}
 .daycard:-webkit-full-screen .dh,.daycard:-webkit-full-screen .tips,.daycard:-webkit-full-screen .stops{display:none}
 .daycard:-webkit-full-screen svg.map{flex:1;width:100%;height:100%;max-width:none;border-radius:0}
-.pin-fixed{transition:transform .05s linear}
-.leg-fixed{transform-box:fill-box;transform-origin:center;transition:transform .05s linear}
+.pin-fixed,.leg-fixed{transition:transform .05s linear}
 .route-line{vector-effect:non-scaling-stroke}
 .stops{list-style:none;margin:13px 0 0;padding:0;display:grid;gap:7px}
 .stops li{display:grid;grid-template-columns:auto 1fr;column-gap:10px;row-gap:6px;align-items:center;color:var(--ink);background:rgba(255,255,255,.5);border:1px solid var(--line);border-radius:12px;padding:9px 12px}

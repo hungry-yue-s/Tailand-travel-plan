@@ -1,11 +1,12 @@
 /**
- * SVG map zoom / pan / fullscreen interactions
+ * SVG map zoom / pan / fullscreen / reset interactions
  * - Mouse wheel zoom (anchor at cursor)
  * - Double-click on empty area zoom in
  * - Two-finger pinch zoom on touch devices
  * - Drag to pan when zoomed in
  * - Fullscreen toggle button
- * - Map pins stay the same visual size while the map zooms
+ * - Reset button to restore initial view
+ * - Map pins, route labels and dashed lines keep visual size while zooming
  */
 (function(){
   'use strict';
@@ -27,6 +28,13 @@
     const legs = Array.from(svg.querySelectorAll('.leg-fixed'));
     const routes = Array.from(svg.querySelectorAll('.route-line'));
 
+    function reset(){
+      scale = 1;
+      cx = W / 2;
+      cy = H / 2;
+      setViewBox();
+    }
+
     function setViewBox(){
       const vw = W / scale;
       const vh = H / scale;
@@ -37,16 +45,26 @@
     }
 
     function updateFixedElements(){
-      // Keep pins and leg labels visually the same size while the map zooms.
-      // We scale each fixed group around its own center by 1/currentScale.
+      // Keep pins visually the same size while the map zooms.
       const inv = 1 / scale;
       pins.forEach(function(pin){
         const pcx = parseFloat(pin.getAttribute('data-cx') || 0);
         const pcy = parseFloat(pin.getAttribute('data-cy') || 0);
         pin.setAttribute('transform', `translate(${pcx}, ${pcy}) scale(${inv}) translate(${-pcx}, ${-pcy})`);
       });
-      legs.forEach(function(leg){ leg.style.transform = `scale(${inv})`; });
-      // Keep dashed route patterns visually consistent and never let them collapse into a solid line.
+      // Keep leg labels visually the same size and centered on their rect.
+      legs.forEach(function(leg){
+        const rect = leg.querySelector('rect');
+        if (!rect) return;
+        const rx = parseFloat(rect.getAttribute('x') || 0);
+        const ry = parseFloat(rect.getAttribute('y') || 0);
+        const rw = parseFloat(rect.getAttribute('width') || 0);
+        const rh = parseFloat(rect.getAttribute('height') || 0);
+        const lx = rx + rw / 2;
+        const ly = ry + rh / 2;
+        leg.setAttribute('transform', `translate(${lx}, ${ly}) scale(${inv}) translate(${-lx}, ${-ly})`);
+      });
+      // Keep dashed route patterns visually consistent and never collapse into a solid line.
       const rect = svg.getBoundingClientRect();
       const pxPerUnit = (rect.width * scale) / W;
       const minScreenPx = 1.0;
@@ -170,6 +188,8 @@
       if (e.touches.length < 2) pinch = null;
       if (e.touches.length === 0) dragging = false;
     });
+
+    return { reset: reset };
   }
 
   function initFullscreen(btn){
@@ -186,6 +206,17 @@
     });
   }
 
-  document.querySelectorAll('svg.map').forEach(init);
+  const controls = {};
+  document.querySelectorAll('svg.map').forEach(function(svg){
+    const dayId = svg.closest('.daycard').id;
+    controls[dayId] = init(svg);
+  });
   document.querySelectorAll('.map-fs').forEach(initFullscreen);
+  document.querySelectorAll('.map-reset').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      const dayId = btn.getAttribute('data-target');
+      if (controls[dayId]) controls[dayId].reset();
+    });
+  });
 })();
