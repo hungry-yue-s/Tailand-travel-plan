@@ -24,6 +24,7 @@
     let pinch = null;
     let startDist = 0;
     const pins = Array.from(svg.querySelectorAll('.pin-fixed'));
+    const legs = Array.from(svg.querySelectorAll('.leg-fixed'));
 
     function setViewBox(){
       const vw = W / scale;
@@ -31,18 +32,20 @@
       const vx = cx - vw / 2;
       const vy = cy - vh / 2;
       svg.setAttribute('viewBox', `${vx.toFixed(2)} ${vy.toFixed(2)} ${vw.toFixed(2)} ${vh.toFixed(2)}`);
-      updatePins();
+      updateFixedElements();
     }
 
-    function updatePins(){
-      // Keep pins and their labels visually the same size while the map zooms.
-      // We scale each pin group around its own center by 1/currentScale.
+    function updateFixedElements(){
+      // Keep pins and leg labels visually the same size while the map zooms.
+      // We scale each fixed group around its own center by 1/currentScale.
       const inv = 1 / scale;
-      pins.forEach(function(pin){
-        const pcx = parseFloat(pin.getAttribute('data-cx') || 0);
-        const pcy = parseFloat(pin.getAttribute('data-cy') || 0);
-        pin.setAttribute('transform', `translate(${pcx}, ${pcy}) scale(${inv}) translate(${-pcx}, ${-pcy})`);
-      });
+      function apply(el){
+        const pcx = parseFloat(el.getAttribute('data-cx') || 0);
+        const pcy = parseFloat(el.getAttribute('data-cy') || 0);
+        el.setAttribute('transform', `translate(${pcx}, ${pcy}) scale(${inv}) translate(${-pcx}, ${-pcy})`);
+      }
+      pins.forEach(apply);
+      legs.forEach(apply);
     }
 
     function clampScale(s){

@@ -336,7 +336,7 @@ def leg_label(a, b, pa, pb, leg_text, accent):
     short_walk = d.endswith("m") and ("步行" in leg_text or "馆内" in leg_text)
     txt = leg_text if short_walk else f"{d} · {leg_text}"
     w = text_w(txt, 13) + 14
-    return (f'<g><rect x="{cx-w/2:.1f}" y="{cy-10:.1f}" width="{w:.1f}" height="20" rx="10" '
+    return (f'<g class="leg-fixed" data-cx="{cx:.1f}" data-cy="{cy:.1f}"><rect x="{cx-w/2:.1f}" y="{cy-10:.1f}" width="{w:.1f}" height="20" rx="10" '
             f'fill="#ffffff" stroke="{accent}" stroke-width="1.3" opacity="0.97"/>'
             f'<text x="{cx:.1f}" y="{cy:.1f}" text-anchor="middle" dominant-baseline="central" dy="0.5" '
             f'font-family="sans-serif" font-size="13" fill="#2a2320">{esc(txt)}</text></g>')
@@ -500,7 +500,7 @@ svg.map a:hover path[stroke]{stroke-width:2}
 .daycard:-webkit-full-screen{position:fixed;inset:0;width:100vw;height:100vh;max-width:none;border-radius:0;display:flex;flex-direction:column;padding:0;overflow:hidden;background:#faf4e6}
 .daycard:-webkit-full-screen .dh,.daycard:-webkit-full-screen .tips,.daycard:-webkit-full-screen .stops{display:none}
 .daycard:-webkit-full-screen svg.map{flex:1;width:100%;height:100%;max-width:none;border-radius:0}
-.pin-fixed{transition:transform .05s linear}
+.pin-fixed,.leg-fixed{transition:transform .05s linear}
 /* stop list */
 .stops{list-style:none;margin:13px 0 0;padding:0;display:grid;gap:7px}
 .stops li{display:grid;grid-template-columns:auto 1fr;column-gap:10px;row-gap:6px;align-items:center;color:var(--ink);
