@@ -304,15 +304,16 @@ def route_seg(a, b, pa, pb, accent):
 
 def pin(cx, cy, n, accent, navurl, alt=False):
     p = pin_path(cx, cy)
+    cls = 'pin-fixed pin-alt' if alt else 'pin-fixed'
     if alt:
-        return (f'<a href="{navurl}" target="_blank" rel="noopener">'
+        return (f'<a href="{navurl}" target="_blank" rel="noopener" class="{cls}" data-cx="{cx:.1f}" data-cy="{cy:.1f}">'
                 f'<ellipse cx="{cx:.1f}" cy="{cy+27:.1f}" rx="7" ry="2.6" fill="#2a2320" opacity="0.10"/>'
                 f'<path d="{p}" fill="none" stroke="{accent}" stroke-width="2" stroke-dasharray="4 3" filter="url(#rough)" opacity="0.7"/>'
                 f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="8.6" fill="#ffffff" opacity="0.10"/>'
                 f'<text x="{cx:.1f}" y="{cy:.1f}" text-anchor="middle" dominant-baseline="central" dy="0.5" '
                 f'font-family="Georgia,serif" font-weight="400" font-size="13" fill="{accent}" opacity="0.85">{n}</text>'
                 f'</a>')
-    return (f'<a href="{navurl}" target="_blank" rel="noopener">'
+    return (f'<a href="{navurl}" target="_blank" rel="noopener" class="{cls}" data-cx="{cx:.1f}" data-cy="{cy:.1f}">'
             f'<ellipse cx="{cx:.1f}" cy="{cy+27:.1f}" rx="7" ry="2.6" fill="#2a2320" opacity="0.16"/>'
             f'<path d="{p}" fill="{accent}" stroke="#2a2320" stroke-width="1.6" filter="url(#rough)"/>'
             f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="8.6" fill="#ffffff" opacity="0.15"/>'
@@ -437,10 +438,11 @@ def render_day(day, accent, include_stops=True, compact=False):
     tips_html = f'<ul class="tips">{tips}</ul>' if tips else ""
     stops_html = f'<ol class="stops">{stops}</ol>' if include_stops else ""
     n = int(day["date"][8:10])
+    fs_btn = f'<button class="map-fs" data-target="d{n}" aria-label="全屏地图">⛶</button>'
     return (f'<section class="daycard" id="d{n}" style="--accent:{accent}">'
             f'<div class="dh"><span class="dd">{esc(day["date"][5:])} <em>{esc(day["weekday"])}</em></span>'
             f'<span class="dt">{esc(day["theme"])}</span></div>'
-            f'{tips_html}{svg_html}'
+            f'{tips_html}{svg_html}{fs_btn}'
             f'{stops_html}</section>')
 
 # ---------------- shared SVG defs (filters + doodle symbols) ----------------
@@ -486,9 +488,19 @@ h1{font-family:var(--serif);font-weight:600;font-size:clamp(28px,7vw,48px);margi
 .dt{color:var(--terra);font-size:14.5px;font-family:var(--serif)}
 .tips{margin:6px 0 10px;padding-left:18px;color:var(--ink2);font-size:13px}
 .tips li{margin:3px 0}
-svg.map{display:block;width:100%;height:auto;border-radius:16px;filter:drop-shadow(0 8px 22px rgba(42,35,32,.14))}
+svg.map{display:block;width:100%;height:auto;border-radius:16px;filter:drop-shadow(0 8px 22px rgba(42,35,32,.14));touch-action:none}
 svg.map a{cursor:pointer}
 svg.map a:hover path[stroke]{stroke-width:2}
+.map-fs{position:absolute;top:26px;right:10px;z-index:5;width:34px;height:34px;border:1px solid var(--line);border-radius:10px;background:rgba(250,244,230,.92);color:var(--ink2);font-size:18px;line-height:1;cursor:pointer;box-shadow:var(--shadow);display:grid;place-items:center;transition:.15s}
+.map-fs:hover{background:#fff;color:var(--jade-d);transform:scale(1.05)}
+.map-fs:active{transform:scale(.95)}
+.daycard:fullscreen{position:fixed;inset:0;width:100vw;height:100vh;max-width:none;border-radius:0;display:flex;flex-direction:column;padding:0;overflow:hidden;background:#faf4e6}
+.daycard:fullscreen .dh,.daycard:fullscreen .tips,.daycard:fullscreen .stops{display:none}
+.daycard:fullscreen svg.map{flex:1;width:100%;height:100%;max-width:none;border-radius:0}
+.daycard:-webkit-full-screen{position:fixed;inset:0;width:100vw;height:100vh;max-width:none;border-radius:0;display:flex;flex-direction:column;padding:0;overflow:hidden;background:#faf4e6}
+.daycard:-webkit-full-screen .dh,.daycard:-webkit-full-screen .tips,.daycard:-webkit-full-screen .stops{display:none}
+.daycard:-webkit-full-screen svg.map{flex:1;width:100%;height:100%;max-width:none;border-radius:0}
+.pin-fixed{transition:transform .05s linear}
 /* stop list */
 .stops{list-style:none;margin:13px 0 0;padding:0;display:grid;gap:7px}
 .stops li{display:grid;grid-template-columns:auto 1fr;column-gap:10px;row-gap:6px;align-items:center;color:var(--ink);

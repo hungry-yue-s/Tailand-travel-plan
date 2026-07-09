@@ -265,6 +265,7 @@ document.addEventListener('click',function(e){{
   window.location=app;
 }});
 </script>
+<script src="map_zoom.js"></script>
 </body></html>"""
     out = os.path.join(ROOT, "index.html")
     with open(out, "w", encoding="utf-8") as f:
@@ -459,9 +460,19 @@ body{
 .dt{font-family:var(--cjk-serif);font-size:17px;font-weight:600}
 .tips{list-style:none;margin:8px 0 12px;padding:0;font-size:13px;color:var(--ink2);line-height:1.6}
 .tips li::before{content:"💡 "}
-svg.map{display:block;width:100%;height:auto;border-radius:16px;filter:drop-shadow(0 8px 22px rgba(42,35,32,.14))}
+svg.map{display:block;width:100%;height:auto;border-radius:16px;filter:drop-shadow(0 8px 22px rgba(42,35,32,.14));touch-action:none}
 svg.map a{cursor:pointer}
 svg.map a:hover path[stroke]{stroke-width:2}
+.map-fs{position:absolute;top:26px;right:10px;z-index:5;width:34px;height:34px;border:1px solid var(--line);border-radius:10px;background:rgba(250,244,230,.92);color:var(--ink2);font-size:18px;line-height:1;cursor:pointer;box-shadow:var(--shadow);display:grid;place-items:center;transition:.15s}
+.map-fs:hover{background:#fff;color:var(--jade-d);transform:scale(1.05)}
+.map-fs:active{transform:scale(.95)}
+.daycard:fullscreen{position:fixed;inset:0;width:100vw;height:100vh;max-width:none;border-radius:0;display:flex;flex-direction:column;padding:0;overflow:hidden;background:#faf4e6}
+.daycard:fullscreen .dh,.daycard:fullscreen .tips,.daycard:fullscreen .stops{display:none}
+.daycard:fullscreen svg.map{flex:1;width:100%;height:100%;max-width:none;border-radius:0}
+.daycard:-webkit-full-screen{position:fixed;inset:0;width:100vw;height:100vh;max-width:none;border-radius:0;display:flex;flex-direction:column;padding:0;overflow:hidden;background:#faf4e6}
+.daycard:-webkit-full-screen .dh,.daycard:-webkit-full-screen .tips,.daycard:-webkit-full-screen .stops{display:none}
+.daycard:-webkit-full-screen svg.map{flex:1;width:100%;height:100%;max-width:none;border-radius:0}
+.pin-fixed{transition:transform .05s linear}
 .stops{list-style:none;margin:13px 0 0;padding:0;display:grid;gap:7px}
 .stops li{display:grid;grid-template-columns:auto 1fr;column-gap:10px;row-gap:6px;align-items:center;color:var(--ink);background:rgba(255,255,255,.5);border:1px solid var(--line);border-radius:12px;padding:9px 12px}
 .sn{grid-column:1;grid-row:1;width:25px;height:25px;border-radius:50%;background:var(--accent);color:#fbf6ec;display:grid;place-items:center;font-family:var(--lat);font-weight:700;font-size:13.5px;box-shadow:0 2px 5px rgba(42,35,32,.25)}
