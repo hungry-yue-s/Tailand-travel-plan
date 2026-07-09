@@ -22,38 +22,54 @@ trip = {
      "slots": [
        {"period": "noon", "name": "抵达 曼谷廊曼机场 DMK", "time": "15:10 落地", "lat": 13.9126, "lng": 100.6068},
        {"period": "noon", "name": "入住 The Quarter Ratchathewi", "time": "16:30", "lat": 13.7538, "lng": 100.5324},
-       {"period": "evening", "name": "Banthat Thong 美食街晚餐", "time": "18:30–21:00", "lat": 13.7365, "lng": 100.5285,
+       {"period": "evening", "name": "Banthat Thong 美食街（朱拉隆夜市）", "time": "18:00–18:20", "lat": 13.7365, "lng": 100.5285},
+       {"period": "evening", "name": "Banthat Thong 街头晚餐", "time": "18:20–21:00", "lat": 13.7363, "lng": 100.5282,
         "alts": [
           {"name": "Jimjoom99 陶锅火锅（99฿/锅·米其林必比登）", "time": "18:00–01:00", "lat": 13.7368, "lng": 100.5278},
           {"name": "Pungdet 炭烤吐司（22种馅·有空调）", "time": "16:00–23:00", "lat": 13.7363, "lng": 100.5282},
         ]},
      ]},
     {"date": "2026-07-15", "weekday": "周三", "theme": "曼谷半日 → 傍晚飞清迈",
-     "tips": ["12:00 前退房、可寄存行李；下午留足时间去廊曼赶 19:30 航班"],
+     "tips": ["12:00 前退房、可寄存行李；下午留足时间去廊曼赶 19:30 航班", "Siam 商圈、Pratunam、机场三地，拖行李务必轻装"],
      "slots": [
-       {"period": "morning", "name": "曼谷 Siam 暹罗商圈", "time": "10:00–13:00", "lat": 13.7460, "lng": 100.5340},
-       {"period": "afternoon", "name": "曼谷廊曼机场 DMK 飞清迈", "time": "17:00 到机场", "lat": 13.9126, "lng": 100.6068},
+       {"period": "morning", "name": "The Quarter Ratchathewi（早餐/退房）", "time": "08:00–09:00", "lat": 13.7538, "lng": 100.5324},
+       {"period": "morning", "name": "曼谷 Siam 暹罗商圈", "time": "09:15–09:25", "lat": 13.7460, "lng": 100.5340},
+       {"period": "morning", "name": "Siam 逛街 + 咖啡", "time": "09:30–12:00", "lat": 13.7465, "lng": 100.5335},
+       {"period": "noon", "name": "午餐（Siam 区商场内 food court）", "time": "12:00–13:00", "lat": 13.7455, "lng": 100.5345},
+       {"period": "noon", "name": "返回 The Quarter Ratchathewi 取行李", "time": "13:00–13:15", "lat": 13.7538, "lng": 100.5324},
+       {"period": "afternoon", "name": "Pratunam 商圈（机动缓冲/扫货/按摩）", "time": "13:15–17:00", "lat": 13.7510, "lng": 100.5400},
+       {"period": "afternoon", "name": "曼谷廊曼机场 DMK", "time": "17:00 到机场", "lat": 13.9126, "lng": 100.6068},
+       {"period": "evening", "name": "清迈机场 CNX（SL520 抵达）", "time": "20:45", "lat": 18.7680, "lng": 98.9626},
        {"period": "evening", "name": "入住 Travelodge Nimman（清迈）", "time": "21:00", "lat": 18.7985, "lng": 98.9668}
      ]},
     {"date": "2026-07-16", "weekday": "周四", "theme": "自然大满贯：粘粘瀑布 · 丛林飞跃 · 便便造纸园",
      "tips": ["城北 Mae Rim 一日，务必包车(约 1,500–3,000฿/天)：瀑布→造纸园→蓬扬全在北线顺路，瀑布 Grab 常拒载返程", "早出发(约 07:30)避午后雷阵雨、穿防滑鞋爬瀑布；蓬扬有体重限制(连衣物鞋约 ≤95–100kg)，建议订 11:00 或 13:00 场(含泰式午餐)", "今晚不做马杀鸡——已挪到 7/17 晚(见 7/17)"],
      "slots": [
-       {"period": "morning", "name": "Bua Tong 粘粘瀑布", "time": "08:45–10:45", "lat": 19.0475, "lng": 99.0286},
-       {"period": "noon", "name": "POOPOOPAPER Park 大象粪造纸园", "time": "11:30–12:40", "lat": 18.9208, "lng": 98.8875},
-       {"period": "afternoon", "name": "⭐ 蓬扬 Pongyang 丛林飞跃 + 自控丛林过山车", "time": "13:00–15:30", "lat": 18.916638, "lng": 98.821402}
+       {"period": "morning", "name": "Travelodge Nimman（早餐/出发）", "time": "07:30–07:50", "lat": 18.7985, "lng": 98.9668},
+       {"period": "morning", "name": "Bua Tong 粘粘瀑布", "time": "07:50–09:00", "lat": 19.0475, "lng": 99.0286},
+       {"period": "morning", "name": "攀爬粘粘瀑布", "time": "09:00–10:45", "lat": 19.0470, "lng": 99.0280},
+       {"period": "noon", "name": "POOPOOPAPER Park 大象粪造纸园", "time": "10:45–11:25", "lat": 18.9208, "lng": 98.8875},
+       {"period": "noon", "name": "POOPOOPAPER 造纸体验", "time": "11:25–12:30", "lat": 18.9205, "lng": 98.8870},
+       {"period": "afternoon", "name": "蓬扬 Pongyang Jungle Coaster", "time": "12:30–12:55", "lat": 18.916638, "lng": 98.821402},
+       {"period": "afternoon", "name": "⭐ 蓬扬丛林飞跃 + 自控丛林过山车", "time": "13:00–15:30", "lat": 18.9163, "lng": 98.8210},
+       {"period": "afternoon", "name": "返回 Travelodge Nimman", "time": "15:30–16:20", "lat": 18.7985, "lng": 98.9668},
+       {"period": "evening", "name": "宁曼休整 + 晚餐 / 夜市小吃", "time": "16:20 起", "lat": 18.7990, "lng": 98.9670}
      ]},
     {"date": "2026-07-17", "weekday": "周五", "theme": "奶奶厨房 · 宁曼购物 · 古城打铁片 · 马杀鸡",
      "tips": ["先去城西南奶奶厨房 Krua Ya 早午餐(9:00–15:30，早去，下午 3 点半收)，再回宁曼逛街", "午后打车去古城做打铁片；Lanna Artisans 17:00 关门宜早到", "今晚做马杀鸡：Oasis 双人套需预约，市区免费接送"],
      "slots": [
        {"period": "morning", "name": "⭐ 奶奶厨房 Krua Ya 早午餐", "time": "09:30–11:00", "lat": 18.7625, "lng": 98.9420},
-       {"period": "morning", "name": "One Nimman / 宁曼路购物", "time": "11:30–14:30", "lat": 18.8006, "lng": 98.9673},
-       {"period": "noon", "name": "打铁片手作 @ Lanna Artisans Art Gallery", "time": "15:00–16:30", "lat": 18.7790, "lng": 98.9836},
+       {"period": "morning", "name": "回宁曼路", "time": "11:00–11:30", "lat": 18.7985, "lng": 98.9668},
+       {"period": "morning", "name": "宁曼路购物：One Nimman / Maya / Think Park", "time": "11:30–14:30", "lat": 18.8006, "lng": 98.9673},
+       {"period": "afternoon", "name": "宁曼 → 古城南门（Wualai·银庙一带）", "time": "14:30–15:00", "lat": 18.7790, "lng": 98.9836},
+       {"period": "afternoon", "name": "打铁片手作 @ Lanna Artisans Art Gallery", "time": "15:00–16:30", "lat": 18.7790, "lng": 98.9836},
        {"period": "afternoon", "name": "银庙 Wat Sri Suphan", "time": "16:30–17:00", "lat": 18.7793, "lng": 98.9838},
-       {"period": "evening", "name": "塔佩门 Tha Phae Gate / 古城咖啡", "time": "17:00–18:15", "lat": 18.7877, "lng": 98.9933,
+       {"period": "evening", "name": "塔佩门 Tha Phae Gate / 古城咖啡", "time": "17:00–18:00", "lat": 18.7877, "lng": 98.9933,
         "alts": [
           {"name": "Ristr8to 尼曼·世界拉花冠军·骷髅杯", "time": "07:30–18:30", "lat": 18.7967, "lng": 98.9680},
           {"name": "Roast8ry Lab 尼曼·冠军新品牌", "time": "08:00–17:00", "lat": 18.7985, "lng": 98.9655},
         ]},
+       {"period": "evening", "name": "回宁曼晚餐", "time": "18:00–19:00", "lat": 18.7980, "lng": 98.9660},
        {"period": "evening", "name": "⭐ Oasis Spa Nimman 情侣马杀鸡", "time": "19:00–21:00", "lat": 18.7972, "lng": 98.9662,
         "alts": [
           {"name": "Fah Lanna Spa Romantic 情侣套餐（奢华）", "time": "12:00–21:00", "lat": 18.7978, "lng": 98.9648},
@@ -62,30 +78,50 @@ trip = {
     {"date": "2026-07-18", "weekday": "周六", "theme": "周末市集 · 艺术村 · 周六夜市",
      "tips": ["用满这个唯一的周六：上午 Jing Jai 周末市集（约 14:00 收摊、越早越好）+ 傍晚 Wualai 周六步行街（都仅周末/周六开）", "艺术村 Baan Kang Wat 顺便在村里咖啡馆吃午餐（奶奶厨房已挪到 7/17 早上）"],
      "slots": [
-       {"period": "morning", "name": "Jing Jai 周末市集（JJ Market）", "time": "07:30–11:00", "lat": 18.8067, "lng": 98.9762},
-       {"period": "noon", "name": "Baan Kang Wat 艺术村（白色集市）+ 村内午餐", "time": "11:30–14:00", "lat": 18.7758, "lng": 98.9436,
+       {"period": "morning", "name": "酒店 → Jing Jai Market（JJ 集市）", "time": "08:00–08:20", "lat": 18.8067, "lng": 98.9762},
+       {"period": "morning", "name": "Jing Jai 农夫 + Rustic 手作市集", "time": "08:20–10:30", "lat": 18.8065, "lng": 98.9760},
+       {"period": "noon", "name": "JJ → Baan Kang Wat 艺术村", "time": "10:30–10:50", "lat": 18.7758, "lng": 98.9436},
+       {"period": "noon", "name": "Baan Kang Wat 艺术村", "time": "10:50–12:15", "lat": 18.7755, "lng": 98.9430,
         "alts": [
           {"name": "Krua Ya 奶奶厨房（如果7/17没去）", "time": "09:00–15:30", "lat": 18.7625, "lng": 98.9420},
         ]},
-       {"period": "evening", "name": "Wualai 周六步行街", "time": "17:30–22:00", "lat": 18.7818, "lng": 98.9852}
+       {"period": "noon", "name": "Baan Kang Wat 艺术村午餐", "time": "12:15–13:30", "lat": 18.7758, "lng": 98.9436},
+       {"period": "afternoon", "name": "返回宁曼，酒店午休 / 咖啡", "time": "13:45–15:30", "lat": 18.7985, "lng": 98.9668},
+       {"period": "afternoon", "name": "宁曼补咖啡 / 轻按摩 / 收拾行李", "time": "15:30–16:30", "lat": 18.8000, "lng": 98.9670},
+       {"period": "evening", "name": "酒店 → Wualai 周六夜市步行街", "time": "17:30–17:50", "lat": 18.7818, "lng": 98.9852},
+       {"period": "evening", "name": "Wualai 周六夜市", "time": "18:00–21:00", "lat": 18.7815, "lng": 98.9850},
+       {"period": "evening", "name": "夜市 → 酒店", "time": "21:00–21:30", "lat": 18.7985, "lng": 98.9668}
      ]},
     {"date": "2026-07-19", "weekday": "周日", "theme": "飞回曼谷 · ICONSIAM · 昭披耶河夜游船",
      "tips": ["清迈上午约 7:30 离店赶 10:15 航班；曼谷落地素万那普(不是廊曼)", "游船 19:30 从 ICONSIAM 码头发船：先在 ICONSIAM 看 18:30 音乐喷泉再登船；建议提前订顶层/前甲板座", "游船顶掉唐人街正餐；船靠岸后想扫街可 MRT 去吃个宵夜(Yaowarat 开到 00:00+)"],
      "slots": [
-       {"period": "morning", "name": "清迈机场 CNX 飞曼谷", "time": "08:15 到机场 / 10:15 起飞", "lat": 18.7680, "lng": 98.9626},
-       {"period": "afternoon", "name": "入住 True Siam Phayathai Hotel", "time": "12:30", "lat": 13.7565, "lng": 100.5335},
-       {"period": "afternoon", "name": "ICONSIAM + 18:30 音乐喷泉", "time": "17:30–19:10", "lat": 13.7263, "lng": 100.5100},
-       {"period": "evening", "name": "⭐ Chao Phraya Princess 夜游船 @ ICONSIAM 码头", "time": "19:30–21:30", "lat": 13.7266, "lng": 100.5099},
+       {"period": "morning", "name": "Travelodge Nimman（起床/退房）", "time": "07:00–07:30", "lat": 18.7985, "lng": 98.9668},
+       {"period": "morning", "name": "清迈机场 CNX", "time": "07:30–07:50", "lat": 18.7680, "lng": 98.9626},
+       {"period": "morning", "name": "清迈机场 CNX 值机安检", "time": "08:15", "lat": 18.7680, "lng": 98.9626},
+       {"period": "noon", "name": "VZ2103 CNX → 曼谷素万那普 BKK", "time": "10:15–11:35", "lat": 13.6900, "lng": 100.7501},
+       {"period": "afternoon", "name": "BKK 机场 → True Siam Phayathai Hotel", "time": "12:00–13:00", "lat": 13.7565, "lng": 100.5335},
+       {"period": "afternoon", "name": "True Siam Phayathai（入住/午餐/休整）", "time": "13:00–14:00", "lat": 13.7565, "lng": 100.5335},
+       {"period": "afternoon", "name": "轻松下午：屋顶/河景咖啡", "time": "15:30–17:30", "lat": 13.7300, "lng": 100.5150,
+        "alts": [
+          {"name": "Lumphini 公园散步", "time": "06:00–21:00", "lat": 13.7310, "lng": 100.5415},
+        ]},
+       {"period": "evening", "name": "前往 ICONSIAM（河畔商场/游船码头）", "time": "17:30–18:00", "lat": 13.7263, "lng": 100.5100},
+       {"period": "evening", "name": "ICONSIAM + 18:30 音乐喷泉", "time": "18:00–19:05", "lat": 13.7263, "lng": 100.5100},
+       {"period": "evening", "name": "ICONSIAM 码头 check-in 登船", "time": "19:05–19:25", "lat": 13.7266, "lng": 100.5099},
+       {"period": "evening", "name": "⭐ Chao Phraya Princess 夜游船", "time": "19:30–21:30", "lat": 13.7266, "lng": 100.5099},
        {"period": "evening", "name": "唐人街 Yaowarat 宵夜（可选）", "time": "21:45–22:45", "lat": 13.7405, "lng": 100.5090}
      ]},
     {"date": "2026-07-20", "weekday": "周一", "theme": "曼谷早餐 · 回国",
      "tips": ["国际航班 11:05，约 07:00 出发去素万那普(留足早高峰时间)，只够吃个早餐"],
      "slots": [
-       {"period": "morning", "name": "Jok Prince 炭香猪肉粥（早餐）", "time": "06:30", "lat": 13.7283, "lng": 100.5160,
+       {"period": "morning", "name": "True Siam Phayathai Hotel（退房）", "time": "06:15–06:50", "lat": 13.7565, "lng": 100.5335},
+       {"period": "morning", "name": "Jok Prince 炭香猪肉粥（早餐）", "time": "06:50–07:15", "lat": 13.7283, "lng": 100.5160,
         "alts": [
           {"name": "K.Panich 芒果糯米饭（周一才开·打包去机场）", "time": "07:00–16:00", "lat": 13.7440, "lng": 100.5060},
         ]},
-       {"period": "noon", "name": "曼谷素万那普机场 BKK 回国", "time": "08:15 到机场 / 11:05 起飞", "lat": 13.6900, "lng": 100.7501}
+       {"period": "morning", "name": "酒店 → 曼谷素万那普 BKK", "time": "07:15", "lat": 13.6900, "lng": 100.7501},
+       {"period": "noon", "name": "素万那普 BKK 办理值机 / 退税 / 安检", "time": "08:15", "lat": 13.6900, "lng": 100.7501},
+       {"period": "noon", "name": "HU7940 BKK → 海口（回程）", "time": "11:05 起飞", "lat": 13.6900, "lng": 100.7501}
      ]},
   ]
 }
@@ -101,13 +137,13 @@ ACCENTS = ["#bd3b73", "#e0a133", "#0f6b53", "#c1522f", "#2f8f6f", "#9a6b14", "#7
 
 # 每段行程的「时长/方式」（首站为 None；距离由坐标自动算）
 LEGS = {
-  "2026-07-14": [None, "Grab 40–60min", "Grab 10min"],
-  "2026-07-15": [None, "Grab 30–45min", "SL520 航班 1h05"],
-  "2026-07-16": [None, "包车 40min", "包车 20–25min"],
-  "2026-07-17": [None, "Grab 15–20min", "Grab 15min", "步行 2min", "步行/车 10min", "Grab 15min"],
-  "2026-07-18": [None, "Grab 15–20min", "Grab 15–20min"],
-  "2026-07-19": [None, "VZ2103 航班 1h20", "Grab 20–30min", "馆内步行", "MRT 15min"],
-  "2026-07-20": [None, "Grab/ARL 30–60min"],
+  "2026-07-14": [None, "Grab 40–60min", "Grab 10min", "步行逛吃"],
+  "2026-07-15": [None, "BTS 1站", "步行", "步行", "BTS 1站", "步行 14min", "Grab 30–60min", "SL520 航班 1h05", "Grab 15–20min"],
+  "2026-07-16": [None, "包车 1–1.25h", "攀爬", "包车 40min", "造纸体验", "包车 20–25min", "飞跃", "包车 40–50min", "步行/休息"],
+  "2026-07-17": [None, "Grab 15–20min", "Grab 15–20min", "步行 5–15min", "Grab 15min", "打铁片", "步行 2min", "Grab/步行", "Grab/步行", "按摩"],
+  "2026-07-18": [None, "Grab 10–15min", "市集", "Grab 15–20min", "逛村", "村内午餐", "Grab 15–20min", "宁曼", "Grab 15min", "夜市", "Grab 15min"],
+  "2026-07-19": [None, "Grab 15–20min", "值机", "VZ2103 航班 1h20", "ARL 28min/Grab", "酒店休整", "二选一", "Grab/BTS 20–30min", "馆内步行", "码头步行", "游船 2h", "MRT/Grab"],
+  "2026-07-20": [None, "酒店早餐", "Grab/ARL 30–60min", "值机安检", "HU7940 起飞"],
 }
 
 def project(points, box):
@@ -129,7 +165,26 @@ def project(points, box):
     mx, my = (x0 + x1) / 2, (y0 + y1) / 2
     return [(mx + (p["lng"] * k - cx) * sc, my - (p["lat"] - cy) * sc) for p in points]
 
-def relax(pos, box, min_sep=46, iters=80):
+def bloom_duplicates(pos, radius=22):
+    """Pre-separate points that project to the exact same pixel so that
+    force relaxation does not collapse them against box borders."""
+    groups = {}
+    for i, p in enumerate(pos):
+        key = (round(p[0], 1), round(p[1], 1))
+        groups.setdefault(key, []).append(i)
+    out = [list(p) for p in pos]
+    for key, idxs in groups.items():
+        if len(idxs) < 2:
+            continue
+        cx, cy = key
+        n = len(idxs)
+        for k, i in enumerate(idxs):
+            ang = 2 * math.pi * k / n + ((n % 2) * 0.3)  # slight rotation for variety
+            out[i][0] = cx + radius * math.cos(ang)
+            out[i][1] = cy + radius * math.sin(ang)
+    return out
+
+def relax(pos, box, min_sep=52, iters=120):
     """Push overlapping pins apart, keep inside box."""
     pos = [list(p) for p in pos]
     x0, y0, x1, y1 = box
@@ -137,7 +192,12 @@ def relax(pos, box, min_sep=46, iters=80):
         for i in range(len(pos)):
             for j in range(i + 1, len(pos)):
                 dx, dy = pos[j][0] - pos[i][0], pos[j][1] - pos[i][1]
-                d = math.hypot(dx, dy) or 0.01
+                d = math.hypot(dx, dy)
+                if d < 0.5:
+                    # deterministic nudge so identical points do not stay stacked
+                    ang = math.radians((i * 137.5 + j * 71.3) % 360)
+                    dx, dy = math.cos(ang), math.sin(ang)
+                    d = 0.5
                 if d < min_sep:
                     push = (min_sep - d) / 2
                     ux, uy = dx / d, dy / d
@@ -314,7 +374,7 @@ def render_day(day, accent, include_stops=True, compact=False):
     for c in order:
         box = boxes[c]
         cpts = [p for p in all_pts if city_of(p) == c]
-        pos = relax(project(cpts, box), box)
+        pos = relax(bloom_duplicates(project(cpts, box), radius=22), box)
         for p, xy in zip(cpts, pos):
             coord[id(p)] = xy
         svg.append(frame_border(box))
@@ -543,7 +603,7 @@ def build():
 
   {cards}
 
-  <div class="disclaimer">{esc(trip['disclaimer'])}</div>
+  <div class="disclaimer">{esc(trip["disclaimer"])}</div>
 
   <footer>
     🐘 {esc(trip['title'])} · 2026/7/14–7/20 ·
