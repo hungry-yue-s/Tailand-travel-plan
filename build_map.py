@@ -23,11 +23,10 @@ trip = {
        {"period": "noon", "name": "抵达 曼谷廊曼机场 DMK", "time": "15:10 落地", "lat": 13.9126, "lng": 100.6068},
        {"period": "noon", "name": "入住 The Quarter Ratchathewi", "time": "16:30", "lat": 13.7538, "lng": 100.5324},
        {"period": "evening", "name": "Banthat Thong 美食街（朱拉隆夜市）", "time": "18:00–18:20", "lat": 13.7365, "lng": 100.5285},
-       {"period": "evening", "name": "Banthat Thong 街头晚餐", "time": "18:20–21:00", "lat": 13.7363, "lng": 100.5282,
-        "alts": [
-          {"name": "Jimjoom99 陶锅火锅（99฿/锅·米其林必比登）", "time": "18:00–01:00", "lat": 13.7368, "lng": 100.5278},
-          {"name": "Pungdet 炭烤吐司（22种馅·有空调）", "time": "16:00–23:00", "lat": 13.7363, "lng": 100.5282},
-        ]},
+       {"period": "evening", "name": "Banthat Thong 街头晚餐", "time": "18:20–21:00", "lat": 13.7363, "lng": 100.5282},
+       {"period": "evening", "name": "Jimjoom99 陶锅火锅（99฿/锅·米其林必比登）", "time": "18:20–20:00", "lat": 13.7368, "lng": 100.5278},
+       {"period": "evening", "name": "Pungdet 炭烤吐司（22种馅·有空调）", "time": "18:20–20:00", "lat": 13.7363, "lng": 100.5282},
+       {"period": "evening", "name": "Jodd Fairs（Ratchada）备选夜市", "time": "18:00–21:00", "lat": 13.7660, "lng": 100.5720},
      ]},
     {"date": "2026-07-15", "weekday": "周三", "theme": "曼谷半日 → 傍晚飞清迈",
      "tips": ["12:00 前退房、可寄存行李；下午留足时间去廊曼赶 19:30 航班", "Siam 商圈、Pratunam、机场三地，拖行李务必轻装"],
@@ -40,7 +39,8 @@ trip = {
        {"period": "afternoon", "name": "Pratunam 商圈（机动缓冲/扫货/按摩）", "time": "13:15–17:00", "lat": 13.7510, "lng": 100.5400},
        {"period": "afternoon", "name": "曼谷廊曼机场 DMK", "time": "17:00 到机场", "lat": 13.9126, "lng": 100.6068},
        {"period": "evening", "name": "清迈机场 CNX（SL520 抵达）", "time": "20:45", "lat": 18.7680, "lng": 98.9626},
-       {"period": "evening", "name": "入住 Travelodge Nimman（清迈）", "time": "21:00", "lat": 18.7985, "lng": 98.9668}
+       {"period": "evening", "name": "入住 Travelodge Nimman（清迈）", "time": "21:00", "lat": 18.7985, "lng": 98.9668},
+       {"period": "night", "name": "凤飞飞猪脚饭 Khao Kha Moo Chang Phueak（备选宵夜）", "time": "21:30–22:30", "lat": 18.7950, "lng": 98.9850}
      ]},
     {"date": "2026-07-16", "weekday": "周四", "theme": "自然大满贯：粘粘瀑布 · 丛林飞跃 · 便便造纸园",
      "tips": ["城北 Mae Rim 一日，务必包车(约 1,500–3,000฿/天)：瀑布→造纸园→蓬扬全在北线顺路，瀑布 Grab 常拒载返程", "早出发(约 07:30)避午后雷阵雨、穿防滑鞋爬瀑布；蓬扬有体重限制(连衣物鞋约 ≤95–100kg)，建议订 11:00 或 13:00 场(含泰式午餐)", "今晚不做马杀鸡——已挪到 7/17 晚(见 7/17)"],
@@ -50,6 +50,7 @@ trip = {
        {"period": "morning", "name": "攀爬粘粘瀑布", "time": "09:00–10:45", "lat": 19.0470, "lng": 99.0280},
        {"period": "noon", "name": "POOPOOPAPER Park 大象粪造纸园", "time": "10:45–11:25", "lat": 18.9208, "lng": 98.8875},
        {"period": "noon", "name": "POOPOOPAPER 造纸体验", "time": "11:25–12:30", "lat": 18.9205, "lng": 98.8870},
+       {"period": "noon", "name": "无骑乘大象营 / 道德大象营（备选）", "time": "10:45–12:30", "lat": 18.9200, "lng": 98.8800},
        {"period": "afternoon", "name": "蓬扬 Pongyang Jungle Coaster", "time": "12:30–12:55", "lat": 18.916638, "lng": 98.821402},
        {"period": "afternoon", "name": "⭐ 蓬扬丛林飞跃 + 自控丛林过山车", "time": "13:00–15:30", "lat": 18.9163, "lng": 98.8210},
        {"period": "afternoon", "name": "返回 Travelodge Nimman", "time": "15:30–16:20", "lat": 18.7985, "lng": 98.9668},
@@ -58,22 +59,19 @@ trip = {
     {"date": "2026-07-17", "weekday": "周五", "theme": "奶奶厨房 · 宁曼购物 · 古城打铁片 · 马杀鸡",
      "tips": ["先去城西南奶奶厨房 Krua Ya 早午餐(9:00–15:30，早去，下午 3 点半收)，再回宁曼逛街", "午后打车去古城做打铁片；Lanna Artisans 17:00 关门宜早到", "今晚做马杀鸡：Oasis 双人套需预约，市区免费接送"],
      "slots": [
+       {"period": "morning", "name": "素贴山双龙寺 Doi Suthep（可选半日）", "time": "06:00–12:00", "lat": 18.8047, "lng": 98.9216},
        {"period": "morning", "name": "⭐ 奶奶厨房 Krua Ya 早午餐", "time": "09:30–11:00", "lat": 18.7625, "lng": 98.9420},
        {"period": "morning", "name": "回宁曼路", "time": "11:00–11:30", "lat": 18.7985, "lng": 98.9668},
        {"period": "morning", "name": "宁曼路购物：One Nimman / Maya / Think Park", "time": "11:30–14:30", "lat": 18.8006, "lng": 98.9673},
        {"period": "afternoon", "name": "宁曼 → 古城南门（Wualai·银庙一带）", "time": "14:30–15:00", "lat": 18.7790, "lng": 98.9836},
        {"period": "afternoon", "name": "打铁片手作 @ Lanna Artisans Art Gallery", "time": "15:00–16:30", "lat": 18.7790, "lng": 98.9836},
        {"period": "afternoon", "name": "银庙 Wat Sri Suphan", "time": "16:30–17:00", "lat": 18.7793, "lng": 98.9838},
-       {"period": "evening", "name": "塔佩门 Tha Phae Gate / 古城咖啡", "time": "17:00–18:00", "lat": 18.7877, "lng": 98.9933,
-        "alts": [
-          {"name": "Ristr8to 尼曼·世界拉花冠军·骷髅杯", "time": "07:30–18:30", "lat": 18.7967, "lng": 98.9680},
-          {"name": "Roast8ry Lab 尼曼·冠军新品牌", "time": "08:00–17:00", "lat": 18.7985, "lng": 98.9655},
-        ]},
+       {"period": "evening", "name": "塔佩门 Tha Phae Gate / 古城咖啡", "time": "17:00–18:00", "lat": 18.7877, "lng": 98.9933},
+       {"period": "evening", "name": "Ristr8to 尼曼·世界拉花冠军·骷髅杯（备选咖啡）", "time": "17:00–18:00", "lat": 18.7967, "lng": 98.9680},
+       {"period": "evening", "name": "Roast8ry Lab 尼曼·冠军新品牌（备选咖啡）", "time": "17:00–18:00", "lat": 18.7985, "lng": 98.9655},
        {"period": "evening", "name": "回宁曼晚餐", "time": "18:00–19:00", "lat": 18.7980, "lng": 98.9660},
-       {"period": "evening", "name": "⭐ Oasis Spa Nimman 情侣马杀鸡", "time": "19:00–21:00", "lat": 18.7972, "lng": 98.9662,
-        "alts": [
-          {"name": "Fah Lanna Spa Romantic 情侣套餐（奢华）", "time": "12:00–21:00", "lat": 18.7978, "lng": 98.9648},
-        ]},
+       {"period": "evening", "name": "⭐ Oasis Spa Nimman 情侣马杀鸡", "time": "19:00–21:00", "lat": 18.7972, "lng": 98.9662},
+       {"period": "evening", "name": "Fah Lanna Spa Romantic 情侣套餐（奢华·备选 SPA）", "time": "19:00–21:00", "lat": 18.7978, "lng": 98.9648},
      ]},
     {"date": "2026-07-18", "weekday": "周六", "theme": "周末市集 · 艺术村 · 周六夜市",
      "tips": ["用满这个唯一的周六：上午 Jing Jai 周末市集（约 14:00 收摊、越早越好）+ 傍晚 Wualai 周六步行街（都仅周末/周六开）", "艺术村 Baan Kang Wat 顺便在村里咖啡馆吃午餐（奶奶厨房已挪到 7/17 早上）"],
@@ -81,11 +79,9 @@ trip = {
        {"period": "morning", "name": "酒店 → Jing Jai Market（JJ 集市）", "time": "08:00–08:20", "lat": 18.8067, "lng": 98.9762},
        {"period": "morning", "name": "Jing Jai 农夫 + Rustic 手作市集", "time": "08:20–10:30", "lat": 18.8065, "lng": 98.9760},
        {"period": "noon", "name": "JJ → Baan Kang Wat 艺术村", "time": "10:30–10:50", "lat": 18.7758, "lng": 98.9436},
-       {"period": "noon", "name": "Baan Kang Wat 艺术村", "time": "10:50–12:15", "lat": 18.7755, "lng": 98.9430,
-        "alts": [
-          {"name": "Krua Ya 奶奶厨房（如果7/17没去）", "time": "09:00–15:30", "lat": 18.7625, "lng": 98.9420},
-        ]},
+       {"period": "noon", "name": "Baan Kang Wat 艺术村", "time": "10:50–12:15", "lat": 18.7755, "lng": 98.9430},
        {"period": "noon", "name": "Baan Kang Wat 艺术村午餐", "time": "12:15–13:30", "lat": 18.7758, "lng": 98.9436},
+       {"period": "noon", "name": "Krua Ya 奶奶厨房（若 7/17 没去·备选午餐）", "time": "12:15–13:30", "lat": 18.7625, "lng": 98.9420},
        {"period": "afternoon", "name": "返回宁曼，酒店午休 / 咖啡", "time": "13:45–15:30", "lat": 18.7985, "lng": 98.9668},
        {"period": "afternoon", "name": "宁曼补咖啡 / 轻按摩 / 收拾行李", "time": "15:30–16:30", "lat": 18.8000, "lng": 98.9670},
        {"period": "evening", "name": "酒店 → Wualai 周六夜市步行街", "time": "17:30–17:50", "lat": 18.7818, "lng": 98.9852},
@@ -101,10 +97,8 @@ trip = {
        {"period": "noon", "name": "VZ2103 CNX → 曼谷素万那普 BKK", "time": "10:15–11:35", "lat": 13.6900, "lng": 100.7501},
        {"period": "afternoon", "name": "BKK 机场 → True Siam Phayathai Hotel", "time": "12:00–13:00", "lat": 13.7565, "lng": 100.5335},
        {"period": "afternoon", "name": "True Siam Phayathai（入住/午餐/休整）", "time": "13:00–14:00", "lat": 13.7565, "lng": 100.5335},
-       {"period": "afternoon", "name": "轻松下午：屋顶/河景咖啡", "time": "15:30–17:30", "lat": 13.7300, "lng": 100.5150,
-        "alts": [
-          {"name": "Lumphini 公园散步", "time": "06:00–21:00", "lat": 13.7310, "lng": 100.5415},
-        ]},
+       {"period": "afternoon", "name": "轻松下午：屋顶/河景咖啡", "time": "15:30–17:30", "lat": 13.7300, "lng": 100.5150},
+       {"period": "afternoon", "name": "Lumphini 公园散步（备选轻松下午）", "time": "15:30–17:30", "lat": 13.7310, "lng": 100.5415},
        {"period": "evening", "name": "前往 ICONSIAM（河畔商场/游船码头）", "time": "17:30–18:00", "lat": 13.7263, "lng": 100.5100},
        {"period": "evening", "name": "ICONSIAM + 18:30 音乐喷泉", "time": "18:00–19:05", "lat": 13.7263, "lng": 100.5100},
        {"period": "evening", "name": "ICONSIAM 码头 check-in 登船", "time": "19:05–19:25", "lat": 13.7266, "lng": 100.5099},
@@ -115,10 +109,8 @@ trip = {
      "tips": ["国际航班 11:05，约 07:00 出发去素万那普(留足早高峰时间)，只够吃个早餐"],
      "slots": [
        {"period": "morning", "name": "True Siam Phayathai Hotel（退房）", "time": "06:15–06:50", "lat": 13.7565, "lng": 100.5335},
-       {"period": "morning", "name": "Jok Prince 炭香猪肉粥（早餐）", "time": "06:50–07:15", "lat": 13.7283, "lng": 100.5160,
-        "alts": [
-          {"name": "K.Panich 芒果糯米饭（周一才开·打包去机场）", "time": "07:00–16:00", "lat": 13.7440, "lng": 100.5060},
-        ]},
+       {"period": "morning", "name": "Jok Prince 炭香猪肉粥（早餐）", "time": "06:50–07:15", "lat": 13.7283, "lng": 100.5160},
+       {"period": "morning", "name": "K.Panich 芒果糯米饭（周一才开·备选早餐）", "time": "06:50–07:15", "lat": 13.7440, "lng": 100.5060},
        {"period": "morning", "name": "酒店 → 曼谷素万那普 BKK", "time": "07:15", "lat": 13.6900, "lng": 100.7501},
        {"period": "noon", "name": "素万那普 BKK 办理值机 / 退税 / 安检", "time": "08:15", "lat": 13.6900, "lng": 100.7501},
        {"period": "noon", "name": "HU7940 BKK → 海口（回程）", "time": "11:05 起飞", "lat": 13.6900, "lng": 100.7501}
@@ -137,13 +129,13 @@ ACCENTS = ["#bd3b73", "#e0a133", "#0f6b53", "#c1522f", "#2f8f6f", "#9a6b14", "#7
 
 # 每段行程的「时长/方式」（首站为 None；距离由坐标自动算）
 LEGS = {
-  "2026-07-14": [None, "Grab 40–60min", "Grab 10min", "步行逛吃"],
-  "2026-07-15": [None, "BTS 1站", "步行", "步行", "BTS 1站", "步行 14min", "Grab 30–60min", "SL520 航班 1h05", "Grab 15–20min"],
-  "2026-07-16": [None, "包车 1–1.25h", "攀爬", "包车 40min", "造纸体验", "包车 20–25min", "飞跃", "包车 40–50min", "步行/休息"],
-  "2026-07-17": [None, "Grab 15–20min", "Grab 15–20min", "步行 5–15min", "Grab 15min", "打铁片", "步行 2min", "Grab/步行", "Grab/步行", "按摩"],
-  "2026-07-18": [None, "Grab 10–15min", "市集", "Grab 15–20min", "逛村", "村内午餐", "Grab 15–20min", "宁曼", "Grab 15min", "夜市", "Grab 15min"],
-  "2026-07-19": [None, "Grab 15–20min", "值机", "VZ2103 航班 1h20", "ARL 28min/Grab", "酒店休整", "二选一", "Grab/BTS 20–30min", "馆内步行", "码头步行", "游船 2h", "MRT/Grab"],
-  "2026-07-20": [None, "酒店早餐", "Grab/ARL 30–60min", "值机安检", "HU7940 起飞"],
+  "2026-07-14": [None, "Grab 40–60min", "Grab 10min", "步行逛吃", "步行", "步行", "Grab 20–30min"],
+  "2026-07-15": [None, "BTS 1站", "步行", "步行", "BTS 1站", "步行 14min", "Grab 30–60min", "SL520 航班 1h05", "Grab 15–20min", "Grab 8–10min"],
+  "2026-07-16": [None, "包车 1–1.25h", "攀爬", "包车 40min", "造纸体验", "包车 15min", "包车 20–25min", "飞跃", "包车 40–50min", "步行/休息"],
+  "2026-07-17": [None, "Grab/包车 30min", "Grab 15–20min", "步行", "Grab 15min", "步行", "步行 2min", "Grab/步行", "Grab/步行", "步行", "步行", "Grab/步行", "步行"],
+  "2026-07-18": [None, "Grab 10–15min", "市集", "Grab 15–20min", "逛村", "村内午餐", "Grab 15–20min", "Grab 15–20min", "宁曼", "Grab 15min", "夜市", "Grab 15min"],
+  "2026-07-19": [None, "Grab 15–20min", "值机", "VZ2103 航班 1h20", "ARL 28min/Grab", "酒店休整", "二选一", "MRT/Grab", "Grab/BTS 20–30min", "馆内步行", "码头步行", "游船 2h", "MRT/Grab"],
+  "2026-07-20": [None, "酒店早餐", "Grab 15min", "Grab/ARL 30–60min", "值机安检", "HU7940 起飞"],
 }
 
 def project(points, box):
