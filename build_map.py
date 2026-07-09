@@ -615,6 +615,7 @@ document.addEventListener('click',function(e){{
   window.location=app;
 }});
 </script>
+<script src="map_zoom.js"></script>
 </body>
 </html>"""
     out = os.path.join(ROOT, "map.html")
