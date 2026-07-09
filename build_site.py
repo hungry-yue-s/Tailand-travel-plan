@@ -161,8 +161,8 @@ def _inject_table_buttons(itinerary_html):
     return "".join(out)
 
 def _process_first_table(html, slots):
-    """Inject action buttons into the second <td> of each data row of the
-    first <table> found in html."""
+    """Inject a serial-number column and action buttons into the first
+    itinerary <table> found in html."""
     table_start = html.find('<table')
     if table_start == -1:
         return html
@@ -171,6 +171,19 @@ def _process_first_table(html, slots):
         return html
     table_end += 8
     table_html = html[table_start:table_end]
+
+    # insert serial-number header into thead
+    thead_start = table_html.find('<thead')
+    thead_end = table_html.find('</thead>', thead_start)
+    if thead_start != -1 and thead_end != -1:
+        thead_end += 8
+        thead_html = table_html[thead_start:thead_end]
+        tr_match = re.search(r'(<tr[^>]*>)(.*?)(</tr>)', thead_html, re.DOTALL)
+        if tr_match:
+            tr_open, tr_content, tr_close = tr_match.groups()
+            new_tr = tr_open + '<th class="sn-cell">序号</th>' + tr_content + tr_close
+            thead_html = thead_html[:tr_match.start()] + new_tr + thead_html[tr_match.end():]
+            table_html = table_html[:thead_start] + thead_html + table_html[thead_end:]
 
     # locate tbody
     tbody_start = table_html.find('<tbody')
@@ -198,10 +211,12 @@ def _process_first_table(html, slots):
                 # rebuild tr_content with buttons inserted at second td
                 new_tr_content = (tr_content[:td2.start(2)] + new_td2_content +
                                   tr_content[td2.end(2):])
-                new_rows.append(tr_open + new_tr_content + tr_close)
+                # prepend serial-number cell so it aligns with map pins
+                new_rows.append(tr_open + f'<td class="sn-cell">{slot_idx + 1}</td>' + new_tr_content + tr_close)
                 slot_idx += 1
                 continue
-        new_rows.append(tr_match.group(0))
+        # rows that don't map to a slot get a dash
+        new_rows.append(tr_open + '<td class="sn-cell">—</td>' + tr_content + tr_close)
 
     new_tbody = f'<tbody>{"".join(new_rows)}</tbody>'
     new_table = table_html[:tbody_start] + new_tbody + table_html[tbody_end:]
@@ -461,6 +476,8 @@ svg.map a:hover path[stroke]{stroke-width:2}
 /* action buttons injected into itinerary tables */
 .md td .stop-btns{display:inline-flex;gap:5px;margin-left:8px;vertical-align:middle}
 .md td .stop-btns .btn{font-size:11px;padding:3px 8px;line-height:1}
+.md th.sn-cell,.md td.sn-cell{text-align:center;font-weight:700;font-family:var(--lat);width:44px;color:var(--jade-d);background:rgba(15,107,83,.06);font-size:13.5px}
+.md th.sn-cell{background:linear-gradient(150deg,var(--jade),var(--jade-d));color:#f7edd7}
 @media(min-width:560px){.stops li{grid-template-columns:auto 1fr auto}.acts{grid-column:3;grid-row:1;flex-wrap:nowrap}}
 /* alt groups */
 .alt-group{margin:4px 0 4px 35px;border:1px dashed var(--line);border-radius:10px;padding:0;overflow:hidden}
