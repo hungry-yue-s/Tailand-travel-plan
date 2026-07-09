@@ -289,7 +289,7 @@ def leg_label(a, b, pa, pb, leg_text, accent):
             f'font-family="sans-serif" font-size="13" fill="#2a2320">{esc(txt)}</text></g>')
 
 # ---------------- per-day map + stop list ----------------
-def render_day(day, accent, include_stops=True):
+def render_day(day, accent, include_stops=True, compact=False):
     pts = day["slots"]
     # collect all points including alts for layout
     all_pts = []
@@ -353,21 +353,27 @@ def render_day(day, accent, include_stops=True):
     stops_parts = []
     for i, s in enumerate(pts, 1):
         alts = s.get("alts", [])
+        # compact mode: hide time from the stop row because the itinerary table below has full timing
+        main_time = esc(s.get("time", ""))
+        time_html = f'<i>{main_time}</i>' if main_time and not compact else ""
         alt_html = ""
         if alts:
-            alt_items = "".join(
-                f'<li class="alt-item"><span class="sn sn-alt">{i}{chr(97+j)}</span>'
-                f'<span class="st"><b>{esc(a["name"])}</b><i>{esc(a.get("time",""))}</i></span>'
-                f'<span class="acts">'
-                f'<a class="btn go" href="{nav(a)}" target="_blank" rel="noopener">🧭</a>'
-                f'<a class="btn grab" href="{grab(a)}" data-fb="https://www.grab.com/th/" target="_blank" rel="noopener">🚕</a>'
-                f'</span></li>'
-                for j, a in enumerate(alts))
+            alt_items_list = []
+            for j, a in enumerate(alts):
+                alt_time = esc(a.get("time", ""))
+                alt_time_html = f'<i>{alt_time}</i>' if alt_time and not compact else ""
+                alt_items_list.append(
+                    f'<li class="alt-item"><span class="sn sn-alt">{i}{chr(97+j)}</span>'
+                    f'<span class="st"><b>{esc(a["name"])}</b>{alt_time_html}</span>'
+                    f'<span class="acts">'
+                    f'<a class="btn go" href="{nav(a)}" target="_blank" rel="noopener">🧭</a>'
+                    f'<a class="btn grab" href="{grab(a)}" data-fb="https://www.grab.com/th/" target="_blank" rel="noopener">🚕</a>'
+                    f'</span></li>')
             alt_html = (f'<details class="alt-group"><summary>🔀 还有 {len(alts)} 个备选</summary>'
-                        f'<ol class="alt-list">{alt_items}</ol></details>')
+                        f'<ol class="alt-list">{"".join(alt_items_list)}</ol></details>')
         stops_parts.append(
             f'<li><span class="sn">{i}</span>'
-            f'<span class="st"><b>{esc(s["name"])}</b><i>{esc(s.get("time",""))}</i></span>'
+            f'<span class="st"><b>{esc(s["name"])}</b>{time_html}</span>'
             f'<span class="acts">'
             f'<a class="btn go" href="{nav(s)}" target="_blank" rel="noopener">🧭 导航</a>'
             f'<a class="btn grab" href="{grab(s)}" data-fb="https://www.grab.com/th/" target="_blank" rel="noopener">🚕 Grab</a>'
@@ -567,13 +573,14 @@ document.addEventListener('click',function(e){{
 
 def render_day_fragments():
     """Return {day_num: html_fragment} for embedding into index.html.
-    Compact mode: keep the map + tips, drop the stops list because the
-    itinerary markdown table already provides detailed timing & logistics."""
+    Compact mode: keep the map + tips + a slim stops list (name + nav/Grab
+    buttons only). The full timing/logistics live in the itinerary markdown
+    table right below, so we drop the time column here to avoid repetition."""
     fragments = {}
     for i, d in enumerate(trip["days"]):
         accent = ACCENTS[i % len(ACCENTS)]
         n = int(d["date"][8:10])
-        fragments[n] = render_day(d, accent, include_stops=False)
+        fragments[n] = render_day(d, accent, compact=True)
     return fragments
 
 if __name__ == "__main__":
