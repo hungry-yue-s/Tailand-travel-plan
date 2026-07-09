@@ -79,7 +79,7 @@ def build_overview():
     hotels = [
         ("曼谷 · 前段","The Quarter Ratchathewi by UHG","7/14 → 7/15 · 1 晚","已订",""),
         ("清迈 · 主场","Travelodge Nimman","7/15 → 7/19 · 4 晚 · 高级房","已订",""),
-        ("曼谷 · 后段","True Siam Phayathai Hotel","7/19 → 7/20 · 1 晚 · ¥291 起 · 步行4分到ARL","查看/预订","hotel.html"),
+        ("曼谷 · 后段","True Siam Phayathai Hotel","7/19 → 7/20 · 1 晚 · ¥291 起 · 步行4分到ARL","已订","hotel.html"),
     ]
     hh = "\n".join(
         (f'<a class="ho ho-link" href="{href}">' if href else '<div class="ho">')
