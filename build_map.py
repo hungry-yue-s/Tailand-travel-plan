@@ -289,7 +289,7 @@ def leg_label(a, b, pa, pb, leg_text, accent):
             f'font-family="sans-serif" font-size="13" fill="#2a2320">{esc(txt)}</text></g>')
 
 # ---------------- per-day map + stop list ----------------
-def render_day(day, accent):
+def render_day(day, accent, include_stops=True):
     pts = day["slots"]
     # collect all points including alts for layout
     all_pts = []
@@ -377,12 +377,13 @@ def render_day(day, accent):
 
     tips = "".join(f"<li>{esc(t)}</li>" for t in day.get("tips", []))
     tips_html = f'<ul class="tips">{tips}</ul>' if tips else ""
+    stops_html = f'<ol class="stops">{stops}</ol>' if include_stops else ""
     n = int(day["date"][8:10])
     return (f'<section class="daycard" id="d{n}" style="--accent:{accent}">'
             f'<div class="dh"><span class="dd">{esc(day["date"][5:])} <em>{esc(day["weekday"])}</em></span>'
             f'<span class="dt">{esc(day["theme"])}</span></div>'
             f'{tips_html}{svg_html}'
-            f'<ol class="stops">{stops}</ol></section>')
+            f'{stops_html}</section>')
 
 # ---------------- shared SVG defs (filters + doodle symbols) ----------------
 DEFS = """<svg class="defs" width="0" height="0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
@@ -565,12 +566,14 @@ document.addEventListener('click',function(e){{
     print(f"wrote {out} — {len(page)} chars, {len(trip['days'])} hand-drawn day maps, {n_points} pins")
 
 def render_day_fragments():
-    """Return {day_num: html_fragment} for embedding into index.html."""
+    """Return {day_num: html_fragment} for embedding into index.html.
+    Compact mode: keep the map + tips, drop the stops list because the
+    itinerary markdown table already provides detailed timing & logistics."""
     fragments = {}
     for i, d in enumerate(trip["days"]):
         accent = ACCENTS[i % len(ACCENTS)]
         n = int(d["date"][8:10])
-        fragments[n] = render_day(d, accent)
+        fragments[n] = render_day(d, accent, include_stops=False)
     return fragments
 
 if __name__ == "__main__":
