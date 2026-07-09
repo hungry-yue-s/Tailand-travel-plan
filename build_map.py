@@ -292,13 +292,13 @@ def route_seg(a, b, pa, pb, accent):
         off = 60
         cx, cy = mx + nx * off, my + ny * off
         ang = math.degrees(math.atan2(y2 - y1, x2 - x1)) + 90
-        return (f'<path d="M{x1:.1f} {y1:.1f} Q{cx:.1f} {cy:.1f} {x2:.1f} {y2:.1f}" fill="none" '
+        return (f'<path class="route-line" data-dash="7 8" d="M{x1:.1f} {y1:.1f} Q{cx:.1f} {cy:.1f} {x2:.1f} {y2:.1f}" fill="none" '
                 f'stroke="{accent}" stroke-width="2" stroke-dasharray="7 8" stroke-linecap="round" '
                 f'opacity="0.7" filter="url(#rough)"/>'
                 + doodle("d-plane", cx - 17, cy - 17, 34, 34, accent, 0.9, rot=ang))
     off = 14
     cx, cy = mx + nx * off, my + ny * off
-    return (f'<path d="M{x1:.1f} {y1:.1f} Q{cx:.1f} {cy:.1f} {x2:.1f} {y2:.1f}" fill="none" '
+    return (f'<path class="route-line" data-dash="1 8" d="M{x1:.1f} {y1:.1f} Q{cx:.1f} {cy:.1f} {x2:.1f} {y2:.1f}" fill="none" '
             f'stroke="{accent}" stroke-width="2.6" stroke-dasharray="1 8" stroke-linecap="round" '
             f'opacity="0.85" filter="url(#rough)"/>')
 
@@ -391,7 +391,7 @@ def render_day(day, accent, include_stops=True, compact=False):
             svg.append(pin(x, y, label, accent, nav(a), alt=True))
             # dashed line from main to alt
             mx, my = coord[id(p)]
-            svg.append(f'<line x1="{mx:.1f}" y1="{my:.1f}" x2="{x:.1f}" y2="{y:.1f}" '
+            svg.append(f'<line class="route-line" data-dash="3 4" x1="{mx:.1f}" y1="{my:.1f}" x2="{x:.1f}" y2="{y:.1f}" '
                        f'stroke="{accent}" stroke-width="1.2" stroke-dasharray="3 4" opacity="0.45"/>')
     # main pins on top
     for i, p in enumerate(pts, 1):
@@ -501,6 +501,7 @@ svg.map a:hover path[stroke]{stroke-width:2}
 .daycard:-webkit-full-screen .dh,.daycard:-webkit-full-screen .tips,.daycard:-webkit-full-screen .stops{display:none}
 .daycard:-webkit-full-screen svg.map{flex:1;width:100%;height:100%;max-width:none;border-radius:0}
 .pin-fixed,.leg-fixed{transition:transform .05s linear}
+.route-line{vector-effect:non-scaling-stroke}
 /* stop list */
 .stops{list-style:none;margin:13px 0 0;padding:0;display:grid;gap:7px}
 .stops li{display:grid;grid-template-columns:auto 1fr;column-gap:10px;row-gap:6px;align-items:center;color:var(--ink);

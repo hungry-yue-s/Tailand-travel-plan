@@ -25,6 +25,7 @@
     let startDist = 0;
     const pins = Array.from(svg.querySelectorAll('.pin-fixed'));
     const legs = Array.from(svg.querySelectorAll('.leg-fixed'));
+    const routes = Array.from(svg.querySelectorAll('.route-line'));
 
     function setViewBox(){
       const vw = W / scale;
@@ -39,13 +40,19 @@
       // Keep pins and leg labels visually the same size while the map zooms.
       // We scale each fixed group around its own center by 1/currentScale.
       const inv = 1 / scale;
-      function apply(el){
+      function applyTransform(el){
         const pcx = parseFloat(el.getAttribute('data-cx') || 0);
         const pcy = parseFloat(el.getAttribute('data-cy') || 0);
         el.setAttribute('transform', `translate(${pcx}, ${pcy}) scale(${inv}) translate(${-pcx}, ${-pcy})`);
       }
-      pins.forEach(apply);
-      legs.forEach(apply);
+      pins.forEach(applyTransform);
+      legs.forEach(applyTransform);
+      // Keep dashed route patterns visually consistent by scaling dasharray.
+      routes.forEach(function(path){
+        const dash = path.getAttribute('data-dash');
+        if (!dash) return;
+        path.setAttribute('stroke-dasharray', dash.split(/[\s,]+/).map(function(v){ return (parseFloat(v) / scale).toFixed(2); }).join(' '));
+      });
     }
 
     function clampScale(s){
