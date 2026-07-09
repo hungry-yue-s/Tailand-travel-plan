@@ -472,7 +472,8 @@ svg.map a:hover path[stroke]{stroke-width:2}
 .daycard:-webkit-full-screen{position:fixed;inset:0;width:100vw;height:100vh;max-width:none;border-radius:0;display:flex;flex-direction:column;padding:0;overflow:hidden;background:#faf4e6}
 .daycard:-webkit-full-screen .dh,.daycard:-webkit-full-screen .tips,.daycard:-webkit-full-screen .stops{display:none}
 .daycard:-webkit-full-screen svg.map{flex:1;width:100%;height:100%;max-width:none;border-radius:0}
-.pin-fixed,.leg-fixed{transition:transform .05s linear}
+.pin-fixed{transition:transform .05s linear}
+.leg-fixed{transform-box:fill-box;transform-origin:center;transition:transform .05s linear}
 .route-line{vector-effect:non-scaling-stroke}
 .stops{list-style:none;margin:13px 0 0;padding:0;display:grid;gap:7px}
 .stops li{display:grid;grid-template-columns:auto 1fr;column-gap:10px;row-gap:6px;align-items:center;color:var(--ink);background:rgba(255,255,255,.5);border:1px solid var(--line);border-radius:12px;padding:9px 12px}

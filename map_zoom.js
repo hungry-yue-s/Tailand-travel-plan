@@ -40,13 +40,12 @@
       // Keep pins and leg labels visually the same size while the map zooms.
       // We scale each fixed group around its own center by 1/currentScale.
       const inv = 1 / scale;
-      function applyTransform(el){
-        const pcx = parseFloat(el.getAttribute('data-cx') || 0);
-        const pcy = parseFloat(el.getAttribute('data-cy') || 0);
-        el.setAttribute('transform', `translate(${pcx}, ${pcy}) scale(${inv}) translate(${-pcx}, ${-pcy})`);
-      }
-      pins.forEach(applyTransform);
-      legs.forEach(applyTransform);
+      pins.forEach(function(pin){
+        const pcx = parseFloat(pin.getAttribute('data-cx') || 0);
+        const pcy = parseFloat(pin.getAttribute('data-cy') || 0);
+        pin.setAttribute('transform', `translate(${pcx}, ${pcy}) scale(${inv}) translate(${-pcx}, ${-pcy})`);
+      });
+      legs.forEach(function(leg){ leg.style.transform = `scale(${inv})`; });
       // Keep dashed route patterns visually consistent and never let them collapse into a solid line.
       const rect = svg.getBoundingClientRect();
       const pxPerUnit = (rect.width * scale) / W;
