@@ -573,14 +573,14 @@ document.addEventListener('click',function(e){{
 
 def render_day_fragments():
     """Return {day_num: html_fragment} for embedding into index.html.
-    Compact mode: keep the map + tips + a slim stops list (name + nav/Grab
-    buttons only). The full timing/logistics live in the itinerary markdown
-    table right below, so we drop the time column here to avoid repetition."""
+    The map provides the visual + numbered pins (pins link to Google Maps).
+    Detailed timing, transport and action buttons live in the itinerary
+    markdown table below, so we drop the stops list entirely."""
     fragments = {}
     for i, d in enumerate(trip["days"]):
         accent = ACCENTS[i % len(ACCENTS)]
         n = int(d["date"][8:10])
-        fragments[n] = render_day(d, accent, compact=True)
+        fragments[n] = render_day(d, accent, include_stops=False)
     return fragments
 
 if __name__ == "__main__":

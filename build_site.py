@@ -133,6 +133,80 @@ def _inject_day_maps(itinerary_html):
         return h2 + "\n" + frag if frag else h2
     return pattern.sub(replacer, itinerary_html)
 
+def _inject_table_buttons(itinerary_html):
+    """Add 🧭 / 🚕 action buttons to the 'location/activity' cell of each
+    itinerary table row, using the trip data from build_map for coordinates."""
+    # day string (e.g. "7/14") -> list of slots
+    day_slots = {}
+    for d in build_map.trip["days"]:
+        day_str = f"{int(d['date'][5:7])}/{int(d['date'][8:10])}"
+        day_slots[day_str] = d["slots"]
+
+    h2_pattern = re.compile(r'(<h2[^>]*>.*?7/(\d{2})\s*周.*?</h2>)', re.DOTALL)
+    parts = h2_pattern.split(itinerary_html)
+    if len(parts) < 3:
+        return itinerary_html
+
+    out = [parts[0]]
+    i = 1
+    while i < len(parts):
+        h2_html, day_digits = parts[i], parts[i+1]
+        rest = parts[i+2] if i+2 < len(parts) else ""
+        day_str = f"7/{int(day_digits)}"
+        slots = day_slots.get(day_str, [])
+        if slots:
+            rest = _process_first_table(rest, slots)
+        out.extend([h2_html, day_digits, rest])
+        i += 3
+    return "".join(out)
+
+def _process_first_table(html, slots):
+    """Inject action buttons into the second <td> of each data row of the
+    first <table> found in html."""
+    table_start = html.find('<table')
+    if table_start == -1:
+        return html
+    table_end = html.find('</table>', table_start)
+    if table_end == -1:
+        return html
+    table_end += 8
+    table_html = html[table_start:table_end]
+
+    # locate tbody
+    tbody_start = table_html.find('<tbody')
+    tbody_end = table_html.find('</tbody>', tbody_start)
+    if tbody_start == -1 or tbody_end == -1:
+        return html
+    tbody_end += 8
+    tbody_html = table_html[tbody_start:tbody_end]
+
+    slot_idx = 0
+    new_rows = []
+    for tr_match in re.finditer(r'(<tr[^>]*>)(.*?)(</tr>)', tbody_html, re.DOTALL):
+        tr_open, tr_content, tr_close = tr_match.groups()
+        td_parts = list(re.finditer(r'(<td[^>]*>)(.*?)(</td>)', tr_content, re.DOTALL))
+        if len(td_parts) >= 2 and slot_idx < len(slots):
+            slot = slots[slot_idx]
+            td2 = td_parts[1]
+            loc_html = td2.group(2)
+            if loc_html.strip():
+                btns = (f'<span class="stop-btns">'
+                        f'<a class="btn go" href="{build_map.nav(slot)}" target="_blank" rel="noopener" title="Google 导航">🧭</a>'
+                        f'<a class="btn grab" href="{build_map.grab(slot)}" data-fb="https://www.grab.com/th/" target="_blank" rel="noopener" title="Grab 叫车">🚕</a>'
+                        f'</span>')
+                new_td2_content = loc_html + btns
+                # rebuild tr_content with buttons inserted at second td
+                new_tr_content = (tr_content[:td2.start(2)] + new_td2_content +
+                                  tr_content[td2.end(2):])
+                new_rows.append(tr_open + new_tr_content + tr_close)
+                slot_idx += 1
+                continue
+        new_rows.append(tr_match.group(0))
+
+    new_tbody = f'<tbody>{"".join(new_rows)}</tbody>'
+    new_table = table_html[:tbody_start] + new_tbody + table_html[tbody_end:]
+    return html[:table_start] + new_table + html[table_end:]
+
 def main():
     today = datetime.date.today().isoformat()
     # nav
@@ -146,6 +220,7 @@ def main():
         body = md_to_html(os.path.join(SRC, fn))
         if key == "itinerary":
             body = _inject_day_maps(body)
+            body = _inject_table_buttons(body)
         secs.append(f'<section id="sec-{key}" class="panel"><div class="md">{body}</div></section>')
     sections_html = "\n".join(secs)
 
@@ -383,6 +458,9 @@ svg.map a:hover path[stroke]{stroke-width:2}
 .btn:active{transform:scale(.94)}
 .go{color:#fff;background:linear-gradient(150deg,var(--jade),var(--jade-d));box-shadow:0 2px 6px rgba(10,79,61,.28)}
 .grab{color:#fff;background:#00b14f;font-weight:600;box-shadow:0 2px 6px rgba(0,177,79,.32)}
+/* action buttons injected into itinerary tables */
+.md td .stop-btns{display:inline-flex;gap:5px;margin-left:8px;vertical-align:middle}
+.md td .stop-btns .btn{font-size:11px;padding:3px 8px;line-height:1}
 @media(min-width:560px){.stops li{grid-template-columns:auto 1fr auto}.acts{grid-column:3;grid-row:1;flex-wrap:nowrap}}
 /* alt groups */
 .alt-group{margin:4px 0 4px 35px;border:1px dashed var(--line);border-radius:10px;padding:0;overflow:hidden}
