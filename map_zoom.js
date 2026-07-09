@@ -47,11 +47,21 @@
       }
       pins.forEach(applyTransform);
       legs.forEach(applyTransform);
-      // Keep dashed route patterns visually consistent by scaling dasharray.
+      // Keep dashed route patterns visually consistent and never let them collapse into a solid line.
+      const rect = svg.getBoundingClientRect();
+      const pxPerUnit = (rect.width * scale) / W;
+      const minScreenPx = 1.0;
+      const minUser = minScreenPx / pxPerUnit;
       routes.forEach(function(path){
         const dash = path.getAttribute('data-dash');
         if (!dash) return;
-        path.setAttribute('stroke-dasharray', dash.split(/[\s,]+/).map(function(v){ return (parseFloat(v) / scale).toFixed(2); }).join(' '));
+        const parts = dash.split(/[\s,]+/).map(parseFloat).map(function(v){ return v / scale; });
+        const minPart = Math.min.apply(null, parts);
+        if (minPart < minUser){
+          const factor = minUser / minPart;
+          for (let i = 0; i < parts.length; i++) parts[i] *= factor;
+        }
+        path.setAttribute('stroke-dasharray', parts.map(function(v){ return v.toFixed(2); }).join(' '));
       });
     }
 
