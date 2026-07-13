@@ -26,13 +26,15 @@
 - **清迈**：Travelodge Nimman（宁曼路核心区），7/15 入住 4 晚、7/19 离店（高级房 ×1）
 - **曼谷（后段）**：**True Siam Phayathai Hotel**（Phaya Thai/Ratchathewi，步行 4 分到 ARL 机场快线），7/19 入住、7/20 离店 · **已订**（站内 hotel.html 有实拍）
 
-> [!important] 🎟️ 出发前必订清单（4 项预订 + 入境卡）
+> [!important] 🎟️ 出发前必订清单（预订状态 · 实时更新）
 > 这几样**出发前先订好**：价格更好、也不怕满场（链接为官方/主流平台，实时价格与档期以打开页面为准；坐标/时间见对应日）。
-> - **① 蓬扬 Pongyang 丛林飞跃**（7/16 · 建议订 **13:00 场**含泰式午餐）→ [Klook](https://www.klook.com/en-US/activity/88017-1-day-join-pongyang-jungle-coaster-zipline-chiang-mai/) · [KKday](https://www.kkday.com/en-us/product/21263)　⚠️ 体重连衣物鞋 ≤ ~95–100kg、穿运动鞋不能拖鞋
-> - **② 情侣马杀鸡**（7/17 晚）→ Oasis：[GoWabi 预约](https://www.gowabi.com/en/provider/oasis-spa-at-nimman-chiang-mai)　|　Fah Lanna Romantic：[官网](https://fahlanna.com/spa-nimman/)　⚠️ 务必预约；Fah Lanna 末场 20:00、Oasis 市区免费接送
-> - **③ Chao Phraya Princess 昭披耶夜游船**（7/19 · 19:30–21:30 ICONSIAM 码头）→ [Klook 顶层 Upper Deck](https://www.klook.com/en-US/activity/88680-upper-deck-seat-chao-phraya-princess-cruise-bangkok/) · [Klook 标准](https://www.klook.com/en-US/activity/375-chao-phraya-princess-cruise-bangkok/) · [KKday](https://www.kkday.com/en-us/product/2567-chao-phraya-princess-river-cruise-with-dinner-buffet-thailand) · [官网](https://chaophrayaprincess.com/reservations.php)　⚠️ 选**顶层/前甲板**；提前 30 分到 **ICONSIAM Pier 2 · SookSiam G 层 Naraya 旁** check-in
+> **接送 / 上门类需填酒店（可直接粘贴）**：`Travelodge Nimman Chiang Mai, 89 Chonprathan Rd, Suthep, Mueang Chiang Mai, Chiang Mai 50200`（注意实际在 **Chonprathan 路**，别写成宁曼某 Soi）。
+> - **① 蓬扬 Pongyang 丛林飞跃** — ✅ **已订**（7/16 · **13:00 场**含泰式午餐）→ [Klook](https://www.klook.com/en-US/activity/88017-1-day-join-pongyang-jungle-coaster-zipline-chiang-mai/) · [KKday](https://www.kkday.com/en-us/product/21263)　⚠️ 7/16 **包车跑北线**（瀑布→造纸→蓬扬）、约 12:50 自行到场，**不必用套餐接送**；体重连衣物鞋 ≤ ~95–100kg、穿运动鞋不能拖鞋。套餐档：Package B（5 项+午餐，最超值）/ Gold（7 项无限次+午餐）/ 散票（过山车 ฿250 + 飞索34站 ฿1,880 …门口刷票）
+> - **② 奶奶厨房 Grandma's 烹饪课** — ⏳ **待订（打电话 / 私信）**（7/17 上午 · **Half Day·Chinese** 中文全程带 · 4.5–5h · 约 **฿1,000/人**下厨 + ฿600 陪同 · **到校付款 pay‑later**）→ [官网预订](https://www.grandmascookingschool.com/book-online) · [Klook](https://www.klook.com/en-US/activity/6936-grandmas-home-cooking-school-chiang-mai/) · [Airbnb](https://www.airbnb.com/experiences/3659040)　⚠️ **08:30 上午场须「致电预订」**（在线只放 11:30 / 16:00）：用 **WhatsApp / 电话 ☎ +66 82 850 9999**（或 ✉️ rsvn.cooking@grandmasvillagefarm.com / [FB](https://www.facebook.com/grandmascookingschool/)）一次办妥 **订 08:30 班 + 点名 Rin / Nuchy 老师 + 报酒店接送**（市区 5km 内免费）
+> - **③ 情侣马杀鸡**（7/17 晚）→ Oasis：[GoWabi 中文预约](https://www.gowabi.com/zh-CN/provider/oasis-spa-at-nimman-chiang-mai)　|　Fah Lanna Romantic：[官网](https://fahlanna.com/spa-nimman/)　⚠️ 务必预约；Fah Lanna 末场 20:00、Oasis 市区免费接送（GoWabi 英文版偶尔挡访问，改用 **中文版 `/zh-CN/`** 链接）
 > - **④ Lanna 实弹射击**（7/18 下午 · 清迈唯一中文服务）→ [KKday](https://www.kkday.com/en/product/146391-lanna-shooting-club-experience-chiang-mai-thailand)　⚠️ 电话/线上预约（☎ 0818 981 553）、带护照；弹壳不得带出场
-> - **⑤ TDAC 电子入境卡**（免费）→ 抵达前 72 小时内（最早 7/11）在官方 [tdac.immigration.go.th](https://tdac.immigration.go.th/) 填、认准 `.go.th`，存 QR 截图
+> - **⑤ Chao Phraya Princess 昭披耶夜游船**（7/19 · 19:30–21:30 ICONSIAM 码头）→ [Klook 顶层 Upper Deck](https://www.klook.com/en-US/activity/88680-upper-deck-seat-chao-phraya-princess-cruise-bangkok/) · [Klook 标准](https://www.klook.com/en-US/activity/375-chao-phraya-princess-cruise-bangkok/) · [KKday](https://www.kkday.com/en-us/product/2567-chao-phraya-princess-river-cruise-with-dinner-buffet-thailand) · [官网](https://chaophrayaprincess.com/reservations.php)　⚠️ 选**顶层/前甲板**；提前 30 分到 **ICONSIAM Pier 2 · SookSiam G 层 Naraya 旁** check-in
+> - **⑥ TDAC 电子入境卡**（免费）→ 抵达前 72 小时内（最早 7/11）在官方 [tdac.immigration.go.th](https://tdac.immigration.go.th/) 填、认准 `.go.th`，存 QR 截图
 
 ---
 
@@ -112,12 +114,12 @@
 ## 🗓️ 7/17 周五 · 奶奶厨房 + 宁曼购物 + 古城打铁片 + 马杀鸡
 
 > [!success] ✅ "奶奶厨房" = **Grandma's Home Cooking School**（Saraphi·半天泰式烹饪课）已排今天上午
-> 你要去的其实是 **Grandma's Home Cooking School**（Saraphi 有机农场·**半天烹饪课**，不是普通餐厅）：校车**免费酒店接送**(市区 5km 内) → 逛本地市场认食材 → 有机农场摘菜 / 喂鸡捡蛋 → 凉亭学做 **4 道菜 + 芒果糯米饭**，送电子食谱。**上午班约 8:00 接、13:30 前后送回**。⚠️ **提前订**：[官网](https://www.grandmascookingschool.com/book-online) · [Airbnb 体验 ★4.94](https://www.airbnb.com/experiences/3659040) · [Klook](https://www.klook.com/en-US/activity/6936-grandmas-home-cooking-school-chiang-mai/)；想指定 **Rin / Nuchy 老师**得**直接联系校方 / FB 私信**说明(平台随机排老师)。⚠️ **上午被课占满——双龙寺今天排不下、宁曼购物压到课后或改天**(下表已按此重排)。
+> 你要去的其实是 **Grandma's Home Cooking School**（Saraphi 有机农场·**半天烹饪课**，不是普通餐厅）：校车**免费酒店接送**(市区 5km 内) → 逛本地市场认食材 → 有机农场摘菜 / 喂鸡捡蛋 → 凉亭学做 **4 道菜 + 芒果糯米饭**，送电子食谱。**上午 08:30 开课、~13:30 送回**。⚠️ **要订的是「Half Day · Chinese」中文班**（4.5–5h，约 **฿1,000/人**下厨 + ฿600 陪同，**到校付款 pay‑later**）：**08:30 上午场须「致电预订」**（[官网 FareHarbor](https://www.grandmascookingschool.com/book-online) 在线只放 11:30/16:00 两场）——打 **WhatsApp / 电话 ☎ +66 82 850 9999**（或 ✉️ rsvn.cooking@grandmasvillagefarm.com / [FB 私信](https://www.facebook.com/grandmascookingschool/)）一次订好 **08:30 班 + 点名 Rin / Nuchy 老师 + 报酒店接送**（[Klook](https://www.klook.com/en-US/activity/6936-grandmas-home-cooking-school-chiang-mai/) / [Airbnb ★4.94](https://www.airbnb.com/experiences/3659040) 也可订但**不能选老师**、平台随机排）。⚠️ **上午被课占满——双龙寺今天排不下、宁曼购物压到课后或改天**(下表已按此重排)。
 
 | 时间 | 地点 / 活动 | 交通（从上一点） | 停留 | 门票 / 费用 | 小贴士 / 推荐理由 |
 |---|---|---|---|---|---|
 | 06:00–12:00 | （可选半日）**素贴山双龙寺 Doi Suthep** | 红双条拼车 / Grab / 包车约 30 分钟 | ~3–4h | 30 THB（缆车 50 THB） | 清迈最标志性山景金塔；06:00–20:00；遮肩盖膝、进殿脱鞋。⚠️ **今天上午是烹饪课，双龙寺基本排不下——想去建议改到别的半天** |
-| 08:00–13:30 | ⭐ **奶奶厨房 = Grandma's Home Cooking School**（Saraphi·半天泰式烹饪课） | 校方**免费接送**（市区 5km 内·约 20–30 分） | ~半天 | 约 1,000–1,400฿/人（以预订页为准） | 逛本地市场认食材 → 有机农场摘菜/喂鸡捡蛋 → 凉亭学做 **4 道菜 + 芒果糯米饭** + 电子食谱。**务必提前订**（[官网](https://www.grandmascookingschool.com/book-online) / [Airbnb](https://www.airbnb.com/experiences/3659040) / [Klook](https://www.klook.com/en-US/activity/6936-grandmas-home-cooking-school-chiang-mai/)）；**要 Rin/Nuchy 老师需直接联系校方指定**（平台随机排） |
+| 08:30–13:30 | ⭐ **奶奶厨房 = Grandma's Home Cooking School**（Saraphi·**Half Day·Chinese** 中文半日班） | 校方**免费接送**（市区 5km 内·约 20–30 分） | ~半天 | 约 **฿1,000/人**（下厨）+ ฿600（陪同） | 逛本地市场认食材 → 有机农场摘菜/喂鸡捡蛋 → 凉亭学做 **4 道菜 + 芒果糯米饭** + 电子食谱。**08:30 场须致电预订** ☎ **+66 82 850 9999**（在线只放 11:30/16:00），顺便**点名 Rin/Nuchy 老师**、报酒店接送；**到校付款**。（[官网](https://www.grandmascookingschool.com/book-online) / [Klook](https://www.klook.com/en-US/activity/6936-grandmas-home-cooking-school-chiang-mai/)） |
 | 13:30–14:15 | 课程结束 → 回市区 / 古城方向 | 校方接送 / Grab（Saraphi 约 20–30 分） | — | 含接送 | 下午去古城打铁片；想先回宁曼也行 |
 | 14:15–14:40 | 宁曼快速逛 / 咖啡（**机动·上午在上课，购物已压缩**） | Grab | ~25min | 自由消费 | One Nimman / Maya 快速晃一下；⚠️ **想认真逛宁曼建议挪到别天**（如 7/18 傍晚或 7/16 晚） |
 | 14:40–15:00 | 宁曼/市区 → 古城南门（Wualai·银庙一带） | Grab 约 15 分 | — | 车 80–120 THB | 打车去古城做打铁片 |
@@ -210,14 +212,14 @@
 ## ✅ 待确认 & 优化建议
 
 > [!success] ✅ 已敲定（原 5 项 + 新增两处玩乐都排好了）
-> 1. ✅ **奶奶厨房 = Grandma's Home Cooking School**（Saraphi·半天泰式烹饪课·Rin/Nuchy 老师），排 **7/17 上午**（校车免费接送·需提前订）。
+> 1. ✅ **奶奶厨房 = Grandma's Home Cooking School**（Saraphi·**Half Day·Chinese** 中文半日班），排 **7/17 上午 08:30**（免费接送·**到校付款**）。⏳ **08:30 场须致电预订** ☎ +66 82 850 9999 并**点名 Rin/Nuchy 老师**。
 > 2. ✅ **打铁片 = 古城 Lanna Artisans**，已排入 **7/17 下午**（50฿/件、仅现金、17:00 关门）。
 > 3. ✅ **7/16 = 自然大满贯**：粘粘瀑布 + 便便造纸园（方案 A）+ **新增丛林飞跃「蓬扬 Pongyang」**（Mae Rim 同北线顺路，飞索 34 站 + 自控丛林过山车，~1,890฿/人）。无骑乘大象营（方案 B）仍作备选（会与造纸/飞索取舍）。
 > 4. ✅ **曼谷后段酒店已定**：True Siam Phayathai（步行 4 分到 ARL），7/19 入住、7/20 离店。
 > 5. ✅ **马杀鸡已排 7/17 晚**（从 7/16 挪来）：Oasis King&Queen 双人套 或 Fah Lanna Romantic。
 > 6. ✅ **新增曼谷夜游船**：**Chao Phraya Princess**，7/19 从 ICONSIAM 码头 19:30–21:30，~1,000–1,300฿/人，顶掉唐人街正餐（可船后 MRT 去吃宵夜）。
 >
-> ⚠️ **需你出发前动手订的 4 项**：① 蓬扬 **Pongyang** 场次（建议 13:00 · Klook/KKday 更便宜）；② 7/17 晚 **马杀鸡**（Oasis / Fah Lanna，务必预约）；③ 昭披耶 **Chao Phraya Princess 游船**（选顶层/前甲板、提前订）；④ 7/18 下午 **Lanna 实弹射击**（中文服务·电话/线上预约·带护照）。
+> ⚠️ **预订进度（详见顶部「必订清单」）**：① 蓬扬 **Pongyang** ✅ **已订**；还需动手订 → ② 奶奶厨房 **致电 ☎ +66 82 850 9999** 订 08:30 班+点名老师；③ 7/17 晚 **马杀鸡**（Oasis/Fah Lanna，务必预约）；④ 7/18 下午 **Lanna 射击**（电话/线上·带护照）；⑤ 昭披耶 **游船**（选顶层、提前订）；⑥ **TDAC 入境卡**（抵达前 72h）。
 
 > [!tip] 通用优化提示
 > - **7 月雨季**：清迈近郊（瀑布）+ 曼谷午后常雷阵雨，**户外尽量排上午**，午后留室内/商场/按摩，行程已如此编排。带轻便雨衣/伞、防滑鞋。
