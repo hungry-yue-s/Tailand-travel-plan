@@ -33,7 +33,7 @@
 
 ## 1. 传主指定必吃（已核实+补充）
 
-> [!tip] 这三家是你们自己点名要去的，下面是核实后的准确信息（地点/时间/价格/招牌），不做替换，只做补充与提醒。
+> [!tip] 这两家是你们自己点名要去的**餐厅**（第三样「奶奶厨房」其实是 Saraphi 的**烹饪课**，见逐日行程）。下面是核实后的准确信息，不做替换、只补充提醒。
 
 ### 1.1 打抛牛肉饭 · Kaprao Nuea Nuea（กะเพราเนื้อเนื้อ）· Chang Moi 路
 
@@ -53,16 +53,6 @@
 - **提醒（诚实说明）**：它是**冰沙/果昔**，不是刨冰或 bingsu。如果你们想要的是**真正的山竹"刨冰/绵绵冰"甜品**，尼曼 Soi 7 的 **Cheevit Cheeva** 是当地最有名的泰式 bingsu 刨冰店（招牌是芒果/泰茶绵绵冰，山竹属时令），可作为"想吃冰品"的补充选项。7 月山竹正当季，果昔尤其新鲜。
 
 来源：[Chiang Mai Locator – Soi 11](https://www.chiangmailocator.com/chiang-mai-shops-7548:joost-smoothies-drink-healthy-nimman-soi-11-branch) · [Chiang Mai Locator – Soi 13](https://www.chiangmailocator.com/chiang-mai-shops-7547:joost-smoothies-drink-healthy-nimman-soi-13-branch) · [Timeout – Chiang Mai smoothies](https://www.timeout.com/chiang-mai/health-and-beauty/smoothie-in-chiang-mai) · [Trip.com moments](https://www.trip.com/moments/detail/chiang-mai-209-15606636/)
-
-### 1.3 Krua Ya 餐厅（Grandma's Kitchen）— 注意：≠ 7/17 的「奶奶厨房烹饪课」
-
-- ⚠️ **别混淆**：这是一家**餐厅**（Grandma's Kitchen / ครัวย่า），和你 **7/17 要去的 Grandma's Home Cooking School 烹饪课**（Saraphi）**不是同一家**。这家只是"想安静吃顿北部菜"的备选，**不在行程里**。
-- **是什么**：清迈一家**家常/北部泰菜**餐厅，英文名就叫 **Grandma's Kitchen（泰文 ครัวย่า Krua Ya）**。氛围极好——**藏在 Chiang Mai Lake Land 住宅村内，临水/池塘、绿树环绕**，很适合两人安静吃一顿。
-- **招牌**：**马沙文咖喱（massaman）**、虾、鱼；每天有**"当日主厨菜（dish of the day）"**；隔壁就是一家口碑咖啡馆，可饭后喝咖啡。
-- **价格/营业**：人均 **~200–300฿**；约 **每天 09:00–15:30（只做白天到午后，含早午餐）**。==分量偏小，建议多点几道配菜。==
-- **⚠️ 重要位置提醒**：它在 **Su Thep 区 Chiang Mai Lake Land 村内**（城郊、湖区方向），**不在尼曼步行范围**，需 **Grab/打车或自驾**前往，门口有停车位。因为**只做白天**，最好安排在**某天的午餐**（例如逛完景点后），别指望晚上去。官网 [kruaya.com](http://www.kruaya.com) 可再确认当日营业时间。
-
-来源：[Chiang Mai Citylife](https://www.chiangmaicitylife.com/clg/food-drink/thai-restaurants/krua-ya-grandmas-kitchen/) · [TripAdvisor](https://www.tripadvisor.com/Restaurant_Review-g293917-d2408796-Reviews-Krua_Ya_Grandma_s_kitchen-Chiang_Mai.html) · [Restaurant Guru](https://restaurantguru.com/Krua-Ya-Grandmas-kitchen-Chiang-Mai)
 
 ---
 
@@ -178,7 +168,7 @@
 
 > [!note] 各店关键提醒汇总
 > - **休息日**：周日休 → Khun Yai、Mae Sai、Dash；周一休 → Cherng Doi、Kai Yang Wichian Buri、Baan Landai；周三休 → Huen Muan Jai（+15:00–17:00 空档）；周五休 → Khao Soi Islam；周三四休 → PoonPoon（原 Woo）。
-> - **中午前去（怕售罄）**：所有传统 khao soi、SP Chicken、Kai Yang Wichian Buri、Mana Sticky Rice、Krua Ya（只到 ~15:30）；**傍晚才开**：凤飞飞猪脚饭、Kaprao Nuea Nuea（~18:00 到）。
+> - **中午前去（怕售罄）**：所有传统 khao soi、SP Chicken、Kai Yang Wichian Buri、Mana Sticky Rice；**傍晚才开**：凤飞飞猪脚饭、Kaprao Nuea Nuea（~18:00 到）。
 > - **只收现金**：多数 khao soi 摊、SP Chicken、Cherng Doi、Kai Yang Wichian Buri、Dash、所有街头摊。
 
 ---
@@ -487,7 +477,7 @@
 
 ## 参考来源
 
-**传主指定三家**：[Kaprao Nuea Nuea – TripAdvisor](https://www.tripadvisor.com/Restaurant_Review-g293917-d25135417-Reviews-Kaprao_Nuea_Nuea-Chiang_Mai.html) · [Kaprao Nuea Nuea – IG](https://www.instagram.com/kapraonueanuea/) · [Joost – Chiang Mai Locator (Soi 11)](https://www.chiangmailocator.com/chiang-mai-shops-7548:joost-smoothies-drink-healthy-nimman-soi-11-branch) · [Joost – Timeout](https://www.timeout.com/chiang-mai/health-and-beauty/smoothie-in-chiang-mai) · [Krua Ya – Chiang Mai Citylife](https://www.chiangmaicitylife.com/clg/food-drink/thai-restaurants/krua-ya-grandmas-kitchen/) · [Krua Ya – TripAdvisor](https://www.tripadvisor.com/Restaurant_Review-g293917-d2408796-Reviews-Krua_Ya_Grandma_s_kitchen-Chiang_Mai.html)
+**传主指定两家**：[Kaprao Nuea Nuea – TripAdvisor](https://www.tripadvisor.com/Restaurant_Review-g293917-d25135417-Reviews-Kaprao_Nuea_Nuea-Chiang_Mai.html) · [Kaprao Nuea Nuea – IG](https://www.instagram.com/kapraonueanuea/) · [Joost – Chiang Mai Locator (Soi 11)](https://www.chiangmailocator.com/chiang-mai-shops-7548:joost-smoothies-drink-healthy-nimman-soi-11-branch) · [Joost – Timeout](https://www.timeout.com/chiang-mai/health-and-beauty/smoothie-in-chiang-mai)
 
 **清迈北部菜与餐厅**：[Michelin Guide](https://guide.michelin.com/th/en) · [Eating Thai Food](https://www.eatingthaifood.com/) · [Chiang Mai Citylife](https://www.chiangmaicitylife.com/) · [The Infatuation – Cowboy Hat Lady](https://www.theinfatuation.com/chiang-mai/reviews/cowboy-hat-lady-khao-kha-moo-chang-phueak) · TripAdvisor / Wongnai / Restaurant Guru（各店 2024–2026 评价）
 
@@ -502,4 +492,4 @@
 **日期核对**：[Calendar-365 – 2026 年 7 月](https://www.calendar-365.com/calendar/2026/July.html)（确认 7/15/2026 = 周三）
 
 > [!note] 可靠性说明
-> 本指南高置信度店家均有 2+ 独立近期（2024–2026）来源佐证。传主指定三家已逐一核实（地点/时间/价格/招牌）：Kaprao Nuea Nuea（打抛牛肉，Chang Moi，傍晚开）、Joost（山竹果昔而非刨冰，尼曼 Soi 11/13）、Krua Ya 奶奶厨房（城郊 Lake Land 村内、只做白天、需打车）。以下**去前建议再确认**：Ploen Ruedee/Phaploen 营业状态、Anchan 休息日、Woo→PoonPoon 改名后时间、Kaprao Nuea Nuea 当月休息日（看店家 IG）、Krua Ya 当日时间（kruaya.com）、芒果糯米饭时令（7 月尾季，优先全年供应）。泰国独立店时间随季节浮动，行前一天查各家 IG/FB 最稳妥。
+> 本指南高置信度店家均有 2+ 独立近期（2024–2026）来源佐证。传主指定两家已逐一核实（地点/时间/价格/招牌）：Kaprao Nuea Nuea（打抛牛肉，Chang Moi，傍晚开）、Joost（山竹果昔而非刨冰，尼曼 Soi 11/13）。以下**去前建议再确认**：Ploen Ruedee/Phaploen 营业状态、Anchan 休息日、Woo→PoonPoon 改名后时间、Kaprao Nuea Nuea 当月休息日（看店家 IG）、芒果糯米饭时令（7 月尾季，优先全年供应）。泰国独立店时间随季节浮动，行前一天查各家 IG/FB 最稳妥。

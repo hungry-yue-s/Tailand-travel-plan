@@ -58,7 +58,7 @@ trip = {
        {"period": "evening", "name": "宁曼休整 + 晚餐 / 夜市小吃", "time": "16:20 起", "lat": 18.7990, "lng": 98.9670}
      ]},
     {"date": "2026-07-17", "weekday": "周五", "theme": "奶奶厨房 · 宁曼购物 · 古城打铁片 · 马杀鸡",
-     "tips": ["先去城西南奶奶厨房 Krua Ya 早午餐(9:00–15:30，早去，下午 3 点半收)，再回宁曼逛街", "午后打车去古城做打铁片；Lanna Artisans 17:00 关门宜早到", "今晚做马杀鸡：Oasis 双人套需预约，市区免费接送"],
+     "tips": ["上午 Grandma's 半天烹饪课（Saraphi·校车免费接送·约 8:00 接 13:30 回·需提前订），午后回城打铁片", "午后打车去古城做打铁片；Lanna Artisans 17:00 关门宜早到", "今晚做马杀鸡：Oasis 双人套需预约，市区免费接送"],
      "slots": [
        {"period": "morning", "name": "素贴山双龙寺 Doi Suthep（可选半日）", "time": "06:00–12:00", "lat": 18.8047, "lng": 98.9216},
        {"period": "morning", "name": "⭐ 奶奶厨房 Grandma's Cooking School 烹饪课", "time": "08:00–13:30", "lat": 18.6775, "lng": 99.0545},
