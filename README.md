@@ -34,8 +34,15 @@ TRAVEL/
 ├── food_guide.md         美食 / 夜市
 ├── transportation.md     交通
 ├── safety_and_tips.md    天气 / 签证 TDAC / 安全 / 文化
-├── budget_summary.md     预算
-└── quick_reference.md    速查卡
+└── budget_summary.md     预算
 ```
 
-> 📌 详细方案正由多 agent 研究生成中，随后提交更新。
+## 🛠️ 构建 & 部署
+
+站点由 Python 从 `TRAVEL/*.md` 生成，产物无运行时依赖、无 CDN（离线 / 国内友好）。
+
+- **依赖**：Python 3 + [pandoc](https://pandoc.org/installing.html)（Markdown → HTML）
+- **构建**：`python build_site.py` → 生成 `index.html`（含内嵌逐日手绘地图 + 导航/Grab 按钮）
+- `build_map.py` 是 `build_site.py` 调用的库（手绘 SVG 地图），无需单独运行
+- `hotel.html` 为手写页面，不经构建
+- **部署**：推送到 GitHub Pages（`.nojekyll` 已就位，直接服务静态文件）

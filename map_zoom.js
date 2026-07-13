@@ -41,6 +41,8 @@
       const vx = cx - vw / 2;
       const vy = cy - vh / 2;
       svg.setAttribute('viewBox', `${vx.toFixed(2)} ${vy.toFixed(2)} ${vw.toFixed(2)} ${vh.toFixed(2)}`);
+      // Only capture touch gestures (block page scroll) while actually zoomed in.
+      svg.style.touchAction = scale > 1 ? 'none' : 'pan-y';
       updateFixedElements();
     }
 
@@ -66,6 +68,7 @@
       });
       // Keep dashed route patterns visually consistent and never collapse into a solid line.
       const rect = svg.getBoundingClientRect();
+      if (!rect.width) return;                       // hidden / zero-layout: skip dash scaling (avoid /0)
       const pxPerUnit = (rect.width * scale) / W;
       const minScreenPx = 1.0;
       const minUser = minScreenPx / pxPerUnit;
@@ -115,6 +118,9 @@
     }
 
     svg.addEventListener('wheel', function(e){
+      // Plain wheel scrolls the page; Ctrl/⌘ + wheel zooms the map (avoids scroll-trapping
+      // on a long page that stacks several maps). Pinch, double-click and ⛶ still zoom directly.
+      if (!e.ctrlKey && !e.metaKey) return;
       e.preventDefault();
       const factor = e.deltaY < 0 ? WHEEL_FACTOR : 1 / WHEEL_FACTOR;
       zoomAt(e.clientX, e.clientY, factor);

@@ -2,13 +2,13 @@
 # -*- coding: utf-8 -*-
 """Build a self-contained index.html travel plan site from the TRAVEL/*.md files.
 No external fonts/CDNs (China + offline friendly). Uses pandoc for md->html."""
-import subprocess, re, os, datetime, urllib.parse
+import subprocess, re, os, urllib.parse
 import build_map
 
 _FAV = "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='#0f6b53'/><text x='50' y='74' font-size='60' text-anchor='middle' fill='#f7edd7' font-family='Georgia,serif'>&#3607;</text></svg>"
 FAVICON = '<link rel="icon" href="data:image/svg+xml,' + urllib.parse.quote(_FAV) + '">'
 
-ROOT = "/home/yuebiao/project/Tailand-travel-plan"
+ROOT = os.path.dirname(os.path.abspath(__file__))
 SRC  = os.path.join(ROOT, "TRAVEL")
 
 ICON = {"note":"📝","tip":"💡","warning":"⚠️","important":"❗","info":"ℹ️",
@@ -45,14 +45,18 @@ def md_to_html(path):
         md = f.read()
     md = callouts_to_divs(md)
     fmt = "markdown+pipe_tables+fenced_divs+bracketed_spans+backtick_code_blocks-smart"
-    p = subprocess.run(["pandoc","-f",fmt,"-t","html5","--wrap=none"],
-                       input=md, capture_output=True, text=True)
+    try:
+        p = subprocess.run(["pandoc","-f",fmt,"-t","html5","--wrap=none"],
+                           input=md, capture_output=True, text=True)
+        if p.returncode != 0:
+            p = subprocess.run(["pandoc","-f","gfm","-t","html5"], input=md,
+                                capture_output=True, text=True)
+    except FileNotFoundError:
+        raise SystemExit("ERROR: pandoc not found on PATH. Install it from "
+                         "https://pandoc.org/installing.html to build the site.")
     if p.returncode != 0:
-        p = subprocess.run(["pandoc","-f","gfm","-t","html5"], input=md,
-                            capture_output=True, text=True)
-    html = p.stdout
-    # first h1 becomes the section's lead; keep as-is
-    return html
+        raise SystemExit(f"ERROR: pandoc failed to convert {os.path.basename(path)}:\n{p.stderr}")
+    return p.stdout
 
 SECTIONS = [
     ("itinerary", "itinerary.md",      "逐日行程", "🗓️"),
@@ -155,12 +159,12 @@ def _inject_table_buttons(itinerary_html):
         day_str = f"7/{int(day_digits)}"
         slots = day_slots.get(day_str, [])
         if slots:
-            rest = _process_first_table(rest, slots)
+            rest = _process_first_table(rest, slots, day_str)
         out.extend([h2_html, day_digits, rest])
         i += 3
     return "".join(out)
 
-def _process_first_table(html, slots):
+def _process_first_table(html, slots, day_str=""):
     """Inject a serial-number column and action buttons into the first
     itinerary <table> found in html."""
     table_start = html.find('<table')
@@ -194,36 +198,43 @@ def _process_first_table(html, slots):
     tbody_html = table_html[tbody_start:tbody_end]
 
     slot_idx = 0
+    eligible = 0
     new_rows = []
     for tr_match in re.finditer(r'(<tr[^>]*>)(.*?)(</tr>)', tbody_html, re.DOTALL):
         tr_open, tr_content, tr_close = tr_match.groups()
         td_parts = list(re.finditer(r'(<td[^>]*>)(.*?)(</td>)', tr_content, re.DOTALL))
-        if len(td_parts) >= 2 and slot_idx < len(slots):
+        has_loc = len(td_parts) >= 2 and td_parts[1].group(2).strip()
+        if has_loc:
+            eligible += 1
+        if has_loc and slot_idx < len(slots):
             slot = slots[slot_idx]
             td2 = td_parts[1]
             loc_html = td2.group(2)
-            if loc_html.strip():
-                btns = (f'<span class="stop-btns">'
-                        f'<a class="btn go" href="{build_map.nav(slot)}" target="_blank" rel="noopener" title="Google 导航">🧭</a>'
-                        f'<a class="btn grab" href="{build_map.grab(slot)}" data-fb="https://www.grab.com/th/" target="_blank" rel="noopener" title="Grab 叫车">🚕</a>'
-                        f'</span>')
-                new_td2_content = loc_html + btns
-                # rebuild tr_content with buttons inserted at second td
-                new_tr_content = (tr_content[:td2.start(2)] + new_td2_content +
-                                  tr_content[td2.end(2):])
-                # prepend serial-number cell so it aligns with map pins
-                new_rows.append(tr_open + f'<td class="sn-cell">{slot_idx + 1}</td>' + new_tr_content + tr_close)
-                slot_idx += 1
-                continue
+            btns = (f'<span class="stop-btns">'
+                    f'<a class="btn go" href="{build_map.esc(build_map.nav(slot))}" target="_blank" rel="noopener" title="Google 导航">🧭</a>'
+                    f'<a class="btn grab" href="{build_map.esc(build_map.grab(slot))}" data-fb="https://www.grab.com/th/" target="_blank" rel="noopener" title="Grab 叫车">🚕</a>'
+                    f'</span>')
+            new_td2_content = loc_html + btns
+            # rebuild tr_content with buttons inserted at second td
+            new_tr_content = (tr_content[:td2.start(2)] + new_td2_content +
+                              tr_content[td2.end(2):])
+            # prepend serial-number cell so it aligns with map pins
+            new_rows.append(tr_open + f'<td class="sn-cell">{slot_idx + 1}</td>' + new_tr_content + tr_close)
+            slot_idx += 1
+            continue
         # rows that don't map to a slot get a dash
         new_rows.append(tr_open + '<td class="sn-cell">—</td>' + tr_content + tr_close)
+
+    if eligible != len(slots):
+        import sys
+        print(f"WARNING: {day_str or 'itinerary'}: {eligible} location rows vs {len(slots)} "
+              f"map slots — serial numbers / nav buttons may be misaligned.", file=sys.stderr)
 
     new_tbody = f'<tbody>{"".join(new_rows)}</tbody>'
     new_table = table_html[:tbody_start] + new_tbody + table_html[tbody_end:]
     return html[:table_start] + new_table + html[table_end:]
 
 def main():
-    today = datetime.date.today().isoformat()
     # nav
     nav = "".join(
         f'<button class="tab{" on" if k=="overview" else ""}" data-tab="{k}">'
@@ -251,7 +262,7 @@ def main():
 </main>
 <footer class="foot">
   <div>🐘 泰国清迈 × 曼谷 · 情侣 7 日 · 2026/7/14–7/20</div>
-  <div class="foot-sub">由 Claude 多智能体研究生成 · 更新于 {today} · 价格/营业时间/签证规则为 2026/7 参考，出行前请复核 ⚠️</div>
+  <div class="foot-sub">由 Claude 多智能体研究生成 · 价格/营业时间/签证规则为 2026/7 参考，出行前请复核 ⚠️</div>
 </footer>
 {SCRIPT}
 <script>
@@ -460,7 +471,7 @@ body{
 .dt{font-family:var(--cjk-serif);font-size:17px;font-weight:600}
 .tips{list-style:none;margin:8px 0 12px;padding:0;font-size:13px;color:var(--ink2);line-height:1.6}
 .tips li::before{content:"💡 "}
-svg.map{display:block;width:100%;height:auto;border-radius:16px;filter:drop-shadow(0 8px 22px rgba(42,35,32,.14));touch-action:none}
+svg.map{display:block;width:100%;height:auto;border-radius:16px;filter:drop-shadow(0 8px 22px rgba(42,35,32,.14));touch-action:pan-y}
 svg.map a{cursor:pointer}
 svg.map a:hover path[stroke]{stroke-width:2}
 .map-fs,.map-reset{position:absolute;right:10px;z-index:5;width:34px;height:34px;border:1px solid var(--line);border-radius:10px;background:rgba(250,244,230,.92);color:var(--ink2);font-size:18px;line-height:1;cursor:pointer;box-shadow:var(--shadow);display:grid;place-items:center;transition:.15s}

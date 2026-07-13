@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Build a single-file HAND-DRAWN illustrated travel map (map.html).
+"""Hand-drawn illustrated per-day maps (inline SVG) for the travel plan.
 
-No tiles, no Leaflet, no external fonts/JS — everything is inline SVG drawn on a
-"Lanna travel journal" cream paper. One little hand-sketched map per day (7 cards);
-cross-city / airport days auto-split into a 曼谷 | 清迈 two-frame vignette joined by a
-dashed plane arc. Every numbered pin and every stop-list row deep-links to Google Maps
+Library used by build_site.py — exposes `trip`, `DEFS`, `nav`, `grab` and
+`render_day_fragments()` (one hand-sketched map per day, embedded into index.html).
+No tiles, no Leaflet, no external fonts/JS: everything is inline SVG on "Lanna travel
+journal" cream paper; cross-city / airport days auto-split into a 曼谷 | 清迈 two-frame
+vignette joined by a dashed plane arc. Every numbered pin deep-links to Google Maps
 navigation (real coords). Fully offline + China-safe."""
-import os, re, json, html, math, datetime, urllib.parse
+import os, html, math, urllib.parse
 
-ROOT = "/home/yuebiao/project/Tailand-travel-plan"
+ROOT = os.path.dirname(os.path.abspath(__file__))
 
 # ---------------- trip data (verbatim, already proof-read) ----------------
 trip = {
@@ -109,7 +110,7 @@ trip = {
      "tips": ["国际航班 11:05，约 07:00 出发去素万那普(留足早高峰时间)，只够吃个早餐"],
      "slots": [
        {"period": "morning", "name": "True Siam Phayathai Hotel（退房）", "time": "06:15–06:50", "lat": 13.7565, "lng": 100.5335},
-       {"period": "morning", "name": "Jok Prince 炭香猪肉粥（早餐）", "time": "06:50–07:15", "lat": 13.7283, "lng": 100.5160},
+       {"period": "morning", "name": "酒店早餐 / 便利店打包（True Siam）", "time": "06:50–07:15", "lat": 13.7565, "lng": 100.5335},
        {"period": "morning", "name": "K.Panich 芒果糯米饭（周一才开·备选早餐）", "time": "06:50–07:15", "lat": 13.7440, "lng": 100.5060},
        {"period": "morning", "name": "酒店 → 曼谷素万那普 BKK", "time": "07:15", "lat": 13.6900, "lng": 100.7501},
        {"period": "noon", "name": "素万那普 BKK 办理值机 / 退税 / 安检", "time": "08:15", "lat": 13.6900, "lng": 100.7501},
@@ -219,7 +220,8 @@ def haversine_km(a, b):
     return 2 * R * math.asin(math.sqrt(h))
 
 def fmt_km(km):
-    if km < 0.95: return f"~{int(round(km*20)*50)}m"
+    if km < 0.03: return ""                        # essentially the same spot
+    if km < 0.95: return f"~{max(50, int(round(km*20)*50))}m"
     if km < 20:   return f"~{round(km)}km"
     if km < 100:  return f"~{int(round(km/5)*5)}km"
     return f"~{int(round(km/10)*10)}km"
@@ -302,18 +304,9 @@ def route_seg(a, b, pa, pb, accent):
             f'stroke="{accent}" stroke-width="2.6" stroke-dasharray="1 8" stroke-linecap="round" '
             f'opacity="0.85" filter="url(#rough)"/>')
 
-def pin(cx, cy, n, accent, navurl, alt=False):
+def pin(cx, cy, n, accent, navurl):
     p = pin_path(cx, cy)
-    cls = 'pin-fixed pin-alt' if alt else 'pin-fixed'
-    if alt:
-        return (f'<a href="{navurl}" target="_blank" rel="noopener" class="{cls}" data-cx="{cx:.1f}" data-cy="{cy:.1f}">'
-                f'<ellipse cx="{cx:.1f}" cy="{cy+27:.1f}" rx="7" ry="2.6" fill="#2a2320" opacity="0.10"/>'
-                f'<path d="{p}" fill="none" stroke="{accent}" stroke-width="2" stroke-dasharray="4 3" filter="url(#rough)" opacity="0.7"/>'
-                f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="8.6" fill="#ffffff" opacity="0.10"/>'
-                f'<text x="{cx:.1f}" y="{cy:.1f}" text-anchor="middle" dominant-baseline="central" dy="0.5" '
-                f'font-family="Georgia,serif" font-weight="400" font-size="13" fill="{accent}" opacity="0.85">{n}</text>'
-                f'</a>')
-    return (f'<a href="{navurl}" target="_blank" rel="noopener" class="{cls}" data-cx="{cx:.1f}" data-cy="{cy:.1f}">'
+    return (f'<a href="{esc(navurl)}" target="_blank" rel="noopener" class="pin-fixed" data-cx="{cx:.1f}" data-cy="{cy:.1f}">'
             f'<ellipse cx="{cx:.1f}" cy="{cy+27:.1f}" rx="7" ry="2.6" fill="#2a2320" opacity="0.16"/>'
             f'<path d="{p}" fill="{accent}" stroke="#2a2320" stroke-width="1.6" filter="url(#rough)"/>'
             f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="8.6" fill="#ffffff" opacity="0.15"/>'
@@ -333,8 +326,8 @@ def leg_label(a, b, pa, pb, leg_text, accent):
     off = (60 if city_of(a) != city_of(b) else 16) + 14
     cx, cy = mx + nx * off, my + ny * off
     d = leg_dist(a, b)
-    short_walk = d.endswith("m") and ("步行" in leg_text or "馆内" in leg_text)
-    txt = leg_text if short_walk else f"{d} · {leg_text}"
+    short_walk = d.endswith("m") and not d.endswith("km") and ("步行" in leg_text or "馆内" in leg_text)
+    txt = leg_text if (short_walk or not d) else f"{d} · {leg_text}"
     w = text_w(txt, 13) + 14
     return (f'<g class="leg-fixed" data-cx="{cx:.1f}" data-cy="{cy:.1f}"><rect x="{cx-w/2:.1f}" y="{cy-10:.1f}" width="{w:.1f}" height="20" rx="10" '
             f'fill="#ffffff" stroke="{accent}" stroke-width="1.3" opacity="0.97"/>'
@@ -342,17 +335,10 @@ def leg_label(a, b, pa, pb, leg_text, accent):
             f'font-family="sans-serif" font-size="13" fill="#2a2320">{esc(txt)}</text></g>')
 
 # ---------------- per-day map + stop list ----------------
-def render_day(day, accent, include_stops=True, compact=False):
+def render_day(day, accent):
     pts = day["slots"]
-    # collect all points including alts for layout
-    all_pts = []
-    for p in pts:
-        all_pts.append(p)
-        for a in p.get("alts", []):
-            all_pts.append(a)
-
     order = []
-    for p in all_pts:
+    for p in pts:
         c = city_of(p)
         if c not in order:
             order.append(c)
@@ -366,7 +352,7 @@ def render_day(day, accent, include_stops=True, compact=False):
 
     for c in order:
         box = boxes[c]
-        cpts = [p for p in all_pts if city_of(p) == c]
+        cpts = [p for p in pts if city_of(p) == c]
         pos = relax(bloom_duplicates(project(cpts, box), radius=22), box)
         for p, xy in zip(cpts, pos):
             coord[id(p)] = xy
@@ -374,7 +360,7 @@ def render_day(day, accent, include_stops=True, compact=False):
         svg.append(decorations(c, box, accent))
         svg.append(city_tag(c, box))
 
-    # routes first (under labels & pins) — only between main slots
+    # routes first (under labels & pins)
     for i in range(len(pts) - 1):
         svg.append(route_seg(pts[i], pts[i + 1], coord[id(pts[i])], coord[id(pts[i + 1])], accent))
     # leg labels (≈距离 · 时长) — above routes, below pins
@@ -382,18 +368,7 @@ def render_day(day, accent, include_stops=True, compact=False):
     for i in range(len(pts) - 1):
         lt = legs[i + 1] if i + 1 < len(legs) else None
         svg.append(leg_label(pts[i], pts[i + 1], coord[id(pts[i])], coord[id(pts[i + 1])], lt, accent))
-    # alt pins first (behind main pins)
-    for i, p in enumerate(pts, 1):
-        alts = p.get("alts", [])
-        for j, a in enumerate(alts):
-            x, y = coord[id(a)]
-            label = f"{i}{chr(97+j)}"  # 1a, 1b, ...
-            svg.append(pin(x, y, label, accent, nav(a), alt=True))
-            # dashed line from main to alt
-            mx, my = coord[id(p)]
-            svg.append(f'<line class="route-line" data-dash="3 4" x1="{mx:.1f}" y1="{my:.1f}" x2="{x:.1f}" y2="{y:.1f}" '
-                       f'stroke="{accent}" stroke-width="1.2" stroke-dasharray="3 4" opacity="0.45"/>')
-    # main pins on top
+    # numbered pins on top
     for i, p in enumerate(pts, 1):
         x, y = coord[id(p)]
         svg.append(pin(x, y, i, accent, nav(p)))
@@ -402,41 +377,8 @@ def render_day(day, accent, include_stops=True, compact=False):
                 f'aria-label="{esc(day["date"])} 手绘地图" xmlns="http://www.w3.org/2000/svg">'
                 + "".join(svg) + "</svg>")
 
-    # stops list with collapsible alts
-    stops_parts = []
-    for i, s in enumerate(pts, 1):
-        alts = s.get("alts", [])
-        # compact mode: hide time from the stop row because the itinerary table below has full timing
-        main_time = esc(s.get("time", ""))
-        time_html = f'<i>{main_time}</i>' if main_time and not compact else ""
-        alt_html = ""
-        if alts:
-            alt_items_list = []
-            for j, a in enumerate(alts):
-                alt_time = esc(a.get("time", ""))
-                alt_time_html = f'<i>{alt_time}</i>' if alt_time and not compact else ""
-                alt_items_list.append(
-                    f'<li class="alt-item"><span class="sn sn-alt">{i}{chr(97+j)}</span>'
-                    f'<span class="st"><b>{esc(a["name"])}</b>{alt_time_html}</span>'
-                    f'<span class="acts">'
-                    f'<a class="btn go" href="{nav(a)}" target="_blank" rel="noopener">🧭</a>'
-                    f'<a class="btn grab" href="{grab(a)}" data-fb="https://www.grab.com/th/" target="_blank" rel="noopener">🚕</a>'
-                    f'</span></li>')
-            alt_html = (f'<details class="alt-group"><summary>🔀 还有 {len(alts)} 个备选</summary>'
-                        f'<ol class="alt-list">{"".join(alt_items_list)}</ol></details>')
-        stops_parts.append(
-            f'<li><span class="sn">{i}</span>'
-            f'<span class="st"><b>{esc(s["name"])}</b>{time_html}</span>'
-            f'<span class="acts">'
-            f'<a class="btn go" href="{nav(s)}" target="_blank" rel="noopener">🧭 导航</a>'
-            f'<a class="btn grab" href="{grab(s)}" data-fb="https://www.grab.com/th/" target="_blank" rel="noopener">🚕 Grab</a>'
-            f'</span></li>'
-            + alt_html)
-    stops = "".join(stops_parts)
-
     tips = "".join(f"<li>{esc(t)}</li>" for t in day.get("tips", []))
     tips_html = f'<ul class="tips">{tips}</ul>' if tips else ""
-    stops_html = f'<ol class="stops">{stops}</ol>' if include_stops else ""
     n = int(day["date"][8:10])
     fs_btn = f'<button class="map-fs" data-target="d{n}" aria-label="全屏地图">⛶</button>'
     reset_btn = f'<button class="map-reset" data-target="d{n}" aria-label="重置地图">⟲</button>'
@@ -444,7 +386,7 @@ def render_day(day, accent, include_stops=True, compact=False):
             f'<div class="dh"><span class="dd">{esc(day["date"][5:])} <em>{esc(day["weekday"])}</em></span>'
             f'<span class="dt">{esc(day["theme"])}</span></div>'
             f'{tips_html}{svg_html}{fs_btn}{reset_btn}'
-            f'{stops_html}</section>')
+            f'</section>')
 
 # ---------------- shared SVG defs (filters + doodle symbols) ----------------
 DEFS = """<svg class="defs" width="0" height="0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
@@ -462,184 +404,7 @@ DEFS = """<svg class="defs" width="0" height="0" aria-hidden="true" xmlns="http:
 <symbol id="d-plane" viewBox="0 0 100 100"><path d="M50 8 L58 44 L90 62 L58 55 L56 82 L66 92 L50 87 L34 92 L44 82 L42 55 L10 62 L42 44 Z" fill="currentColor"/></symbol>
 </defs></svg>"""
 
-# ---------------- CSS (plain string; journal aesthetic) ----------------
-CSS = """
-:root{--paper:#f4ecda;--ink:#2a2320;--ink2:#5c5044;--jade:#0f6b53;--jade-d:#0a4f3d;--terra:#c1522f;--gold:#e0a133;--card:#faf4e6;--line:rgba(42,35,32,.14);--shadow:0 1px 2px rgba(42,35,32,.06),0 14px 34px -16px rgba(42,35,32,.28);--serif:"Songti SC","Noto Serif SC",STSong,serif;--sans:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;--lat:"Georgia",serif}
-*{box-sizing:border-box}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.7;
- background-image:radial-gradient(60vw 60vw at 88% -8%,rgba(224,161,51,.18),transparent 60%),radial-gradient(55vw 55vw at -12% 4%,rgba(15,107,83,.15),transparent 60%);background-attachment:fixed}
-.wrap{max-width:860px;margin:0 auto;padding:0 clamp(12px,4vw,28px) 60px}
-header.top{text-align:center;padding:min(9vw,54px) 0 14px}
-.kick{font-family:var(--lat);letter-spacing:.32em;text-transform:uppercase;font-size:11px;color:var(--terra)}
-h1{font-family:var(--serif);font-weight:600;font-size:clamp(28px,7vw,48px);margin:10px 0 6px;letter-spacing:.02em;
- background:linear-gradient(160deg,var(--jade-d),var(--jade) 55%,var(--terra));-webkit-background-clip:text;background-clip:text;color:transparent}
-.dates{font-family:var(--lat);letter-spacing:.18em;color:var(--ink2);font-size:15px}
-.intro{color:var(--ink2);font-size:13.5px;margin:12px auto 0;max-width:640px}
-.intro b{color:var(--jade-d)}
-/* day quick-nav */
-.daynav{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin:20px 0 6px}
-.daynav a{font-family:var(--lat);font-size:12.5px;text-decoration:none;color:var(--ink2);background:var(--card);
- border:1px solid var(--line);border-radius:999px;padding:5px 11px;box-shadow:var(--shadow)}
-.daynav a b{color:var(--ink);font-family:var(--serif)}
-/* day card */
-.daycard{margin:20px 0;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:15px clamp(12px,3vw,20px) 17px;box-shadow:var(--shadow);scroll-margin-top:16px;position:relative}
-.daycard::before{content:"";position:absolute;left:0;top:20px;bottom:20px;width:5px;border-radius:0 5px 5px 0;background:var(--accent);opacity:.9}
-.dh{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;border-bottom:2px solid var(--ink);padding-bottom:9px;margin-bottom:8px}
-.dd{font-family:var(--serif);font-weight:600;font-size:20px}.dd em{font-style:normal;color:var(--jade-d);font-size:15px;margin-left:2px}
-.dt{color:var(--terra);font-size:14.5px;font-family:var(--serif)}
-.tips{margin:6px 0 10px;padding-left:18px;color:var(--ink2);font-size:13px}
-.tips li{margin:3px 0}
-svg.map{display:block;width:100%;height:auto;border-radius:16px;filter:drop-shadow(0 8px 22px rgba(42,35,32,.14));touch-action:none}
-svg.map a{cursor:pointer}
-svg.map a:hover path[stroke]{stroke-width:2}
-.map-fs,.map-reset{position:absolute;right:10px;z-index:5;width:34px;height:34px;border:1px solid var(--line);border-radius:10px;background:rgba(250,244,230,.92);color:var(--ink2);font-size:18px;line-height:1;cursor:pointer;box-shadow:var(--shadow);display:grid;place-items:center;transition:.15s}
-.map-fs{top:26px}
-.map-reset{top:64px;font-size:16px}
-.map-fs:hover,.map-reset:hover{background:#fff;color:var(--jade-d);transform:scale(1.05)}
-.map-fs:active,.map-reset:active{transform:scale(.95)}
-.daycard:fullscreen{position:fixed;inset:0;width:100vw;height:100vh;max-width:none;border-radius:0;display:flex;flex-direction:column;padding:0;overflow:hidden;background:#faf4e6}
-.daycard:fullscreen .dh,.daycard:fullscreen .tips,.daycard:fullscreen .stops{display:none}
-.daycard:fullscreen svg.map{flex:1;width:100%;height:100%;max-width:none;border-radius:0}
-.daycard:-webkit-full-screen{position:fixed;inset:0;width:100vw;height:100vh;max-width:none;border-radius:0;display:flex;flex-direction:column;padding:0;overflow:hidden;background:#faf4e6}
-.daycard:-webkit-full-screen .dh,.daycard:-webkit-full-screen .tips,.daycard:-webkit-full-screen .stops{display:none}
-.daycard:-webkit-full-screen svg.map{flex:1;width:100%;height:100%;max-width:none;border-radius:0}
-.pin-fixed,.leg-fixed{transition:transform .05s linear}
-.route-line{vector-effect:non-scaling-stroke}
-/* stop list */
-.stops{list-style:none;margin:13px 0 0;padding:0;display:grid;gap:7px}
-.stops li{display:grid;grid-template-columns:auto 1fr;column-gap:10px;row-gap:6px;align-items:center;color:var(--ink);
- background:rgba(255,255,255,.5);border:1px solid var(--line);border-radius:12px;padding:9px 12px}
-.sn{grid-column:1;grid-row:1;width:25px;height:25px;border-radius:50%;background:var(--accent);color:#fbf6ec;
- display:grid;place-items:center;font-family:var(--lat);font-weight:700;font-size:13.5px;box-shadow:0 2px 5px rgba(42,35,32,.25)}
-.st{grid-column:2;grid-row:1;min-width:0;display:flex;flex-direction:column}
-.st b{font-family:var(--serif);font-weight:600;font-size:14px;line-height:1.34}
-.st i{font-style:normal;color:var(--ink2);font-size:11.5px;font-family:var(--lat)}
-.acts{grid-column:1/-1;grid-row:2;display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end}
-.btn{font-size:12px;text-decoration:none;white-space:nowrap;padding:5px 11px;border-radius:999px;transition:transform .12s}
-.btn:active{transform:scale(.94)}
-.go{color:#fff;background:linear-gradient(150deg,var(--jade),var(--jade-d));box-shadow:0 2px 6px rgba(10,79,61,.28)}
-.grab{color:#fff;background:#00b14f;font-weight:600;box-shadow:0 2px 6px rgba(0,177,79,.32)}
-@media(min-width:560px){.stops li{grid-template-columns:auto 1fr auto}.acts{grid-column:3;grid-row:1;flex-wrap:nowrap}}
-/* alt groups */
-.alt-group{margin:4px 0 4px 35px;border:1px dashed var(--line);border-radius:10px;padding:0;overflow:hidden}
-.alt-group summary{font-size:12px;color:var(--ink2);cursor:pointer;padding:6px 10px;user-select:none}
-.alt-group summary:hover{color:var(--accent);background:rgba(0,0,0,.02)}
-.alt-list{list-style:none;margin:0;padding:0 8px 8px;display:grid;gap:5px}
-.alt-item{background:rgba(255,255,255,.4);border:1px dashed var(--line);border-radius:10px;padding:7px 10px}
-.sn-alt{width:22px;height:22px;font-size:11.5px;background:transparent;color:var(--accent);border:2px dashed var(--accent);box-shadow:none}
-/* legend / disclaimer / footer */
-.legend{display:flex;flex-wrap:wrap;gap:12px 18px;justify-content:center;margin:14px 0 0;font-size:12.5px;color:var(--ink2)}
-.legend span{display:inline-flex;align-items:center;gap:6px}
-.legend .k{width:22px;height:0;border-top:2.6px dotted var(--jade);display:inline-block}
-.legend .kf{width:22px;height:0;border-top:2.6px dashed var(--terra);display:inline-block}
-.legend .kp{font-size:14px}
-.disclaimer{margin:22px 0 0;font-size:12px;color:var(--ink2);background:rgba(193,82,47,.06);border:1px dashed var(--terra);border-radius:12px;padding:12px 15px;line-height:1.65}
-footer{text-align:center;color:var(--ink2);font-size:12.5px;padding:28px 10px 6px;border-top:1px solid var(--line);margin-top:26px}
-footer a{color:var(--jade-d)}
-.booking{margin:20px 0 4px;background:linear-gradient(160deg,rgba(224,161,51,.12),rgba(15,107,83,.07));border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:16px;padding:15px 18px;box-shadow:var(--shadow)}
-.booking h3{margin:0 0 3px;font-family:var(--serif);font-size:18px}
-.booking .bk-sub{color:var(--ink2);font-size:12.5px;margin:0 0 10px}
-.booking ol{list-style:none;margin:0;padding:0;display:grid;gap:8px}
-.booking li{display:flex;flex-wrap:wrap;align-items:baseline;gap:5px 8px;padding:9px 11px;background:rgba(255,255,255,.55);border:1px solid var(--line);border-radius:12px}
-.booking li b{font-family:var(--serif);font-size:14px}
-.booking .bk-when{font-size:11.5px;color:var(--terra);font-family:var(--lat)}
-.booking .bk-links{display:flex;flex-wrap:wrap;gap:6px;margin-top:3px;flex:1 1 100%}
-.booking .bk-links a{font-size:12px;text-decoration:none;color:#fff;background:linear-gradient(150deg,var(--jade),var(--jade-d));padding:4px 10px;border-radius:999px}
-.booking .bk-warn{flex:1 1 100%;font-size:11.5px;color:var(--ink2)}
-@media(min-width:760px){.daycard{padding:18px 22px 20px}}
-"""
-
 # ---------------- assemble ----------------
-def build():
-    cards = "".join(render_day(d, ACCENTS[i % len(ACCENTS)]) for i, d in enumerate(trip["days"]))
-    daynav = "".join(
-        f'<a href="#d{int(d["date"][8:10])}"><b>{d["date"][5:]}</b> {d["weekday"][1:]}</a>'
-        for d in trip["days"])
-    booking = (
-      '<section class="booking">'
-      '<h3>🎟️ 出发前必订清单</h3>'
-      '<p class="bk-sub">这几样先订好：价格更好、不怕满场（链接为官方/主流平台，实时价格与档期以页面为准）</p>'
-      '<ol>'
-      '<li><b>① 蓬扬 Pongyang 丛林飞跃</b> <span class="bk-when">7/16 · 建议 13:00 场</span>'
-      '<span class="bk-links"><a href="https://www.klook.com/en-US/activity/88017-1-day-join-pongyang-jungle-coaster-zipline-chiang-mai/" target="_blank" rel="noopener">Klook</a>'
-      '<a href="https://www.kkday.com/en-us/product/21263" target="_blank" rel="noopener">KKday</a></span>'
-      '<span class="bk-warn">⚠️ 体重连衣物鞋 ≤ ~95–100kg、穿运动鞋不能拖鞋</span></li>'
-      '<li><b>② 情侣马杀鸡</b> <span class="bk-when">7/17 晚</span>'
-      '<span class="bk-links"><a href="https://www.gowabi.com/en/provider/oasis-spa-at-nimman-chiang-mai" target="_blank" rel="noopener">Oasis·GoWabi</a>'
-      '<a href="https://fahlanna.com/spa-nimman/" target="_blank" rel="noopener">Fah Lanna 官网</a></span>'
-      '<span class="bk-warn">⚠️ 务必预约；Fah Lanna 末场 20:00、Oasis 市区免费接送</span></li>'
-      '<li><b>③ Chao Phraya Princess 夜游船</b> <span class="bk-when">7/19 · 19:30 ICONSIAM 码头</span>'
-      '<span class="bk-links"><a href="https://www.klook.com/en-US/activity/88680-upper-deck-seat-chao-phraya-princess-cruise-bangkok/" target="_blank" rel="noopener">Klook 顶层</a>'
-      '<a href="https://www.klook.com/en-US/activity/375-chao-phraya-princess-cruise-bangkok/" target="_blank" rel="noopener">Klook 标准</a>'
-      '<a href="https://www.kkday.com/en-us/product/2567-chao-phraya-princess-river-cruise-with-dinner-buffet-thailand" target="_blank" rel="noopener">KKday</a>'
-      '<a href="https://chaophrayaprincess.com/reservations.php" target="_blank" rel="noopener">官网</a></span>'
-      '<span class="bk-warn">⚠️ 选顶层/前甲板；提前 30 分到 ICONSIAM Pier 2 · SookSiam G 层 Naraya 旁 check-in</span></li>'
-      '<li><b>④ TDAC 电子入境卡</b> <span class="bk-when">免费 · 抵达前 72h（最早 7/11）</span>'
-      '<span class="bk-links"><a href="https://tdac.immigration.go.th/" target="_blank" rel="noopener">tdac.immigration.go.th</a></span>'
-      '<span class="bk-warn">⚠️ 认准 .go.th 免费官网，填完存 QR 截图</span></li>'
-      '</ol></section>')
-    page = f"""<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#0f6b53">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230f6b53'/%3E%3Ctext x='50' y='74' font-size='60' text-anchor='middle' fill='%23f7edd7' font-family='Georgia,serif'%3E%E0%B8%97%3C/text%3E%3C/svg%3E">
-<title>{esc(trip['title'])} · 手绘地图</title>
-<style>{CSS}</style>
-</head>
-<body>
-{DEFS}
-<div class="wrap">
-  <header class="top">
-    <div class="kick">Hand-drawn Route Journal · 手绘路线</div>
-    <h1>{esc(trip['title'])}</h1>
-    <div class="dates">2026 · 07 · 14 — 07 · 20</div>
-    <p class="intro">一天一张手绘小地图，牛皮纸上用墨线把当天的脚印连起来。每一站都能<b>一键跳 Google 地图导航</b>，或 <b>🚕 唤起 Grab 叫车</b>（尽力预填目的地）。跨城/机场那天会拆成「曼谷｜清迈」两格、用虚线飞机弧相连。全部离线绘制，无需联网。</p>
-    <div class="legend">
-      <span><i class="k"></i> 当天步行/车行路线</span>
-      <span><i class="kf"></i> 飞机跨城</span>
-      <span><i class="kp">📏</i> 连线上 ≈距离 · 时长（估算）</span>
-      <span><i class="kp">🧭</i> 图钉/导航 = Google 地图</span>
-      <span><i class="kp">🚕</i> Grab = 叫车（预填目的地）</span>
-    </div>
-  </header>
-
-  <nav class="daynav">{daynav}</nav>
-
-  {booking}
-
-  {cards}
-
-  <div class="disclaimer">{esc(trip["disclaimer"])}</div>
-
-  <footer>
-    🐘 {esc(trip['title'])} · 2026/7/14–7/20 ·
-    <a href="./index.html">← 返回完整攻略</a> ·
-    <a href="./hotel.html">曼谷酒店实拍 →</a><br>
-    手绘 SVG · 无外部依赖 · 坐标近似示意，导航以 Google 地图为准
-  </footer>
-</div>
-<script>
-/* Grab 深链：点按先尝试唤起 App，未安装/桌面端则回退 grab.com；不影响离线阅读 */
-document.addEventListener('click',function(e){{
-  var a=e.target.closest('a.grab');if(!a)return;
-  var app=a.getAttribute('href'),fb=a.getAttribute('data-fb');
-  if(!app||app.indexOf('grab://')!==0){{return;}}
-  e.preventDefault();var t=Date.now();
-  setTimeout(function(){{if(!document.hidden&&Date.now()-t<1700){{window.location=fb;}}}},1200);
-  window.location=app;
-}});
-</script>
-<script src="map_zoom.js"></script>
-</body>
-</html>"""
-    out = os.path.join(ROOT, "map.html")
-    with open(out, "w", encoding="utf-8") as f:
-        f.write(page)
-    n_points = sum(len(d["slots"]) for d in trip["days"])
-    print(f"wrote {out} — {len(page)} chars, {len(trip['days'])} hand-drawn day maps, {n_points} pins")
-
 def render_day_fragments():
     """Return {day_num: html_fragment} for embedding into index.html.
     The map provides the visual + numbered pins (pins link to Google Maps).
@@ -649,8 +414,8 @@ def render_day_fragments():
     for i, d in enumerate(trip["days"]):
         accent = ACCENTS[i % len(ACCENTS)]
         n = int(d["date"][8:10])
-        fragments[n] = render_day(d, accent, include_stops=False)
+        fragments[n] = render_day(d, accent)
     return fragments
 
 if __name__ == "__main__":
-    build()
+    print("build_map.py is a library used by build_site.py — run: python build_site.py")
