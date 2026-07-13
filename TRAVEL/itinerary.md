@@ -133,7 +133,7 @@
 | 19:00–21:00 | （备选 SPA）**Fah Lanna Spa Romantic** 情侣套餐 | 步行 / Grab / 免费接送 | ~2h | 约 11,300 THB/对 | 世界奢华生态 SPA 金奖；12:00–21:00（末场 20:00，最少 2 小时，**务必预约**） |
 
 > [!tip] 马杀鸡推荐（宁曼，情侣双人 · 今晚 7/17）
-> - **Oasis Spa Nimman**（Soi 7，距 One Nimman 步行 3 分钟）：**King & Queen 双人套餐**（泰式 + 精油），欧式红楼宅邸、私密房，**市区内免费接送**；营业 10:00–24:00（预约 8:30–21:30）。相对高性价比套餐约 **3,045 THB（150 分钟，含 Lanna Secret）**。
+> - **Oasis Spa Nimman**（11 Nimmana Haeminda Rd Lane 7，距 One Nimman 步行 3 分钟）：**King & Queen 双人套餐**（泰式 + 精油），欧式红楼宅邸、私密房，**市区内免费接送**；营业 10:00–24:00（预约 8:30–21:30）。**GoWabi 实价**（[中文页](https://www.gowabi.com/zh-CN/provider/oasis-spa-at-nimman-chiang-mai)·需登录·预付）：双人 `for 2 Person` 180min 约 **฿9,999**（原价 12,711）；或各订单人套 `Lanna Secrets` 120min ฿2,857 / `Wonderful Oasis` 150min ฿3,708 / `King of Oasis` 120min ฿4,126。选 **7/17 约 19:00**。
 > - **Fah Lanna Spa 宁曼馆**（Nimman Soi 15）：世界奢华生态 SPA 金奖；**Romantic 情侣套餐**（蒸浴+磨砂+皇家浴+精油+面部）**约 11,300 THB/对**，营业 12:00–21:00（末场 20:00，**最少 2 小时、务必预约**）。
 > 👉 情侣纪念感选 Fah Lanna Romantic；日常放松 + 免费接送选 Oasis。⚠️ 都要**提前预约**（尤其 Fah Lanna 末场 20:00），今早或前一天订好。
 
