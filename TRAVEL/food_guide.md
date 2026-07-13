@@ -54,8 +54,9 @@
 
 来源：[Chiang Mai Locator – Soi 11](https://www.chiangmailocator.com/chiang-mai-shops-7548:joost-smoothies-drink-healthy-nimman-soi-11-branch) · [Chiang Mai Locator – Soi 13](https://www.chiangmailocator.com/chiang-mai-shops-7547:joost-smoothies-drink-healthy-nimman-soi-13-branch) · [Timeout – Chiang Mai smoothies](https://www.timeout.com/chiang-mai/health-and-beauty/smoothie-in-chiang-mai) · [Trip.com moments](https://www.trip.com/moments/detail/chiang-mai-209-15606636/)
 
-### 1.3 奶奶厨房 · Krua Ya（Grandma's Kitchen）
+### 1.3 Krua Ya 餐厅（Grandma's Kitchen）— 注意：≠ 7/17 的「奶奶厨房烹饪课」
 
+- ⚠️ **别混淆**：这是一家**餐厅**（Grandma's Kitchen / ครัวย่า），和你 **7/17 要去的 Grandma's Home Cooking School 烹饪课**（Saraphi）**不是同一家**。这家只是"想安静吃顿北部菜"的备选，**不在行程里**。
 - **是什么**：清迈一家**家常/北部泰菜**餐厅，英文名就叫 **Grandma's Kitchen（泰文 ครัวย่า Krua Ya）**。氛围极好——**藏在 Chiang Mai Lake Land 住宅村内，临水/池塘、绿树环绕**，很适合两人安静吃一顿。
 - **招牌**：**马沙文咖喱（massaman）**、虾、鱼；每天有**"当日主厨菜（dish of the day）"**；隔壁就是一家口碑咖啡馆，可饭后喝咖啡。
 - **价格/营业**：人均 **~200–300฿**；约 **每天 09:00–15:30（只做白天到午后，含早午餐）**。==分量偏小，建议多点几道配菜。==
@@ -246,7 +247,7 @@
 ### 5.3 建议 3 晚 + 周六安排（贴合住宿在尼曼）
 
 - **周四 7/16**：**象门夜市**（~18:00 吃凤飞飞猪脚饭）→ 顺逛 **Night Bazaar**；雨大转 **Kalare** 有顶棚食阁。
-- **周五 7/17**：**先去城郊奶奶厨房 Krua Ya 早午餐**（09:30–11:00，营业 09:00–15:30，趁早去）→ 回 **宁曼路逛街**（One Nimman / Maya / Think Park）→ 午后古城**打铁片手作** → 晚上**马杀鸡**（Oasis / Fah Lanna）。见 §1.3。
+- **周五 7/17**：**上午 Grandma's Home Cooking School 半天烹饪课**（Saraphi·约 8:00 接–13:30 送回·需提前订）→ 午后古城**打铁片手作** → 晚上**马杀鸡**（Oasis / Fah Lanna）。宁曼逛街压缩或改天。
 - **周六 7/18（用满这天）**：==上午 **Jing Jai/JJ 市集**（~7–9 点，早餐+咖啡+农产，约14:00收摊、越早越好）→ 中午 **Baan Kang Wat 艺术村**午餐 → 傍晚 **Wualai 周六步行街**（银器 + 北部小吃）==。这是你们唯一的周末，两个只在周末开的亮点一网打尽。
 
 ---

@@ -111,16 +111,16 @@
 
 ## 🗓️ 7/17 周五 · 奶奶厨房 + 宁曼购物 + 古城打铁片 + 马杀鸡
 
-> [!success] ✅ "奶奶厨房" Krua Ya 已排今天早上（按你的安排：先奶奶厨房，再逛宁曼）
-> 清迈郊外 **Chiang Mai Lake Land** 别墅村里的泰餐花园餐厅（临池塘绿树、家常泰菜、马沙文咖喱/椰香虾末米线）。**营业 09:00–15:30**（下午 3 点半就收，所以**趁早上先去**），在城**西南郊**、需 Grab。今日流程：**可选双龙寺半日 → Krua Ya 早午餐 → 回宁曼逛街 → 午后古城打铁片 → 晚上马杀鸡**。⚠️ **建议电话订台**：☎ 089-433-3883（订位/问路，国内拨 +66 89 433 3883），店员英语有限、可请酒店前台或 Grab 司机代打泰语。营业时间各资料有出入（09:30–14:00 ~ 09:00–15:30），趁上午去、电话确认当天收档。
+> [!success] ✅ "奶奶厨房" = **Grandma's Home Cooking School**（Saraphi·半天泰式烹饪课）已排今天上午
+> 你要去的其实是 **Grandma's Home Cooking School**（Saraphi 有机农场·**半天烹饪课**，不是普通餐厅）：校车**免费酒店接送**(市区 5km 内) → 逛本地市场认食材 → 有机农场摘菜 / 喂鸡捡蛋 → 凉亭学做 **4 道菜 + 芒果糯米饭**，送电子食谱。**上午班约 8:00 接、13:30 前后送回**。⚠️ **提前订**：[官网](https://www.grandmascookingschool.com/book-online) · [Airbnb 体验 ★4.94](https://www.airbnb.com/experiences/3659040) · [Klook](https://www.klook.com/en-US/activity/6936-grandmas-home-cooking-school-chiang-mai/)；想指定 **Rin / Nuchy 老师**得**直接联系校方 / FB 私信**说明(平台随机排老师)。⚠️ **上午被课占满——双龙寺今天排不下、宁曼购物压到课后或改天**(下表已按此重排)。
 
 | 时间 | 地点 / 活动 | 交通（从上一点） | 停留 | 门票 / 费用 | 小贴士 / 推荐理由 |
 |---|---|---|---|---|---|
-| 06:00–12:00 | （可选半日）**素贴山双龙寺 Doi Suthep** | 红双条拼车 / Grab / 包车约 30 分钟 | ~3–4h | 30 THB（缆车 50 THB） | 清迈最标志性山景金塔；06:00–20:00；黄昏可俯瞰清迈城；遮肩盖膝、进殿脱鞋。非寺庙控可选 |
-| 09:30–11:00 | ⭐ **奶奶厨房 Krua Ya 早午餐**（城西南 Chiang Mai Lake Land 别墅村） | 酒店 Grab 约 15–20 分 | ~1.5h | 人均 200–300 THB | 你点名的清迈家常泰菜：马沙文咖喱、椰香虾末米线；临池塘绿树很出片。**营业 09:00–15:30，趁早去**，☎ **089-433-3883 电话订台**（周五较满）。 |
-| 11:00–11:30 | Krua Ya → 宁曼 | Grab 约 15–20 分 | — | 车 100–130 THB | 城西南回宁曼核心区 |
-| 11:30–14:30 | **宁曼路购物**：One Nimman → Maya Lifestyle Mall → Think Park | 三点均在宁曼，步行 5–15 分钟互达 | ~3h | 自由消费 | One Nimman（欧式拱廊 + 文创）、Maya（商场 + 顶楼景观）、Think Park（文创拍照）；顺便在宁曼吃点/喝咖啡 |
-| 14:30–15:00 | 宁曼 → 古城南门（Wualai·银庙一带） | Grab 约 15 分 | — | 车 80–120 THB | 打车去古城做打铁片 |
+| 06:00–12:00 | （可选半日）**素贴山双龙寺 Doi Suthep** | 红双条拼车 / Grab / 包车约 30 分钟 | ~3–4h | 30 THB（缆车 50 THB） | 清迈最标志性山景金塔；06:00–20:00；遮肩盖膝、进殿脱鞋。⚠️ **今天上午是烹饪课，双龙寺基本排不下——想去建议改到别的半天** |
+| 08:00–13:30 | ⭐ **奶奶厨房 = Grandma's Home Cooking School**（Saraphi·半天泰式烹饪课） | 校方**免费接送**（市区 5km 内·约 20–30 分） | ~半天 | 约 1,000–1,400฿/人（以预订页为准） | 逛本地市场认食材 → 有机农场摘菜/喂鸡捡蛋 → 凉亭学做 **4 道菜 + 芒果糯米饭** + 电子食谱。**务必提前订**（[官网](https://www.grandmascookingschool.com/book-online) / [Airbnb](https://www.airbnb.com/experiences/3659040) / [Klook](https://www.klook.com/en-US/activity/6936-grandmas-home-cooking-school-chiang-mai/)）；**要 Rin/Nuchy 老师需直接联系校方指定**（平台随机排） |
+| 13:30–14:15 | 课程结束 → 回市区 / 古城方向 | 校方接送 / Grab（Saraphi 约 20–30 分） | — | 含接送 | 下午去古城打铁片；想先回宁曼也行 |
+| 14:15–14:40 | 宁曼快速逛 / 咖啡（**机动·上午在上课，购物已压缩**） | Grab | ~25min | 自由消费 | One Nimman / Maya 快速晃一下；⚠️ **想认真逛宁曼建议挪到别天**（如 7/18 傍晚或 7/16 晚） |
+| 14:40–15:00 | 宁曼/市区 → 古城南门（Wualai·银庙一带） | Grab 约 15 分 | — | 车 80–120 THB | 打车去古城做打铁片 |
 | 15:00–16:30 | ⭐ **打铁片手作 @ Lanna Artisans Art Gallery**（南门银庙旁，认门口有**三角梅**的那家） | 步行 | ~1.5h | **50 THB/件**（钥匙扣/戒指/手镯·**仅现金**） | 选铁牌 → 选图案（大象/泰文/祝福语）→ 小铁锤敲打（师傅指导）→ 修边抛光打孔 → 门口老奶奶喷漆带走。**独一无二伴手礼 + 雨季室内解压**。⚠️ **17:00 关门宜早到**；等加工可逛旁边 **杰林寺 Wat Jet Lin** |
 | 16:30–17:00 | 顺看 **银庙 Wat Sri Suphan**（就在旁边，Wualai 路） | 步行 | 30min | ~50 THB | 全球唯一纯银装饰佛殿；⚠️ 银殿**仅限男性入内**，女生外围参观 |
 | 17:00–18:00 | 古城咖啡 / 塔佩门散步 | Grab / 步行 | ~1h | 咖啡 100–150 THB | 顺路歇脚，之后回宁曼 |
@@ -155,8 +155,8 @@
 | 08:20–10:30 | **Jing Jai 农夫 + Rustic 手作市集** | 步行 | ~2h | 免费进 | ⚠️ **仅周末营业，约 06:30–15:00（部分资料 13:00–14:00 收摊）**，**越早越好**（7–9 点凉快人少）。有机农产、手作、现做小吃；**市集内不用塑料袋、禁摩托，记得自带袋** |
 | 10:30–10:50 | JJ → **Baan Kang Wat 白色艺术村 / 艺术家村** | Grab / 出租车约 15–20 分钟（穿城到西南 Suthep 一带）、≈100–130 THB | — | — | 两点一北一南，用 Grab 衔接 |
 | 10:50–12:15 | **Baan Kang Wat 艺术村**逛店 | 步行 | ~1.5h | 免费进（消费自理） | ✅ **周六开放**（**周一闭村**），约 **11:00–18:00**。手作工作坊、小店、咖啡、文艺拍照 |
-| 12:15–13:30 | **艺术村午餐**（Baan Kang Wat 村内咖啡馆 / 小馆） | 步行 | ~1.25h | 人均 150–300 THB | 村里有几家文艺小馆 + 咖啡，边吃边逛拍照（**奶奶厨房 Krua Ya 已挪到 7/17 早上**）。也可回宁曼路上吃 |
-| 12:15–13:30 | （备选）**Krua Ya 奶奶厨房**（若 7/17 没去） | 艺术村 → Krua Ya Grab 约 10 分钟 | ~1.25h | 人均 200–300 THB | 城西南 Chiang Mai Lake Land 别墅村泰餐花园；**营业 09:00–15:30，趁早去**。Google Maps 搜「Krua Ya」 |
+| 12:15–13:30 | **艺术村午餐**（Baan Kang Wat 村内咖啡馆 / 小馆） | 步行 | ~1.25h | 人均 150–300 THB | 村里有几家文艺小馆 + 咖啡，边吃边逛拍照（**奶奶厨房烹饪课在 7/17 上午**）。也可回宁曼路上吃 |
+| 12:15–13:30 | （备选）**奶奶厨房烹饪课**（若 7/17 没排上） | 校方免费接送 | ~半天 | 约 1,000–1,400฿ | 其实是 Saraphi 的**半天烹饪课**（非快餐），想做得**另约一个半天**；当天中午就在艺术村咖啡馆吃 |
 | 14:00–15:45 | ⭐ **Lanna Shooting Club 实弹射击**（Chotana Rd 昌拍区·清迈唯一中文服务） | 艺术村 → Grab 约 25–35 分钟（跨城往北 Chang Phuak） | ~1.5h | 约 1,900–3,300฿/人（按枪数/弹数） | 军方一对一教练 + IDPA 认证、15+ 枪型（.22/9mm/.38/.45/霰弹）；⚠️ **带护照**、**务必先电话/线上预约**（☎ 0818 981 553），弹壳不得带出场、全程听教练口令。可订 [KKday](https://www.kkday.com/en/product/146391-lanna-shooting-club-experience-chiang-mai-thailand) |
 | 16:00–17:00 | 返回宁曼：冲凉 / 补咖啡 / 收拾行李（明早飞曼谷） | Grab 约 15–20 分钟 | 1h | 按需 | 打完靶回宁曼歇脚；明早要早退房赶机，今晚提前把行李理好 |
 | 17:30–17:50 | 酒店 → **Wualai 周六夜市步行街 Saturday Walking Street** | Grab / 出租车约 15 分钟到古城南门 Wualai Rd、≈100 THB | — | — | 建议 **18:00–20:00 到**避开最挤时段 |
@@ -210,7 +210,7 @@
 ## ✅ 待确认 & 优化建议
 
 > [!success] ✅ 已敲定（原 5 项 + 新增两处玩乐都排好了）
-> 1. ✅ **奶奶厨房 = 清迈 Krua Ya**，已排入 **7/17 早上**（先 Krua Ya 早午餐 → 再逛宁曼；营业 09:00–15:30，趁早去）。
+> 1. ✅ **奶奶厨房 = Grandma's Home Cooking School**（Saraphi·半天泰式烹饪课·Rin/Nuchy 老师），排 **7/17 上午**（校车免费接送·需提前订）。
 > 2. ✅ **打铁片 = 古城 Lanna Artisans**，已排入 **7/17 下午**（50฿/件、仅现金、17:00 关门）。
 > 3. ✅ **7/16 = 自然大满贯**：粘粘瀑布 + 便便造纸园（方案 A）+ **新增丛林飞跃「蓬扬 Pongyang」**（Mae Rim 同北线顺路，飞索 34 站 + 自控丛林过山车，~1,890฿/人）。无骑乘大象营（方案 B）仍作备选（会与造纸/飞索取舍）。
 > 4. ✅ **曼谷后段酒店已定**：True Siam Phayathai（步行 4 分到 ARL），7/19 入住、7/20 离店。
@@ -243,7 +243,7 @@
 - 宁曼 SPA：[Fah Lanna 官网](https://fahlanna.com/spa-nimman/) · [Oasis GoWabi](https://www.gowabi.com/en/provider/oasis-spa-at-nimman-chiang-mai) · [pelago](https://www.pelago.com/en-US/articles/best-thai-massage-chiang-mai/)
 - 宁曼咖啡：[togethertowherever](https://togethertowherever.com/best-cafes-in-nimman-chiang-mai/) · [Graph 官网](https://www.graphcoffeeco.com/graph-onenimman)
 - 双龙寺：[tourismthailand](https://www.tourismthailand.org/Attraction/wat-phra-that-doi-suthep) · [chiangmaicitylife 2025 收费更新](https://www.chiangmaicitylife.com/citynews/general/entrance-fees-required-at-doi-suthep-pui-starting-october-2025/) · [forevervacation](https://forevervacation.com/chiang-mai/doi-suthep-temple)
-- Banthat Thong（朱拉隆夜市）+ 奶奶厨房：[yourthaiguide](https://yourthaiguide.com/chulalongkorn-food-street-your-complete-guide-to-bangkoks-bhantat-thong-night-market/) · [chatrium](https://www.chatrium.com/grandbangkok/stories/banthat-thong-road) · [phuket101](https://www.phuket101.net/banthat-thong-road/)
+- Banthat Thong（朱拉隆夜市）：[yourthaiguide](https://yourthaiguide.com/chulalongkorn-food-street-your-complete-guide-to-bangkoks-bhantat-thong-night-market/) · [chatrium](https://www.chatrium.com/grandbangkok/stories/banthat-thong-road) · [phuket101](https://www.phuket101.net/banthat-thong-road/)
 - Jodd Fairs / Sam Yan 对比：[adventureinyou](https://www.adventureinyou.com/thailand/bangkok-night-markets/) · [klook blog](https://www.klook.com/en-US/blog/night-markets-in-bangkok/) · [airahotelbangkok](https://www.airahotelbangkok.com/jodd-fairs-night-market/)
 - The Quarter Ratchathewi 位置：[expedia](https://www.expedia.com/Bangkok-Hotels-The-Quarter-Ratchathewi-By-UHG.h98198396.Hotel-Information) · [官网](http://quarterratchathewi.com/) · [tripadvisor](https://www.tripadvisor.com/Hotel_Review-g293916-d26678647-Reviews-The_Quarter_Ratchathewi_By_UHG-Bangkok.html)
 - DMK → 市区交通：[thaiest](https://thaiest.com/blog/how-to-get-from-bangkok-don-muang-airport-dmk-to-pratunam) · [geckoroutes](https://www.geckoroutes.com/thailand/don-muang-airport-bangkok/)
