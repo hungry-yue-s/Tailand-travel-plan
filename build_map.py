@@ -177,7 +177,7 @@ def bloom_duplicates(pos, radius=22):
             out[i][1] = cy + radius * math.sin(ang)
     return out
 
-def relax(pos, box, min_sep=52, iters=120):
+def relax(pos, box, min_sep=76, iters=160):
     """Push overlapping pins apart, keep inside box."""
     pos = [list(p) for p in pos]
     x0, y0, x1, y1 = box
@@ -314,22 +314,69 @@ def pin(cx, cy, n, accent, navurl):
             f'font-family="Georgia,serif" font-weight="700" font-size="15" fill="#fbf6ec">{n}</text>'
             f'</a>')
 
-def leg_label(a, b, pa, pb, leg_text, accent):
-    """一段连线上的「≈距离 · 时长」小标签，贴在曲线外侧。"""
+def leg_label_spec(a, b, pa, pb, leg_text):
+    """Compute a leg label's text + initial anchor (before decluttering). None = skip."""
     if not leg_text:
-        return ""
+        return None
     x1, y1 = pa; x2, y2 = pb
     mx, my = (x1 + x2) / 2, (y1 + y2) / 2
     dx, dy = x2 - x1, y2 - y1
     L = math.hypot(dx, dy) or 1
     nx, ny = -dy / L, dx / L
     off = (60 if city_of(a) != city_of(b) else 16) + 14
-    cx, cy = mx + nx * off, my + ny * off
+    ax, ay = mx + nx * off, my + ny * off
     d = leg_dist(a, b)
     short_walk = d.endswith("m") and not d.endswith("km") and ("步行" in leg_text or "馆内" in leg_text)
     txt = leg_text if (short_walk or not d) else f"{d} · {leg_text}"
     w = text_w(txt, 13) + 14
-    return (f'<g class="leg-fixed" data-cx="{cx:.1f}" data-cy="{cy:.1f}"><rect x="{cx-w/2:.1f}" y="{cy-10:.1f}" width="{w:.1f}" height="20" rx="10" '
+    return {"ax": ax, "ay": ay, "cx": ax, "cy": ay, "w": w, "txt": txt}
+
+def relax_labels(specs, pins, box, iters=200):
+    """Declutter leg labels: separate overlapping label boxes and push them off pins,
+    with a weak spring back to each label's leg anchor (keeps the association) — this
+    also migrates labels into otherwise-empty canvas so dense days stay readable."""
+    x0, y0, x1, y1 = box
+    for _ in range(iters):
+        for i in range(len(specs)):
+            A = specs[i]
+            for j in range(i + 1, len(specs)):
+                B = specs[j]
+                dx = B["cx"] - A["cx"]; dy = B["cy"] - A["cy"]
+                ox = (A["w"] + B["w"]) / 2 + 7 - abs(dx)
+                oy = 25 - abs(dy)
+                if ox > 0 and oy > 0:
+                    if ox < oy:
+                        s = ox / 2 if dx >= 0 else -ox / 2
+                        A["cx"] -= s; B["cx"] += s
+                    else:
+                        s = oy / 2 if dy >= 0 else -oy / 2
+                        A["cy"] -= s; B["cy"] += s
+        for A in specs:
+            for px, py in pins:
+                dx = A["cx"] - px; dy = A["cy"] - py
+                ox = (A["w"] / 2 + 16) - abs(dx)
+                oy = 27 - abs(dy)
+                if ox > 0 and oy > 0:
+                    if ox < oy:
+                        A["cx"] += ox if dx >= 0 else -ox
+                    else:
+                        A["cy"] += oy if dy >= 0 else -oy
+        for A in specs:
+            A["cx"] += (A["ax"] - A["cx"]) * 0.04
+            A["cy"] += (A["ay"] - A["cy"]) * 0.04
+            A["cx"] = min(max(A["cx"], x0 + A["w"] / 2 + 3), x1 - A["w"] / 2 - 3)
+            A["cy"] = min(max(A["cy"], y0 + 12), y1 - 12)
+    return specs
+
+def leg_label_svg(spec, accent):
+    cx, cy, w, txt = spec["cx"], spec["cy"], spec["w"], spec["txt"]
+    # faint leader ties a moved label back to its leg so the association stays clear
+    leader = ""
+    if math.hypot(cx - spec["ax"], cy - spec["ay"]) > 18:
+        leader = (f'<line x1="{spec["ax"]:.1f}" y1="{spec["ay"]:.1f}" x2="{cx:.1f}" y2="{cy:.1f}" '
+                  f'stroke="{accent}" stroke-width="0.8" stroke-dasharray="2 3" opacity="0.35"/>')
+    return (leader + f'<g class="leg-fixed" data-cx="{cx:.1f}" data-cy="{cy:.1f}">'
+            f'<rect x="{cx-w/2:.1f}" y="{cy-10:.1f}" width="{w:.1f}" height="20" rx="10" '
             f'fill="#ffffff" stroke="{accent}" stroke-width="1.3" opacity="0.97"/>'
             f'<text x="{cx:.1f}" y="{cy:.1f}" text-anchor="middle" dominant-baseline="central" dy="0.5" '
             f'font-family="sans-serif" font-size="13" fill="#2a2320">{esc(txt)}</text></g>')
@@ -363,11 +410,18 @@ def render_day(day, accent):
     # routes first (under labels & pins)
     for i in range(len(pts) - 1):
         svg.append(route_seg(pts[i], pts[i + 1], coord[id(pts[i])], coord[id(pts[i + 1])], accent))
-    # leg labels (≈距离 · 时长) — above routes, below pins
+    # leg labels (≈距离 · 时长) — decluttered off pins & each other, filling empty canvas
     legs = LEGS.get(day["date"], [])
+    pin_pts = [coord[id(p)] for p in pts]
+    specs = []
     for i in range(len(pts) - 1):
         lt = legs[i + 1] if i + 1 < len(legs) else None
-        svg.append(leg_label(pts[i], pts[i + 1], coord[id(pts[i])], coord[id(pts[i + 1])], lt, accent))
+        s = leg_label_spec(pts[i], pts[i + 1], coord[id(pts[i])], coord[id(pts[i + 1])], lt)
+        if s:
+            specs.append(s)
+    relax_labels(specs, pin_pts, (10, 10, W - 10, H - 10))
+    for s in specs:
+        svg.append(leg_label_svg(s, accent))
     # numbered pins on top
     for i, p in enumerate(pts, 1):
         x, y = coord[id(p)]

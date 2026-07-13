@@ -26,7 +26,6 @@
     let startDist = 0;
     const pins = Array.from(svg.querySelectorAll('.pin-fixed'));
     const legs = Array.from(svg.querySelectorAll('.leg-fixed'));
-    const routes = Array.from(svg.querySelectorAll('.route-line'));
 
     function reset(){
       scale = 1;
@@ -66,23 +65,9 @@
         const ly = ry + rh / 2;
         leg.setAttribute('transform', `translate(${lx}, ${ly}) scale(${inv}) translate(${-lx}, ${-ly})`);
       });
-      // Keep dashed route patterns visually consistent and never collapse into a solid line.
-      const rect = svg.getBoundingClientRect();
-      if (!rect.width) return;                       // hidden / zero-layout: skip dash scaling (avoid /0)
-      const pxPerUnit = (rect.width * scale) / W;
-      const minScreenPx = 1.0;
-      const minUser = minScreenPx / pxPerUnit;
-      routes.forEach(function(path){
-        const dash = path.getAttribute('data-dash');
-        if (!dash) return;
-        const parts = dash.split(/[\s,]+/).map(parseFloat).map(function(v){ return v / scale; });
-        const minPart = Math.min.apply(null, parts);
-        if (minPart < minUser){
-          const factor = minUser / minPart;
-          for (let i = 0; i < parts.length; i++) parts[i] *= factor;
-        }
-        path.setAttribute('stroke-dasharray', parts.map(function(v){ return v.toFixed(2); }).join(' '));
-      });
+      // Dashed routes keep a constant on-screen width AND dash spacing at every zoom via
+      // CSS `.route-line { vector-effect: non-scaling-stroke }` — no per-zoom recompute.
+      // (An earlier JS rescale here fought the CSS and thinned the dots when zoomed in.)
     }
 
     function clampScale(s){

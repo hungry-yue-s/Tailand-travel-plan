@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """Build a self-contained index.html travel plan site from the TRAVEL/*.md files.
 No external fonts/CDNs (China + offline friendly). Uses pandoc for md->html."""
-import subprocess, re, os, urllib.parse
+import subprocess, re, os, urllib.parse, hashlib
 import build_map
 
 _FAV = "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='#0f6b53'/><text x='50' y='74' font-size='60' text-anchor='middle' fill='#f7edd7' font-family='Georgia,serif'>&#3607;</text></svg>"
@@ -235,6 +235,7 @@ def _process_first_table(html, slots, day_str=""):
     return html[:table_start] + new_table + html[table_end:]
 
 def main():
+    mapjs_ver = hashlib.md5(open(os.path.join(ROOT, "map_zoom.js"), "rb").read()).hexdigest()[:8]
     # nav
     nav = "".join(
         f'<button class="tab{" on" if k=="overview" else ""}" data-tab="{k}">'
@@ -276,7 +277,7 @@ document.addEventListener('click',function(e){{
   window.location=app;
 }});
 </script>
-<script src="map_zoom.js"></script>
+<script src="map_zoom.js?v={mapjs_ver}"></script>
 </body></html>"""
     out = os.path.join(ROOT, "index.html")
     with open(out, "w", encoding="utf-8") as f:
