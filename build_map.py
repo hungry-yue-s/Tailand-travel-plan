@@ -75,7 +75,7 @@ trip = {
        {"period": "evening", "name": "Fah Lanna Spa Romantic 情侣套餐（奢华·备选 SPA）", "time": "19:00–21:00", "lat": 18.7978, "lng": 98.9648},
      ]},
     {"date": "2026-07-18", "weekday": "周六", "theme": "周末市集 · 艺术村 · 周六夜市",
-     "tips": ["用满这个唯一的周六：上午 Jing Jai 周末市集（约 14:00 收摊、越早越好）+ 傍晚 Wualai 周六步行街（都仅周末/周六开）", "艺术村 Baan Kang Wat 顺便在村里咖啡馆吃午餐（奶奶厨房已挪到 7/17 早上）"],
+     "tips": ["用满这个唯一的周六：上午 Jing Jai 周末市集（约 14:00 收摊、越早越好）+ 傍晚 Wualai 周六步行街（都仅周末/周六开）", "艺术村 Baan Kang Wat 顺便在村里咖啡馆吃午餐（奶奶厨房已挪到 7/17 早上）", "下午新增：Lanna Shooting Club 实弹射击（清迈唯一中文服务·需预约·带护照）"],
      "slots": [
        {"period": "morning", "name": "酒店 → Jing Jai Market（JJ 集市）", "time": "08:00–08:20", "lat": 18.8067, "lng": 98.9762},
        {"period": "morning", "name": "Jing Jai 农夫 + Rustic 手作市集", "time": "08:20–10:30", "lat": 18.8065, "lng": 98.9760},
@@ -83,8 +83,8 @@ trip = {
        {"period": "noon", "name": "Baan Kang Wat 艺术村", "time": "10:50–12:15", "lat": 18.7755, "lng": 98.9430},
        {"period": "noon", "name": "Baan Kang Wat 艺术村午餐", "time": "12:15–13:30", "lat": 18.7758, "lng": 98.9436},
        {"period": "noon", "name": "Krua Ya 奶奶厨房（若 7/17 没去·备选午餐）", "time": "12:15–13:30", "lat": 18.7625, "lng": 98.9420},
-       {"period": "afternoon", "name": "返回宁曼，酒店午休 / 咖啡", "time": "13:45–15:30", "lat": 18.7985, "lng": 98.9668},
-       {"period": "afternoon", "name": "宁曼补咖啡 / 轻按摩 / 收拾行李", "time": "15:30–16:30", "lat": 18.8000, "lng": 98.9670},
+       {"period": "afternoon", "name": "⭐ Lanna Shooting Club 实弹射击（中文服务）", "time": "14:00–15:45", "lat": 18.8225, "lng": 98.9780},
+       {"period": "afternoon", "name": "返回宁曼冲凉 / 补咖啡 / 收拾行李", "time": "16:00–17:00", "lat": 18.8000, "lng": 98.9670},
        {"period": "evening", "name": "酒店 → Wualai 周六夜市步行街", "time": "17:30–17:50", "lat": 18.7818, "lng": 98.9852},
        {"period": "evening", "name": "Wualai 周六夜市", "time": "18:00–21:00", "lat": 18.7815, "lng": 98.9850},
        {"period": "evening", "name": "夜市 → 酒店", "time": "21:00–21:30", "lat": 18.7985, "lng": 98.9668}
@@ -134,7 +134,7 @@ LEGS = {
   "2026-07-15": [None, "BTS 1站", "步行", "步行", "BTS 1站", "步行 14min", "Grab 30–60min", "SL520 航班 1h05", "Grab 15–20min", "Grab 8–10min"],
   "2026-07-16": [None, "包车 1–1.25h", "攀爬", "包车 40min", "造纸体验", "包车 15min", "包车 20–25min", "飞跃", "包车 40–50min", "步行/休息"],
   "2026-07-17": [None, "Grab/包车 30min", "Grab 15–20min", "步行", "Grab 15min", "步行", "步行 2min", "Grab/步行", "Grab/步行", "步行", "步行", "Grab/步行", "步行"],
-  "2026-07-18": [None, "Grab 10–15min", "市集", "Grab 15–20min", "逛村", "村内午餐", "Grab 15–20min", "Grab 15–20min", "宁曼", "Grab 15min", "夜市", "Grab 15min"],
+  "2026-07-18": [None, "Grab 10–15min", "市集", "Grab 15–20min", "逛村", "村内午餐", "Grab 15–20min", "Grab 25–35min", "Grab 15–20min", "Grab 15min", "夜市", "Grab 15min"],
   "2026-07-19": [None, "Grab 15–20min", "值机", "VZ2103 航班 1h20", "ARL 28min/Grab", "酒店休整", "二选一", "MRT/Grab", "Grab/BTS 20–30min", "馆内步行", "码头步行", "游船 2h", "MRT/Grab"],
   "2026-07-20": [None, "酒店早餐", "Grab 15min", "Grab/ARL 30–60min", "值机安检", "HU7940 起飞"],
 }

@@ -26,12 +26,13 @@
 - **清迈**：Travelodge Nimman（宁曼路核心区），7/15 入住 4 晚、7/19 离店（高级房 ×1）
 - **曼谷（后段）**：**True Siam Phayathai Hotel**（Phaya Thai/Ratchathewi，步行 4 分到 ARL 机场快线），7/19 入住、7/20 离店 · **已订**（站内 hotel.html 有实拍）
 
-> [!important] 🎟️ 出发前必订清单（3 张票 + 入境卡）
+> [!important] 🎟️ 出发前必订清单（4 项预订 + 入境卡）
 > 这几样**出发前先订好**：价格更好、也不怕满场（链接为官方/主流平台，实时价格与档期以打开页面为准；坐标/时间见对应日）。
 > - **① 蓬扬 Pongyang 丛林飞跃**（7/16 · 建议订 **13:00 场**含泰式午餐）→ [Klook](https://www.klook.com/en-US/activity/88017-1-day-join-pongyang-jungle-coaster-zipline-chiang-mai/) · [KKday](https://www.kkday.com/en-us/product/21263)　⚠️ 体重连衣物鞋 ≤ ~95–100kg、穿运动鞋不能拖鞋
 > - **② 情侣马杀鸡**（7/17 晚）→ Oasis：[GoWabi 预约](https://www.gowabi.com/en/provider/oasis-spa-at-nimman-chiang-mai)　|　Fah Lanna Romantic：[官网](https://fahlanna.com/spa-nimman/)　⚠️ 务必预约；Fah Lanna 末场 20:00、Oasis 市区免费接送
 > - **③ Chao Phraya Princess 昭披耶夜游船**（7/19 · 19:30–21:30 ICONSIAM 码头）→ [Klook 顶层 Upper Deck](https://www.klook.com/en-US/activity/88680-upper-deck-seat-chao-phraya-princess-cruise-bangkok/) · [Klook 标准](https://www.klook.com/en-US/activity/375-chao-phraya-princess-cruise-bangkok/) · [KKday](https://www.kkday.com/en-us/product/2567-chao-phraya-princess-river-cruise-with-dinner-buffet-thailand) · [官网](https://chaophrayaprincess.com/reservations.php)　⚠️ 选**顶层/前甲板**；提前 30 分到 **ICONSIAM Pier 2 · SookSiam G 层 Naraya 旁** check-in
-> - **④ TDAC 电子入境卡**（免费）→ 抵达前 72 小时内（最早 7/11）在官方 [tdac.immigration.go.th](https://tdac.immigration.go.th/) 填、认准 `.go.th`，存 QR 截图
+> - **④ Lanna 实弹射击**（7/18 下午 · 清迈唯一中文服务）→ [KKday](https://www.kkday.com/en/product/146391-lanna-shooting-club-experience-chiang-mai-thailand)　⚠️ 电话/线上预约（☎ 0818 981 553）、带护照；弹壳不得带出场
+> - **⑤ TDAC 电子入境卡**（免费）→ 抵达前 72 小时内（最早 7/11）在官方 [tdac.immigration.go.th](https://tdac.immigration.go.th/) 填、认准 `.go.th`，存 QR 截图
 
 ---
 
@@ -156,8 +157,8 @@
 | 10:50–12:15 | **Baan Kang Wat 艺术村**逛店 | 步行 | ~1.5h | 免费进（消费自理） | ✅ **周六开放**（**周一闭村**），约 **11:00–18:00**。手作工作坊、小店、咖啡、文艺拍照 |
 | 12:15–13:30 | **艺术村午餐**（Baan Kang Wat 村内咖啡馆 / 小馆） | 步行 | ~1.25h | 人均 150–300 THB | 村里有几家文艺小馆 + 咖啡，边吃边逛拍照（**奶奶厨房 Krua Ya 已挪到 7/17 早上**）。也可回宁曼路上吃 |
 | 12:15–13:30 | （备选）**Krua Ya 奶奶厨房**（若 7/17 没去） | 艺术村 → Krua Ya Grab 约 10 分钟 | ~1.25h | 人均 200–300 THB | 城西南 Chiang Mai Lake Land 别墅村泰餐花园；**营业 09:00–15:30，趁早去**。Google Maps 搜「Krua Ya」 |
-| 13:45–15:30 | 返回宁曼，酒店午休 / 咖啡（避午后暴晒 + 攒体力晚上逛街） | Grab 约 15–20 分钟 | ~1.75h | — | 7 月午后常有雷阵雨，室内休整正好 |
-| 15:30–16:30 | 可选：宁曼补咖啡 / 轻按摩 / 收拾行李（明早飞曼谷） | 步行 | 1h | 按需 | 明早要早退房赶机，今晚提前理好行李 |
+| 14:00–15:45 | ⭐ **Lanna Shooting Club 实弹射击**（Chotana Rd 昌拍区·清迈唯一中文服务） | 艺术村 → Grab 约 25–35 分钟（跨城往北 Chang Phuak） | ~1.5h | 约 1,900–3,300฿/人（按枪数/弹数） | 军方一对一教练 + IDPA 认证、15+ 枪型（.22/9mm/.38/.45/霰弹）；⚠️ **带护照**、**务必先电话/线上预约**（☎ 0818 981 553），弹壳不得带出场、全程听教练口令。可订 [KKday](https://www.kkday.com/en/product/146391-lanna-shooting-club-experience-chiang-mai-thailand) |
+| 16:00–17:00 | 返回宁曼：冲凉 / 补咖啡 / 收拾行李（明早飞曼谷） | Grab 约 15–20 分钟 | 1h | 按需 | 打完靶回宁曼歇脚；明早要早退房赶机，今晚提前把行李理好 |
 | 17:30–17:50 | 酒店 → **Wualai 周六夜市步行街 Saturday Walking Street** | Grab / 出租车约 15 分钟到古城南门 Wualai Rd、≈100 THB | — | — | 建议 **18:00–20:00 到**避开最挤时段 |
 | 18:00–21:00 | **Wualai 周六夜市**：逛吃 + 银器手作 + 街头表演 | 步行 | ~3h | 免费 | ⚠️ **仅周六，约 16:00 起至 22:00–24:00**（Wualai Rd 16:00–23:00 封路禁车）。以**清迈银器/漆器/手工艺 + 街头小吃**闻名，比周日夜市更本地、更松弛。**⚠️ 街上禁饮酒**（最高罚 1 万铢），想喝去食阁/餐厅内。顺看银庙 **Wat Sri Suphan**（周六亮灯有表演） |
 | 21:00–21:30 | 夜市 → 酒店 | Grab 约 15 分钟 | — | — | 回去早点睡，明早早起赶机 |
@@ -216,7 +217,7 @@
 > 5. ✅ **马杀鸡已排 7/17 晚**（从 7/16 挪来）：Oasis King&Queen 双人套 或 Fah Lanna Romantic。
 > 6. ✅ **新增曼谷夜游船**：**Chao Phraya Princess**，7/19 从 ICONSIAM 码头 19:30–21:30，~1,000–1,300฿/人，顶掉唐人街正餐（可船后 MRT 去吃宵夜）。
 >
-> ⚠️ **需你出发前动手订的 3 张票**：① 蓬扬 **Pongyang** 场次（建议 13:00 · Klook/KKday 更便宜）；② 7/17 晚 **马杀鸡**（Oasis / Fah Lanna，务必预约）；③ 昭披耶 **Chao Phraya Princess 游船**（选顶层/前甲板、提前订）。
+> ⚠️ **需你出发前动手订的 4 项**：① 蓬扬 **Pongyang** 场次（建议 13:00 · Klook/KKday 更便宜）；② 7/17 晚 **马杀鸡**（Oasis / Fah Lanna，务必预约）；③ 昭披耶 **Chao Phraya Princess 游船**（选顶层/前甲板、提前订）；④ 7/18 下午 **Lanna 实弹射击**（中文服务·电话/线上预约·带护照）。
 
 > [!tip] 通用优化提示
 > - **7 月雨季**：清迈近郊（瀑布）+ 曼谷午后常雷阵雨，**户外尽量排上午**，午后留室内/商场/按摩，行程已如此编排。带轻便雨衣/伞、防滑鞋。
